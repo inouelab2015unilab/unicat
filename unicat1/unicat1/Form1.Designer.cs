@@ -36,6 +36,7 @@
             this.up = new System.Windows.Forms.Button();
             this.score = new System.Windows.Forms.ListBox();
             this.select = new System.Windows.Forms.ComboBox();
+            this.Catch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +100,7 @@
             // 
             this.score.FormattingEnabled = true;
             this.score.ItemHeight = 15;
-            this.score.Location = new System.Drawing.Point(861, 500);
+            this.score.Location = new System.Drawing.Point(879, 592);
             this.score.Name = "score";
             this.score.Size = new System.Drawing.Size(282, 349);
             this.score.TabIndex = 6;
@@ -113,11 +114,21 @@
             this.select.Size = new System.Drawing.Size(131, 23);
             this.select.TabIndex = 7;
             // 
+            // Catch
+            // 
+            this.Catch.Location = new System.Drawing.Point(943, 492);
+            this.Catch.Name = "Catch";
+            this.Catch.Size = new System.Drawing.Size(162, 62);
+            this.Catch.TabIndex = 8;
+            this.Catch.Text = "キャッチ！";
+            this.Catch.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 953);
+            this.Controls.Add(this.Catch);
             this.Controls.Add(this.select);
             this.Controls.Add(this.score);
             this.Controls.Add(this.up);
@@ -145,6 +156,7 @@
         private System.Windows.Forms.Button up;
         private System.Windows.Forms.ListBox score;
         private System.Windows.Forms.ComboBox select;
+        private System.Windows.Forms.Button Catch;
     }
 }
 
