@@ -10,13 +10,16 @@ using System.Windows.Forms;
 using System.Drawing;
 using InoueLab;
 
-
 namespace unicat1
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
+            RandomMT rand = new RandomMT();
+
+
+
             InitializeComponent();
             ////画像ファイルを読み込んで、Imageオブジェクトを作成する
             //System.Drawing.Image img = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
@@ -30,35 +33,28 @@ namespace unicat1
 
             //画像ファイルを読み込んで、Imageオブジェクトとして取得する
             //Image img = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
-            int xmax=6,ymax=6;
-            Image[,] img = new Image[xmax,ymax];
-            Image[,] img2 = new Image[xmax, ymax];
-            Image[,] fish = new Image[xmax, ymax];
-            Image[,] cat = new Image[xmax, ymax];
+            int xmax = 6, ymax = 6;
+            Image back = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\back.png");
+            Image road = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\road.png");
+            Image fish = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish.png");
+            Image cat = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\cat.png");
 
             for (int i = 0; i < ymax ; i++)
             {
                 for (int j = 0; j < ymax; j++)
                 {
-                    img[i, j] = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
-                    img2[i, j] = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru2.png");
-                    fish[i, j] = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish.png");
-                    cat[i, j] = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\cat.png");
+                    int a = rand.Int(10);
 
-                    if (i % 2 == 0) g.DrawImage(img2[i, j], i * img2[i, j].Width, j * img2[i, j].Height, img2[i, j].Width, img2[i, j].Height);
-                    else            g.DrawImage(img[i, j], i * img[i, j].Width, j * img[i, j].Height, img[i, j].Width, img[i, j].Height);
-
-                    img[i,j].Dispose();
+                    if (a < 6) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                    else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
                 }
             }
 
-            g.DrawImage(fish[1, 1], 1 * fish[1, 1].Width, 1 * fish[1, 1].Height, fish[1, 1].Width, fish[1, 1].Height);
-            g.DrawImage(cat[1, 2], 1 * cat[1, 2].Width, 2 * cat[1, 2].Height, cat[1, 2].Width, cat[1, 2].Height);
+            //お魚
+            g.DrawImage(fish, 1 * fish.Width, 1 * fish.Height, fish.Width, fish.Height);
+            //猫
+            g.DrawImage(cat, 1 * cat.Width, 2 * cat.Height, cat.Width, cat.Height);
 
-                //画像をcanvasの座標(20, 10)の位置に描画する
-                //g.DrawImage(img, 100, 10, img.Width, img.Height);
-            //Imageオブジェクトのリソースを解放する
-            
 
             //Graphicsオブジェクトのリソースを解放する
             g.Dispose();
