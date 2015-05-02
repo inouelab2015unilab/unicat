@@ -39,16 +39,31 @@ namespace unicat1
             Image fish = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish.png");
             Image cat = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\cat.png");
 
-            for (int i = 0; i < xmax ; i++)
+            //ランダム
+            //for (int i = 0; i < xmax ; i++)
+            //{
+            //    for (int j = 0; j < ymax; j++)
+            //    {
+            //        int a = rand.Int(10);
+
+            //        if (a < 6) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+            //        else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
+            //    }
+            //}
+
+
+            //stage1
+            for (int i = 0; i < xmax; i++)
             {
                 for (int j = 0; j < ymax; j++)
                 {
-                    int a = rand.Int(10);
-
-                    if (a < 6) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                    if (j ==0) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                    else if (i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
                     else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
                 }
             }
+
+
 
             //お魚
             g.DrawImage(fish, 1 * fish.Width, 1 * fish.Height, fish.Width, fish.Height);
