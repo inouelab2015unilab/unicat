@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing;
+using System.Threading;
 using InoueLab;
 
 namespace unicat1
@@ -23,7 +23,7 @@ namespace unicat1
 
 
         int catposx;
-            int catposy;
+        int catposy;
 
         public Form1()
         {
@@ -96,20 +96,82 @@ namespace unicat1
             //猫
             g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
 
+
             //Graphicsオブジェクトのリソースを解放する
             //g.Dispose();
+
             //PictureBox1に表示する
-            pictureBox1.Image = canvas;
+            pictureBox1.Image = canvas;  
+
         }
-
-
-        public void catmove()
+      
+        //ネコがある方向に一つ進む
+        public void catmove(string direction)
         {
+            int xmove = 0, ymove = 0;
+            if (direction == "up")
+            {
+                xmove = 0; ymove = -1;
+            }
+            if (direction == "down")
+            {
+                xmove = 0; ymove = 1;
 
+            }
+            if (direction == "right")
+            {
+                xmove = 1; ymove = 0;
+
+            }
+            if (direction == "left")
+            {
+                xmove = -1; ymove = 0;
+
+            }
+
+            for (int i = 0; i <= 100; i = i + 5)
+            {
+
+                g.DrawImage(road, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
+                g.DrawImage(cat, catposx * cat.Width + xmove*i, catposy * cat.Height + ymove*i, cat.Width, cat.Height);
+                pictureBox1.Refresh();
+                Thread.Sleep(1);
+            }
+            catposx +=xmove;
+            catposy += ymove;
         }
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            //左キーが押されているか調べる
+            if ((keyData & Keys.KeyCode) == Keys.Up)
+            {
+                catmove("up");
+                return true;
+            }
+            if ((keyData & Keys.KeyCode) == Keys.Down)
+            {
+                catmove("down");
+
+                return true;
+            } if ((keyData & Keys.KeyCode) == Keys.Right)
+            {
+                catmove("right");
+
+                return true;
+            } if ((keyData & Keys.KeyCode) == Keys.Left)
+            {
+                catmove("left");
+
+                return true;
+            }
+
+            return base.ProcessDialogKey(keyData);
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
-            catmove();
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -117,44 +179,31 @@ namespace unicat1
 
         }
 
-   
+
         private void button6_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void left_Click(object sender, EventArgs e)
         {
-            g.DrawImage(road, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
-            catposx = catposx - 1;
-            g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
-            pictureBox1.Refresh();
+            catmove("left");
         }
 
         private void up_Click(object sender, EventArgs e)
         {
-            g.DrawImage(road, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
-            catposy = catposy - 1;
-            g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
-            pictureBox1.Refresh();
-            //Thread.Sleep(500);
+            catmove("up");
 
         }
 
         private void down_Click(object sender, EventArgs e)
         {
-            g.DrawImage(road, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
-            catposy = catposy + 1;
-            g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
-            pictureBox1.Refresh();
+            catmove("down");
         }
 
         private void right_Click(object sender, EventArgs e)
         {
-            g.DrawImage(road, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
-            catposx = catposx + 1;
-            g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
-            pictureBox1.Refresh();
+            catmove("right");
         }
 
 

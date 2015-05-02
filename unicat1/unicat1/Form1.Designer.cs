@@ -69,7 +69,7 @@
             this.left.TabIndex = 2;
             this.left.Text = "⇐";
             this.left.UseVisualStyleBackColor = true;
-            this.left.Click += new System.EventHandler(this.button2_Click);
+            this.left.Click += new System.EventHandler(this.left_Click);
             // 
             // down
             // 
