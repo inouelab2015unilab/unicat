@@ -37,7 +37,7 @@ namespace unicat1
                 for (int j = 0; j < ymax; j++)
                 {
                     img[i, j] = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
-                    g.DrawImage(img[i,j], i*50,j*50 , img[i,j].Width, img[i,j].Height);
+                    g.DrawImage(img[i, j], i * img[i, j].Width, j * img[i, j].Height, img[i, j].Width, img[i, j].Height);
                     img[i,j].Dispose();
                 }
    
