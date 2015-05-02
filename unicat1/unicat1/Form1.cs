@@ -55,17 +55,32 @@ namespace unicat1
 
             if (comboBox1.SelectedIndex == 1)
             {
-                //stage1
-                for (int i = 0; i < xmax; i++)
+            //stage1
+            for (int i = 0; i < xmax; i++)
+            {
+                for (int j = 0; j < ymax; j++)
                 {
-                    for (int j = 0; j < ymax; j++)
-                    {
-                        if (j ==0) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
-                        else if (i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
-                        else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
-                    }
+                    if (j == 0) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                    else if (i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                    else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
                 }
             }
+            }
+
+            //stage2
+            //for (int i = 0; i < xmax; i++)
+            //{
+            //    for (int j = 0; j < ymax; j++)
+            //    {
+            //        if (j == 0&&i<=2) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+            //        else if (i == 2 && j == 1) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+            //        else if (j == 2 && i == 2 ||j==2&& i == 3) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+            //        else if (j == 3 && i == 3 ||j == 3&& i == 4 ||j == 3&& i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+            //        else if (j == 4 && i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+            //        else if (j == 5 && i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+            //        else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
+            //    }
+            //}
 
 
             //お魚
