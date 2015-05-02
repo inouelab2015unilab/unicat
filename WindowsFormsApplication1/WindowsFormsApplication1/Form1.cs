@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
-            //画像ファイルを読み込んで、Imageオブジェクトを作成する
+            //画像ファイルを読み込んで、Imageオブジェクトを作成する。。
             System.Drawing.Image img = System.Drawing.Image.FromFile(@"C:\Users\Rina\Documents\GitHub\unicat\unicat\unicat\bin\Debug\paneru.png");
 
             //画像を表示する
