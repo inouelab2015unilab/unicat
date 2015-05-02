@@ -16,11 +16,13 @@ namespace unicat1
     {
         public Form1()
         {
+            InitializeComponent();
             RandomMT rand = new RandomMT();
 
+            comboBox1.Items.Add("stage1");
+            comboBox1.Items.Add("stage2");
+            comboBox1.SelectedIndex = 0;
 
-
-            InitializeComponent();
             ////画像ファイルを読み込んで、Imageオブジェクトを作成する
             //System.Drawing.Image img = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
             ////画像を表示する
@@ -51,18 +53,19 @@ namespace unicat1
             //    }
             //}
 
-
-            //stage1
-            for (int i = 0; i < xmax; i++)
+            if (comboBox1.SelectedIndex == 1)
             {
-                for (int j = 0; j < ymax; j++)
+                //stage1
+                for (int i = 0; i < xmax; i++)
                 {
-                    if (j ==0) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
-                    else if (i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
-                    else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
+                    for (int j = 0; j < ymax; j++)
+                    {
+                        if (j ==0) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else if (i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
+                    }
                 }
             }
-
 
 
             //お魚
@@ -92,6 +95,11 @@ namespace unicat1
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
         {
 
         }
