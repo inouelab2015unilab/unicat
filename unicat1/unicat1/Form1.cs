@@ -19,6 +19,9 @@ namespace unicat1
         Image road = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\road.png");
         Image fish = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish.png");
         Image cat = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\cat.png");
+
+
+
         int catposx;
             int catposy;
 
@@ -57,7 +60,7 @@ namespace unicat1
             //    }
             //}
 
-            if (comboBox1.SelectedIndex == 1)
+            if (comboBox1.SelectedIndex == 0)
             {
                 //stage1
                 for (int i = 0; i < xmax; i++)
