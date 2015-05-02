@@ -65,5 +65,15 @@ namespace unicat1
             //PictureBox1に表示する
             pictureBox1.Image = canvas;
         }
+
+
+        public void catmove()
+        {
+
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            catmove();
+        }
     }
 }
