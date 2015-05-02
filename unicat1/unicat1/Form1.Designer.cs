@@ -77,6 +77,7 @@
             this.down.TabIndex = 3;
             this.down.Text = "⇓";
             this.down.UseVisualStyleBackColor = true;
+            this.down.Click += new System.EventHandler(this.down_Click);
             // 
             // right
             // 
@@ -86,6 +87,7 @@
             this.right.TabIndex = 4;
             this.right.Text = "⇒";
             this.right.UseVisualStyleBackColor = true;
+            this.right.Click += new System.EventHandler(this.right_Click);
             // 
             // up
             // 
@@ -95,6 +97,7 @@
             this.up.TabIndex = 5;
             this.up.Text = "⇑";
             this.up.UseVisualStyleBackColor = true;
+            this.up.Click += new System.EventHandler(this.up_Click);
             // 
             // score
             // 
