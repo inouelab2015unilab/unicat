@@ -7,18 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing;
 using InoueLab;
+using System.Threading;
 
 namespace unicat1
 {
     public partial class Form1 : Form
     {
+        Graphics g;
+        Image cat = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\cat.png");
+        Image back = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\back.png");
+        Image road = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\road.png");
+        Image fish = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish.png");
+        int catposx ;
+        int catposy ;
         public Form1()
         {
             RandomMT rand = new RandomMT();
-
-
 
             InitializeComponent();
             ////画像ファイルを読み込んで、Imageオブジェクトを作成する
@@ -29,15 +34,13 @@ namespace unicat1
             //描画先とするImageオブジェクトを作成する
             Bitmap canvas = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             //ImageオブジェクトのGraphicsオブジェクトを作成する
-            Graphics g = Graphics.FromImage(canvas);
+            g = Graphics.FromImage(canvas);
 
             //画像ファイルを読み込んで、Imageオブジェクトとして取得する
             //Image img = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
             int xmax = 6, ymax = 6;
-            Image back = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\back.png");
-            Image road = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\road.png");
-            Image fish = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish.png");
-            Image cat = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\cat.png");
+
+           
 
             for (int i = 0; i < xmax ; i++)
             {
@@ -52,11 +55,14 @@ namespace unicat1
 
             //お魚
             g.DrawImage(fish, 1 * fish.Width, 1 * fish.Height, fish.Width, fish.Height);
+
+            catposx = 5;
+            catposy = 5;
             //猫
-            g.DrawImage(cat, 5 * cat.Width, 5 * cat.Height, cat.Width, cat.Height);
+            g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
 
             //Graphicsオブジェクトのリソースを解放する
-            g.Dispose();
+            //g.Dispose();
             //PictureBox1に表示する
             pictureBox1.Image = canvas;
         }
@@ -78,7 +84,37 @@ namespace unicat1
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            g.DrawImage(road, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
+            catposx = catposx - 1;
+            g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
+            pictureBox1.Refresh();
         }
+
+        private void up_Click(object sender, EventArgs e)
+        {
+            g.DrawImage(road, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
+            catposy = catposy - 1;
+                g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
+                pictureBox1.Refresh();
+                //Thread.Sleep(500);
+            
+        }
+
+        private void down_Click(object sender, EventArgs e)
+        {
+            g.DrawImage(road, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
+            catposy = catposy + 1;
+            g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
+            pictureBox1.Refresh();
+        }
+
+        private void right_Click(object sender, EventArgs e)
+        {
+            g.DrawImage(road, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
+            catposx = catposx + 1;
+            g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
+            pictureBox1.Refresh();
+        }
+
     }
 }
