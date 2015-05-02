@@ -34,6 +34,7 @@ namespace unicat1
             Image[,] img = new Image[xmax,ymax];
             Image[,] img2 = new Image[xmax, ymax];
             Image[,] fish = new Image[xmax, ymax];
+            Image[,] cat = new Image[xmax, ymax];
 
             for (int i = 0; i < ymax ; i++)
             {
@@ -42,16 +43,17 @@ namespace unicat1
                     img[i, j] = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
                     img2[i, j] = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru2.png");
                     fish[i, j] = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish.png");
+                    cat[i, j] = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\cat.png");
 
                     if (i % 2 == 0) g.DrawImage(img2[i, j], i * img2[i, j].Width, j * img2[i, j].Height, img2[i, j].Width, img2[i, j].Height);
                     else            g.DrawImage(img[i, j], i * img[i, j].Width, j * img[i, j].Height, img[i, j].Width, img[i, j].Height);
 
                     img[i,j].Dispose();
                 }
-   
             }
 
             g.DrawImage(fish[1, 1], 1 * fish[1, 1].Width, 1 * fish[1, 1].Height, fish[1, 1].Width, fish[1, 1].Height);
+            g.DrawImage(cat[1, 2], 1 * cat[1, 2].Width, 2 * cat[1, 2].Height, cat[1, 2].Width, cat[1, 2].Height);
 
                 //画像をcanvasの座標(20, 10)の位置に描画する
                 //g.DrawImage(img, 100, 10, img.Width, img.Height);
