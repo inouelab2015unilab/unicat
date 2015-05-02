@@ -55,16 +55,16 @@ namespace unicat1
 
             if (comboBox1.SelectedIndex == 1)
             {
-            //stage1
-            for (int i = 0; i < xmax; i++)
-            {
-                for (int j = 0; j < ymax; j++)
+                //stage1
+                for (int i = 0; i < xmax; i++)
                 {
-                    if (j == 0) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
-                    else if (i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
-                    else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
+                    for (int j = 0; j < ymax; j++)
+                    {
+                        if (j == 0) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else if (i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
+                    }
                 }
-            }
             }
 
             //stage2
