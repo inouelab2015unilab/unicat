@@ -15,10 +15,8 @@ namespace unicat1
         public Form1()
         {
             InitializeComponent();
-
-            InitializeComponent();
             //画像ファイルを読み込んで、Imageオブジェクトを作成する
-            System.Drawing.Image img = System.Drawing.Image.FromFile(@"C:\Users\晴子\Documents\GitHub\unicat\unicat1\unicat1\bin\Debug\paneru.png");
+            System.Drawing.Image img = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
 
             //画像を表示する
             pictureBox1.Image = img;
