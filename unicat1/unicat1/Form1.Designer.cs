@@ -34,8 +34,8 @@
             this.down = new System.Windows.Forms.Button();
             this.right = new System.Windows.Forms.Button();
             this.up = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.score = new System.Windows.Forms.ListBox();
+            this.select = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,31 +95,31 @@
             this.up.Text = "⇑";
             this.up.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // score
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(861, 500);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(282, 349);
-            this.listBox1.TabIndex = 6;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.score.FormattingEnabled = true;
+            this.score.ItemHeight = 15;
+            this.score.Location = new System.Drawing.Point(861, 500);
+            this.score.Name = "score";
+            this.score.Size = new System.Drawing.Size(282, 349);
+            this.score.TabIndex = 6;
+            this.score.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // comboBox1
+            // select
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(918, 56);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(131, 23);
-            this.comboBox1.TabIndex = 7;
+            this.select.FormattingEnabled = true;
+            this.select.Location = new System.Drawing.Point(918, 56);
+            this.select.Name = "select";
+            this.select.Size = new System.Drawing.Size(131, 23);
+            this.select.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 953);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.select);
+            this.Controls.Add(this.score);
             this.Controls.Add(this.up);
             this.Controls.Add(this.right);
             this.Controls.Add(this.down);
@@ -143,8 +143,8 @@
         private System.Windows.Forms.Button down;
         private System.Windows.Forms.Button right;
         private System.Windows.Forms.Button up;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ListBox score;
+        private System.Windows.Forms.ComboBox select;
     }
 }
 
