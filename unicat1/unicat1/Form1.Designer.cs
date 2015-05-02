@@ -30,120 +30,118 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.left = new System.Windows.Forms.Button();
+            this.down = new System.Windows.Forms.Button();
+            this.right = new System.Windows.Forms.Button();
+            this.up = new System.Windows.Forms.Button();
+            this.score = new System.Windows.Forms.ListBox();
+            this.select = new System.Windows.Forms.ComboBox();
+            this.Catch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(22, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(29, 31);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(600, 600);
+            this.pictureBox1.Size = new System.Drawing.Size(800, 750);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(811, 46);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(918, 110);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 62);
+            this.button1.Size = new System.Drawing.Size(225, 78);
             this.button1.TabIndex = 1;
             this.button1.Text = "ねこ移動";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // left
             // 
-            this.button2.Location = new System.Drawing.Point(646, 230);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 58);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "⇐";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.left.Location = new System.Drawing.Point(861, 288);
+            this.left.Name = "left";
+            this.left.Size = new System.Drawing.Size(107, 73);
+            this.left.TabIndex = 2;
+            this.left.Text = "⇐";
+            this.left.UseVisualStyleBackColor = true;
+            this.left.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // down
             // 
-            this.button3.Location = new System.Drawing.Point(724, 294);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 54);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "⇓";
-            this.button3.UseVisualStyleBackColor = true;
+            this.down.Location = new System.Drawing.Point(966, 367);
+            this.down.Name = "down";
+            this.down.Size = new System.Drawing.Size(106, 67);
+            this.down.TabIndex = 3;
+            this.down.Text = "⇓";
+            this.down.UseVisualStyleBackColor = true;
+            this.down.Click += new System.EventHandler(this.down_Click);
             // 
-            // button4
+            // right
             // 
-            this.button4.Location = new System.Drawing.Point(800, 232);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(85, 57);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "⇒";
-            this.button4.UseVisualStyleBackColor = true;
+            this.right.Location = new System.Drawing.Point(1067, 290);
+            this.right.Name = "right";
+            this.right.Size = new System.Drawing.Size(113, 71);
+            this.right.TabIndex = 4;
+            this.right.Text = "⇒";
+            this.right.UseVisualStyleBackColor = true;
+            this.right.Click += new System.EventHandler(this.right_Click);
             // 
-            // button5
+            // up
             // 
-            this.button5.Location = new System.Drawing.Point(724, 169);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(80, 57);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "⇑";
-            this.button5.UseVisualStyleBackColor = true;
+            this.up.Location = new System.Drawing.Point(966, 211);
+            this.up.Name = "up";
+            this.up.Size = new System.Drawing.Size(106, 71);
+            this.up.TabIndex = 5;
+            this.up.Text = "⇑";
+            this.up.UseVisualStyleBackColor = true;
+            this.up.Click += new System.EventHandler(this.up_Click);
             // 
-            // listBox1
+            // score
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(734, 381);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(212, 280);
-            this.listBox1.TabIndex = 6;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.score.FormattingEnabled = true;
+            this.score.ItemHeight = 15;
+            this.score.Location = new System.Drawing.Point(879, 592);
+            this.score.Name = "score";
+            this.score.Size = new System.Drawing.Size(282, 349);
+            this.score.TabIndex = 6;
+            this.score.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // comboBox1
+            // select
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(743, 694);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 20);
-            this.comboBox1.TabIndex = 7;
+            this.select.FormattingEnabled = true;
+            this.select.Location = new System.Drawing.Point(918, 56);
+            this.select.Name = "select";
+            this.select.Size = new System.Drawing.Size(131, 23);
+            this.select.TabIndex = 7;
             // 
-            // button6
+            // Catch
             // 
-            this.button6.Location = new System.Drawing.Point(891, 694);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.Catch.Location = new System.Drawing.Point(943, 492);
+            this.Catch.Name = "Catch";
+            this.Catch.Size = new System.Drawing.Size(162, 62);
+            this.Catch.TabIndex = 8;
+            this.Catch.Text = "キャッチ！";
+            this.Catch.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 762);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.ClientSize = new System.Drawing.Size(1182, 953);
+            this.Controls.Add(this.Catch);
+            this.Controls.Add(this.select);
+            this.Controls.Add(this.score);
+            this.Controls.Add(this.up);
+            this.Controls.Add(this.right);
+            this.Controls.Add(this.down);
+            this.Controls.Add(this.left);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -155,13 +153,13 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button left;
+        private System.Windows.Forms.Button down;
+        private System.Windows.Forms.Button right;
+        private System.Windows.Forms.Button up;
+        private System.Windows.Forms.ListBox score;
+        private System.Windows.Forms.ComboBox select;
+        private System.Windows.Forms.Button Catch;
     }
 }
 
