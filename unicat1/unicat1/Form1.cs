@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using InoueLab;
+using System.Threading;
 
 namespace unicat1
 {
@@ -39,7 +40,7 @@ namespace unicat1
             Image fish = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish.png");
             Image cat = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\cat.png");
 
-            for (int i = 0; i < ymax ; i++)
+            for (int i = 0; i < xmax; i++)
             {
                 for (int j = 0; j < ymax; j++)
                 {
@@ -55,11 +56,21 @@ namespace unicat1
             //猫
             g.DrawImage(cat, 1 * cat.Width, 2 * cat.Height, cat.Width, cat.Height);
 
+            //PictureBox1に表示する
+            pictureBox1.Image = canvas;
+
+
+            for (int i = 100; i < 200; i++)
+            {
+                g.DrawImage(cat, i, 100, cat.Width, cat.Height);
+                pictureBox1.Refresh();
+                Thread.Sleep(5);
+
+            }
 
             //Graphicsオブジェクトのリソースを解放する
             g.Dispose();
-            //PictureBox1に表示する
-            pictureBox1.Image = canvas;
+            
         }
 
 
