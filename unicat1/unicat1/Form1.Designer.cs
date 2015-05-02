@@ -43,7 +43,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(29, 31);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(800, 750);
             this.pictureBox1.TabIndex = 0;
@@ -80,6 +80,7 @@
             this.down.TabIndex = 3;
             this.down.Text = "⇓";
             this.down.UseVisualStyleBackColor = true;
+            this.down.Click += new System.EventHandler(this.down_Click);
             // 
             // right
             // 
@@ -90,6 +91,7 @@
             this.right.TabIndex = 4;
             this.right.Text = "⇒";
             this.right.UseVisualStyleBackColor = true;
+            this.right.Click += new System.EventHandler(this.right_Click);
             // 
             // up
             // 
@@ -100,6 +102,7 @@
             this.up.TabIndex = 5;
             this.up.Text = "⇑";
             this.up.UseVisualStyleBackColor = true;
+            this.up.Click += new System.EventHandler(this.up_Click);
             // 
             // score
             // 
@@ -126,7 +129,7 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(529, 826);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 23);
             this.comboBox1.TabIndex = 9;
@@ -146,7 +149,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
