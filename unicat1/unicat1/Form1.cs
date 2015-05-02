@@ -29,11 +29,24 @@ namespace unicat1
             Graphics g = Graphics.FromImage(canvas);
 
             //画像ファイルを読み込んで、Imageオブジェクトとして取得する
-            Image img = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
-            //画像をcanvasの座標(20, 10)の位置に描画する
-            g.DrawImage(img, 100, 10, img.Width, img.Height);
+            //Image img = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
+            int xmax=6,ymax=6;
+            Image[,] img = new Image[xmax,ymax];
+            for (int i = 0; i < ymax ; i++)
+            {
+                for (int j = 0; j < ymax; j++)
+                {
+                    img[i, j] = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
+                    g.DrawImage(img[i,j], i*50,j*50 , img[i,j].Width, img[i,j].Height);
+                    img[i,j].Dispose();
+                }
+   
+            }
+
+                //画像をcanvasの座標(20, 10)の位置に描画する
+                //g.DrawImage(img, 100, 10, img.Width, img.Height);
             //Imageオブジェクトのリソースを解放する
-            img.Dispose();
+            
 
             //Graphicsオブジェクトのリソースを解放する
             g.Dispose();
