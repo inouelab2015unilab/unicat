@@ -43,11 +43,18 @@ namespace unicat1
             System.Drawing.Image commandpanel = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\commandpanel.png");
             ////画像を表示する
             pictureBox3.Image = commandpanel;
-            pictureBox4.Image =command1;
-            pictureBox5.Image = command2;
-            pictureBox6.Image = command3;
-            pictureBox7.Image = command4;
-           
+
+            button3.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\up.png");
+            button4.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\left.png");
+            button5.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\right.png");
+            button6.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\catch.png");
+
+            button3.Paint += new PaintEventHandler(button3_Paint);
+            button4.Paint += new PaintEventHandler(button4_Paint);
+            button5.Paint += new PaintEventHandler(button5_Paint);
+            button6.Paint += new PaintEventHandler(button6_Paint);
+
+
 
             //描画先とするImageオブジェクトを作成する
             Bitmap canvas = new Bitmap(pictureBox1.Width, pictureBox1.Height);
@@ -253,6 +260,38 @@ namespace unicat1
             return base.ProcessDialogKey(keyData);
         }
 
+        private void button3_Paint(object sender, PaintEventArgs e)
+        {
+            Button btn = (Button)sender;
+            //ボタンの背景画像をボタンの大きさに合わせて描画
+            e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
+
+        }
+
+        private void button4_Paint(object sender, PaintEventArgs e)
+        {
+            Button btn = (Button)sender;
+            //ボタンの背景画像をボタンの大きさに合わせて描画
+            e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
+
+        }
+
+        private void button5_Paint(object sender, PaintEventArgs e)
+        {
+            Button btn = (Button)sender;
+            //ボタンの背景画像をボタンの大きさに合わせて描画
+            e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
+
+        }
+
+        private void button6_Paint(object sender, PaintEventArgs e)
+        {
+            Button btn = (Button)sender;
+            //ボタンの背景画像をボタンの大きさに合わせて描画
+            e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
+
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -323,6 +362,26 @@ namespace unicat1
             }
         }
     }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }
