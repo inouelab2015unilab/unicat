@@ -29,21 +29,32 @@ namespace unicat1
         {
             InitializeComponent();
             RandomMT rand = new RandomMT();
-
+            comboBox1.Items.Add("stage select");
             comboBox1.Items.Add("stage1");
             comboBox1.Items.Add("stage2");
             comboBox1.SelectedIndex = 0;
 
             ////画像ファイルを読み込んで、Imageオブジェクトを作成する
-            //System.Drawing.Image img = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
+            System.Drawing.Image command1 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\up.png");
+            System.Drawing.Image command2 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\left.png");
+            System.Drawing.Image command3 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\right.png");
+            System.Drawing.Image command4 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\catch.png");
+            System.Drawing.Image commandpanel = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\commandpanel.png");
             ////画像を表示する
-            //pictureBox1.Image = img;
+            pictureBox3.Image = commandpanel;
+            pictureBox4.Image =command1;
+            pictureBox5.Image = command2;
+            pictureBox6.Image = command3;
+            pictureBox7.Image = command4;
+           
 
             //描画先とするImageオブジェクトを作成する
             Bitmap canvas = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+           
             //ImageオブジェクトのGraphicsオブジェクトを作成する
             g = Graphics.FromImage(canvas);
-
+           
+           
             //画像ファイルを読み込んで、Imageオブジェクトとして取得する
             //Image img = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
             int xmax = 6, ymax = 6;
@@ -59,8 +70,9 @@ namespace unicat1
             //        else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
             //    }
             //}
+     
 
-            if (comboBox1.SelectedIndex == 0)
+            if (comboBox1.SelectedIndex==0)
             {
                 //stage1
                 for (int i = 0; i < xmax; i++)
@@ -72,22 +84,24 @@ namespace unicat1
                         else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
                     }
                 }
+
             }
 
-            //stage2
-            //for (int i = 0; i < xmax; i++)
-            //{
-            //    for (int j = 0; j < ymax; j++)
-            //    {
-            //        if (j == 0&&i<=2) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
-            //        else if (i == 2 && j == 1) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
-            //        else if (j == 2 && i == 2 ||j==2&& i == 3) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
-            //        else if (j == 3 && i == 3 ||j == 3&& i == 4 ||j == 3&& i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
-            //        else if (j == 4 && i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
-            //        else if (j == 5 && i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
-            //        else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
-            //    }
-            //}
+            else if (comboBox1.SelectedIndex == 2)
+           // stage2
+                for (int i = 0; i < xmax; i++)
+                {
+                    for (int j = 0; j < ymax; j++)
+                    {
+                        if (j == 0 && i <= 2) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else if (i == 2 && j == 1) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else if (j == 2 && i == 2 || j == 2 && i == 3) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else if (j == 3 && i == 3 || j == 3 && i == 4 || j == 3 && i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else if (j == 4 && i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else if (j == 5 && i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
+                    }
+                }
 
             catposx = 3;
             catposy = 3;

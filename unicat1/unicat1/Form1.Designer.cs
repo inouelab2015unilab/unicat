@@ -30,14 +30,20 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.left = new System.Windows.Forms.Button();
-            this.down = new System.Windows.Forms.Button();
-            this.right = new System.Windows.Forms.Button();
-            this.up = new System.Windows.Forms.Button();
             this.score = new System.Windows.Forms.ListBox();
-            this.Catch = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -51,7 +57,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(917, 110);
+            this.button1.Location = new System.Drawing.Point(904, 489);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(225, 78);
@@ -59,50 +65,6 @@
             this.button1.Text = "ねこ移動";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // left
-            // 
-            this.left.Location = new System.Drawing.Point(861, 288);
-            this.left.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.left.Name = "left";
-            this.left.Size = new System.Drawing.Size(107, 72);
-            this.left.TabIndex = 2;
-            this.left.Text = "⇐";
-            this.left.UseVisualStyleBackColor = true;
-            this.left.Click += new System.EventHandler(this.left_Click);
-            // 
-            // down
-            // 
-            this.down.Location = new System.Drawing.Point(965, 368);
-            this.down.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.down.Name = "down";
-            this.down.Size = new System.Drawing.Size(107, 68);
-            this.down.TabIndex = 3;
-            this.down.Text = "⇓";
-            this.down.UseVisualStyleBackColor = true;
-            this.down.Click += new System.EventHandler(this.down_Click);
-            // 
-            // right
-            // 
-            this.right.Location = new System.Drawing.Point(1067, 290);
-            this.right.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.right.Name = "right";
-            this.right.Size = new System.Drawing.Size(113, 71);
-            this.right.TabIndex = 4;
-            this.right.Text = "⇒";
-            this.right.UseVisualStyleBackColor = true;
-            this.right.Click += new System.EventHandler(this.right_Click);
-            // 
-            // up
-            // 
-            this.up.Location = new System.Drawing.Point(965, 211);
-            this.up.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.up.Name = "up";
-            this.up.Size = new System.Drawing.Size(107, 71);
-            this.up.TabIndex = 5;
-            this.up.Text = "⇑";
-            this.up.UseVisualStyleBackColor = true;
-            this.up.Click += new System.EventHandler(this.up_Click);
             // 
             // score
             // 
@@ -115,37 +77,78 @@
             this.score.TabIndex = 6;
             this.score.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // Catch
-            // 
-            this.Catch.Location = new System.Drawing.Point(943, 492);
-            this.Catch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Catch.Name = "Catch";
-            this.Catch.Size = new System.Drawing.Size(163, 62);
-            this.Catch.TabIndex = 8;
-            this.Catch.Text = "キャッチ！";
-            this.Catch.UseVisualStyleBackColor = true;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(529, 826);
+            this.comboBox1.Location = new System.Drawing.Point(853, 31);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 23);
             this.comboBox1.TabIndex = 9;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(787, 78);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(373, 406);
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(94, 802);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(124, 126);
+            this.pictureBox4.TabIndex = 12;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Location = new System.Drawing.Point(249, 802);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(124, 126);
+            this.pictureBox5.TabIndex = 13;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Location = new System.Drawing.Point(402, 802);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(124, 126);
+            this.pictureBox6.TabIndex = 14;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Location = new System.Drawing.Point(562, 802);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(124, 126);
+            this.pictureBox7.TabIndex = 15;
+            this.pictureBox7.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1054, 31);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+          //  this.button1.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1181, 952);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.Catch);
             this.Controls.Add(this.score);
-            this.Controls.Add(this.up);
-            this.Controls.Add(this.right);
-            this.Controls.Add(this.down);
-            this.Controls.Add(this.left);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -153,6 +156,11 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -161,13 +169,14 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button left;
-        private System.Windows.Forms.Button down;
-        private System.Windows.Forms.Button right;
-        private System.Windows.Forms.Button up;
         private System.Windows.Forms.ListBox score;
-        private System.Windows.Forms.Button Catch;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Button button2;
     }
 }
 
