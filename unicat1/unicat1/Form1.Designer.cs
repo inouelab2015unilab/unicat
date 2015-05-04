@@ -64,7 +64,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "ねこ移動";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+          //  this.button1.Click += new System.EventHandler(this.button2_Click);
             // 
             // score
             // 
@@ -88,7 +88,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(787, 78);
+            this.pictureBox3.Location = new System.Drawing.Point(836, 78);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(373, 406);
             this.pictureBox3.TabIndex = 11;
@@ -134,7 +134,6 @@
             this.button2.TabIndex = 16;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-          //  this.button1.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
