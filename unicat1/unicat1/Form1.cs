@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using InoueLab;
+using System.IO;
 
 namespace unicat1
 {
@@ -24,6 +25,7 @@ namespace unicat1
 
         int catposx;
         int catposy;
+        List<int[,]> boardlist = new List<int[,]>();
         int buttoncount=0;
         PictureBox[] picarray = new PictureBox[12];
         ////画像ファイルを読み込んで、Imageオブジェクトを作成する
@@ -98,6 +100,31 @@ namespace unicat1
             //    }
             //}
             comboBox1.SelectedIndex = 0;
+            string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
+            foreach (var n in files)
+            {
+
+                using (StreamReader sr = new StreamReader(n, Encoding.GetEncoding(932)))
+                {
+                    int[,] temp = new int[6, 6];
+
+
+                    int index = 0;
+                    while (!sr.EndOfStream)
+                    {
+                        string s = sr.ReadLine();
+                        string[] a = s.Split(',');
+                        for (int i = 0; i < a.GetLength(0); i++)
+                        {
+                            temp[i, index] = int.Parse(a[i]);
+
+                        }
+                        index++;
+                    }
+                    boardlist.Add(temp);
+
+                }
+            }
 
             if (comboBox1.SelectedIndex==1)
             {
@@ -376,10 +403,16 @@ namespace unicat1
             {
                 if (boardmat[i, j] == 1) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);               //道
                 else if (boardmat[i, j] == 2) g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);          //背景
-                else if (boardmat[i, j] == 3) g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);   //猫だよ
-                else if (boardmat[i, j] == 4) g.DrawImage(fish, 1 * fish.Width, 1 * fish.Height, fish.Width, fish.Height);          //魚dayo
+                else if (boardmat[i, j] == 3)  
+                {
+                    catposx = i;
+                    catposy = j;
+                    g.DrawImage(cat, i * cat.Width, j * cat.Height, cat.Width, cat.Height);
+                }//猫だよ
+                else if (boardmat[i, j] == 4) g.DrawImage(fish, i * fish.Width, j * fish.Height, fish.Width, fish.Height);          //魚dayo
             }
         }
+        pictureBox1.Refresh();
     }
 
         private void button3_Click(object sender, EventArgs e)
@@ -405,6 +438,11 @@ namespace unicat1
         {
             picarray[buttoncount].Image = command4;
             buttoncount += 1;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            makeboard(boardlist[0]);
         }
 
 
