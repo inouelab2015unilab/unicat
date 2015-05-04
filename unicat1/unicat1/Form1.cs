@@ -19,7 +19,7 @@ namespace unicat1
         Image road = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\road.png");
         Image fish = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish.png");
         Image cat = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\cat.png");
-
+        int xmax = 6, ymax = 6;
 
 
         int catposx;
@@ -32,6 +32,7 @@ namespace unicat1
             comboBox1.Items.Add("stage select");
             comboBox1.Items.Add("stage1");
             comboBox1.Items.Add("stage2");
+
             comboBox1.SelectedIndex = 0;
 
             ////画像ファイルを読み込んで、Imageオブジェクトを作成する
@@ -57,7 +58,7 @@ namespace unicat1
            
             //画像ファイルを読み込んで、Imageオブジェクトとして取得する
             //Image img = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
-            int xmax = 6, ymax = 6;
+
 
             //ランダム
             //for (int i = 0; i < xmax ; i++)
@@ -70,9 +71,9 @@ namespace unicat1
             //        else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
             //    }
             //}
-     
+            comboBox1.SelectedIndex = 0;
 
-            if (comboBox1.SelectedIndex==2)
+            if (comboBox1.SelectedIndex==1)
             {
                 //stage1
                 for (int i = 0; i < xmax; i++)
@@ -82,13 +83,16 @@ namespace unicat1
                         if (j == 0) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
                         else if (i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
                         else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
+                        
                     }
                 }
 
             }
 
+
             else if (comboBox1.SelectedIndex == 2)
-           // stage2
+            // stage2
+            {
                 for (int i = 0; i < xmax; i++)
                 {
                     for (int j = 0; j < ymax; j++)
@@ -102,22 +106,26 @@ namespace unicat1
                         else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
                     }
                 }
+            }
 
-            else if (comboBox1.SelectedIndex == 2)
-                // stage3
+            else if (comboBox1.SelectedIndex == 3)
+            // stage3
+            {
                 for (int i = 0; i < xmax; i++)
                 {
                     for (int j = 0; j < ymax; j++)
                     {
-                        if (j == 0 || j==3 || j==5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        if (j == 0 || j == 3 || j == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
                         else if (j == 1 && i == 5 || j == 2 && i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
                         else if (j == 4 && i == 0) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
                         else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
                     }
                 }
+            }
 
-            else if (comboBox1.SelectedIndex == 0)
-                // stage4
+            else if (comboBox1.SelectedIndex == 4)
+            // stage4
+            {
                 for (int i = 0; i < xmax; i++)
                 {
                     for (int j = 0; j < ymax; j++)
@@ -129,9 +137,30 @@ namespace unicat1
                         else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
                     }
                 }
+            }
+
+            else if (comboBox1.SelectedIndex == 5)
+            // stage5
+            {
+                for (int i = 0; i < xmax; i++)
+                {
+                    for (int j = 0; j < ymax; j++)
+                    {
+                        if (j == 0 && i == 4) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else if (j == 0 && i == 4) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else if (j == 5 && i == 2) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else if (j == 0 && i == 0) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
+                    }
+                }
+            }
+
+
+
+
 
             else if (comboBox1.SelectedIndex == 0)
-                // stage5
+                // stage10
                 for (int i = 0; i < xmax; i++)
                 {
                     for (int j = 0; j < ymax; j++)
@@ -151,6 +180,7 @@ namespace unicat1
             //猫
             g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
 
+            pictureBox1.Refresh();
 
             //Graphicsオブジェクトのリソースを解放する
             //g.Dispose();
@@ -261,6 +291,26 @@ namespace unicat1
             catmove("right");
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 1)
+            {
+                //stage1
+                for (int i = 0; i < xmax; i++)
+                {
+                    for (int j = 0; j < ymax; j++)
+                    {
+                        if (j == 0) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else if (i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+                        else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
+
+                    }
+                }
+                pictureBox1.Refresh();
+            }
+        }
+
+        
 
     }
 }
