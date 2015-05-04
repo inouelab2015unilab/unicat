@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using InoueLab;
+using System.IO;
 
 namespace unicat1
 {
@@ -20,6 +21,9 @@ namespace unicat1
         Image fish = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish.png");
         Image cat = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\cat.png");
         int xmax = 6, ymax = 6;
+
+        List<int[,]> boardlist = new List<int[,]>();
+
 
 
         int catposx;
@@ -34,6 +38,22 @@ namespace unicat1
             comboBox1.Items.Add("stage2");
 
             comboBox1.SelectedIndex = 0;
+
+            //int boardcount = 0;
+            //string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
+            //foreach (var n in files)
+            //{
+
+            //    StreamReader sr = new StreamReader(n, Encoding.GetEncoding(932));
+            //    int[,] temp=new int[6,6];
+            //    boardlist.Add(temp);
+
+            //    while (!sr.EndOfStream)
+            //    {
+            //        string s = sr.ReadLine();
+            //        string[] a = s.Split(',');
+            //    }
+            //}
 
             ////画像ファイルを読み込んで、Imageオブジェクトを作成する
             System.Drawing.Image command1 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\up.png");
