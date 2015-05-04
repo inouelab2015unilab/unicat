@@ -330,7 +330,19 @@ namespace unicat1
             }
         }
 
-        
+        private void makeboard(int[,] boardmat)
+    {
+        for (int i = 0; i < xmax; i++)
+        {
+            for (int j = 0; j < ymax; j++)
+            {
+                if (boardmat[i, j] == 1) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);               //道
+                else if (boardmat[i, j] == 2) g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);          //背景
+                else if (boardmat[i, j] == 3) g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);   //猫だよ
+                else if (boardmat[i, j] == 4) g.DrawImage(fish, 1 * fish.Width, 1 * fish.Height, fish.Width, fish.Height);          //魚dayo
+            }
+        }
+    }
 
     }
 }
