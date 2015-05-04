@@ -19,11 +19,14 @@ namespace unicat1
         Image road = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\road.png");
         Image fish = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish.png");
         Image cat = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\cat.png");
+        Image crear = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\crear.png");
 
 
 
         int catposx;
         int catposy;
+        int xmax = 6, ymax = 6;
+
 
         public Form1()
         {
@@ -46,18 +49,19 @@ namespace unicat1
             pictureBox5.Image = command2;
             pictureBox6.Image = command3;
             pictureBox7.Image = command4;
-           
+
 
             //描画先とするImageオブジェクトを作成する
             Bitmap canvas = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-           
+
             //ImageオブジェクトのGraphicsオブジェクトを作成する
             g = Graphics.FromImage(canvas);
            
            
+           
             //画像ファイルを読み込んで、Imageオブジェクトとして取得する
             //Image img = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
-            int xmax = 6, ymax = 6;
+          
 
             //ランダム
             //for (int i = 0; i < xmax ; i++)
@@ -70,9 +74,9 @@ namespace unicat1
             //        else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
             //    }
             //}
-     
 
-            if (comboBox1.SelectedIndex==0)
+
+            //if (comboBox1.SelectedIndex == 0)
             {
                 //stage1
                 for (int i = 0; i < xmax; i++)
@@ -87,8 +91,9 @@ namespace unicat1
 
             }
 
-            else if (comboBox1.SelectedIndex == 2)
-           // stage2
+
+            //else if (comboBox1.SelectedIndex == 1)
+                // stage2
                 for (int i = 0; i < xmax; i++)
                 {
                     for (int j = 0; j < ymax; j++)
@@ -110,6 +115,8 @@ namespace unicat1
             //猫
             g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
 
+            //if(catposx==0&&catposy==0)
+            //    g.DrawImage(crear, 1 * crear.Width, 1 * crear.Height, crear.Width, crear.Height);
 
             //Graphicsオブジェクトのリソースを解放する
             //g.Dispose();
@@ -118,6 +125,7 @@ namespace unicat1
             pictureBox1.Image = canvas;  
 
         }
+
       
         //ネコがある方向に一つ進む
         public void catmove(string direction)
@@ -187,11 +195,29 @@ namespace unicat1
         {
 
         }
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    if (comboBox1.SelectedIndex == 1)
+        //    {
+        //        //stage1
+        //        for (int i = 0; i < xmax; i++)
+        //        {
+        //            for (int j = 0; j < ymax; j++)
+        //            {
+        //                if (j == 0) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+        //                else if (i == 5) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
+        //                else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
+        //            }
+        //        }
+        //    }
+
+        //}
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
 
 
         private void button6_Click(object sender, EventArgs e)
