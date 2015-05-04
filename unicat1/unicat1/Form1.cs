@@ -20,14 +20,14 @@ namespace unicat1
         Image road = Image.FromFile(@"../../素材/road.png");
         Image fish = Image.FromFile(@"../../素材/fish.png");
         Image cat = Image.FromFile(@"../../素材/cat.png");
-        int xmax = 6, ymax = 6;
-
+        int xmax = 10, ymax = 10;
 
         int catposx;
         int catposy;
         List<int[,]> boardlist = new List<int[,]>();
         int buttoncount=0;
         PictureBox[] picarray = new PictureBox[12];
+
         ////画像ファイルを読み込んで、Imageオブジェクトを作成する
         System.Drawing.Image command1 = System.Drawing.Image.FromFile(@"../../素材/up.png");
         System.Drawing.Image command2 = System.Drawing.Image.FromFile(@"../../素材/left.png");
@@ -38,12 +38,10 @@ namespace unicat1
         public Form1()
         {
             InitializeComponent();
+
             RandomMT rand = new RandomMT();
             comboBox1.Items.Add("stage1");
             comboBox1.Items.Add("stage2");
-
-            comboBox1.SelectedIndex = 0;
-
            
                picarray[0] = pictureBox2;
                picarray[1] = pictureBox3;
@@ -63,8 +61,7 @@ namespace unicat1
                    picarray[i].Image = commandpanel;
                }
 
-
-                   button3.BackgroundImage = Image.FromFile(@"../../素材/up.png");
+            button3.BackgroundImage = Image.FromFile(@"../../素材/up.png");
             button4.BackgroundImage = Image.FromFile(@"../../素材/left.png");
             button5.BackgroundImage = Image.FromFile(@"../../素材/right.png");
             button6.BackgroundImage = Image.FromFile(@"../../素材/catch.png");
@@ -80,12 +77,7 @@ namespace unicat1
             Bitmap canvas = new Bitmap(pictureBox1.Width, pictureBox1.Height);
            
             //ImageオブジェクトのGraphicsオブジェクトを作成する
-            g = Graphics.FromImage(canvas);
-           
-           
-            //画像ファイルを読み込んで、Imageオブジェクトとして取得する
-            //Image img = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\paneru.png");
-
+            g = Graphics.FromImage(canvas);            
 
             //ランダム
             //for (int i = 0; i < xmax ; i++)
@@ -99,12 +91,14 @@ namespace unicat1
             //    }
             //}
             comboBox1.SelectedIndex = 0;
+
+            //盤面情報をCSVファイルから読み込み
             string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
             foreach (var n in files)
             {
                 using (StreamReader sr = new StreamReader(n, Encoding.GetEncoding(932)))
                 {
-                    int[,] temp = new int[6, 6];
+                    int[,] temp = new int[xmax, ymax];
 
 
                     int index = 0;
@@ -124,18 +118,7 @@ namespace unicat1
                 }
             }
 
-         
-            catposx = 3;
-            catposy = 3;
-            //お魚
-            g.DrawImage(fish, 1 * fish.Width, 1 * fish.Height, fish.Width, fish.Height);
-            //猫
-            g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
-
-            pictureBox1.Refresh();
-
-            //Graphicsオブジェクトのリソースを解放する
-            //g.Dispose();
+            makeboard(boardlist[comboBox1.SelectedIndex]);
 
             //PictureBox1に表示する
             pictureBox1.Image = canvas;  
@@ -166,17 +149,21 @@ namespace unicat1
 
             }
 
-            for (int i = 0; i <= 100; i = i + 5)
+            for (int i = 0; i <= pictureBox1.Width / xmax; i = i + 5)
             {
+                //g.DrawImage(road, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
+                //g.DrawImage(cat, catposx * cat.Width + xmove*i, catposy * cat.Height + ymove*i, cat.Width, cat.Height);
+                g.DrawImage(road, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+                g.DrawImage(cat, catposx * pictureBox1.Width / xmax + xmove * i, catposy * pictureBox1.Height / ymax + ymove * i, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
 
-                g.DrawImage(road, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
-                g.DrawImage(cat, catposx * cat.Width + xmove*i, catposy * cat.Height + ymove*i, cat.Width, cat.Height);
                 pictureBox1.Refresh();
                 Thread.Sleep(1);
             }
             catposx +=xmove;
             catposy += ymove;
         }
+
+        //矢印キーでネコ移動
         protected override bool ProcessDialogKey(Keys keyData)
         {
             //左キーが押されているか調べる
@@ -276,30 +263,45 @@ namespace unicat1
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            
+        {            
             makeboard(boardlist[comboBox1.SelectedIndex]);
         }
 
         private void makeboard(int[,] boardmat)
-    {
-        for (int i = 0; i < xmax; i++)
         {
-            for (int j = 0; j < ymax; j++)
+            //for (int i = 0; i < xmax; i++)
+            //{
+            //    for (int j = 0; j < ymax; j++)
+            //    {
+            //        if (boardmat[i, j] == 1) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);               //道
+            //        else if (boardmat[i, j] == 2) g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);          //背景
+            //        else if (boardmat[i, j] == 3)
+            //        {
+            //            catposx = i;
+            //            catposy = j;
+            //            g.DrawImage(cat, i * cat.Width, j * cat.Height, cat.Width, cat.Height);
+            //        }//猫だよ
+            //        else if (boardmat[i, j] == 4) g.DrawImage(fish, i * fish.Width, j * fish.Height, fish.Width, fish.Height);          //魚dayo
+            //    }
+            //}
+            //pictureBox1.Refresh();
+            for (int i = 0; i < xmax; i++)
             {
-                if (boardmat[i, j] == 1) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);               //道
-                else if (boardmat[i, j] == 2) g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);          //背景
-                else if (boardmat[i, j] == 3)  
+                for (int j = 0; j < ymax; j++)
                 {
-                    catposx = i;
-                    catposy = j;
-                    g.DrawImage(cat, i * cat.Width, j * cat.Height, cat.Width, cat.Height);
-                }//猫だよ
-                else if (boardmat[i, j] == 4) g.DrawImage(fish, i * fish.Width, j * fish.Height, fish.Width, fish.Height);          //魚dayo
+                    if (boardmat[i, j] == 1) g.DrawImage(road, i * pictureBox1.Width/xmax , j * pictureBox1.Height/ymax, pictureBox1.Width/xmax, pictureBox1.Height/ymax);               //道
+                    else if (boardmat[i, j] == 2||boardmat[i,j]==0) g.DrawImage(back, i * pictureBox1.Width/xmax , j *pictureBox1.Height/ymax , pictureBox1.Width/xmax,pictureBox1.Height/ymax );          //背景
+                    else if (boardmat[i, j] == 3)
+                    {
+                        catposx = i;
+                        catposy = j;
+                        g.DrawImage(cat, i *  pictureBox1.Width/xmax, j *pictureBox1.Height/ymax ,pictureBox1.Width/xmax ,pictureBox1.Height/ymax);
+                    }//猫だよ
+                    else if (boardmat[i, j] == 4) g.DrawImage(fish, i * pictureBox1.Width / xmax, j * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);          //魚dayo
+                }
             }
+            pictureBox1.Refresh();
         }
-        pictureBox1.Refresh();
-    }
 
         private void button3_Click(object sender, EventArgs e)
         {
