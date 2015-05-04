@@ -81,7 +81,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="素材\back.png" />
+    <Content Include="素材\BGM.wav" />
+    <Content Include="素材\cat.png" />
+    <Content Include="素材\catch.png" />
+    <Content Include="素材\commandpanel.png" />
+    <Content Include="素材\crear.png" />
+    <Content Include="素材\fish.png" />
+    <Content Include="素材\left.png" />
+    <Content Include="素材\right.png" />
+    <Content Include="素材\road.png" />
+    <Content Include="素材\up.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -16,10 +16,10 @@ namespace unicat1
     public partial class Form1 : Form
     {
         Graphics g;
-        Image back = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\back.png");
-        Image road = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\road.png");
-        Image fish = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish.png");
-        Image cat = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\cat.png");
+        Image back = Image.FromFile(@"../../素材/back.png");
+        Image road = Image.FromFile(@"../../素材/road.png");
+        Image fish = Image.FromFile(@"../../素材/fish.png");
+        Image cat = Image.FromFile(@"../../素材/cat.png");
         int xmax = 6, ymax = 6;
 
 
@@ -29,11 +29,11 @@ namespace unicat1
         int buttoncount=0;
         PictureBox[] picarray = new PictureBox[12];
         ////画像ファイルを読み込んで、Imageオブジェクトを作成する
-        System.Drawing.Image command1 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\up.png");
-        System.Drawing.Image command2 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\left.png");
-        System.Drawing.Image command3 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\right.png");
-        System.Drawing.Image command4 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\catch.png");
-        System.Drawing.Image commandpanel = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\commandpanel.png");
+        System.Drawing.Image command1 = System.Drawing.Image.FromFile(@"../../素材/up.png");
+        System.Drawing.Image command2 = System.Drawing.Image.FromFile(@"../../素材/left.png");
+        System.Drawing.Image command3 = System.Drawing.Image.FromFile(@"../../素材/right.png");
+        System.Drawing.Image command4 = System.Drawing.Image.FromFile(@"../../素材/catch.png");
+        System.Drawing.Image commandpanel = System.Drawing.Image.FromFile(@"../../素材/commandpanel.png");
 
         public Form1()
         {
@@ -64,10 +64,10 @@ namespace unicat1
                }
 
 
-                   button3.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\up.png");
-            button4.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\left.png");
-            button5.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\right.png");
-            button6.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\catch.png");
+                   button3.BackgroundImage = Image.FromFile(@"../../素材/up.png");
+            button4.BackgroundImage = Image.FromFile(@"../../素材/left.png");
+            button5.BackgroundImage = Image.FromFile(@"../../素材/right.png");
+            button6.BackgroundImage = Image.FromFile(@"../../素材/catch.png");
 
             button3.Paint += new PaintEventHandler(button3_Paint);
             button4.Paint += new PaintEventHandler(button4_Paint);
