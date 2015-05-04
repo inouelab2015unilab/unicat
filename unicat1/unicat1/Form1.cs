@@ -39,21 +39,32 @@ namespace unicat1
 
             comboBox1.SelectedIndex = 0;
 
-            //int boardcount = 0;
-            //string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
-            //foreach (var n in files)
-            //{
+            
+            string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
+            foreach (var n in files)
+            {
 
-            //    StreamReader sr = new StreamReader(n, Encoding.GetEncoding(932));
-            //    int[,] temp=new int[6,6];
-            //    boardlist.Add(temp);
+                using (StreamReader sr = new StreamReader(n, Encoding.GetEncoding(932)))
+                {
+                    int[,] temp = new int[6, 6];
+                    
 
-            //    while (!sr.EndOfStream)
-            //    {
-            //        string s = sr.ReadLine();
-            //        string[] a = s.Split(',');
-            //    }
-            //}
+                    int index=0;
+                    while (!sr.EndOfStream)
+                    {
+                        string s = sr.ReadLine();
+                        string[] a = s.Split(',');
+                        for (int i = 0; i < a.GetLength(0); i++)
+                        {
+                            temp[i, index] = int.Parse(a[i]);
+                            
+                        }
+                        index++;                       
+                    }
+                    boardlist.Add(temp);
+                    
+                }
+            }
 
             ////画像ファイルを読み込んで、Imageオブジェクトを作成する
             System.Drawing.Image command1 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\up.png");
@@ -277,6 +288,7 @@ namespace unicat1
         private void button1_Click(object sender, EventArgs e)
         {
 
+            makeboard(boardlist[0]);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -328,6 +340,7 @@ namespace unicat1
                 }
                 pictureBox1.Refresh();
             }
+           
         }
 
         private void makeboard(int[,] boardmat)
@@ -338,11 +351,19 @@ namespace unicat1
             {
                 if (boardmat[i, j] == 1) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);               //道
                 else if (boardmat[i, j] == 2) g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);          //背景
-                else if (boardmat[i, j] == 3) g.DrawImage(cat, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);   //猫だよ
-                else if (boardmat[i, j] == 4) g.DrawImage(fish, 1 * fish.Width, 1 * fish.Height, fish.Width, fish.Height);          //魚dayo
+                else if (boardmat[i, j] == 3)
+                {
+                    g.DrawImage(cat, i * cat.Width, j * cat.Height, cat.Width, cat.Height);   //猫だよ
+                    catposy = j;
+                    catposx = i;
+                }
+                else if (boardmat[i, j] == 4) g.DrawImage(fish, i * fish.Width, j * fish.Height, fish.Width, fish.Height);          //魚dayo
             }
+
         }
+        pictureBox1.Refresh();
     }
+
 
     }
 }
