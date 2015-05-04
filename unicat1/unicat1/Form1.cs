@@ -24,6 +24,7 @@ namespace unicat1
 
         int catposx;
         int catposy;
+        int buttoncount=0;
 
         public Form1()
         {
@@ -42,9 +43,30 @@ namespace unicat1
             System.Drawing.Image command4 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\catch.png");
             System.Drawing.Image commandpanel = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\commandpanel.png");
             ////画像を表示する
-            pictureBox3.Image = commandpanel;
 
-            button3.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\up.png");
+          
+               
+            PictureBox[] picarray =new PictureBox[12];
+               picarray[0] = pictureBox2;
+               picarray[1] = pictureBox3;
+               picarray[2] = pictureBox4;
+               picarray[3] = pictureBox5;
+               picarray[4] = pictureBox6;
+               picarray[5] = pictureBox7;
+               picarray[6] = pictureBox8;
+               picarray[7] = pictureBox9;
+               picarray[8] = pictureBox10;
+               picarray[9] = pictureBox11;
+               picarray[10] = pictureBox12;
+               picarray[11] = pictureBox13;
+
+               for (int i = 0; i < 12; i++)
+               {
+                   picarray[i].Image = commandpanel;
+               }
+
+
+                   button3.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\up.png");
             button4.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\left.png");
             button5.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\right.png");
             button6.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\catch.png");
@@ -365,23 +387,25 @@ namespace unicat1
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            buttoncount += 1;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            buttoncount += 1;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            buttoncount += 1;
         }
 
         private void button6_Click_1(object sender, EventArgs e)
         {
-
+            buttoncount += 1;
         }
+
+
 
     }
 }
