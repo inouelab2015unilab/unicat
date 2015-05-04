@@ -25,6 +25,13 @@ namespace unicat1
         int catposx;
         int catposy;
         int buttoncount=0;
+        PictureBox[] picarray = new PictureBox[12];
+        ////画像ファイルを読み込んで、Imageオブジェクトを作成する
+        System.Drawing.Image command1 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\up.png");
+        System.Drawing.Image command2 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\left.png");
+        System.Drawing.Image command3 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\right.png");
+        System.Drawing.Image command4 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\catch.png");
+        System.Drawing.Image commandpanel = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\commandpanel.png");
 
         public Form1()
         {
@@ -36,17 +43,7 @@ namespace unicat1
 
             comboBox1.SelectedIndex = 0;
 
-            ////画像ファイルを読み込んで、Imageオブジェクトを作成する
-            System.Drawing.Image command1 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\up.png");
-            System.Drawing.Image command2 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\left.png");
-            System.Drawing.Image command3 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\right.png");
-            System.Drawing.Image command4 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\catch.png");
-            System.Drawing.Image commandpanel = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\commandpanel.png");
-            ////画像を表示する
-
-          
-               
-            PictureBox[] picarray =new PictureBox[12];
+           
                picarray[0] = pictureBox2;
                picarray[1] = pictureBox3;
                picarray[2] = pictureBox4;
@@ -387,21 +384,26 @@ namespace unicat1
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            picarray[buttoncount].Image = command1;
             buttoncount += 1;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            picarray[buttoncount].Image = command2;
             buttoncount += 1;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            picarray[buttoncount].Image = command3;
             buttoncount += 1;
         }
 
         private void button6_Click_1(object sender, EventArgs e)
         {
+            picarray[buttoncount].Image = command4;
             buttoncount += 1;
         }
 
