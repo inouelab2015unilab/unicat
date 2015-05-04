@@ -27,11 +27,20 @@ namespace unicat1
 
         public Form1()
         {
+            
             InitializeComponent();
             RandomMT rand = new RandomMT();
             comboBox1.Items.Add("stage select");
             comboBox1.Items.Add("stage1");
             comboBox1.Items.Add("stage2");
+            comboBox1.Items.Add("stage3");
+            comboBox1.Items.Add("stage4");
+            comboBox1.Items.Add("stage5");
+            comboBox1.Items.Add("stage6");
+            comboBox1.Items.Add("stage7");
+            comboBox1.Items.Add("stage8");
+            comboBox1.Items.Add("stage9");
+            comboBox1.Items.Add("stage10");
 
             comboBox1.SelectedIndex = 0;
 
