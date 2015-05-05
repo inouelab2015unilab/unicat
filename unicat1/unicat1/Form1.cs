@@ -96,26 +96,51 @@ namespace unicat1
             string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
             foreach (var n in files)
             {
+                //using (StreamReader sr = new StreamReader(n, Encoding.GetEncoding(932)))
+                //{
+                //    int index = 0;
+                //    int[,] temp = new int[xmax, ymax];
+
+                //    while (!sr.EndOfStream)
+                //    {
+                //        string s = sr.ReadLine();
+                //        string[] a = s.Split(',');
+                //        for (int i = 0; i < a.GetLength(0); i++)
+                //        {
+                //            temp[i, index] = int.Parse(a[i]);
+
+                //        }
+                //        index++;
+                //    }
+                //    boardlist.Add(temp);
+
+                //}
+
                 using (StreamReader sr = new StreamReader(n, Encoding.GetEncoding(932)))
                 {
-                    int[,] temp = new int[xmax, ymax];
+                    List<string> templist = new List<string>();
 
-
-                    int index = 0;
                     while (!sr.EndOfStream)
                     {
                         string s = sr.ReadLine();
-                        string[] a = s.Split(',');
-                        for (int i = 0; i < a.GetLength(0); i++)
-                        {
-                            temp[i, index] = int.Parse(a[i]);
+                        templist.Add(s);
+                     }
+                    xmax = templist.Count;
+                    string[] a = templist[0].Split(',');
+                    ymax = a.Length;
+                    int[,] temp = new int[xmax, ymax];
 
+                    for (int y = 0; y < ymax; y++)
+                    {
+                        string[] arraytemp = templist[y].Split(',');
+                        for (int x = 0; x < xmax; x++)
+                        {
+                            temp[x, y] = int.Parse(arraytemp[x]);
                         }
-                        index++;
                     }
                     boardlist.Add(temp);
-
                 }
+
             }
 
             makeboard(boardlist[comboBox1.SelectedIndex]);
@@ -285,19 +310,21 @@ namespace unicat1
             //    }
             //}
             //pictureBox1.Refresh();
-            for (int i = 0; i < xmax; i++)
+
+            g.FillRectangle(Brushes.White,0,0,pictureBox1.Width,pictureBox1.Height);
+            for (int i = 0; i < boardmat.GetLength(0); i++)
             {
-                for (int j = 0; j < ymax; j++)
+                for (int j = 0; j < (boardmat.Length / boardmat.GetLength(0)); j++)
                 {
-                    if (boardmat[i, j] == 1) g.DrawImage(road, i * pictureBox1.Width/xmax , j * pictureBox1.Height/ymax, pictureBox1.Width/xmax, pictureBox1.Height/ymax);               //道
-                    else if (boardmat[i, j] == 2||boardmat[i,j]==0) g.DrawImage(back, i * pictureBox1.Width/xmax , j *pictureBox1.Height/ymax , pictureBox1.Width/xmax,pictureBox1.Height/ymax );          //背景
+                    if (boardmat[i, j] == 1) g.DrawImage(road, i * pictureBox1.Width / boardmat.GetLength(0), j * pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)), pictureBox1.Width / boardmat.GetLength(0), pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)));               //道
+                    else if (boardmat[i, j] == 2 || boardmat[i, j] == 0) g.DrawImage(back, i * pictureBox1.Width / boardmat.GetLength(0), j * pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)), pictureBox1.Width / boardmat.GetLength(0), pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)));          //背景
                     else if (boardmat[i, j] == 3)
                     {
                         catposx = i;
                         catposy = j;
-                        g.DrawImage(cat, i *  pictureBox1.Width/xmax, j *pictureBox1.Height/ymax ,pictureBox1.Width/xmax ,pictureBox1.Height/ymax);
+                        g.DrawImage(cat, i * pictureBox1.Width / boardmat.GetLength(0), j * pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)), pictureBox1.Width / boardmat.GetLength(0), pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)));
                     }//猫だよ
-                    else if (boardmat[i, j] == 4) g.DrawImage(fish, i * pictureBox1.Width / xmax, j * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);          //魚dayo
+                    else if (boardmat[i, j] == 4) g.DrawImage(fish, i * pictureBox1.Width / boardmat.GetLength(0), j * pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)), pictureBox1.Width / boardmat.GetLength(0), pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)));          //魚dayo
                 }
             }
             pictureBox1.Refresh();
