@@ -332,7 +332,7 @@ namespace unicat1
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //catchfish(catposx, catposy);
-            score.Items.Add(Score);
+            //score.Items.Add(Score);
         }
 
 
@@ -554,28 +554,32 @@ namespace unicat1
             {
                 Score = 100;
                 fishcount += 1;
-                listBox1.Items.Add(fishcount);
-                listBox4.Items.Add(fishcount*100);
+                label13.Text = fishcount.ToString();
+                label16.Text = (fishcount*100).ToString();
                 //score.Items.Add(Score);
             }
             if (catposx == fish2posx && catposy == fish2posy)
             {
                 Score = 300;
                 fish2count += 1;
-                listBox2.Items.Add(fish2count);
-                listBox5.Items.Add(fish2count*300);
+                label14.Text = fish2count.ToString();
+                label17.Text = (fish2count * 100).ToString();
                 //score.Items.Add(Score);
             }
             if (catposx == fish3posx && catposy == fish3posy)
             {
                 Score = 500;
                 fish3count += 1;
-                listBox3.Items.Add(fish3count);
-                listBox6.Items.Add(fish3count*500);
+                label15.Text = fish3count.ToString();
+                label18.Text = (fish3count * 100).ToString();
+
                 //score.Items.Add(Score);
             }
-            score.Items.Add(fishcount * 100 + fish2count * 300+fish3count*500);
+
+            label19.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500).ToString();
+ 
         }
+
 
     }
 }
