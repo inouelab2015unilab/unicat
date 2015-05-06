@@ -46,7 +46,7 @@ namespace unicat1
         public Form1()
         {
             InitializeComponent();
-            movecount = new int[buttoncount];
+            movecount = new int[100];
             RandomMT rand = new RandomMT();
             comboBox1.Items.Add("stage1");
             comboBox1.Items.Add("stage2");
@@ -381,19 +381,19 @@ namespace unicat1
         {
             for (int i = 0; i < buttoncount; i++)
             {
-                if (movecount[buttoncount] == 0)
+                if (movecount[i] == 0)
                 {
                     catmove("up");
                 }
-                else if (movecount[buttoncount] == 1)
+                if (movecount[i] == 1)
                 {
                     catmove("left");
                 }
-                else if (movecount[buttoncount] == 2)
+                if (movecount[i] == 2)
                 {
                     catmove("right");
                 }
-                else if (movecount[buttoncount] == 3)
+                 if (movecount[i] == 3)
                 {
                     //catmove("catch");
                 }
