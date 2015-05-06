@@ -31,7 +31,7 @@ namespace unicat1
         int rightcount = 0;
         int leftcount = 0;
         int catchcount = 0;
-  //      int[] movecount = new int[buttoncount];
+        int[] movecount;
 
         List<int[,]> boardlist = new List<int[,]>();
         PictureBox[] picarray = new PictureBox[12];
@@ -47,6 +47,8 @@ namespace unicat1
         {
             InitializeComponent();
 
+
+             movecount=new int[100];
             SoundPlayer Hoge = new SoundPlayer(@"../../素材/BGM.wav");
             Hoge.PlayLooping();
 
@@ -347,6 +349,7 @@ namespace unicat1
         {
 
             picarray[buttoncount].Image = command1;
+            movecount[buttoncount] = 0;
             buttoncount += 1;
             upcount += 1;
             
@@ -355,29 +358,52 @@ namespace unicat1
         private void button4_Click(object sender, EventArgs e)
         {
             picarray[buttoncount].Image = command2;
+            movecount[buttoncount] = 1;
             buttoncount += 1;
             leftcount += 1;
+            movecount[buttoncount] = 1;
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             picarray[buttoncount].Image = command3;
+            movecount[buttoncount] = 2;
             buttoncount += 1;
             rightcount += 1;
+            movecount[buttoncount] = 2;
         }
 
         private void button6_Click_1(object sender, EventArgs e)
         {
             picarray[buttoncount].Image = command4;
+            movecount[buttoncount] = 3;
             buttoncount += 1;
             catchcount += 1;
+            movecount[buttoncount] = 3;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            for (int i = 0; i < upcount; i++)
+            for (int i = 0; i < buttoncount; i++)
             {
-                catmove("up");
+                if (movecount[i] == 0)
+                {
+                    catmove("up");
+                }
+
+                else if (movecount[i] == 1)
+                {
+                    catmove("left");
+                }
+
+                else if (movecount[i] == 2)
+                {
+                    catmove("right");
+                }
+                else if (movecount[i] == 3)
+                {
+                    //catmove("catch");
+                }
             }
 
         }
