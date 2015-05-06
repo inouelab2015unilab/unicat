@@ -318,6 +318,8 @@ namespace unicat1
             //}
             //pictureBox1.Refresh();
 
+            xmax = boardmat.GetLength(0);
+            ymax = boardmat.Length / boardmat.GetLength(0);
             g.FillRectangle(Brushes.White,0,0,pictureBox1.Width,pictureBox1.Height);
             for (int i = 0; i < boardmat.GetLength(0); i++)
             {
