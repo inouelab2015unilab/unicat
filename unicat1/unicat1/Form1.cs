@@ -237,6 +237,7 @@ namespace unicat1
                 if (i < pictureBox1.Width / xmax - 5) i = i + 4;
                 g.DrawImage(road, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
                 g.DrawImage(cat, catposx * pictureBox1.Width / xmax + xmove * i, catposy * pictureBox1.Height / ymax + ymove * i, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+
                 pictureBox1.Refresh();
                 Thread.Sleep(1);
             }
@@ -444,7 +445,7 @@ namespace unicat1
             catchcount += 1;
             movecount[buttoncount] = 3;
 
-            catchfish(catposx, catposy);
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -487,6 +488,7 @@ namespace unicat1
                 }
                 else if (movecount[i] == 3)
                 {
+                    catchfish(catposx, catposy);
                     //catmove("catch");
                 }
             }
@@ -554,7 +556,6 @@ namespace unicat1
                 score.Items.Add(Score);
             }
         }
-
 
     }
 }
