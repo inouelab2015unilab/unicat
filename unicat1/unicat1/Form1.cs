@@ -531,32 +531,30 @@ namespace unicat1
 
        
           //スコアの実装失敗
-    // private void catchfish(int catposx,int catposy)
-    //{
-    //    //魚の位置確認
-    //    int[,] fishtemp = boardlist[comboBox1.SelectedIndex];
+        private void catchfish(int catposx, int catposy)
+        {
+            //魚の位置確認
+            int[,] fishtemp = boardlist[comboBox1.SelectedIndex];
 
-    //    for (int i = 0; i < xmax; i++)
-    //    {
-    //        for (int j = 0; j < ymax; j++)
-    //        {
-    //            if (fishtemp[i.j] == 4)
-    //            {
-    //                Score += 300;
-    //            }
-    //            if (fishtemp[i.j] == 5)
-    //            {
-    //                Score += 500;
-    //            }
-    //            if (fishtemp[i.j] == 6)
-    //            {
-    //                Score += 1000;
-    //            }
-    //        }
-    //    }
-
-
-    //}  
+            for (int i = 0; i < xmax; i++)
+            {
+                for (int j = 0; j < ymax; j++)
+                {
+                    if (fishtemp[i.j] == 4)
+                    {
+                        Score += 300;
+                    }
+                    if (fishtemp[i.j] == 5)
+                    {
+                        Score += 500;
+                    }
+                    if (fishtemp[i.j] == 6)
+                    {
+                        Score += 1000;
+                    }
+                }
+            }
+        }  
     
        
       
