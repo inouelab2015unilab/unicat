@@ -20,6 +20,8 @@ namespace unicat1
         Image back = Image.FromFile(@"../../素材/back.png");
         Image road = Image.FromFile(@"../../素材/road.png");
         Image fish = Image.FromFile(@"../../素材/fish.png");
+        Image fish2 = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish2.png");
+        Image fish3 = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish3.png");
         Image cat = Image.FromFile(@"../../素材/cat.png");
         int xmax = 10, ymax = 10;
 
@@ -34,7 +36,7 @@ namespace unicat1
         int[] movecount;
 
         List<int[,]> boardlist = new List<int[,]>();
-        PictureBox[] picarray = new PictureBox[12];
+        PictureBox[] picarray = new PictureBox[24];
 
         ////画像ファイルを読み込んで、Imageオブジェクトを作成する
         System.Drawing.Image command1 = System.Drawing.Image.FromFile(@"../../素材/up.png");
@@ -42,6 +44,9 @@ namespace unicat1
         System.Drawing.Image command3 = System.Drawing.Image.FromFile(@"../../素材/right.png");
         System.Drawing.Image command4 = System.Drawing.Image.FromFile(@"../../素材/catch.png");
         System.Drawing.Image commandpanel = System.Drawing.Image.FromFile(@"../../素材/commandpanel.png");
+        System.Drawing.Image commandpanel2 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\commandpanel2.png");
+        System.Drawing.Image loop1 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\1.png");
+        System.Drawing.Image loop2 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\2.png");
 
         public Form1()
         {
@@ -55,6 +60,16 @@ namespace unicat1
             RandomMT rand = new RandomMT();
             comboBox1.Items.Add("stage1");
             comboBox1.Items.Add("stage2");
+            comboBox1.Items.Add("stage3");
+            comboBox1.Items.Add("stage4");
+            comboBox1.Items.Add("stage5");
+            comboBox1.Items.Add("stage6");
+            comboBox1.Items.Add("stage7");
+            comboBox1.Items.Add("stage8");
+            comboBox1.Items.Add("stage9");
+            comboBox1.Items.Add("stage10");
+            comboBox1.Items.Add("stage11");
+            comboBox1.Items.Add("stage12");
            
                picarray[0] = pictureBox2;
                picarray[1] = pictureBox3;
@@ -68,23 +83,43 @@ namespace unicat1
                picarray[9] = pictureBox11;
                picarray[10] = pictureBox12;
                picarray[11] = pictureBox13;
+               picarray[12] = pictureBox14;
+               picarray[13] = pictureBox15;
+               picarray[14] = pictureBox16;
+               picarray[15] = pictureBox17;
+               picarray[16] = pictureBox18;
+               picarray[17] = pictureBox19;
+               picarray[18] = pictureBox20;
+               picarray[19] = pictureBox21;
+               picarray[20] = pictureBox22;
+               picarray[21] = pictureBox23;
+               picarray[22] = pictureBox24;
+               picarray[23] = pictureBox25;
 
                for (int i = 0; i < 12; i++)
                {
                    picarray[i].Image = commandpanel;
                }
 
+               for (int i = 12; i < 24; i++)
+               {
+                   picarray[i].Image = commandpanel2;
+               }
+
+
             button3.BackgroundImage = Image.FromFile(@"../../素材/up.png");
             button4.BackgroundImage = Image.FromFile(@"../../素材/left.png");
             button5.BackgroundImage = Image.FromFile(@"../../素材/right.png");
             button6.BackgroundImage = Image.FromFile(@"../../素材/catch.png");
+            button7.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\1.png");
+            button8.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\2.png");
 
             button3.Paint += new PaintEventHandler(button3_Paint);
             button4.Paint += new PaintEventHandler(button4_Paint);
             button5.Paint += new PaintEventHandler(button5_Paint);
             button6.Paint += new PaintEventHandler(button6_Paint);
-
-
+            button7.Paint += new PaintEventHandler(button7_Paint);
+            button8.Paint += new PaintEventHandler(button8_Paint);
 
             //描画先とするImageオブジェクトを作成する
             Bitmap canvas = new Bitmap(pictureBox1.Width, pictureBox1.Height);
@@ -262,6 +297,21 @@ namespace unicat1
 
         }
 
+        private void button7_Paint(object sender, PaintEventArgs e)
+        {
+            Button btn = (Button)sender;
+            //ボタンの背景画像をボタンの大きさに合わせて描画
+            e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
+
+        }
+        private void button8_Paint(object sender, PaintEventArgs e)
+        {
+            Button btn = (Button)sender;
+            //ボタンの背景画像をボタンの大きさに合わせて描画
+            e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
+
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -340,7 +390,11 @@ namespace unicat1
                         g.DrawImage(cat, i * pictureBox1.Width / boardmat.GetLength(0), j * pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)), pictureBox1.Width / boardmat.GetLength(0), pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)));
                     }//猫だよ
                     else if (boardmat[i, j] == 4) g.DrawImage(fish, i * pictureBox1.Width / boardmat.GetLength(0), j * pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)), pictureBox1.Width / boardmat.GetLength(0), pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)));          //魚dayo
+                    else if (boardmat[i, j] == 5) g.DrawImage(fish2, i * pictureBox1.Width / boardmat.GetLength(0), j * pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)), pictureBox1.Width / boardmat.GetLength(0), pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)));          //魚2dayo
+                    else if (boardmat[i, j] == 6) g.DrawImage(fish3, i * pictureBox1.Width / boardmat.GetLength(0), j * pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)), pictureBox1.Width / boardmat.GetLength(0), pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)));          //魚3dayo
+            
                 }
+
             }
             pictureBox1.Refresh();
         }
@@ -408,7 +462,28 @@ namespace unicat1
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+       
+        //  スコアの実装失敗
+    // private void catchfish(int catposx,int catposy)
+    //{
+    //     if( == fish)
+    //     {
+    //       score += 300;
+    //     }
+         
+    //}  
+    
+      
 
     }
 }
