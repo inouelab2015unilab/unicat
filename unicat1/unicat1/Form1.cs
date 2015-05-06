@@ -229,6 +229,9 @@ namespace unicat1
                 if (catposx != 0) xmove = -1;
 
             }
+
+            if(boardlist[comboBox1.SelectedIndex][catposx+xmove,catposy+ymove]!=2)
+            {
             for (int i = 0; i <= pictureBox1.Width / xmax; i = i + 1)
             {
                 if (i < pictureBox1.Width / xmax - 5) i = i + 4;
@@ -241,7 +244,7 @@ namespace unicat1
             catposx += xmove;
             catposy += ymove;
         }
-
+        }
         //矢印キーでネコ移動
         protected override bool ProcessDialogKey(Keys keyData)
         {
