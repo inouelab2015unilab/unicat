@@ -226,13 +226,13 @@ namespace unicat1
 
             }
 
-            for (int i = 0; i <= pictureBox1.Width / xmax; i = i + 5)
+            for (int i = 0; i <= pictureBox1.Width / xmax; i = i + 1)
             {
+                if (i < pictureBox1.Width / xmax-5) i = i + 4;
                 //g.DrawImage(road, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
                 //g.DrawImage(cat, catposx * cat.Width + xmove*i, catposy * cat.Height + ymove*i, cat.Width, cat.Height);
                 g.DrawImage(road, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
                 g.DrawImage(cat, catposx * pictureBox1.Width / xmax + xmove * i, catposy * pictureBox1.Height / ymax + ymove * i, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-
                 pictureBox1.Refresh();
                 Thread.Sleep(1);
             }
