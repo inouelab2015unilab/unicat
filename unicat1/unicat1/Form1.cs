@@ -344,38 +344,59 @@ namespace unicat1
         {
 
             picarray[buttoncount].Image = command1;
+            movecount[buttoncount] = 0;  
             buttoncount += 1;
             upcount += 1;
-            movecount[buttoncount] = 0;         
+                
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             picarray[buttoncount].Image = command2;
+            movecount[buttoncount] = 1;   
             buttoncount += 1;
             leftcount += 1;
-            movecount[buttoncount] = 1;   
+        
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             picarray[buttoncount].Image = command3;
+            movecount[buttoncount] = 2;   
             buttoncount += 1;
             rightcount += 1;
+          
         }
 
         private void button6_Click_1(object sender, EventArgs e)
         {
             picarray[buttoncount].Image = command4;
+            movecount[buttoncount] = 3;   
             buttoncount += 1;
             catchcount += 1;
+            
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            for (int i = 0; i < upcount; i++)
+            for (int i = 0; i < buttoncount; i++)
             {
-                catmove("up");
+                if (movecount[buttoncount] == 0)
+                {
+                    catmove("up");
+                }
+                else if (movecount[buttoncount] == 1)
+                {
+                    catmove("left");
+                }
+                else if (movecount[buttoncount] == 2)
+                {
+                    catmove("right");
+                }
+                else if (movecount[buttoncount] == 3)
+                {
+                    //catmove("catch");
+                }
             }
 
         }
