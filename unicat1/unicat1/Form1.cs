@@ -53,7 +53,7 @@ namespace unicat1
             InitializeComponent();
 
 
-             movecount=new int[100];
+             movecount=new int[12];
             SoundPlayer Hoge = new SoundPlayer(@"../../素材/BGM.wav");
             Hoge.PlayLooping();
 
@@ -70,6 +70,10 @@ namespace unicat1
             comboBox1.Items.Add("stage10");
             comboBox1.Items.Add("stage11");
             comboBox1.Items.Add("stage12");
+
+            comboBox2.Items.Add("メイン");
+            comboBox2.Items.Add("one");
+            comboBox2.Items.Add("two");
            
                picarray[0] = pictureBox2;
                picarray[1] = pictureBox3;
@@ -436,6 +440,26 @@ namespace unicat1
             movecount[buttoncount] = 3;
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            picarray[buttoncount].Image = loop1;
+            movecount[buttoncount] = 4;
+            buttoncount += 1;
+            catchcount += 1;
+            movecount[buttoncount] = 4;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            picarray[buttoncount].Image = loop2;
+            movecount[buttoncount] = 5;
+            buttoncount += 1;
+            catchcount += 1;
+            movecount[buttoncount] = 5;
+        }
+
+        
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             for (int i = 0; i < buttoncount; i++)
@@ -471,6 +495,14 @@ namespace unicat1
         {
 
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
+       
 
        
         //  スコアの実装失敗
