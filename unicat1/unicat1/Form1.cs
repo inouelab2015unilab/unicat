@@ -249,7 +249,7 @@ namespace unicat1
 
             }
 
-            for (int i = 0; i <= pictureBox1.Width / xmax; i = i + 5)
+            for (int i = 0; i <= pictureBox1.Width / xmax; i = i + 1)
             {
                 if (i < pictureBox1.Width / xmax - 5) i = i + 4;
                 //g.DrawImage(road, catposx * cat.Width, catposy * cat.Height, cat.Width, cat.Height);
@@ -540,18 +540,26 @@ namespace unicat1
             {
                 for (int j = 0; j < ymax; j++)
                 {
-                    if (fishtemp[i.j] == 4)
-                    {
-                        Score += 300;
-                    }
-                    if (fishtemp[i.j] == 5)
-                    {
-                        Score += 500;
-                    }
-                    if (fishtemp[i.j] == 6)
-                    {
-                        Score += 1000;
-                    }
+                    //if (fishtemp[i.j] == 4)
+                    //{
+                    //    Score += 300;
+                    //}
+                    //if (fishtemp[i.j] == 5)
+                    //{
+                    //    Score += 500;
+                    //}
+                    //if (fishtemp[i.j] == 6)
+                    //{
+                    //    Score += 1000;
+                    //}
+                }
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+
                 }
             }
         }  
