@@ -55,9 +55,9 @@ namespace unicat1
         System.Drawing.Image command3 = System.Drawing.Image.FromFile(@"../../素材/right.png");
         System.Drawing.Image command4 = System.Drawing.Image.FromFile(@"../../素材/catch.png");
         System.Drawing.Image commandpanel = System.Drawing.Image.FromFile(@"../../素材/commandpanel.png");
-        System.Drawing.Image commandpanel2 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\commandpanel2.png");
-        System.Drawing.Image loop1 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\1.png");
-        System.Drawing.Image loop2 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\2.png");
+        System.Drawing.Image commandpanel2 = System.Drawing.Image.FromFile(@"../../素材/commandpanel2.png");
+        System.Drawing.Image loop1 = System.Drawing.Image.FromFile(@"../../素材/1.png");
+        System.Drawing.Image loop2 = System.Drawing.Image.FromFile(@"../../素材/2.png");
 
 
         //盤面情報をCSVファイルから読み込み
@@ -130,8 +130,8 @@ namespace unicat1
             button4.BackgroundImage = Image.FromFile(@"../../素材/left.png");
             button5.BackgroundImage = Image.FromFile(@"../../素材/right.png");
             button6.BackgroundImage = Image.FromFile(@"../../素材/catch.png");
-            button7.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\1.png");
-            button8.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\2.png");
+            button7.BackgroundImage = Image.FromFile(@"../../素材/1.png");
+            button8.BackgroundImage = Image.FromFile(@"../../素材/2.png");
 
             button3.Paint += new PaintEventHandler(button3_Paint);
             button4.Paint += new PaintEventHandler(button4_Paint);
