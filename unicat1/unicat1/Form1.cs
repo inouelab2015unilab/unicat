@@ -27,12 +27,10 @@ namespace unicat1
 
         int catposx;
         int catposy;
-        int fishposx;
-        int fishposy;
-        int fish2posx;
-        int fish2posy;
-        int fish3posx;
-        int fish3posy;
+        int fishcount;
+        int fish2count;
+        int fish3count;
+    
 
         int buttoncount = 0;
         int upcount = 0;
@@ -40,7 +38,7 @@ namespace unicat1
         int leftcount = 0;
         int catchcount = 0;
         int[] movecount;
-        int Score = 0;
+        int Score=0;
 
 
 
@@ -194,13 +192,17 @@ namespace unicat1
 
             //PictureBox1に表示する
             pictureBox1.Image = canvas;
+            pictureBox26.Image = fish;
+            pictureBox27.Image = fish2;
+            pictureBox28.Image = fish3;
+            //画像の大きさをPictureBoxに合わせる
+            pictureBox26.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox27.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox28.SizeMode = PictureBoxSizeMode.StretchImage;
 
 
 
-
-
-
-            catchfish(1, 1);
+         
 
 
         }
@@ -519,7 +521,10 @@ namespace unicat1
         {
             //魚の位置確認
             int[,] fishtemp = boardlist[comboBox1.SelectedIndex];
-            int fishposx=0, fishposy=0;
+            int fishposx=5, fishposy=5;
+            int fish2posx = 5, fish2posy = 5;
+            int fish3posx = 5, fish3posy = 5;
+
             for (int i = 0; i < xmax; i++)
             {
                 for (int j = 0; j < ymax; j++)
@@ -530,31 +535,46 @@ namespace unicat1
                         fishposy = j;
                         break;
                     }
-
-                    //if (fishtemp[i.j] == 1)
-                    //{
-                    //    Score += 300;
-                    //}
-                    //else if (fishtemp[i.j] == 5)
-                    //{
-                    //    Score += 500;
-                    //}
-                    //else if (fishtemp[i.j] == 6)
-                    //{
-                    //    Score += 1000;
-                    //}
+                    if (fishtemp[i, j] == 5)
+                    {
+                        fish2posx = i;
+                        fish2posy = j;
+                        break;
+                    }
+                    if (fishtemp[i, j] == 6)
+                    {
+                        fish3posx = i;
+                        fish3posy = j;
+                        break;
+                    }
                 }
             }
+          
             if (catposx == fishposx && catposy == fishposy)
             {
                 Score = 100;
-                score.Items.Add(Score);
+                fishcount += 1;
+                listBox1.Items.Add(fishcount);
+                listBox4.Items.Add(fishcount*100);
+                //score.Items.Add(Score);
             }
-            else 
+            if (catposx == fish2posx && catposy == fish2posy)
             {
-                Score = 0;
-                score.Items.Add(Score);
+                Score = 300;
+                fish2count += 1;
+                listBox2.Items.Add(fish2count);
+                listBox5.Items.Add(fish2count*300);
+                //score.Items.Add(Score);
             }
+            if (catposx == fish3posx && catposy == fish3posy)
+            {
+                Score = 500;
+                fish3count += 1;
+                listBox3.Items.Add(fish3count);
+                listBox6.Items.Add(fish3count*500);
+                //score.Items.Add(Score);
+            }
+            score.Items.Add(fishcount * 100 + fish2count * 300+fish3count*500);
         }
 
     }
