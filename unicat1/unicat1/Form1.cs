@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using InoueLab;
 using System.IO;
+using System.Media;
 
 namespace unicat1
 {
@@ -45,6 +46,9 @@ namespace unicat1
         public Form1()
         {
             InitializeComponent();
+
+            SoundPlayer Hoge = new SoundPlayer(@"../../素材/BGM.wav");
+            Hoge.PlayLooping();
 
             RandomMT rand = new RandomMT();
             comboBox1.Items.Add("stage1");
