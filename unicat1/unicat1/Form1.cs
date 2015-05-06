@@ -445,7 +445,7 @@ namespace unicat1
             catchcount += 1;
             movecount[buttoncount] = 3;
 
-            catchfish(catposx, catposy);
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -488,6 +488,7 @@ namespace unicat1
                 }
                 else if (movecount[i] == 3)
                 {
+                    catchfish(catposx, catposy);
                     //catmove("catch");
                 }
             }
