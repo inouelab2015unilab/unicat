@@ -68,6 +68,7 @@
     </Compile>
     <None Include="boardmatrix\stage1.csv" />
     <None Include="boardmatrix\stage2.csv" />
+    <None Include="boardmatrix\stage3.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
