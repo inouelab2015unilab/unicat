@@ -30,7 +30,8 @@ namespace unicat1
         int rightcount = 0;
         int leftcount = 0;
         int catchcount = 0;
-  //      int[] movecount = new int[buttoncount];
+        int[] movecount;
+       
 
         List<int[,]> boardlist = new List<int[,]>();
         PictureBox[] picarray = new PictureBox[12];
@@ -45,7 +46,7 @@ namespace unicat1
         public Form1()
         {
             InitializeComponent();
-
+            movecount = new int[buttoncount];
             RandomMT rand = new RandomMT();
             comboBox1.Items.Add("stage1");
             comboBox1.Items.Add("stage2");
@@ -343,7 +344,7 @@ namespace unicat1
             picarray[buttoncount].Image = command1;
             buttoncount += 1;
             upcount += 1;
-            
+            movecount[buttoncount] = 0;         
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -351,6 +352,7 @@ namespace unicat1
             picarray[buttoncount].Image = command2;
             buttoncount += 1;
             leftcount += 1;
+            movecount[buttoncount] = 1;   
         }
 
         private void button5_Click(object sender, EventArgs e)
