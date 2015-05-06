@@ -83,13 +83,20 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="素材\1.png" />
+    <Content Include="素材\2.png" />
     <Content Include="素材\back.png" />
     <Content Include="素材\BGM.wav" />
     <Content Include="素材\cat.png" />
     <Content Include="素材\catch.png" />
+    <Content Include="素材\catl.png" />
+    <Content Include="素材\catr.png" />
     <Content Include="素材\commandpanel.png" />
+    <Content Include="素材\commandpanel2.png" />
     <Content Include="素材\crear.png" />
     <Content Include="素材\fish.png" />
+    <Content Include="素材\fish2.png" />
+    <Content Include="素材\fish3.png" />
     <Content Include="素材\left.png" />
     <Content Include="素材\right.png" />
     <Content Include="素材\road.png" />
