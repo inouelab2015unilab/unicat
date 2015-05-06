@@ -27,16 +27,27 @@ namespace unicat1
 
         int catposx;
         int catposy;
-       
+        int fishposx;
+        int fishposy; 
+        int fish2posx;
+        int fish2posy;
+        int fish3posx;
+        int fish3posy;
+
         int buttoncount=0;
         int upcount = 0;
         int rightcount = 0;
         int leftcount = 0;
         int catchcount = 0;
         int[] movecount;
+        int Score = 0;
+
+      
 
         List<int[,]> boardlist = new List<int[,]>();
         PictureBox[] picarray = new PictureBox[24];
+
+        
 
         ////画像ファイルを読み込んで、Imageオブジェクトを作成する
         System.Drawing.Image command1 = System.Drawing.Image.FromFile(@"../../素材/up.png");
@@ -48,12 +59,16 @@ namespace unicat1
         System.Drawing.Image loop1 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\1.png");
         System.Drawing.Image loop2 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\2.png");
 
+
+        //盤面情報をCSVファイルから読み込み
+        string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
+
         public Form1()
         {
             InitializeComponent();
 
 
-             movecount=new int[12];
+            movecount = new int[12];
             SoundPlayer Hoge = new SoundPlayer(@"../../素材/BGM.wav");
             Hoge.PlayLooping();
 
@@ -74,41 +89,41 @@ namespace unicat1
             comboBox2.Items.Add("メイン");
             comboBox2.Items.Add("one");
             comboBox2.Items.Add("two");
-           
-               picarray[0] = pictureBox2;
-               picarray[1] = pictureBox3;
-               picarray[2] = pictureBox4;
-               picarray[3] = pictureBox5;
-               picarray[4] = pictureBox6;
-               picarray[5] = pictureBox7;
-               picarray[6] = pictureBox8;
-               picarray[7] = pictureBox9;
-               picarray[8] = pictureBox10;
-               picarray[9] = pictureBox11;
-               picarray[10] = pictureBox12;
-               picarray[11] = pictureBox13;
-               picarray[12] = pictureBox14;
-               picarray[13] = pictureBox15;
-               picarray[14] = pictureBox16;
-               picarray[15] = pictureBox17;
-               picarray[16] = pictureBox18;
-               picarray[17] = pictureBox19;
-               picarray[18] = pictureBox20;
-               picarray[19] = pictureBox21;
-               picarray[20] = pictureBox22;
-               picarray[21] = pictureBox23;
-               picarray[22] = pictureBox24;
-               picarray[23] = pictureBox25;
 
-               for (int i = 0; i < 12; i++)
-               {
-                   picarray[i].Image = commandpanel;
-               }
+            picarray[0] = pictureBox2;
+            picarray[1] = pictureBox3;
+            picarray[2] = pictureBox4;
+            picarray[3] = pictureBox5;
+            picarray[4] = pictureBox6;
+            picarray[5] = pictureBox7;
+            picarray[6] = pictureBox8;
+            picarray[7] = pictureBox9;
+            picarray[8] = pictureBox10;
+            picarray[9] = pictureBox11;
+            picarray[10] = pictureBox12;
+            picarray[11] = pictureBox13;
+            picarray[12] = pictureBox14;
+            picarray[13] = pictureBox15;
+            picarray[14] = pictureBox16;
+            picarray[15] = pictureBox17;
+            picarray[16] = pictureBox18;
+            picarray[17] = pictureBox19;
+            picarray[18] = pictureBox20;
+            picarray[19] = pictureBox21;
+            picarray[20] = pictureBox22;
+            picarray[21] = pictureBox23;
+            picarray[22] = pictureBox24;
+            picarray[23] = pictureBox25;
 
-               for (int i = 12; i < 24; i++)
-               {
-                   picarray[i].Image = commandpanel2;
-               }
+            for (int i = 0; i < 12; i++)
+            {
+                picarray[i].Image = commandpanel;
+            }
+
+            for (int i = 12; i < 24; i++)
+            {
+                picarray[i].Image = commandpanel2;
+            }
 
 
             button3.BackgroundImage = Image.FromFile(@"../../素材/up.png");
@@ -127,9 +142,9 @@ namespace unicat1
 
             //描画先とするImageオブジェクトを作成する
             Bitmap canvas = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-           
+
             //ImageオブジェクトのGraphicsオブジェクトを作成する
-            g = Graphics.FromImage(canvas);            
+            g = Graphics.FromImage(canvas);
 
             //ランダム
             //for (int i = 0; i < xmax ; i++)
@@ -145,7 +160,7 @@ namespace unicat1
             comboBox1.SelectedIndex = 0;
 
             //盤面情報をCSVファイルから読み込み
-            string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
+            //string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
             foreach (var n in files)
             {
                 //using (StreamReader sr = new StreamReader(n, Encoding.GetEncoding(932)))
@@ -176,7 +191,7 @@ namespace unicat1
                     {
                         string s = sr.ReadLine();
                         templist.Add(s);
-                     }
+                    }
                     xmax = templist.Count;
                     string[] a = templist[0].Split(',');
                     ymax = a.Length;
@@ -198,7 +213,15 @@ namespace unicat1
             makeboard(boardlist[comboBox1.SelectedIndex]);
 
             //PictureBox1に表示する
-            pictureBox1.Image = canvas;  
+            pictureBox1.Image = canvas;
+
+          
+
+           
+
+
+
+
 
         }
       
@@ -324,7 +347,8 @@ namespace unicat1
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //catchfish(catposx, catposy);
+            score.Items.Add(Score);
         }
 
 
@@ -505,16 +529,35 @@ namespace unicat1
        
 
        
-        //  スコアの実装失敗
+          //スコアの実装失敗
     // private void catchfish(int catposx,int catposy)
     //{
-    //     if( == fish)
-    //     {
-    //       score += 300;
-    //     }
-         
+    //    //魚の位置確認
+    //    int[,] fishtemp = boardlist[comboBox1.SelectedIndex];
+
+    //    for (int i = 0; i < xmax; i++)
+    //    {
+    //        for (int j = 0; j < ymax; j++)
+    //        {
+    //            if (fishtemp[i.j] == 4)
+    //            {
+    //                Score += 300;
+    //            }
+    //            if (fishtemp[i.j] == 5)
+    //            {
+    //                Score += 500;
+    //            }
+    //            if (fishtemp[i.j] == 6)
+    //            {
+    //                Score += 1000;
+    //            }
+    //        }
+    //    }
+
+
     //}  
     
+       
       
 
     }
