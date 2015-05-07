@@ -20,8 +20,8 @@ namespace unicat1
         Image back = Image.FromFile(@"../../素材/back.png");
         Image road = Image.FromFile(@"../../素材/road.png");
         Image fish = Image.FromFile(@"../../素材/fish.png");
-        Image fish2 = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish2.png");
-        Image fish3 = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\fish3.png");
+        Image fish2 = Image.FromFile(@"../../素材/fish2.png");
+        Image fish3 = Image.FromFile(@"../../素材/fish3.png");
         Image cat = Image.FromFile(@"../../素材/cat.png");
         int xmax = 10, ymax = 10;
 
@@ -31,7 +31,6 @@ namespace unicat1
         int fish2count;
         int fish3count;
     
-
         int buttoncount = 0;
         int upcount = 0;
         int rightcount = 0;
@@ -40,12 +39,8 @@ namespace unicat1
         int[] movecount;
         int Score=0;
 
-
-
         List<int[,]> boardlist = new List<int[,]>();
         PictureBox[] picarray = new PictureBox[24];
-
-
 
         ////画像ファイルを読み込んで、Imageオブジェクトを作成する
         System.Drawing.Image command1 = System.Drawing.Image.FromFile(@"../../素材/up.png");
@@ -53,9 +48,9 @@ namespace unicat1
         System.Drawing.Image command3 = System.Drawing.Image.FromFile(@"../../素材/right.png");
         System.Drawing.Image command4 = System.Drawing.Image.FromFile(@"../../素材/catch.png");
         System.Drawing.Image commandpanel = System.Drawing.Image.FromFile(@"../../素材/commandpanel.png");
-        System.Drawing.Image commandpanel2 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\commandpanel2.png");
-        System.Drawing.Image loop1 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\1.png");
-        System.Drawing.Image loop2 = System.Drawing.Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\2.png");
+        System.Drawing.Image commandpanel2 = System.Drawing.Image.FromFile(@"../../素材/commandpanel2.png");
+        System.Drawing.Image loop1 = System.Drawing.Image.FromFile(@"../../素材/1.png");
+        System.Drawing.Image loop2 = System.Drawing.Image.FromFile(@"../../素材/2.png");
 
 
         //盤面情報をCSVファイルから読み込み
@@ -128,8 +123,8 @@ namespace unicat1
             button4.BackgroundImage = Image.FromFile(@"../../素材/left.png");
             button5.BackgroundImage = Image.FromFile(@"../../素材/right.png");
             button6.BackgroundImage = Image.FromFile(@"../../素材/catch.png");
-            button7.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\1.png");
-            button8.BackgroundImage = Image.FromFile(@"\\SERVERFILE1\Common\ユニラブ\ユニラブ2015\素材\2.png");
+            button7.BackgroundImage = Image.FromFile(@"../../素材/1.png");
+            button8.BackgroundImage = Image.FromFile(@"../../素材/2.png");
 
             button3.Paint += new PaintEventHandler(button3_Paint);
             button4.Paint += new PaintEventHandler(button4_Paint);
@@ -199,12 +194,6 @@ namespace unicat1
             pictureBox26.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox27.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox28.SizeMode = PictureBoxSizeMode.StretchImage;
-
-
-
-         
-
-
         }
 
         //ネコがある方向に一つ進む
@@ -369,23 +358,6 @@ namespace unicat1
 
         private void makeboard(int[,] boardmat)
         {
-            //for (int i = 0; i < xmax; i++)
-            //{
-            //    for (int j = 0; j < ymax; j++)
-            //    {
-            //        if (boardmat[i, j] == 1) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);               //道
-            //        else if (boardmat[i, j] == 2) g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);          //背景
-            //        else if (boardmat[i, j] == 3)
-            //        {
-            //            catposx = i;
-            //            catposy = j;
-            //            g.DrawImage(cat, i * cat.Width, j * cat.Height, cat.Width, cat.Height);
-            //        }//猫だよ
-            //        else if (boardmat[i, j] == 4) g.DrawImage(fish, i * fish.Width, j * fish.Height, fish.Width, fish.Height);          //魚dayo
-            //    }
-            //}
-            //pictureBox1.Refresh();
-
             xmax = boardmat.GetLength(0);
             ymax = boardmat.Length / boardmat.GetLength(0);
             g.FillRectangle(Brushes.White, 0, 0, pictureBox1.Width, pictureBox1.Height);
@@ -413,59 +385,79 @@ namespace unicat1
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            picarray[buttoncount].Image = command1;
-            movecount[buttoncount] = 0;
-            buttoncount += 1;
-            upcount += 1;
-
+            try
+            {
+                picarray[buttoncount].Image = command1;
+                movecount[buttoncount] = 0;
+                buttoncount += 1;
+                upcount += 1;
+            }
+            catch { }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            picarray[buttoncount].Image = command2;
-            movecount[buttoncount] = 1;
-            buttoncount += 1;
-            leftcount += 1;
-            movecount[buttoncount] = 1;
+            try
+            {
+                picarray[buttoncount].Image = command2;
+                movecount[buttoncount] = 1;
+                buttoncount += 1;
+                leftcount += 1;
+                movecount[buttoncount] = 1;
+            }
+            catch { }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            picarray[buttoncount].Image = command3;
-            movecount[buttoncount] = 2;
-            buttoncount += 1;
-            rightcount += 1;
-            movecount[buttoncount] = 2;
+            try
+            {
+                picarray[buttoncount].Image = command3;
+                movecount[buttoncount] = 2;
+                buttoncount += 1;
+                rightcount += 1;
+                movecount[buttoncount] = 2;
+            }
+            catch { }
         }
 
         private void button6_Click_1(object sender, EventArgs e)
         {
-            picarray[buttoncount].Image = command4;
-            movecount[buttoncount] = 3;
-            buttoncount += 1;
-            catchcount += 1;
-            movecount[buttoncount] = 3;
-
-            
+            try
+            {
+                picarray[buttoncount].Image = command4;
+                movecount[buttoncount] = 3;
+                buttoncount += 1;
+                catchcount += 1;
+                movecount[buttoncount] = 3;
+            }
+            catch { }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            picarray[buttoncount].Image = loop1;
-            movecount[buttoncount] = 4;
-            buttoncount += 1;
-            catchcount += 1;
-            movecount[buttoncount] = 4;
+            try
+            {
+                picarray[buttoncount].Image = loop1;
+                movecount[buttoncount] = 4;
+                buttoncount += 1;
+                catchcount += 1;
+                movecount[buttoncount] = 4;
+            }
+            catch { }
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            picarray[buttoncount].Image = loop2;
-            movecount[buttoncount] = 5;
-            buttoncount += 1;
-            catchcount += 1;
-            movecount[buttoncount] = 5;
+            try
+            {
+                picarray[buttoncount].Image = loop2;
+                movecount[buttoncount] = 5;
+                buttoncount += 1;
+                catchcount += 1;
+                movecount[buttoncount] = 5;
+            }
+            catch { }
         }
 
 
@@ -556,7 +548,6 @@ namespace unicat1
                 fishcount += 1;
                 label13.Text = fishcount.ToString();
                 label16.Text = (fishcount*100).ToString();
-                //score.Items.Add(Score);
             }
             if (catposx == fish2posx && catposy == fish2posy)
             {
@@ -564,7 +555,6 @@ namespace unicat1
                 fish2count += 1;
                 label14.Text = fish2count.ToString();
                 label17.Text = (fish2count * 100).ToString();
-                //score.Items.Add(Score);
             }
             if (catposx == fish3posx && catposy == fish3posy)
             {
@@ -572,12 +562,15 @@ namespace unicat1
                 fish3count += 1;
                 label15.Text = fish3count.ToString();
                 label18.Text = (fish3count * 100).ToString();
-
-                //score.Items.Add(Score);
             }
 
             label19.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500).ToString();
  
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            makeboard(boardlist[comboBox1.SelectedIndex]);
         }
 
 
