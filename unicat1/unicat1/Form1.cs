@@ -574,7 +574,8 @@ namespace unicat1
                     catchfish(catposx, catposy);
                 }
 
-                footcount += (movelist.Count) / 2;
+                if (movelist.Count % 2 == 0) footcount += movelist.Count / 2;
+                else footcount += movelist.Count;
                 label21.Text = footcount.ToString();
                 label23.Text = (-footcount * 5).ToString();
 
