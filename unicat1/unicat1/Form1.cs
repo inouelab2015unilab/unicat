@@ -692,6 +692,27 @@ namespace unicat1
 
         }
 
+
+        //命令を一つ消す
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (maincount <0)  maincount = 0;
+            else if (maincount > 0)
+            {
+                mainpicarray[maincount - 1].Image = commandpanel;
+                maincount--;
+            }
+            if (movelist.Count > 0){           
+                movelist.Remove(movelist[movelist.Count - 1]);           
+            }
+            
+            //Array.Clear(mainpicarray, maincount, 1);
+            
+            
+            
+           
+        }
+
  
     }
 }
