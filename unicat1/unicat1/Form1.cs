@@ -43,6 +43,7 @@ namespace unicat1
         int maincount = 0;
         int onecount = 0;
         int twocount = 0;
+        int totalscore = 0;
 
         //0=上、1=右、2=下、3=左
         int catdirction = 0;
@@ -77,7 +78,7 @@ namespace unicat1
 
         //盤面情報をCSVファイルから読み込み
         string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -373,6 +374,12 @@ namespace unicat1
         private void button2_Click(object sender, EventArgs e)
         {
             makeboard(boardlist[comboBox1.SelectedIndex]);
+            footcount = 0;
+            fishcount = 0;
+            fish2count = 0;
+            fish3count = 0;
+            label21.Text = label23.Text = 0.ToString();
+
         }
 
         //二次元配列にしたがって盤面を描画
@@ -532,6 +539,8 @@ namespace unicat1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            footcount += movelist.Count;
+                
             //movelistに格納された番号にしたがって命令を実行
             for (int i = 0; i < movelist.Count; i++)
             {
@@ -578,12 +587,14 @@ namespace unicat1
                     catchfish(catposx, catposy);
                 }
 
-                if (movelist.Count % 2 == 0) footcount += movelist.Count / 2;
-                else footcount += movelist.Count;
                 label21.Text = footcount.ToString();
                 label23.Text = (-footcount * 5).ToString();
 
             }
+
+            label19.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500-footcount*5).ToString();
+
+
 
         }
 
@@ -641,25 +652,23 @@ namespace unicat1
                 Score = 100;
                 fishcount += 1;
                 label13.Text = fishcount.ToString();
-                label16.Text = (fishcount*100).ToString();
+                label16.Text = (fishcount * Score).ToString();
             }
             if (catposx == fish2posx && catposy == fish2posy)
             {
                 Score = 300;
                 fish2count += 1;
                 label14.Text = fish2count.ToString();
-                label17.Text = (fish2count * 100).ToString();
+                label17.Text = (fish2count * Score).ToString();
             }
             if (catposx == fish3posx && catposy == fish3posy)
             {
                 Score = 500;
                 fish3count += 1;
                 label15.Text = fish3count.ToString();
-                label18.Text = (fish3count * 100).ToString();
+                label18.Text = (fish3count * Score).ToString();
             }
 
-            label19.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500-movelist.Count*5).ToString();
- 
         }
 
         private void button9_Click(object sender, EventArgs e)
