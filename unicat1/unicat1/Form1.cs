@@ -22,7 +22,14 @@ namespace unicat1
         Image fish = Image.FromFile(@"../../素材/fish.png");
         Image fish2 = Image.FromFile(@"../../素材/fish2.png");
         Image fish3 = Image.FromFile(@"../../素材/fish3.png");
-        Image cat = Image.FromFile(@"../../素材/cat.png");
+        Image catu = Image.FromFile(@"../../素材/cat.png");
+        Image catr = Image.FromFile(@"../../素材/catr.png");
+        Image catl = Image.FromFile(@"../../素材/catl.png");
+        Image catd = Image.FromFile(@"../../素材/catd.png");
+       
+
+        Image cat;
+
         int xmax = 10, ymax = 10;
 
         int catposx;
@@ -35,10 +42,14 @@ namespace unicat1
         int onecount = 0;
         int twocount = 0;
 
+        //0=上、1=右、2=下、3=左
+        int catdirction = 0;
+
         int upcount = 0;
         int rightcount = 0;
         int leftcount = 0;
         int catchcount = 0;
+
         int[] movecount;
         List<int> movelist = new List<int>();
         List<int> onelist = new List<int>();
@@ -74,6 +85,8 @@ namespace unicat1
             Hoge.PlayLooping();
 
             movecount = new int[12];
+
+            cat = catu;
 
             RandomMT rand = new RandomMT();
             comboBox1.Items.Add("stage1");
@@ -208,25 +221,25 @@ namespace unicat1
         }
 
         //ネコがある方向に一つ進む
-        public void catmove(string direction)
+        public void catmove(int direction)
         {
             int xmove = 0, ymove = 0;
-            if (direction == "up")
+            if (direction == 0)
             {
                 if (catposy != 0) ymove = -1;
 
             }
-            if (direction == "down")
+            if (direction == 2)
             {
                 if (catposy !=ymax-1 ) ymove = 1;
 
             }
-            if (direction == "right")
+            if (direction == 1)
             {
                 if (catposx != xmax-1) xmove = 1;
 
             }
-            if (direction == "left")
+            if (direction == 3)
             {
                 if (catposx != 0) xmove = -1;
 
@@ -247,28 +260,58 @@ namespace unicat1
             catposy += ymove;
         }
         }
+
+        private void catd_change()
+        {
+            if (catdirction == 0)
+            {
+                cat = catu;
+                g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+            }
+            else if (catdirction == 1)
+            {
+                cat = catr;
+                g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+
+            }
+            else if (catdirction == 2)
+            {
+                cat = catd;
+                g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+
+            }
+            else if (catdirction == 3)
+            {
+                cat = catl;
+                g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+
+            }
+            pictureBox1.Refresh();
+            Thread.Sleep(200);
+        }
+
         //矢印キーでネコ移動
         protected override bool ProcessDialogKey(Keys keyData)
         {
             //左キーが押されているか調べる
             if ((keyData & Keys.KeyCode) == Keys.Up)
             {
-                catmove("up");
+                catmove(0);
                 return true;
             }
             if ((keyData & Keys.KeyCode) == Keys.Down)
             {
-                catmove("down");
+                catmove(2);
 
                 return true;
             } if ((keyData & Keys.KeyCode) == Keys.Right)
             {
-                catmove("right");
+                catmove(1);
 
                 return true;
             } if ((keyData & Keys.KeyCode) == Keys.Left)
             {
-                catmove("left");
+                catmove(3);
 
                 return true;
             }
@@ -485,21 +528,42 @@ namespace unicat1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            //movelistに格納された番号にしたがって命令を実行
             for (int i = 0; i < movelist.Count; i++)
             {
                 if (movelist[i] == 0)
                 {
-                    catmove("up");
+                    catmove(catdirction);
                 }
 
                 else if (movelist[i] == 1)
                 {
-                    catmove("left");
+                    if (catdirction == 0)
+                    {
+                        catdirction = 3;
+                    }
+                    else
+                    {
+                        catdirction -= 1;
+                    }
+
+                    catd_change();
+                    //catmove(3);
                 }
 
                 else if (movelist[i] == 2)
                 {
-                    catmove("right");
+                    if (catdirction == 0)
+                    {
+                        catdirction = 3;
+                    }
+                    else
+                    {
+                        catdirction -= 1;
+                    }
+
+                    catd_change();
+                    //catmove(1);
                 }
                 else if (movelist[i] == 3)
                 {
@@ -523,10 +587,6 @@ namespace unicat1
         {
 
         }
-
-
-
-
 
         //スコアの実装
         private void catchfish(int catposx, int catposy)
@@ -591,6 +651,31 @@ namespace unicat1
         private void button9_Click(object sender, EventArgs e)
         {
             makeboard(boardlist[comboBox1.SelectedIndex]);
+            catdirction = 0;
+            catd_change();
+        }
+
+        private void orderreset_button_Click(object sender, EventArgs e)
+        {
+            movelist.Clear();
+            onelist.Clear();
+            twolist.Clear();
+
+            maincount = 0;
+            onecount = 0;
+            twocount = 0;
+
+            for (int i = 0; i < 12; i++)
+            {
+                mainpicarray[i].Image = commandpanel;
+            }
+
+            for (int i = 0; i < 6; i++)
+            {
+                onepicarray[i].Image = commandpanel2;
+                twopicarray[i].Image = commandpanel2;
+            }
+
         }
 
  

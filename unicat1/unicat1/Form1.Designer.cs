@@ -86,6 +86,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
+            this.orderreset_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).BeginInit();
@@ -646,11 +647,22 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // orderreset_button
+            // 
+            this.orderreset_button.Location = new System.Drawing.Point(1201, 423);
+            this.orderreset_button.Name = "orderreset_button";
+            this.orderreset_button.Size = new System.Drawing.Size(149, 63);
+            this.orderreset_button.TabIndex = 76;
+            this.orderreset_button.Text = "命令初期化";
+            this.orderreset_button.UseVisualStyleBackColor = true;
+            this.orderreset_button.Click += new System.EventHandler(this.orderreset_button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1437, 762);
+            this.Controls.Add(this.orderreset_button);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
@@ -806,6 +818,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button orderreset_button;
     }
 }
 

@@ -89,6 +89,7 @@
     <Content Include="素材\BGM.wav" />
     <Content Include="素材\cat.png" />
     <Content Include="素材\catch.png" />
+    <Content Include="素材\catd.png" />
     <Content Include="素材\catl.png" />
     <Content Include="素材\catr.png" />
     <Content Include="素材\commandpanel.png" />
