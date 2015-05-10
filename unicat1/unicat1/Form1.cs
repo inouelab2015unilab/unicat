@@ -35,7 +35,7 @@ namespace unicat1
 
         int catposx;
         int catposy;
-    //    int footcount;
+        int footcount;
         int fishcount;
         int fish2count;
         int fish3count;
@@ -578,8 +578,10 @@ namespace unicat1
                     catchfish(catposx, catposy);
                 }
 
-                label21.Text = movelist.Count.ToString();
-                label23.Text = (-movelist.Count * 5).ToString();
+                if (movelist.Count % 2 == 0) footcount += movelist.Count / 2;
+                else footcount += movelist.Count;
+                label21.Text = footcount.ToString();
+                label23.Text = (-footcount * 5).ToString();
 
             }
 
@@ -655,8 +657,6 @@ namespace unicat1
                 label15.Text = fish3count.ToString();
                 label18.Text = (fish3count * 100).ToString();
             }
-
-
 
             label19.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500-movelist.Count*5).ToString();
  
