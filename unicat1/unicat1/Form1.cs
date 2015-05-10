@@ -19,6 +19,7 @@ namespace unicat1
         Graphics g;
         Image back = Image.FromFile(@"../../素材/back.png");
         Image road = Image.FromFile(@"../../素材/road.png");
+        Image catharapeko = Image.FromFile(@"../../素材/catharapeko.png");
         Image fish = Image.FromFile(@"../../素材/fish.png");
         Image fish2 = Image.FromFile(@"../../素材/fish2.png");
         Image fish3 = Image.FromFile(@"../../素材/fish3.png");
@@ -34,6 +35,7 @@ namespace unicat1
 
         int catposx;
         int catposy;
+    //    int footcount;
         int fishcount;
         int fish2count;
         int fish3count;
@@ -45,10 +47,10 @@ namespace unicat1
         //0=上、1=右、2=下、3=左
         int catdirction = 0;
 
-        int upcount = 0;
-        int rightcount = 0;
-        int leftcount = 0;
-        int catchcount = 0;
+        //int upcount = 0;
+        //int rightcount = 0;
+        //int leftcount = 0;
+        //int catchcount = 0;
 
         int[] movecount;
         List<int> movelist = new List<int>();
@@ -211,10 +213,12 @@ namespace unicat1
 
             //PictureBox1に表示する
             pictureBox1.Image = canvas;
+            pictureBox2.Image = catharapeko;
             pictureBox26.Image = fish;
             pictureBox27.Image = fish2;
             pictureBox28.Image = fish3;
             //画像の大きさをPictureBoxに合わせる
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox26.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox27.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox28.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -569,6 +573,10 @@ namespace unicat1
                 {
                     catchfish(catposx, catposy);
                 }
+
+                label21.Text = movelist.Count.ToString();
+                label23.Text = (-movelist.Count * 5).ToString();
+
             }
 
         }
@@ -644,7 +652,9 @@ namespace unicat1
                 label18.Text = (fish3count * 100).ToString();
             }
 
-            label19.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500).ToString();
+
+
+            label19.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500-movelist.Count*5).ToString();
  
         }
 
