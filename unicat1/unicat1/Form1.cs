@@ -26,7 +26,6 @@ namespace unicat1
         Image catr = Image.FromFile(@"../../素材/catr.png");
         Image catl = Image.FromFile(@"../../素材/catl.png");
         Image catd = Image.FromFile(@"../../素材/catd.png");
-       
 
         Image cat;
 
@@ -44,11 +43,6 @@ namespace unicat1
 
         //0=上、1=右、2=下、3=左
         int catdirction = 0;
-
-        int upcount = 0;
-        int rightcount = 0;
-        int leftcount = 0;
-        int catchcount = 0;
 
         int[] movecount;
         List<int> movelist = new List<int>();
