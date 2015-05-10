@@ -30,17 +30,26 @@ namespace unicat1
         int fishcount;
         int fish2count;
         int fish3count;
-    
-        int buttoncount = 0;
+
+        int maincount = 0;
+        int onecount = 0;
+        int twocount = 0;
+
         int upcount = 0;
         int rightcount = 0;
         int leftcount = 0;
         int catchcount = 0;
         int[] movecount;
+        List<int> movelist = new List<int>();
+        List<int> onelist = new List<int>();
+        List<int> twolist = new List<int>();
+
         int Score=0;
 
         List<int[,]> boardlist = new List<int[,]>();
-        PictureBox[] picarray = new PictureBox[24];
+        PictureBox[] mainpicarray = new PictureBox[12];
+        PictureBox[] onepicarray = new PictureBox[6];
+        PictureBox[] twopicarray = new PictureBox[6];
 
         ////画像ファイルを読み込んで、Imageオブジェクトを作成する
         System.Drawing.Image command1 = System.Drawing.Image.FromFile(@"../../素材/up.png");
@@ -60,10 +69,11 @@ namespace unicat1
         {
             InitializeComponent();
 
-
-            movecount = new int[12];
+            //音楽流す
             SoundPlayer Hoge = new SoundPlayer(@"../../素材/BGM.wav");
             Hoge.PlayLooping();
+
+            movecount = new int[12];
 
             RandomMT rand = new RandomMT();
             comboBox1.Items.Add("stage1");
@@ -83,55 +93,55 @@ namespace unicat1
             comboBox2.Items.Add("one");
             comboBox2.Items.Add("two");
 
-            picarray[0] = pictureBox2;
-            picarray[1] = pictureBox3;
-            picarray[2] = pictureBox4;
-            picarray[3] = pictureBox5;
-            picarray[4] = pictureBox6;
-            picarray[5] = pictureBox7;
-            picarray[6] = pictureBox8;
-            picarray[7] = pictureBox9;
-            picarray[8] = pictureBox10;
-            picarray[9] = pictureBox11;
-            picarray[10] = pictureBox12;
-            picarray[11] = pictureBox13;
-            picarray[12] = pictureBox14;
-            picarray[13] = pictureBox15;
-            picarray[14] = pictureBox16;
-            picarray[15] = pictureBox17;
-            picarray[16] = pictureBox18;
-            picarray[17] = pictureBox19;
-            picarray[18] = pictureBox20;
-            picarray[19] = pictureBox21;
-            picarray[20] = pictureBox22;
-            picarray[21] = pictureBox23;
-            picarray[22] = pictureBox24;
-            picarray[23] = pictureBox25;
+            mainpicarray[0] = main1;
+            mainpicarray[1] = main2;
+            mainpicarray[2] = main3;
+            mainpicarray[3] = main4;
+            mainpicarray[4] = main5;
+            mainpicarray[5] = main6;
+            mainpicarray[6] = main7;
+            mainpicarray[7] = main8;
+            mainpicarray[8] = main9;
+            mainpicarray[9] = main10;
+            mainpicarray[10] = main11;
+            mainpicarray[11] = main12;
+            onepicarray[0] = one1;
+            onepicarray[1] = one2;
+            onepicarray[2] = one3;
+            onepicarray[3] = one4;
+            onepicarray[4] = one5;
+            onepicarray[5] = one6;
+            twopicarray[5] = two6;
+            twopicarray[4] = two5;
+            twopicarray[3] = two4;
+            twopicarray[2] = two3;
+            twopicarray[1] = two2;
+            twopicarray[0] = two1;
 
             for (int i = 0; i < 12; i++)
             {
-                picarray[i].Image = commandpanel;
+                mainpicarray[i].Image = commandpanel;
             }
 
-            for (int i = 12; i < 24; i++)
+            for (int i = 0; i < 6; i++)
             {
-                picarray[i].Image = commandpanel2;
+                onepicarray[i].Image = commandpanel2;
+                twopicarray[i].Image = commandpanel2;
             }
 
+            gobutton.BackgroundImage = Image.FromFile(@"../../素材/up.png");
+            turnleft_button.BackgroundImage = Image.FromFile(@"../../素材/left.png");
+            turnright_button.BackgroundImage = Image.FromFile(@"../../素材/right.png");
+            catchfish_button.BackgroundImage = Image.FromFile(@"../../素材/catch.png");
+            one_button.BackgroundImage = Image.FromFile(@"../../素材/1.png");
+            two_button.BackgroundImage = Image.FromFile(@"../../素材/2.png");
 
-            button3.BackgroundImage = Image.FromFile(@"../../素材/up.png");
-            button4.BackgroundImage = Image.FromFile(@"../../素材/left.png");
-            button5.BackgroundImage = Image.FromFile(@"../../素材/right.png");
-            button6.BackgroundImage = Image.FromFile(@"../../素材/catch.png");
-            button7.BackgroundImage = Image.FromFile(@"../../素材/1.png");
-            button8.BackgroundImage = Image.FromFile(@"../../素材/2.png");
-
-            button3.Paint += new PaintEventHandler(button3_Paint);
-            button4.Paint += new PaintEventHandler(button4_Paint);
-            button5.Paint += new PaintEventHandler(button5_Paint);
-            button6.Paint += new PaintEventHandler(button6_Paint);
-            button7.Paint += new PaintEventHandler(button7_Paint);
-            button8.Paint += new PaintEventHandler(button8_Paint);
+            gobutton.Paint += new PaintEventHandler(button3_Paint);
+            turnleft_button.Paint += new PaintEventHandler(button4_Paint);
+            turnright_button.Paint += new PaintEventHandler(button5_Paint);
+            catchfish_button.Paint += new PaintEventHandler(button6_Paint);
+            one_button.Paint += new PaintEventHandler(button7_Paint);
+            two_button.Paint += new PaintEventHandler(button8_Paint);
 
             //描画先とするImageオブジェクトを作成する
             Bitmap canvas = new Bitmap(pictureBox1.Width, pictureBox1.Height);
@@ -151,6 +161,7 @@ namespace unicat1
             //    }
             //}
             comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
 
             //盤面情報をCSVファイルから読み込み
             //string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
@@ -312,50 +323,12 @@ namespace unicat1
 
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //catchfish(catposx, catposy);
-            //score.Items.Add(Score);
-        }
-
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void left_Click(object sender, EventArgs e)
-        {
-            catmove("left");
-        }
-
-        private void up_Click(object sender, EventArgs e)
-        {
-            catmove("up");
-
-        }
-
-        private void down_Click(object sender, EventArgs e)
-        {
-            catmove("down");
-        }
-
-        private void right_Click(object sender, EventArgs e)
-        {
-            catmove("right");
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             makeboard(boardlist[comboBox1.SelectedIndex]);
         }
 
+        //二次元配列にしたがって盤面を描画
         private void makeboard(int[,] boardmat)
         {
             xmax = boardmat.GetLength(0);
@@ -383,107 +356,154 @@ namespace unicat1
             pictureBox1.Refresh();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        //引数に命令番号と表示画像をとって命令情報を管理するメソッド
+        private void orderclick(int ordernum,Image orderimage)
         {
-            try
+            if (comboBox2.SelectedIndex == 0)
             {
-                picarray[buttoncount].Image = command1;
-                movecount[buttoncount] = 0;
-                buttoncount += 1;
-                upcount += 1;
+                try
+                {
+                    mainpicarray[maincount].Image = orderimage;
+                    movelist.Add(ordernum);
+                    maincount += 1;
+                }
+                catch { }
             }
-            catch { }
+            else if (comboBox2.SelectedIndex == 1)
+            {
+                try
+                {
+                    onepicarray[onecount].Image = orderimage;
+                    onelist.Add(ordernum);
+                    onecount += 1;
+                }
+                catch { }
+            }
+            else if (comboBox2.SelectedIndex == 2)
+            {
+                try
+                {
+                    twopicarray[twocount].Image = orderimage;
+                    twolist.Add(ordernum);
+                    twocount += 1;
+                }
+                catch { }
+            }
+
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void go_button_Click(object sender, EventArgs e)
         {
-            try
-            {
-                picarray[buttoncount].Image = command2;
-                movecount[buttoncount] = 1;
-                buttoncount += 1;
-                leftcount += 1;
-                movecount[buttoncount] = 1;
-            }
-            catch { }
+            orderclick(0,command1);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void turnleft_button_Click(object sender, EventArgs e)
         {
-            try
-            {
-                picarray[buttoncount].Image = command3;
-                movecount[buttoncount] = 2;
-                buttoncount += 1;
-                rightcount += 1;
-                movecount[buttoncount] = 2;
-            }
-            catch { }
+            orderclick(1,command2);
         }
 
-        private void button6_Click_1(object sender, EventArgs e)
+        private void turnright_button_Click(object sender, EventArgs e)
         {
-            try
-            {
-                picarray[buttoncount].Image = command4;
-                movecount[buttoncount] = 3;
-                buttoncount += 1;
-                catchcount += 1;
-                movecount[buttoncount] = 3;
-            }
-            catch { }
+            orderclick(2,command3);
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void catchfish_button_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                picarray[buttoncount].Image = loop1;
-                movecount[buttoncount] = 4;
-                buttoncount += 1;
-                catchcount += 1;
-                movecount[buttoncount] = 4;
-            }
-            catch { }
+            orderclick(3,command4);
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void one_button_Click(object sender, EventArgs e)
         {
-            try
+            if (comboBox2.SelectedIndex == 0)
             {
-                picarray[buttoncount].Image = loop2;
-                movecount[buttoncount] = 5;
-                buttoncount += 1;
-                catchcount += 1;
-                movecount[buttoncount] = 5;
+                try
+                {
+                    mainpicarray[maincount].Image = loop1;
+                    movelist.AddRange(onelist);
+                    maincount += 1;
+                }
+                catch { }
             }
-            catch { }
+            else if (comboBox2.SelectedIndex == 1)
+            {
+                try
+                {
+                    onepicarray[onecount].Image = loop1;
+                    onelist.AddRange(onelist);
+                    onecount += 1;
+                }
+                catch { }
+            }
+            else if (comboBox2.SelectedIndex == 2)
+            {
+                try
+                {
+                    twopicarray[twocount].Image = loop1;
+                    twolist.AddRange(onelist);
+                    twocount += 1;
+                }
+                catch { }
+            }
+
+
         }
 
+        private void two_button_Click(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedIndex == 0)
+            {
+                try
+                {
+                    mainpicarray[maincount].Image = loop2;
+                    movelist.AddRange(twolist);
+                    maincount += 1;
+                }
+                catch { }
+            }
+            else if (comboBox2.SelectedIndex == 1)
+            {
+                try
+                {
+                    onepicarray[onecount].Image = loop2;
+                    onelist.AddRange(twolist);
+                    onecount += 1;
+                }
+                catch { }
+            }
+            else if (comboBox2.SelectedIndex == 2)
+            {
+                try
+                {
+                    twopicarray[twocount].Image = loop2;
+                    twolist.AddRange(twolist);
+                    twocount += 1;
+                }
+                catch { }
+            }
 
+        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            for (int i = 0; i < buttoncount; i++)
+            for (int i = 0; i < movelist.Count; i++)
             {
-                if (movecount[i] == 0)
+                if (movelist[i] == 0)
                 {
                     catmove("up");
                 }
 
-                else if (movecount[i] == 1)
+                else if (movelist[i] == 1)
                 {
                     catmove("left");
                 }
 
-                else if (movecount[i] == 2)
+                else if (movelist[i] == 2)
                 {
                     catmove("right");
                 }
-                else if (movecount[i] == 3)
+                else if (movelist[i] == 3)
                 {
                     catchfish(catposx, catposy);
-                    //catmove("catch");
                 }
             }
 
@@ -508,7 +528,7 @@ namespace unicat1
 
 
 
-        //スコアの実装失敗
+        //スコアの実装
         private void catchfish(int catposx, int catposy)
         {
             //魚の位置確認
@@ -573,6 +593,6 @@ namespace unicat1
             makeboard(boardlist[comboBox1.SelectedIndex]);
         }
 
-
+ 
     }
 }
