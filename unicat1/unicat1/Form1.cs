@@ -19,7 +19,7 @@ namespace unicat1
         Graphics g;
         Image back = Image.FromFile(@"../../素材/back.png");
         Image road = Image.FromFile(@"../../素材/road.png");
-        Image catharapeko = Image.FromFile(@"../../素材/catharapeko.png");
+        //Image catharapeko = Image.FromFile(@"../../素材/catharapeko.png");
         Image fish = Image.FromFile(@"../../素材/fish.png");
         Image fish2 = Image.FromFile(@"../../素材/fish2.png");
         Image fish3 = Image.FromFile(@"../../素材/fish3.png");
@@ -213,7 +213,7 @@ namespace unicat1
 
             //PictureBox1に表示する
             pictureBox1.Image = canvas;
-            pictureBox2.Image = catharapeko;
+            //pictureBox2.Image = catharapeko;
             pictureBox26.Image = fish;
             pictureBox27.Image = fish2;
             pictureBox28.Image = fish3;
@@ -552,23 +552,27 @@ namespace unicat1
                     }
 
                     catd_change();
-                    //catmove(3);
+                    //catmove(1);
                 }
 
                 else if (movelist[i] == 2)
                 {
                     if (catdirction == 0)
                     {
-                        catdirction = 3;
+                        catdirction = 1;
                     }
+                    else if (catdirction == 3) catdirction = 0;
                     else
                     {
-                        catdirction -= 1;
+
+                        catdirction += 1;
                     }
 
                     catd_change();
-                    //catmove(1);
+                    //catmove(3);
                 }
+
+      
                 else if (movelist[i] == 3)
                 {
                     catchfish(catposx, catposy);
