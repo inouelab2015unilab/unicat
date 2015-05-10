@@ -19,7 +19,7 @@ namespace unicat1
         Graphics g;
         Image back = Image.FromFile(@"../../素材/back.png");
         Image road = Image.FromFile(@"../../素材/road.png");
-        Image catharapeko = Image.FromFile(@"../../素材/catharapeko.png");
+        //Image catharapeko = Image.FromFile(@"../../素材/catharapeko.png");
         Image fish = Image.FromFile(@"../../素材/fish.png");
         Image fish2 = Image.FromFile(@"../../素材/fish2.png");
         Image fish3 = Image.FromFile(@"../../素材/fish3.png");
@@ -35,7 +35,7 @@ namespace unicat1
 
         int catposx;
         int catposy;
-    //    int footcount;
+        int footcount;
         int fishcount;
         int fish2count;
         int fish3count;
@@ -213,7 +213,7 @@ namespace unicat1
 
             //PictureBox1に表示する
             pictureBox1.Image = canvas;
-            pictureBox2.Image = catharapeko;
+            //pictureBox2.Image = catharapeko;
             pictureBox26.Image = fish;
             pictureBox27.Image = fish2;
             pictureBox28.Image = fish3;
@@ -574,8 +574,9 @@ namespace unicat1
                     catchfish(catposx, catposy);
                 }
 
-                label21.Text = movelist.Count.ToString();
-                label23.Text = (-movelist.Count * 5).ToString();
+                footcount += (movelist.Count) / 2;
+                label21.Text = footcount.ToString();
+                label23.Text = (-footcount * 5).ToString();
 
             }
 
