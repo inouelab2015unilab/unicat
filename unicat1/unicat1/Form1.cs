@@ -705,14 +705,47 @@ namespace unicat1
         //命令を一つ消す
         private void button3_Click(object sender, EventArgs e)
         {
-            if (maincount <0)  maincount = 0;
-            else if (maincount > 0)
+            if (comboBox2.SelectedIndex == 0)
             {
-                mainpicarray[maincount - 1].Image = commandpanel;
-                maincount--;
+                if (maincount < 0) maincount = 0;
+                else if (maincount > 0)
+                {
+                    mainpicarray[maincount - 1].Image = commandpanel;
+                    maincount--;
+                }
+                if (movelist.Count > 0)
+                {
+                    movelist.Remove(movelist[movelist.Count - 1]);
+                }
+
             }
-            if (movelist.Count > 0){           
-                movelist.Remove(movelist[movelist.Count - 1]);           
+
+            if (comboBox2.SelectedIndex == 1)
+            {
+                if (onecount < 0) onecount = 0;
+                else if (onecount > 0)
+                {
+                    onepicarray[onecount - 1].Image = commandpanel2;
+                    onecount--;
+                }
+                if (onelist.Count > 0)
+                {
+                    onelist.Remove(onelist[onelist.Count - 1]);
+                }
+            }
+
+            if (comboBox2.SelectedIndex == 2)
+            {
+                if (twocount < 0) twocount = 0;
+                else if (twocount > 0)
+                {
+                    twopicarray[twocount - 1].Image = commandpanel2;
+                    twocount--;
+                }
+                if (twolist.Count > 0)
+                {
+                    twolist.Remove(twolist[twolist.Count - 1]);
+                }
             }
             
             //Array.Clear(mainpicarray, maincount, 1);
