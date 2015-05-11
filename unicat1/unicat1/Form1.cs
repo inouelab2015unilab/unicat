@@ -710,6 +710,10 @@ namespace unicat1
                 if (maincount < 0) maincount = 0;
                 else if (maincount > 0)
                 {
+                    if (mainpicarray[maincount].Image == loop1)
+                    {
+                        movelist.RemoveRange(movelist.Count, onelist.Count);
+                    }
                     mainpicarray[maincount - 1].Image = commandpanel;
                     maincount--;
                 }
@@ -717,6 +721,7 @@ namespace unicat1
                 {
                     movelist.Remove(movelist[movelist.Count - 1]);
                 }
+               
 
             }
 
