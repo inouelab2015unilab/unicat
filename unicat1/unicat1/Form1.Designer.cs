@@ -716,7 +716,7 @@
             this.button3.TabIndex = 82;
             this.button3.Text = "一つ消す";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.Undo_Click);
             // 
             // Form1
             // 

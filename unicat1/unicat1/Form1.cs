@@ -54,7 +54,7 @@ namespace unicat1
         //int catchcount = 0;
 
         int[] movecount;
-        List<int> movelist = new List<int>();
+        List<int> movelist = new List<int>() ;
         List<int> onelist = new List<int>();
         List<int> twolist = new List<int>();
 
@@ -75,6 +75,7 @@ namespace unicat1
         System.Drawing.Image loop1 = System.Drawing.Image.FromFile(@"../../素材/1.png");
         System.Drawing.Image loop2 = System.Drawing.Image.FromFile(@"../../素材/2.png");
 
+      
 
         //盤面情報をCSVファイルから読み込み
         string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
@@ -90,10 +91,10 @@ namespace unicat1
             movecount = new int[12];
 
             cat = catu;
-
+            
             RandomMT rand = new RandomMT();
-            comboBox1.Items.Add("stage1");
-            comboBox1.Items.Add("stage2");
+            comboBox1.Items.Add("stage1");        //ループ回そう
+            comboBox1.Items.Add("stage2");        //PictureBoxは配列で動的に生成できるそうです
             comboBox1.Items.Add("stage3");
             comboBox1.Items.Add("stage4");
             comboBox1.Items.Add("stage5");
@@ -703,22 +704,22 @@ namespace unicat1
 
 
         //命令を一つ消す
-        private void button3_Click(object sender, EventArgs e)
+        private void Undo_Click(object sender, EventArgs e)
         {
             if (comboBox2.SelectedIndex == 0)
             {
                 if (maincount < 0) maincount = 0;
-                else if (maincount > 0)
+                 if (maincount > 0)
                 {
-                    if (mainpicarray[maincount].Image == loop1)
+                    if (mainpicarray[maincount-1].Image == loop1)                                //Imageをboolに使うのは処理重くなるから使わないほうが良いとのこと
                     {
-                        movelist.RemoveRange(movelist.Count, onelist.Count);
-                    }
+                        movelist.RemoveRange(onelist.Count-1, onelist.Count);　　　　　　　　　　//oneに入力→メインに①置く→実行○
+                    }                                                                           //メインに①置く→oneに入力→実行×のバグ？
                     mainpicarray[maincount - 1].Image = commandpanel;
                     maincount--;
                 }
-                if (movelist.Count > 0)
-                {
+                else if (movelist.Count > 0)                                                   //１、２ループの所に①、②ボタンを置けないようにしてください
+                {                                                                               //スレッド分けたいです
                     movelist.Remove(movelist[movelist.Count - 1]);
                 }
                
