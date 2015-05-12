@@ -239,12 +239,12 @@ namespace unicat1
             }
             if (direction == 2)
             {
-                if (catposy !=ymax-1 ) ymove = 1;
+                if (catposy != ymax - 1) ymove = 1;
 
             }
             if (direction == 1)
             {
-                if (catposx != xmax-1) xmove = 1;
+                if (catposx != xmax - 1) xmove = 1;
 
             }
             if (direction == 3)
@@ -267,13 +267,14 @@ namespace unicat1
                 catposx += xmove;
                 catposy += ymove;
                 harapekocount.Text = footcount.ToString();
-                harapekoscore.Text = (-footcount * 5).ToString();             
+                harapekoscore.Text = (-footcount * 5).ToString();
                 label19.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
                 label19.Refresh();
                 harapekocount.Refresh();
                 harapekoscore.Refresh();
                 Thread.Sleep(500);
-            
+
+            }
         }
 
         private void catd_change()
