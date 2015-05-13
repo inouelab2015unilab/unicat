@@ -707,7 +707,7 @@ namespace unicat1
                     mainpicarray[mainpiccount - 1].Image = commandpanel;
                     mainpiccount--;
                 }
-                else if (movelist.Count > 0)                                                   //１、２ループの所に①、②ボタンを置けないようにしてください
+                if (movelist.Count > 0)                                                   //１、２ループの所に①、②ボタンを置けないようにしてください
                 {                                                                               //スレッド分けたいです
                     movelist.Remove(movelist[movelist.Count - 1]);
                 }
