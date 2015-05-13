@@ -446,9 +446,12 @@ namespace unicat1
             {
                 try
                 {
-                    onepicarray[onepiccount].Image = orderimage;
-                    onelist.Add(ordernum);
-                    onepiccount += 1;
+                    if (orderimage != loop1 || orderimage != loop2)
+                    {
+                        onepicarray[onepiccount].Image = orderimage;
+                        onelist.Add(ordernum);
+                        onepiccount += 1;
+                    }
                 }
                 catch { }
             }
@@ -456,9 +459,12 @@ namespace unicat1
             {
                 try
                 {
-                    twopicarray[twopiccount].Image = orderimage;
-                    twolist.Add(ordernum);
-                    twopiccount += 1;
+                    if (orderimage != loop1 || orderimage != loop2)
+                    {
+                        twopicarray[twopiccount].Image = orderimage;
+                        twolist.Add(ordernum);
+                        twopiccount += 1;
+                    }
                 }
                 catch { }
             }
@@ -703,11 +709,11 @@ namespace unicat1
             {
                 if (mainpiccount < 0) mainpiccount = 0;               
                 else if (mainpiccount > 0)
-                {                                                                                           //メインに①置く→oneに入力→実行×のバグ？
+                {                                                                                           
                     mainpicarray[mainpiccount - 1].Image = commandpanel;
                     mainpiccount--;
                 }
-                if (movelist.Count > 0)                                                   //１、２ループの所に①、②ボタンを置けないようにしてください
+                if (movelist.Count > 0)                                                  
                 {                                                                               //スレッド分けたいです
                     movelist.Remove(movelist[movelist.Count - 1]);
                 }
