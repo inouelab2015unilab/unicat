@@ -29,14 +29,10 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.movebutton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.main2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.gobutton = new System.Windows.Forms.Button();
-            this.turnleft_button = new System.Windows.Forms.Button();
-            this.turnright_button = new System.Windows.Forms.Button();
-            this.catchfish_button = new System.Windows.Forms.Button();
             this.main1 = new System.Windows.Forms.PictureBox();
             this.main3 = new System.Windows.Forms.PictureBox();
             this.main4 = new System.Windows.Forms.PictureBox();
@@ -48,8 +44,6 @@
             this.main10 = new System.Windows.Forms.PictureBox();
             this.main11 = new System.Windows.Forms.PictureBox();
             this.main12 = new System.Windows.Forms.PictureBox();
-            this.one_button = new System.Windows.Forms.Button();
-            this.two_button = new System.Windows.Forms.Button();
             this.one1 = new System.Windows.Forms.PictureBox();
             this.one2 = new System.Windows.Forms.PictureBox();
             this.one3 = new System.Windows.Forms.PictureBox();
@@ -62,11 +56,9 @@
             this.two3 = new System.Windows.Forms.PictureBox();
             this.two2 = new System.Windows.Forms.PictureBox();
             this.two1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.pictureBox26 = new System.Windows.Forms.PictureBox();
@@ -84,7 +76,7 @@
             this.fish100score = new System.Windows.Forms.Label();
             this.fish300score = new System.Windows.Forms.Label();
             this.fish500score = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.totalscorelabel = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.orderreset_button = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -93,6 +85,15 @@
             this.label22 = new System.Windows.Forms.Label();
             this.harapekoscore = new System.Windows.Forms.Label();
             this.undo_button = new System.Windows.Forms.Button();
+            this.gobutton = new System.Windows.Forms.Button();
+            this.turnleft_button = new System.Windows.Forms.Button();
+            this.turnright_button = new System.Windows.Forms.Button();
+            this.catchfish_button = new System.Windows.Forms.Button();
+            this.one_button = new System.Windows.Forms.Button();
+            this.two_button = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).BeginInit();
@@ -122,6 +123,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -132,22 +134,22 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // movebutton
             // 
-            this.button1.Location = new System.Drawing.Point(670, 551);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 62);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "ねこ移動";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.movebutton.Location = new System.Drawing.Point(676, 706);
+            this.movebutton.Margin = new System.Windows.Forms.Padding(2);
+            this.movebutton.Name = "movebutton";
+            this.movebutton.Size = new System.Drawing.Size(130, 50);
+            this.movebutton.TabIndex = 1;
+            this.movebutton.Text = "ねこ移動";
+            this.movebutton.UseVisualStyleBackColor = true;
+            this.movebutton.Click += new System.EventHandler(this.movebutton_Click_1);
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(640, 25);
+            this.comboBox1.Location = new System.Drawing.Point(674, 519);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 9;
@@ -163,7 +165,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(790, 25);
+            this.button2.Location = new System.Drawing.Point(824, 519);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 20);
@@ -171,46 +173,6 @@
             this.button2.Text = "ステージ選択";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // gobutton
-            // 
-            this.gobutton.Location = new System.Drawing.Point(12, 640);
-            this.gobutton.Name = "gobutton";
-            this.gobutton.Size = new System.Drawing.Size(86, 78);
-            this.gobutton.TabIndex = 17;
-            this.gobutton.Text = "gobutton";
-            this.gobutton.UseVisualStyleBackColor = true;
-            this.gobutton.Click += new System.EventHandler(this.go_button_Click);
-            // 
-            // turnleft_button
-            // 
-            this.turnleft_button.Location = new System.Drawing.Point(104, 640);
-            this.turnleft_button.Name = "turnleft_button";
-            this.turnleft_button.Size = new System.Drawing.Size(86, 78);
-            this.turnleft_button.TabIndex = 18;
-            this.turnleft_button.Text = "turnleft_button";
-            this.turnleft_button.UseVisualStyleBackColor = true;
-            this.turnleft_button.Click += new System.EventHandler(this.turnleft_button_Click);
-            // 
-            // turnright_button
-            // 
-            this.turnright_button.Location = new System.Drawing.Point(196, 640);
-            this.turnright_button.Name = "turnright_button";
-            this.turnright_button.Size = new System.Drawing.Size(86, 78);
-            this.turnright_button.TabIndex = 19;
-            this.turnright_button.Text = "turnright_button";
-            this.turnright_button.UseVisualStyleBackColor = true;
-            this.turnright_button.Click += new System.EventHandler(this.turnright_button_Click);
-            // 
-            // catchfish_button
-            // 
-            this.catchfish_button.Location = new System.Drawing.Point(288, 640);
-            this.catchfish_button.Name = "catchfish_button";
-            this.catchfish_button.Size = new System.Drawing.Size(86, 78);
-            this.catchfish_button.TabIndex = 20;
-            this.catchfish_button.Text = "catchfish_button";
-            this.catchfish_button.UseVisualStyleBackColor = true;
-            this.catchfish_button.Click += new System.EventHandler(this.catchfish_button_Click_1);
             // 
             // main1
             // 
@@ -310,26 +272,6 @@
             this.main12.Size = new System.Drawing.Size(100, 100);
             this.main12.TabIndex = 31;
             this.main12.TabStop = false;
-            // 
-            // one_button
-            // 
-            this.one_button.Location = new System.Drawing.Point(380, 640);
-            this.one_button.Name = "one_button";
-            this.one_button.Size = new System.Drawing.Size(86, 78);
-            this.one_button.TabIndex = 32;
-            this.one_button.Text = "one_button";
-            this.one_button.UseVisualStyleBackColor = true;
-            this.one_button.Click += new System.EventHandler(this.one_button_Click);
-            // 
-            // two_button
-            // 
-            this.two_button.Location = new System.Drawing.Point(472, 640);
-            this.two_button.Name = "two_button";
-            this.two_button.Size = new System.Drawing.Size(86, 78);
-            this.two_button.TabIndex = 33;
-            this.two_button.Text = "two_button";
-            this.two_button.UseVisualStyleBackColor = true;
-            this.two_button.Click += new System.EventHandler(this.two_button_Click);
             // 
             // one1
             // 
@@ -439,14 +381,6 @@
             this.two1.TabIndex = 40;
             this.two1.TabStop = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 12);
-            this.label1.TabIndex = 46;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -455,7 +389,6 @@
             this.label2.Size = new System.Drawing.Size(23, 12);
             this.label2.TabIndex = 47;
             this.label2.Text = "one";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -475,18 +408,10 @@
             this.label4.TabIndex = 49;
             this.label4.Text = "メイン";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(372, 146);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 12);
-            this.label5.TabIndex = 50;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1194, 744);
+            this.label6.Location = new System.Drawing.Point(454, 157);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 12);
             this.label6.TabIndex = 51;
@@ -496,7 +421,7 @@
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(933, 25);
+            this.comboBox2.Location = new System.Drawing.Point(674, 556);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 20);
             this.comboBox2.TabIndex = 52;
@@ -504,7 +429,7 @@
             // 
             // pictureBox26
             // 
-            this.pictureBox26.Location = new System.Drawing.Point(1053, 555);
+            this.pictureBox26.Location = new System.Drawing.Point(5, 76);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(57, 53);
             this.pictureBox26.TabIndex = 53;
@@ -512,7 +437,7 @@
             // 
             // pictureBox27
             // 
-            this.pictureBox27.Location = new System.Drawing.Point(1053, 614);
+            this.pictureBox27.Location = new System.Drawing.Point(317, 15);
             this.pictureBox27.Name = "pictureBox27";
             this.pictureBox27.Size = new System.Drawing.Size(57, 53);
             this.pictureBox27.TabIndex = 54;
@@ -520,7 +445,7 @@
             // 
             // pictureBox28
             // 
-            this.pictureBox28.Location = new System.Drawing.Point(1053, 673);
+            this.pictureBox28.Location = new System.Drawing.Point(317, 74);
             this.pictureBox28.Name = "pictureBox28";
             this.pictureBox28.Size = new System.Drawing.Size(57, 53);
             this.pictureBox28.TabIndex = 55;
@@ -529,7 +454,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1122, 574);
+            this.label7.Location = new System.Drawing.Point(74, 95);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(17, 12);
             this.label7.TabIndex = 62;
@@ -538,7 +463,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1124, 640);
+            this.label8.Location = new System.Drawing.Point(388, 41);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(17, 12);
             this.label8.TabIndex = 63;
@@ -547,7 +472,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1124, 700);
+            this.label9.Location = new System.Drawing.Point(388, 101);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(17, 12);
             this.label9.TabIndex = 64;
@@ -556,7 +481,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1240, 574);
+            this.label10.Location = new System.Drawing.Point(192, 95);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(17, 12);
             this.label10.TabIndex = 65;
@@ -565,7 +490,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1240, 640);
+            this.label11.Location = new System.Drawing.Point(504, 41);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(17, 12);
             this.label11.TabIndex = 66;
@@ -574,7 +499,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1240, 700);
+            this.label12.Location = new System.Drawing.Point(504, 101);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(17, 12);
             this.label12.TabIndex = 67;
@@ -583,7 +508,7 @@
             // fish100count
             // 
             this.fish100count.AutoSize = true;
-            this.fish100count.Location = new System.Drawing.Point(1166, 574);
+            this.fish100count.Location = new System.Drawing.Point(118, 95);
             this.fish100count.Name = "fish100count";
             this.fish100count.Size = new System.Drawing.Size(11, 12);
             this.fish100count.TabIndex = 68;
@@ -592,7 +517,7 @@
             // fish300count
             // 
             this.fish300count.AutoSize = true;
-            this.fish300count.Location = new System.Drawing.Point(1166, 640);
+            this.fish300count.Location = new System.Drawing.Point(430, 41);
             this.fish300count.Name = "fish300count";
             this.fish300count.Size = new System.Drawing.Size(11, 12);
             this.fish300count.TabIndex = 69;
@@ -601,7 +526,7 @@
             // fish500count
             // 
             this.fish500count.AutoSize = true;
-            this.fish500count.Location = new System.Drawing.Point(1166, 700);
+            this.fish500count.Location = new System.Drawing.Point(430, 101);
             this.fish500count.Name = "fish500count";
             this.fish500count.Size = new System.Drawing.Size(11, 12);
             this.fish500count.TabIndex = 70;
@@ -610,7 +535,7 @@
             // fish100score
             // 
             this.fish100score.AutoSize = true;
-            this.fish100score.Location = new System.Drawing.Point(1306, 574);
+            this.fish100score.Location = new System.Drawing.Point(258, 95);
             this.fish100score.Name = "fish100score";
             this.fish100score.Size = new System.Drawing.Size(11, 12);
             this.fish100score.TabIndex = 71;
@@ -619,7 +544,7 @@
             // fish300score
             // 
             this.fish300score.AutoSize = true;
-            this.fish300score.Location = new System.Drawing.Point(1306, 640);
+            this.fish300score.Location = new System.Drawing.Point(570, 41);
             this.fish300score.Name = "fish300score";
             this.fish300score.Size = new System.Drawing.Size(11, 12);
             this.fish300score.TabIndex = 72;
@@ -628,27 +553,27 @@
             // fish500score
             // 
             this.fish500score.AutoSize = true;
-            this.fish500score.Location = new System.Drawing.Point(1306, 700);
+            this.fish500score.Location = new System.Drawing.Point(570, 101);
             this.fish500score.Name = "fish500score";
             this.fish500score.Size = new System.Drawing.Size(11, 12);
             this.fish500score.TabIndex = 73;
             this.fish500score.Text = "0";
             // 
-            // label19
+            // totalscorelabel
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(1306, 744);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(11, 12);
-            this.label19.TabIndex = 74;
-            this.label19.Text = "0";
+            this.totalscorelabel.AutoSize = true;
+            this.totalscorelabel.Location = new System.Drawing.Point(566, 157);
+            this.totalscorelabel.Name = "totalscorelabel";
+            this.totalscorelabel.Size = new System.Drawing.Size(11, 12);
+            this.totalscorelabel.TabIndex = 74;
+            this.totalscorelabel.Text = "0";
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(672, 622);
+            this.button9.Location = new System.Drawing.Point(837, 706);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(166, 62);
+            this.button9.Size = new System.Drawing.Size(130, 50);
             this.button9.TabIndex = 75;
             this.button9.Text = "ねこ戻す";
             this.button9.UseVisualStyleBackColor = true;
@@ -656,9 +581,9 @@
             // 
             // orderreset_button
             // 
-            this.orderreset_button.Location = new System.Drawing.Point(868, 622);
+            this.orderreset_button.Location = new System.Drawing.Point(1160, 704);
             this.orderreset_button.Name = "orderreset_button";
-            this.orderreset_button.Size = new System.Drawing.Size(149, 63);
+            this.orderreset_button.Size = new System.Drawing.Size(130, 50);
             this.orderreset_button.TabIndex = 76;
             this.orderreset_button.Text = "命令初期化";
             this.orderreset_button.UseVisualStyleBackColor = true;
@@ -666,7 +591,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(1053, 494);
+            this.pictureBox2.Location = new System.Drawing.Point(5, 15);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(57, 53);
             this.pictureBox2.TabIndex = 77;
@@ -675,7 +600,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(1121, 516);
+            this.label20.Location = new System.Drawing.Point(73, 37);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(17, 12);
             this.label20.TabIndex = 78;
@@ -684,7 +609,7 @@
             // harapekocount
             // 
             this.harapekocount.AutoSize = true;
-            this.harapekocount.Location = new System.Drawing.Point(1165, 516);
+            this.harapekocount.Location = new System.Drawing.Point(117, 37);
             this.harapekocount.Name = "harapekocount";
             this.harapekocount.Size = new System.Drawing.Size(11, 12);
             this.harapekocount.TabIndex = 79;
@@ -693,7 +618,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(1240, 516);
+            this.label22.Location = new System.Drawing.Point(192, 37);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(17, 12);
             this.label22.TabIndex = 80;
@@ -702,7 +627,7 @@
             // harapekoscore
             // 
             this.harapekoscore.AutoSize = true;
-            this.harapekoscore.Location = new System.Drawing.Point(1306, 516);
+            this.harapekoscore.Location = new System.Drawing.Point(258, 37);
             this.harapekoscore.Name = "harapekoscore";
             this.harapekoscore.Size = new System.Drawing.Size(11, 12);
             this.harapekoscore.TabIndex = 81;
@@ -710,45 +635,132 @@
             // 
             // undo_button
             // 
-            this.undo_button.Location = new System.Drawing.Point(867, 551);
+            this.undo_button.Location = new System.Drawing.Point(1000, 706);
             this.undo_button.Name = "undo_button";
-            this.undo_button.Size = new System.Drawing.Size(150, 59);
+            this.undo_button.Size = new System.Drawing.Size(130, 50);
             this.undo_button.TabIndex = 82;
             this.undo_button.Text = "一つ消す";
             this.undo_button.UseVisualStyleBackColor = true;
             this.undo_button.Click += new System.EventHandler(this.undo_button_Click);
             // 
+            // gobutton
+            // 
+            this.gobutton.Location = new System.Drawing.Point(674, 598);
+            this.gobutton.Name = "gobutton";
+            this.gobutton.Size = new System.Drawing.Size(86, 78);
+            this.gobutton.TabIndex = 17;
+            this.gobutton.Text = "gobutton";
+            this.gobutton.UseVisualStyleBackColor = true;
+            this.gobutton.Click += new System.EventHandler(this.go_button_Click);
+            // 
+            // turnleft_button
+            // 
+            this.turnleft_button.Location = new System.Drawing.Point(766, 598);
+            this.turnleft_button.Name = "turnleft_button";
+            this.turnleft_button.Size = new System.Drawing.Size(86, 78);
+            this.turnleft_button.TabIndex = 18;
+            this.turnleft_button.Text = "turnleft_button";
+            this.turnleft_button.UseVisualStyleBackColor = true;
+            this.turnleft_button.Click += new System.EventHandler(this.turnleft_button_Click);
+            // 
+            // turnright_button
+            // 
+            this.turnright_button.Location = new System.Drawing.Point(858, 598);
+            this.turnright_button.Name = "turnright_button";
+            this.turnright_button.Size = new System.Drawing.Size(86, 78);
+            this.turnright_button.TabIndex = 19;
+            this.turnright_button.Text = "turnright_button";
+            this.turnright_button.UseVisualStyleBackColor = true;
+            this.turnright_button.Click += new System.EventHandler(this.turnright_button_Click);
+            // 
+            // catchfish_button
+            // 
+            this.catchfish_button.Location = new System.Drawing.Point(950, 598);
+            this.catchfish_button.Name = "catchfish_button";
+            this.catchfish_button.Size = new System.Drawing.Size(86, 78);
+            this.catchfish_button.TabIndex = 20;
+            this.catchfish_button.Text = "catchfish_button";
+            this.catchfish_button.UseVisualStyleBackColor = true;
+            this.catchfish_button.Click += new System.EventHandler(this.catchfish_button_Click_1);
+            // 
+            // one_button
+            // 
+            this.one_button.Location = new System.Drawing.Point(1042, 598);
+            this.one_button.Name = "one_button";
+            this.one_button.Size = new System.Drawing.Size(86, 78);
+            this.one_button.TabIndex = 32;
+            this.one_button.Text = "one_button";
+            this.one_button.UseVisualStyleBackColor = true;
+            this.one_button.Click += new System.EventHandler(this.one_button_Click);
+            // 
+            // two_button
+            // 
+            this.two_button.Location = new System.Drawing.Point(1134, 598);
+            this.two_button.Name = "two_button";
+            this.two_button.Size = new System.Drawing.Size(86, 78);
+            this.two_button.TabIndex = 33;
+            this.two_button.Text = "two_button";
+            this.two_button.UseVisualStyleBackColor = true;
+            this.two_button.Click += new System.EventHandler(this.two_button_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 12);
+            this.label1.TabIndex = 46;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(372, 146);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 12);
+            this.label5.TabIndex = 50;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.harapekoscore);
+            this.groupBox1.Controls.Add(this.label22);
+            this.groupBox1.Controls.Add(this.harapekocount);
+            this.groupBox1.Controls.Add(this.label20);
+            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Controls.Add(this.totalscorelabel);
+            this.groupBox1.Controls.Add(this.fish500score);
+            this.groupBox1.Controls.Add(this.fish300score);
+            this.groupBox1.Controls.Add(this.fish100score);
+            this.groupBox1.Controls.Add(this.fish500count);
+            this.groupBox1.Controls.Add(this.fish300count);
+            this.groupBox1.Controls.Add(this.fish100count);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.pictureBox28);
+            this.groupBox1.Controls.Add(this.pictureBox27);
+            this.groupBox1.Controls.Add(this.pictureBox26);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Location = new System.Drawing.Point(7, 627);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(604, 172);
+            this.groupBox1.TabIndex = 83;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "スコア";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1431, 762);
+            this.BackColor = System.Drawing.Color.Ivory;
+            this.ClientSize = new System.Drawing.Size(1355, 811);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.undo_button);
-            this.Controls.Add(this.harapekoscore);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.harapekocount);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.orderreset_button);
             this.Controls.Add(this.button9);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.fish500score);
-            this.Controls.Add(this.fish300score);
-            this.Controls.Add(this.fish100score);
-            this.Controls.Add(this.fish500count);
-            this.Controls.Add(this.fish300count);
-            this.Controls.Add(this.fish100count);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.pictureBox28);
-            this.Controls.Add(this.pictureBox27);
-            this.Controls.Add(this.pictureBox26);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -786,12 +798,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.main2);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.movebutton);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).EndInit();
@@ -821,6 +832,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -829,14 +842,10 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button movebutton;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox main2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button gobutton;
-        private System.Windows.Forms.Button turnleft_button;
-        private System.Windows.Forms.Button turnright_button;
-        private System.Windows.Forms.Button catchfish_button;
         private System.Windows.Forms.PictureBox main1;
         private System.Windows.Forms.PictureBox main3;
         private System.Windows.Forms.PictureBox main4;
@@ -848,8 +857,6 @@
         private System.Windows.Forms.PictureBox main10;
         private System.Windows.Forms.PictureBox main11;
         private System.Windows.Forms.PictureBox main12;
-        private System.Windows.Forms.Button one_button;
-        private System.Windows.Forms.Button two_button;
         private System.Windows.Forms.PictureBox one1;
         private System.Windows.Forms.PictureBox one2;
         private System.Windows.Forms.PictureBox one3;
@@ -862,11 +869,9 @@
         private System.Windows.Forms.PictureBox two3;
         private System.Windows.Forms.PictureBox two2;
         private System.Windows.Forms.PictureBox two1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.PictureBox pictureBox26;
@@ -884,7 +889,7 @@
         private System.Windows.Forms.Label fish100score;
         private System.Windows.Forms.Label fish300score;
         private System.Windows.Forms.Label fish500score;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label totalscorelabel;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button orderreset_button;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -893,6 +898,15 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label harapekoscore;
         private System.Windows.Forms.Button undo_button;
+        private System.Windows.Forms.Button gobutton;
+        private System.Windows.Forms.Button turnleft_button;
+        private System.Windows.Forms.Button turnright_button;
+        private System.Windows.Forms.Button catchfish_button;
+        private System.Windows.Forms.Button one_button;
+        private System.Windows.Forms.Button two_button;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

@@ -30,7 +30,7 @@ namespace unicat1
        
 
         Image cat;
-
+        int[,] nowboard;
         int xmax = 10, ymax = 10;
 
         int catposx;
@@ -46,7 +46,7 @@ namespace unicat1
         int totalscore = 0;
 
         //0=上、1=右、2=下、3=左
-        int catdirction = 0;
+        int catdirection = 0;
 
         //int upcount = 0;
         //int rightcount = 0;
@@ -83,7 +83,7 @@ namespace unicat1
         public Form1()
         {
             InitializeComponent();
-
+            
             //音楽流す
             SoundPlayer Hoge = new SoundPlayer(@"../../素材/BGM.wav");
             Hoge.PlayLooping();
@@ -103,8 +103,8 @@ namespace unicat1
             comboBox1.Items.Add("stage8");
             comboBox1.Items.Add("stage9");
             comboBox1.Items.Add("stage10");
-            comboBox1.Items.Add("stage11");
-            comboBox1.Items.Add("stage12");
+            //comboBox1.Items.Add("stage11");
+            //comboBox1.Items.Add("stage12");
 
             comboBox2.Items.Add("メイン");
             comboBox2.Items.Add("one");
@@ -258,7 +258,24 @@ namespace unicat1
                 for (int i = 0; i <= pictureBox1.Width / xmax; i = i + 1)
                 {
                     if (i < pictureBox1.Width / xmax - 5) i = i + 4;
-                    g.DrawImage(road, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+
+                    if (nowboard[catposx, catposy] == 4)
+                    {
+                        g.DrawImage(fish, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+                    }
+                    else if (nowboard[catposx, catposy] == 5)
+                    {
+                        g.DrawImage(fish2, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+                    }
+                    else if (nowboard[catposx, catposy] == 6)
+                    {
+                        g.DrawImage(fish3, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+                    }
+                    else
+                    {
+                        g.DrawImage(road, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+                    }
+
                     g.DrawImage(cat, catposx * pictureBox1.Width / xmax + xmove * i, catposy * pictureBox1.Height / ymax + ymove * i, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
 
                     pictureBox1.Refresh();
@@ -268,8 +285,8 @@ namespace unicat1
                 catposy += ymove;
                 harapekocount.Text = footcount.ToString();
                 harapekoscore.Text = (-footcount * 5).ToString();
-                label19.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
-                label19.Refresh();
+                totalscorelabel.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+                totalscorelabel.Refresh();
                 harapekocount.Refresh();
                 harapekoscore.Refresh();
                 Thread.Sleep(100);
@@ -281,24 +298,24 @@ namespace unicat1
         {
             footcount++;
 
-            if (catdirction == 0)
+            if (catdirection == 0)
             {
                 cat = catu;
                 g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
             }
-            else if (catdirction == 1)
+            else if (catdirection == 1)
             {
                 cat = catr;
                 g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
 
             }
-            else if (catdirction == 2)
+            else if (catdirection == 2)
             {
                 cat = catd;
                 g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
 
             }
-            else if (catdirction == 3)
+            else if (catdirection == 3)
             {
                 cat = catl;
                 g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
@@ -306,8 +323,8 @@ namespace unicat1
             }
             harapekocount.Text = footcount.ToString();
             harapekoscore.Text = (-footcount * 5).ToString();          
-            label19.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
-            label19.Refresh();
+            totalscorelabel.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+            totalscorelabel.Refresh();
             harapekocount.Refresh();
             harapekoscore.Refresh();          
             pictureBox1.Refresh();
@@ -406,7 +423,17 @@ namespace unicat1
         {
             xmax = boardmat.GetLength(0);
             ymax = boardmat.Length / boardmat.GetLength(0);
-            g.FillRectangle(Brushes.White, 0, 0, pictureBox1.Width, pictureBox1.Height);
+            nowboard = new int[xmax, ymax];
+
+            for (int i = 0; i < boardmat.GetLength(0); i++)
+            {
+                for (int j = 0; j < boardmat.GetLength(1); j++)
+                {
+                    nowboard[i,j] = boardmat[i, j];
+                }
+            }
+
+                g.FillRectangle(Brushes.White, 0, 0, pictureBox1.Width, pictureBox1.Height);
             for (int i = 0; i < boardmat.GetLength(0); i++)
             {
                 for (int j = 0; j < (boardmat.Length / boardmat.GetLength(0)); j++)
@@ -417,6 +444,9 @@ namespace unicat1
                     {
                         catposx = i;
                         catposy = j;
+                        //猫の画像，向きの初期化
+                        cat = catu;
+                        catdirection = 0;
                         g.DrawImage(cat, i * pictureBox1.Width / boardmat.GetLength(0), j * pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)), pictureBox1.Width / boardmat.GetLength(0), pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)));
                     }//猫だよ
                     else if (boardmat[i, j] == 4) g.DrawImage(fish, i * pictureBox1.Width / boardmat.GetLength(0), j * pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)), pictureBox1.Width / boardmat.GetLength(0), pictureBox1.Height / (boardmat.Length / boardmat.GetLength(0)));          //魚dayo
@@ -426,6 +456,7 @@ namespace unicat1
                 }
 
             }
+            scorereset();
             pictureBox1.Refresh();
         }
 
@@ -511,18 +542,18 @@ namespace unicat1
         {
             if (list[index] == 0)
             {
-                catmove(catdirction);
+                catmove(catdirection);
             }
 
             else if (list[index] == 1)
             {
-                if (catdirction == 0)
+                if (catdirection == 0)
                 {
-                    catdirction = 3;
+                    catdirection = 3;
                 }
                 else
                 {
-                    catdirction -= 1;
+                    catdirection -= 1;
                 }
 
                 catd_change();
@@ -531,15 +562,15 @@ namespace unicat1
 
             else if (list[index] == 2)
             {
-                if (catdirction == 0)
+                if (catdirection == 0)
                 {
-                    catdirction = 1;
+                    catdirection = 1;
                 }
-                else if (catdirction == 3) catdirction = 0;
+                else if (catdirection == 3) catdirection = 0;
                 else
                 {
 
-                    catdirction += 1;
+                    catdirection += 1;
                 }
 
                 catd_change();
@@ -554,7 +585,7 @@ namespace unicat1
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void movebutton_Click_1(object sender, EventArgs e)
         {
             //footcount += movelist.Count;
                 
@@ -589,24 +620,50 @@ namespace unicat1
 
             if (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5 <= -100)
             {
-                MessageBox.Show("死", "オーイ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("死", "オーイ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }               
+            else totalscorelabel.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+
+
+            int foodcount = 0;
+            for (int i = 0; i < nowboard.GetLength(0); i++)
+            {
+                for (int j = 0; j < nowboard.GetLength(1); j++)
+                {
+                    if (nowboard[i, j] == 4 || nowboard[i, j] == 5 || nowboard[i, j] == 6) foodcount++;
+                }
+
             }
-            else label19.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
-            
 
-
+                if (foodcount==0) 
+                {
+                    MessageBox.Show("オメ", "おおっ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    try
+                    {
+                        makeboard(boardlist[comboBox1.SelectedIndex + 1]);
+                        comboBox1.SelectedIndex++;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("全クリ", "ムム...?", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                   
+                    
+                }
+                else
+                {
+                    MessageBox.Show("残念", "あーあ。。。", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    makeboard(boardlist[comboBox1.SelectedIndex]);
+                    scorereset();
+                }
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+      
 
-        }
+      
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -637,52 +694,27 @@ namespace unicat1
         private void catchfish(int catposx, int catposy)
         {
             //魚の位置確認
-            int[,] fishtemp = boardlist[comboBox1.SelectedIndex];
-            int fishposx=5, fishposy=5;
-            int fish2posx = 5, fish2posy = 5;
-            int fish3posx = 5, fish3posy = 5;
-
-            for (int i = 0; i < xmax; i++)
+            int[,] fishtemp = nowboard;
+         
+            if (nowboard[catposx,catposy]==4)
             {
-                for (int j = 0; j < ymax; j++)
-                {
-                    if (fishtemp[i, j] == 4)
-                    {
-                        fishposx = i;
-                        fishposy = j;
-                        break;
-                    }
-                    if (fishtemp[i, j] == 5)
-                    {
-                        fish2posx = i;
-                        fish2posy = j;
-                        break;
-                    }
-                    if (fishtemp[i, j] == 6)
-                    {
-                        fish3posx = i;
-                        fish3posy = j;
-                        break;
-                    }
-                }
-            }
-          
-            if (catposx == fishposx && catposy == fishposy)
-            {
+                nowboard[catposx, catposy] = 1;
                 Score = 100;
                 fishcount += 1;
                 fish100count.Text = fishcount.ToString();
                 fish100score.Text = (fishcount * Score).ToString();
             }
-            if (catposx == fish2posx && catposy == fish2posy)
+            if (nowboard[catposx,catposy]==5)
             {
+                nowboard[catposx, catposy] = 1;
                 Score = 300;
                 fish2count += 1;
                 fish300count.Text = fish2count.ToString();
                 fish300score.Text = (fish2count * Score).ToString();
             }
-            if (catposx == fish3posx && catposy == fish3posy)
+            if (nowboard[catposx,catposy]==6)
             {
+                nowboard[catposx, catposy] = 1;
                 Score = 500;
                 fish3count += 1;
                 fish500count.Text = fish3count.ToString();
@@ -691,10 +723,33 @@ namespace unicat1
 
         }
 
+
+        //スコア初期化
+        private void scorereset()
+        {
+            fishcount = 0;
+            fish2count=0;
+            fish3count=0;
+            footcount = 0;
+            fish100count.Text = fishcount.ToString();
+            fish100score.Text = (fishcount * Score).ToString();
+            fish300count.Text = fishcount.ToString();
+            fish300score.Text = (fishcount * Score).ToString();
+            fish500count.Text = fishcount.ToString();
+            fish500score.Text = (fishcount * Score).ToString();
+
+            harapekocount.Text = footcount.ToString();
+            harapekoscore.Text = (-footcount * 5).ToString();
+            totalscorelabel.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+            totalscorelabel.Refresh();
+
+        }
+
+
         private void button9_Click(object sender, EventArgs e)
         {
             makeboard(boardlist[comboBox1.SelectedIndex]);
-            catdirction = 0;
+            catdirection = 0;
             catd_change();
         }
 
