@@ -19,6 +19,7 @@ namespace unicat1
         Graphics g;
         Image back = Image.FromFile(@"../../素材/back.png");
         Image road = Image.FromFile(@"../../素材/road.png");
+        //Image catharapeko = Image.FromFile(@"../../素材/catharapeko.png");
         Image fish = Image.FromFile(@"../../素材/fish.png");
         Image fish2 = Image.FromFile(@"../../素材/fish2.png");
         Image fish3 = Image.FromFile(@"../../素材/fish3.png");
@@ -26,6 +27,7 @@ namespace unicat1
         Image catr = Image.FromFile(@"../../素材/catr.png");
         Image catl = Image.FromFile(@"../../素材/catl.png");
         Image catd = Image.FromFile(@"../../素材/catd.png");
+       
 
         Image cat;
 
@@ -33,19 +35,26 @@ namespace unicat1
 
         int catposx;
         int catposy;
+        int footcount;
         int fishcount;
         int fish2count;
         int fish3count;
 
-        int maincount = 0;
-        int onecount = 0;
-        int twocount = 0;
+        int mainpiccount = 0;
+        int onepiccount = 0;
+        int twopiccount = 0;
+        int totalscore = 0;
 
         //0=上、1=右、2=下、3=左
         int catdirction = 0;
 
+        //int upcount = 0;
+        //int rightcount = 0;
+        //int leftcount = 0;
+        //int catchcount = 0;
+
         int[] movecount;
-        List<int> movelist = new List<int>();
+        List<int> movelist = new List<int>() ;
         List<int> onelist = new List<int>();
         List<int> twolist = new List<int>();
 
@@ -66,10 +75,11 @@ namespace unicat1
         System.Drawing.Image loop1 = System.Drawing.Image.FromFile(@"../../素材/1.png");
         System.Drawing.Image loop2 = System.Drawing.Image.FromFile(@"../../素材/2.png");
 
+      
 
         //盤面情報をCSVファイルから読み込み
         string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -81,10 +91,10 @@ namespace unicat1
             movecount = new int[12];
 
             cat = catu;
-
+            
             RandomMT rand = new RandomMT();
-            comboBox1.Items.Add("stage1");
-            comboBox1.Items.Add("stage2");
+            comboBox1.Items.Add("stage1");        //ループ回そう
+            comboBox1.Items.Add("stage2");        //PictureBoxは配列で動的に生成できるそうです
             comboBox1.Items.Add("stage3");
             comboBox1.Items.Add("stage4");
             comboBox1.Items.Add("stage5");
@@ -205,10 +215,12 @@ namespace unicat1
 
             //PictureBox1に表示する
             pictureBox1.Image = canvas;
+            //pictureBox2.Image = catharapeko;
             pictureBox26.Image = fish;
             pictureBox27.Image = fish2;
             pictureBox28.Image = fish3;
             //画像の大きさをPictureBoxに合わせる
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox26.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox27.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox28.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -217,6 +229,8 @@ namespace unicat1
         //ネコがある方向に一つ進む
         public void catmove(int direction)
         {
+
+            footcount++;
             int xmove = 0, ymove = 0;
             if (direction == 0)
             {
@@ -225,12 +239,12 @@ namespace unicat1
             }
             if (direction == 2)
             {
-                if (catposy !=ymax-1 ) ymove = 1;
+                if (catposy != ymax - 1) ymove = 1;
 
             }
             if (direction == 1)
             {
-                if (catposx != xmax-1) xmove = 1;
+                if (catposx != xmax - 1) xmove = 1;
 
             }
             if (direction == 3)
@@ -239,24 +253,34 @@ namespace unicat1
 
             }
 
-            if(boardlist[comboBox1.SelectedIndex][catposx+xmove,catposy+ymove]!=2)
+            if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)
             {
-            for (int i = 0; i <= pictureBox1.Width / xmax; i = i + 1)
-            {
-                if (i < pictureBox1.Width / xmax - 5) i = i + 4;
-                g.DrawImage(road, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-                g.DrawImage(cat, catposx * pictureBox1.Width / xmax + xmove * i, catposy * pictureBox1.Height / ymax + ymove * i, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+                for (int i = 0; i <= pictureBox1.Width / xmax; i = i + 1)
+                {
+                    if (i < pictureBox1.Width / xmax - 5) i = i + 4;
+                    g.DrawImage(road, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+                    g.DrawImage(cat, catposx * pictureBox1.Width / xmax + xmove * i, catposy * pictureBox1.Height / ymax + ymove * i, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
 
-                pictureBox1.Refresh();
-                Thread.Sleep(1);
+                    pictureBox1.Refresh();
+                    Thread.Sleep(1);
+                }
+                catposx += xmove;
+                catposy += ymove;
+                harapekocount.Text = footcount.ToString();
+                harapekoscore.Text = (-footcount * 5).ToString();
+                label19.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+                label19.Refresh();
+                harapekocount.Refresh();
+                harapekoscore.Refresh();
+                Thread.Sleep(100);
+
             }
-            catposx += xmove;
-            catposy += ymove;
-        }
         }
 
         private void catd_change()
         {
+            footcount++;
+
             if (catdirction == 0)
             {
                 cat = catu;
@@ -280,6 +304,12 @@ namespace unicat1
                 g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
 
             }
+            harapekocount.Text = footcount.ToString();
+            harapekoscore.Text = (-footcount * 5).ToString();          
+            label19.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+            label19.Refresh();
+            harapekocount.Refresh();
+            harapekoscore.Refresh();          
             pictureBox1.Refresh();
             Thread.Sleep(200);
         }
@@ -363,6 +393,12 @@ namespace unicat1
         private void button2_Click(object sender, EventArgs e)
         {
             makeboard(boardlist[comboBox1.SelectedIndex]);
+            footcount = 0;
+            fishcount = 0;
+            fish2count = 0;
+            fish3count = 0;
+            harapekocount.Text = harapekoscore.Text = 0.ToString();
+
         }
 
         //二次元配列にしたがって盤面を描画
@@ -400,9 +436,9 @@ namespace unicat1
             {
                 try
                 {
-                    mainpicarray[maincount].Image = orderimage;
+                    mainpicarray[mainpiccount].Image = orderimage;
                     movelist.Add(ordernum);
-                    maincount += 1;
+                    mainpiccount += 1;
                 }
                 catch { }
             }
@@ -410,9 +446,12 @@ namespace unicat1
             {
                 try
                 {
-                    onepicarray[onecount].Image = orderimage;
-                    onelist.Add(ordernum);
-                    onecount += 1;
+                    if (orderimage != loop1 || orderimage != loop2)
+                    {
+                        onepicarray[onepiccount].Image = orderimage;
+                        onelist.Add(ordernum);
+                        onepiccount += 1;
+                    }
                 }
                 catch { }
             }
@@ -420,9 +459,12 @@ namespace unicat1
             {
                 try
                 {
-                    twopicarray[twocount].Image = orderimage;
-                    twolist.Add(ordernum);
-                    twocount += 1;
+                    if (orderimage != loop1 || orderimage != loop2)
+                    {
+                        twopicarray[twopiccount].Image = orderimage;
+                        twolist.Add(ordernum);
+                        twopiccount += 1;
+                    }
                 }
                 catch { }
             }
@@ -453,117 +495,106 @@ namespace unicat1
         {
             if (comboBox2.SelectedIndex == 0)
             {
-                try
-                {
-                    mainpicarray[maincount].Image = loop1;
-                    movelist.AddRange(onelist);
-                    maincount += 1;
-                }
-                catch { }
+                orderclick(4, loop1);
             }
-            else if (comboBox2.SelectedIndex == 1)
-            {
-                try
-                {
-                    onepicarray[onecount].Image = loop1;
-                    onelist.AddRange(onelist);
-                    onecount += 1;
-                }
-                catch { }
-            }
-            else if (comboBox2.SelectedIndex == 2)
-            {
-                try
-                {
-                    twopicarray[twocount].Image = loop1;
-                    twolist.AddRange(onelist);
-                    twocount += 1;
-                }
-                catch { }
-            }
-
-
         }
 
         private void two_button_Click(object sender, EventArgs e)
         {
             if (comboBox2.SelectedIndex == 0)
             {
-                try
-                {
-                    mainpicarray[maincount].Image = loop2;
-                    movelist.AddRange(twolist);
-                    maincount += 1;
-                }
-                catch { }
-            }
-            else if (comboBox2.SelectedIndex == 1)
+                orderclick(5, loop2);
+            }      
+        }
+
+        private void listcheck(List<int> list,int index)
+        {
+            if (list[index] == 0)
             {
-                try
-                {
-                    onepicarray[onecount].Image = loop2;
-                    onelist.AddRange(twolist);
-                    onecount += 1;
-                }
-                catch { }
+                catmove(catdirction);
             }
-            else if (comboBox2.SelectedIndex == 2)
+
+            else if (list[index] == 1)
             {
-                try
+                if (catdirction == 0)
                 {
-                    twopicarray[twocount].Image = loop2;
-                    twolist.AddRange(twolist);
-                    twocount += 1;
+                    catdirction = 3;
                 }
-                catch { }
+                else
+                {
+                    catdirction -= 1;
+                }
+
+                catd_change();
+               
+            }
+
+            else if (list[index] == 2)
+            {
+                if (catdirction == 0)
+                {
+                    catdirction = 1;
+                }
+                else if (catdirction == 3) catdirction = 0;
+                else
+                {
+
+                    catdirction += 1;
+                }
+
+                catd_change();
+              
+            }
+
+
+            else if (list[index] == 3)
+            {
+                catchfish(catposx, catposy);
             }
 
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            //footcount += movelist.Count;
+                
             //movelistに格納された番号にしたがって命令を実行
             for (int i = 0; i < movelist.Count; i++)
             {
-                if (movelist[i] == 0)
+                listcheck(movelist, i);
+
+                if (movelist[i] == 4)
                 {
-                    catmove(catdirction);
+                    for (int j = 0; j < onelist.Count; j++)
+                    {
+                        listcheck(onelist, j);
+                        
+                    }
                 }
 
-                else if (movelist[i] == 1)
+                if (movelist[i] == 5)
                 {
-                    if (catdirction == 0)
+                    for (int j = 0; j < twolist.Count; j++)
                     {
-                        catdirction = 3;
-                    }
-                    else
-                    {
-                        catdirction -= 1;
-                    }
+                        listcheck(twolist, j);
 
-                    catd_change();
-                    //catmove(3);
+                    }
                 }
 
-                else if (movelist[i] == 2)
-                {
-                    if (catdirction == 0)
-                    {
-                        catdirction = 3;
-                    }
-                    else
-                    {
-                        catdirction -= 1;
-                    }
+                //harapekocount.Text = footcount.ToString();
+                //harapekoscore.Text = (-footcount * 5).ToString();
 
-                    catd_change();
-                    //catmove(1);
-                }
-                else if (movelist[i] == 3)
-                {
-                    catchfish(catposx, catposy);
-                }
+
             }
+
+            if (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5 <= -100)
+            {
+                MessageBox.Show("死", "オーイ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else label19.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+            
+
+
 
         }
 
@@ -579,7 +610,27 @@ namespace unicat1
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox2.SelectedIndex == 0)
+            {
+                label4.BackColor = Color.Yellow;
+                label2.BackColor = DefaultBackColor;
+                label3.BackColor = DefaultBackColor;
 
+            }
+            if (comboBox2.SelectedIndex == 1)
+            {
+                label2.BackColor = Color.Yellow;
+                label4.BackColor = DefaultBackColor;
+                label3.BackColor = DefaultBackColor;
+
+            }
+            if (comboBox2.SelectedIndex == 2)
+            {
+                label3.BackColor = Color.Yellow;
+                label2.BackColor = DefaultBackColor;
+                label4.BackColor = DefaultBackColor;
+
+            }
         }
 
         //スコアの実装
@@ -620,26 +671,24 @@ namespace unicat1
             {
                 Score = 100;
                 fishcount += 1;
-                label13.Text = fishcount.ToString();
-                label16.Text = (fishcount*100).ToString();
+                fish100count.Text = fishcount.ToString();
+                fish100score.Text = (fishcount * Score).ToString();
             }
             if (catposx == fish2posx && catposy == fish2posy)
             {
                 Score = 300;
                 fish2count += 1;
-                label14.Text = fish2count.ToString();
-                label17.Text = (fish2count * 100).ToString();
+                fish300count.Text = fish2count.ToString();
+                fish300score.Text = (fish2count * Score).ToString();
             }
             if (catposx == fish3posx && catposy == fish3posy)
             {
                 Score = 500;
                 fish3count += 1;
-                label15.Text = fish3count.ToString();
-                label18.Text = (fish3count * 100).ToString();
+                fish500count.Text = fish3count.ToString();
+                fish500score.Text = (fish3count * Score).ToString();
             }
 
-            label19.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500).ToString();
- 
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -655,9 +704,9 @@ namespace unicat1
             onelist.Clear();
             twolist.Clear();
 
-            maincount = 0;
-            onecount = 0;
-            twocount = 0;
+            mainpiccount = 0;
+            onepiccount = 0;
+            twopiccount = 0;
 
             for (int i = 0; i < 12; i++)
             {
@@ -670,6 +719,54 @@ namespace unicat1
                 twopicarray[i].Image = commandpanel2;
             }
 
+        }
+
+
+        //命令を一つ消す
+        private void undo_button_Click(object sender, EventArgs e)
+        {
+            if (comboBox2.SelectedIndex == 0)
+            {
+                if (mainpiccount < 0) mainpiccount = 0;
+                else if (mainpiccount > 0)
+                {
+                    mainpicarray[mainpiccount - 1].Image = commandpanel;
+                    mainpiccount--;
+                }
+                if (movelist.Count > 0)
+                {                                                                               //スレッド分けたいです
+                    movelist.Remove(movelist[movelist.Count - 1]);
+                }
+
+            }
+
+            if (comboBox2.SelectedIndex == 1)
+            {
+                if (onepiccount < 0) onepiccount = 0;
+                else if (onepiccount > 0)
+                {
+                    onepicarray[onepiccount - 1].Image = commandpanel2;
+                    onepiccount--;
+                }
+                if (onelist.Count > 0)
+                {
+                    onelist.Remove(onelist[onelist.Count - 1]);
+                }
+            }
+
+            if (comboBox2.SelectedIndex == 2)
+            {
+                if (twopiccount < 0) twopiccount = 0;
+                else if (twopiccount > 0)
+                {
+                    twopicarray[twopiccount - 1].Image = commandpanel2;
+                    twopiccount--;
+                }
+                if (twolist.Count > 0)
+                {
+                    twolist.Remove(twolist[twolist.Count - 1]);
+                }
+            }
         }
 
  

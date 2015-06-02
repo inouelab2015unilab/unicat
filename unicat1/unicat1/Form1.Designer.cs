@@ -78,15 +78,21 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.fish100count = new System.Windows.Forms.Label();
+            this.fish300count = new System.Windows.Forms.Label();
+            this.fish500count = new System.Windows.Forms.Label();
+            this.fish100score = new System.Windows.Forms.Label();
+            this.fish300score = new System.Windows.Forms.Label();
+            this.fish500score = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.orderreset_button = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.harapekocount = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.harapekoscore = new System.Windows.Forms.Label();
+            this.undo_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).BeginInit();
@@ -115,6 +121,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -127,7 +134,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1003, 352);
+            this.button1.Location = new System.Drawing.Point(670, 551);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(169, 62);
@@ -147,7 +154,7 @@
             // 
             // main2
             // 
-            this.main2.Location = new System.Drawing.Point(774, 74);
+            this.main2.Location = new System.Drawing.Point(774, 58);
             this.main2.Margin = new System.Windows.Forms.Padding(2);
             this.main2.Name = "main2";
             this.main2.Size = new System.Drawing.Size(100, 100);
@@ -207,7 +214,7 @@
             // 
             // main1
             // 
-            this.main1.Location = new System.Drawing.Point(670, 74);
+            this.main1.Location = new System.Drawing.Point(670, 58);
             this.main1.Margin = new System.Windows.Forms.Padding(2);
             this.main1.Name = "main1";
             this.main1.Size = new System.Drawing.Size(100, 100);
@@ -216,7 +223,7 @@
             // 
             // main3
             // 
-            this.main3.Location = new System.Drawing.Point(878, 74);
+            this.main3.Location = new System.Drawing.Point(878, 58);
             this.main3.Margin = new System.Windows.Forms.Padding(2);
             this.main3.Name = "main3";
             this.main3.Size = new System.Drawing.Size(100, 100);
@@ -225,7 +232,7 @@
             // 
             // main4
             // 
-            this.main4.Location = new System.Drawing.Point(670, 178);
+            this.main4.Location = new System.Drawing.Point(982, 58);
             this.main4.Margin = new System.Windows.Forms.Padding(2);
             this.main4.Name = "main4";
             this.main4.Size = new System.Drawing.Size(100, 100);
@@ -234,7 +241,7 @@
             // 
             // main5
             // 
-            this.main5.Location = new System.Drawing.Point(774, 178);
+            this.main5.Location = new System.Drawing.Point(1086, 58);
             this.main5.Margin = new System.Windows.Forms.Padding(2);
             this.main5.Name = "main5";
             this.main5.Size = new System.Drawing.Size(100, 100);
@@ -243,7 +250,7 @@
             // 
             // main6
             // 
-            this.main6.Location = new System.Drawing.Point(878, 178);
+            this.main6.Location = new System.Drawing.Point(1190, 58);
             this.main6.Margin = new System.Windows.Forms.Padding(2);
             this.main6.Name = "main6";
             this.main6.Size = new System.Drawing.Size(100, 100);
@@ -252,7 +259,7 @@
             // 
             // main7
             // 
-            this.main7.Location = new System.Drawing.Point(670, 282);
+            this.main7.Location = new System.Drawing.Point(670, 162);
             this.main7.Margin = new System.Windows.Forms.Padding(2);
             this.main7.Name = "main7";
             this.main7.Size = new System.Drawing.Size(100, 100);
@@ -261,7 +268,7 @@
             // 
             // main8
             // 
-            this.main8.Location = new System.Drawing.Point(774, 282);
+            this.main8.Location = new System.Drawing.Point(774, 162);
             this.main8.Margin = new System.Windows.Forms.Padding(2);
             this.main8.Name = "main8";
             this.main8.Size = new System.Drawing.Size(100, 100);
@@ -270,7 +277,7 @@
             // 
             // main9
             // 
-            this.main9.Location = new System.Drawing.Point(878, 282);
+            this.main9.Location = new System.Drawing.Point(878, 162);
             this.main9.Margin = new System.Windows.Forms.Padding(2);
             this.main9.Name = "main9";
             this.main9.Size = new System.Drawing.Size(100, 100);
@@ -279,16 +286,16 @@
             // 
             // main10
             // 
-            this.main10.Location = new System.Drawing.Point(670, 383);
+            this.main10.Location = new System.Drawing.Point(982, 162);
             this.main10.Margin = new System.Windows.Forms.Padding(2);
             this.main10.Name = "main10";
-            this.main10.Size = new System.Drawing.Size(100, 103);
+            this.main10.Size = new System.Drawing.Size(100, 100);
             this.main10.TabIndex = 29;
             this.main10.TabStop = false;
             // 
             // main11
             // 
-            this.main11.Location = new System.Drawing.Point(774, 386);
+            this.main11.Location = new System.Drawing.Point(1086, 162);
             this.main11.Margin = new System.Windows.Forms.Padding(2);
             this.main11.Name = "main11";
             this.main11.Size = new System.Drawing.Size(100, 100);
@@ -297,7 +304,7 @@
             // 
             // main12
             // 
-            this.main12.Location = new System.Drawing.Point(878, 386);
+            this.main12.Location = new System.Drawing.Point(1190, 162);
             this.main12.Margin = new System.Windows.Forms.Padding(2);
             this.main12.Name = "main12";
             this.main12.Size = new System.Drawing.Size(100, 100);
@@ -326,7 +333,7 @@
             // 
             // one1
             // 
-            this.one1.Location = new System.Drawing.Point(670, 540);
+            this.one1.Location = new System.Drawing.Point(670, 276);
             this.one1.Margin = new System.Windows.Forms.Padding(2);
             this.one1.Name = "one1";
             this.one1.Size = new System.Drawing.Size(100, 100);
@@ -335,7 +342,7 @@
             // 
             // one2
             // 
-            this.one2.Location = new System.Drawing.Point(774, 540);
+            this.one2.Location = new System.Drawing.Point(774, 276);
             this.one2.Margin = new System.Windows.Forms.Padding(2);
             this.one2.Name = "one2";
             this.one2.Size = new System.Drawing.Size(100, 100);
@@ -344,7 +351,7 @@
             // 
             // one3
             // 
-            this.one3.Location = new System.Drawing.Point(878, 540);
+            this.one3.Location = new System.Drawing.Point(878, 276);
             this.one3.Margin = new System.Windows.Forms.Padding(2);
             this.one3.Name = "one3";
             this.one3.Size = new System.Drawing.Size(100, 100);
@@ -353,7 +360,7 @@
             // 
             // one4
             // 
-            this.one4.Location = new System.Drawing.Point(982, 540);
+            this.one4.Location = new System.Drawing.Point(982, 276);
             this.one4.Margin = new System.Windows.Forms.Padding(2);
             this.one4.Name = "one4";
             this.one4.Size = new System.Drawing.Size(100, 100);
@@ -362,7 +369,7 @@
             // 
             // one5
             // 
-            this.one5.Location = new System.Drawing.Point(1086, 540);
+            this.one5.Location = new System.Drawing.Point(1086, 276);
             this.one5.Margin = new System.Windows.Forms.Padding(2);
             this.one5.Name = "one5";
             this.one5.Size = new System.Drawing.Size(100, 100);
@@ -371,7 +378,7 @@
             // 
             // one6
             // 
-            this.one6.Location = new System.Drawing.Point(1190, 540);
+            this.one6.Location = new System.Drawing.Point(1190, 276);
             this.one6.Margin = new System.Windows.Forms.Padding(2);
             this.one6.Name = "one6";
             this.one6.Size = new System.Drawing.Size(100, 100);
@@ -380,7 +387,7 @@
             // 
             // two6
             // 
-            this.two6.Location = new System.Drawing.Point(1190, 651);
+            this.two6.Location = new System.Drawing.Point(1190, 388);
             this.two6.Margin = new System.Windows.Forms.Padding(2);
             this.two6.Name = "two6";
             this.two6.Size = new System.Drawing.Size(100, 100);
@@ -389,7 +396,7 @@
             // 
             // two5
             // 
-            this.two5.Location = new System.Drawing.Point(1086, 651);
+            this.two5.Location = new System.Drawing.Point(1086, 388);
             this.two5.Margin = new System.Windows.Forms.Padding(2);
             this.two5.Name = "two5";
             this.two5.Size = new System.Drawing.Size(100, 100);
@@ -398,7 +405,7 @@
             // 
             // two4
             // 
-            this.two4.Location = new System.Drawing.Point(982, 651);
+            this.two4.Location = new System.Drawing.Point(982, 388);
             this.two4.Margin = new System.Windows.Forms.Padding(2);
             this.two4.Name = "two4";
             this.two4.Size = new System.Drawing.Size(100, 100);
@@ -407,7 +414,7 @@
             // 
             // two3
             // 
-            this.two3.Location = new System.Drawing.Point(878, 651);
+            this.two3.Location = new System.Drawing.Point(878, 388);
             this.two3.Margin = new System.Windows.Forms.Padding(2);
             this.two3.Name = "two3";
             this.two3.Size = new System.Drawing.Size(100, 100);
@@ -416,7 +423,7 @@
             // 
             // two2
             // 
-            this.two2.Location = new System.Drawing.Point(774, 651);
+            this.two2.Location = new System.Drawing.Point(774, 388);
             this.two2.Margin = new System.Windows.Forms.Padding(2);
             this.two2.Name = "two2";
             this.two2.Size = new System.Drawing.Size(100, 100);
@@ -425,7 +432,7 @@
             // 
             // two1
             // 
-            this.two1.Location = new System.Drawing.Point(670, 651);
+            this.two1.Location = new System.Drawing.Point(670, 388);
             this.two1.Margin = new System.Windows.Forms.Padding(2);
             this.two1.Name = "two1";
             this.two1.Size = new System.Drawing.Size(100, 100);
@@ -443,7 +450,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(630, 593);
+            this.label2.Location = new System.Drawing.Point(630, 329);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(23, 12);
             this.label2.TabIndex = 47;
@@ -453,7 +460,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(630, 693);
+            this.label3.Location = new System.Drawing.Point(630, 430);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(23, 12);
             this.label3.TabIndex = 48;
@@ -462,7 +469,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(638, 74);
+            this.label4.Location = new System.Drawing.Point(629, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 12);
             this.label4.TabIndex = 49;
@@ -471,7 +478,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1199, 60);
+            this.label5.Location = new System.Drawing.Point(372, 146);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 12);
             this.label5.TabIndex = 50;
@@ -479,7 +486,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1227, 318);
+            this.label6.Location = new System.Drawing.Point(1194, 744);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 12);
             this.label6.TabIndex = 51;
@@ -497,7 +504,7 @@
             // 
             // pictureBox26
             // 
-            this.pictureBox26.Location = new System.Drawing.Point(1086, 121);
+            this.pictureBox26.Location = new System.Drawing.Point(1053, 555);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(57, 53);
             this.pictureBox26.TabIndex = 53;
@@ -505,7 +512,7 @@
             // 
             // pictureBox27
             // 
-            this.pictureBox27.Location = new System.Drawing.Point(1086, 180);
+            this.pictureBox27.Location = new System.Drawing.Point(1053, 614);
             this.pictureBox27.Name = "pictureBox27";
             this.pictureBox27.Size = new System.Drawing.Size(57, 53);
             this.pictureBox27.TabIndex = 54;
@@ -513,7 +520,7 @@
             // 
             // pictureBox28
             // 
-            this.pictureBox28.Location = new System.Drawing.Point(1086, 239);
+            this.pictureBox28.Location = new System.Drawing.Point(1053, 673);
             this.pictureBox28.Name = "pictureBox28";
             this.pictureBox28.Size = new System.Drawing.Size(57, 53);
             this.pictureBox28.TabIndex = 55;
@@ -522,7 +529,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1155, 140);
+            this.label7.Location = new System.Drawing.Point(1122, 574);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(17, 12);
             this.label7.TabIndex = 62;
@@ -531,7 +538,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1157, 206);
+            this.label8.Location = new System.Drawing.Point(1124, 640);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(17, 12);
             this.label8.TabIndex = 63;
@@ -540,7 +547,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1157, 266);
+            this.label9.Location = new System.Drawing.Point(1124, 700);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(17, 12);
             this.label9.TabIndex = 64;
@@ -549,7 +556,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1273, 140);
+            this.label10.Location = new System.Drawing.Point(1240, 574);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(17, 12);
             this.label10.TabIndex = 65;
@@ -558,7 +565,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1273, 206);
+            this.label11.Location = new System.Drawing.Point(1240, 640);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(17, 12);
             this.label11.TabIndex = 66;
@@ -567,70 +574,70 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1273, 266);
+            this.label12.Location = new System.Drawing.Point(1240, 700);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(17, 12);
             this.label12.TabIndex = 67;
             this.label12.Text = "＝";
             // 
-            // label13
+            // fish100count
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(1199, 140);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(11, 12);
-            this.label13.TabIndex = 68;
-            this.label13.Text = "0";
+            this.fish100count.AutoSize = true;
+            this.fish100count.Location = new System.Drawing.Point(1166, 574);
+            this.fish100count.Name = "fish100count";
+            this.fish100count.Size = new System.Drawing.Size(11, 12);
+            this.fish100count.TabIndex = 68;
+            this.fish100count.Text = "0";
             // 
-            // label14
+            // fish300count
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1199, 206);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(11, 12);
-            this.label14.TabIndex = 69;
-            this.label14.Text = "0";
+            this.fish300count.AutoSize = true;
+            this.fish300count.Location = new System.Drawing.Point(1166, 640);
+            this.fish300count.Name = "fish300count";
+            this.fish300count.Size = new System.Drawing.Size(11, 12);
+            this.fish300count.TabIndex = 69;
+            this.fish300count.Text = "0";
             // 
-            // label15
+            // fish500count
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(1199, 266);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(11, 12);
-            this.label15.TabIndex = 70;
-            this.label15.Text = "0";
+            this.fish500count.AutoSize = true;
+            this.fish500count.Location = new System.Drawing.Point(1166, 700);
+            this.fish500count.Name = "fish500count";
+            this.fish500count.Size = new System.Drawing.Size(11, 12);
+            this.fish500count.TabIndex = 70;
+            this.fish500count.Text = "0";
             // 
-            // label16
+            // fish100score
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(1339, 140);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(11, 12);
-            this.label16.TabIndex = 71;
-            this.label16.Text = "0";
+            this.fish100score.AutoSize = true;
+            this.fish100score.Location = new System.Drawing.Point(1306, 574);
+            this.fish100score.Name = "fish100score";
+            this.fish100score.Size = new System.Drawing.Size(11, 12);
+            this.fish100score.TabIndex = 71;
+            this.fish100score.Text = "0";
             // 
-            // label17
+            // fish300score
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1339, 206);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(11, 12);
-            this.label17.TabIndex = 72;
-            this.label17.Text = "0";
+            this.fish300score.AutoSize = true;
+            this.fish300score.Location = new System.Drawing.Point(1306, 640);
+            this.fish300score.Name = "fish300score";
+            this.fish300score.Size = new System.Drawing.Size(11, 12);
+            this.fish300score.TabIndex = 72;
+            this.fish300score.Text = "0";
             // 
-            // label18
+            // fish500score
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(1339, 266);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(11, 12);
-            this.label18.TabIndex = 73;
-            this.label18.Text = "0";
+            this.fish500score.AutoSize = true;
+            this.fish500score.Location = new System.Drawing.Point(1306, 700);
+            this.fish500score.Name = "fish500score";
+            this.fish500score.Size = new System.Drawing.Size(11, 12);
+            this.fish500score.TabIndex = 73;
+            this.fish500score.Text = "0";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(1339, 318);
+            this.label19.Location = new System.Drawing.Point(1306, 744);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(11, 12);
             this.label19.TabIndex = 74;
@@ -638,7 +645,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(1005, 423);
+            this.button9.Location = new System.Drawing.Point(672, 622);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(166, 62);
@@ -649,7 +656,7 @@
             // 
             // orderreset_button
             // 
-            this.orderreset_button.Location = new System.Drawing.Point(1201, 423);
+            this.orderreset_button.Location = new System.Drawing.Point(868, 622);
             this.orderreset_button.Name = "orderreset_button";
             this.orderreset_button.Size = new System.Drawing.Size(149, 63);
             this.orderreset_button.TabIndex = 76;
@@ -657,20 +664,80 @@
             this.orderreset_button.UseVisualStyleBackColor = true;
             this.orderreset_button.Click += new System.EventHandler(this.orderreset_button_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(1053, 494);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(57, 53);
+            this.pictureBox2.TabIndex = 77;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(1121, 516);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(17, 12);
+            this.label20.TabIndex = 78;
+            this.label20.Text = "×";
+            // 
+            // harapekocount
+            // 
+            this.harapekocount.AutoSize = true;
+            this.harapekocount.Location = new System.Drawing.Point(1165, 516);
+            this.harapekocount.Name = "harapekocount";
+            this.harapekocount.Size = new System.Drawing.Size(11, 12);
+            this.harapekocount.TabIndex = 79;
+            this.harapekocount.Text = "0";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(1240, 516);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(17, 12);
+            this.label22.TabIndex = 80;
+            this.label22.Text = "＝";
+            // 
+            // harapekoscore
+            // 
+            this.harapekoscore.AutoSize = true;
+            this.harapekoscore.Location = new System.Drawing.Point(1306, 516);
+            this.harapekoscore.Name = "harapekoscore";
+            this.harapekoscore.Size = new System.Drawing.Size(11, 12);
+            this.harapekoscore.TabIndex = 81;
+            this.harapekoscore.Text = "0";
+            // 
+            // undo_button
+            // 
+            this.undo_button.Location = new System.Drawing.Point(867, 551);
+            this.undo_button.Name = "undo_button";
+            this.undo_button.Size = new System.Drawing.Size(150, 59);
+            this.undo_button.TabIndex = 82;
+            this.undo_button.Text = "一つ消す";
+            this.undo_button.UseVisualStyleBackColor = true;
+            this.undo_button.Click += new System.EventHandler(this.undo_button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1437, 762);
+            this.ClientSize = new System.Drawing.Size(1431, 762);
+            this.Controls.Add(this.undo_button);
+            this.Controls.Add(this.harapekoscore);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.harapekocount);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.orderreset_button);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.fish500score);
+            this.Controls.Add(this.fish300score);
+            this.Controls.Add(this.fish100score);
+            this.Controls.Add(this.fish500count);
+            this.Controls.Add(this.fish300count);
+            this.Controls.Add(this.fish100count);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -753,6 +820,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -810,15 +878,21 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label fish100count;
+        private System.Windows.Forms.Label fish300count;
+        private System.Windows.Forms.Label fish500count;
+        private System.Windows.Forms.Label fish100score;
+        private System.Windows.Forms.Label fish300score;
+        private System.Windows.Forms.Label fish500score;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button orderreset_button;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label harapekocount;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label harapekoscore;
+        private System.Windows.Forms.Button undo_button;
     }
 }
 

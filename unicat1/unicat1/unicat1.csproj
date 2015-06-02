@@ -67,8 +67,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="boardmatrix\stage1.csv" />
+    <None Include="boardmatrix\stage10.csv" />
     <None Include="boardmatrix\stage2.csv" />
     <None Include="boardmatrix\stage3.csv" />
+    <None Include="boardmatrix\stage4.csv" />
+    <None Include="boardmatrix\stage5.csv" />
+    <None Include="boardmatrix\stage6.csv" />
+    <None Include="boardmatrix\stage7.csv" />
+    <None Include="boardmatrix\stage8.csv" />
+    <None Include="boardmatrix\stage9.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
