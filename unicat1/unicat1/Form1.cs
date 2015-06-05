@@ -102,7 +102,7 @@ namespace unicat1
             comboBox1.Items.Add("stage7");
             comboBox1.Items.Add("stage8");
             comboBox1.Items.Add("stage9");
-            comboBox1.Items.Add("stage10");
+            //comboBox1.Items.Add("stage10");
             //comboBox1.Items.Add("stage11");
             //comboBox1.Items.Add("stage12");
 
@@ -620,7 +620,7 @@ namespace unicat1
 
             if (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5 <= -100)
             {
-                MessageBox.Show("死", "オーイ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("死亡", "オーイ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }               
             else totalscorelabel.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
 
