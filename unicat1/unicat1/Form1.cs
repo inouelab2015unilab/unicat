@@ -285,7 +285,7 @@ namespace unicat1
                 catposy += ymove;
                 harapekocount.Text = footcount.ToString();
                 harapekoscore.Text = (-footcount * 5).ToString();
-                totalscorelabel.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+                totalscorelabel.Text = (100+fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
                 totalscorelabel.Refresh();
                 harapekocount.Refresh();
                 harapekoscore.Refresh();
@@ -323,7 +323,7 @@ namespace unicat1
             }
             harapekocount.Text = footcount.ToString();
             harapekoscore.Text = (-footcount * 5).ToString();          
-            totalscorelabel.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+            totalscorelabel.Text = (100+fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
             totalscorelabel.Refresh();
             harapekocount.Refresh();
             harapekoscore.Refresh();          
@@ -588,7 +588,7 @@ namespace unicat1
         private void movebutton_Click_1(object sender, EventArgs e)
         {
             //footcount += movelist.Count;
-                
+
             //movelistに格納された番号にしたがって命令を実行
             for (int i = 0; i < movelist.Count; i++)
             {
@@ -599,7 +599,7 @@ namespace unicat1
                     for (int j = 0; j < onelist.Count; j++)
                     {
                         listcheck(onelist, j);
-                        
+
                     }
                 }
 
@@ -618,11 +618,14 @@ namespace unicat1
 
             }
 
-            if (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5 <= -100)
+            int totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+
+
+            if (totalscore <= -100)
             {
                 MessageBox.Show("死亡", "オーイ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }               
-            else totalscorelabel.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+            }
+            else totalscorelabel.Text = (100 + totalscore).ToString();
 
 
             int foodcount = 0;
@@ -635,27 +638,32 @@ namespace unicat1
 
             }
 
-                if (foodcount==0) 
+            //totalscorelabel.Text = (100 +totalscore).ToString();
+            //totalscorelabel.Refresh();
+
+            if (foodcount == 0)
+            {
+                totalscorelabel.Text = (100 +totalscore).ToString();
+                totalscorelabel.Refresh();
+                MessageBox.Show("オメ", "おおっ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
                 {
-                    MessageBox.Show("オメ", "おおっ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    try
-                    {
-                        makeboard(boardlist[comboBox1.SelectedIndex + 1]);
-                        comboBox1.SelectedIndex++;
-                    }
-                    catch
-                    {
-                        MessageBox.Show("全クリ", "ムム...?", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                   
-                    
+                    makeboard(boardlist[comboBox1.SelectedIndex + 1]);
+                    comboBox1.SelectedIndex++;
                 }
-                else
+                catch
                 {
-                    MessageBox.Show("残念", "あーあ。。。", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    makeboard(boardlist[comboBox1.SelectedIndex]);
-                    scorereset();
+                    MessageBox.Show("全クリ", "ムム...?", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
+
+            }
+            else
+            {
+                MessageBox.Show("残念", "あーあ。。。", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                makeboard(boardlist[comboBox1.SelectedIndex]);
+                scorereset();
+            }
 
         }
 
@@ -740,7 +748,7 @@ namespace unicat1
 
             harapekocount.Text = footcount.ToString();
             harapekoscore.Text = (-footcount * 5).ToString();
-            totalscorelabel.Text = (fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+            totalscorelabel.Text = (100+fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
             totalscorelabel.Refresh();
 
         }
@@ -822,6 +830,21 @@ namespace unicat1
                     twolist.Remove(twolist[twolist.Count - 1]);
                 }
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            comboBox2.SelectedIndex = 0;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            comboBox2.SelectedIndex = 1;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            comboBox2.SelectedIndex = 2;
         }
 
  

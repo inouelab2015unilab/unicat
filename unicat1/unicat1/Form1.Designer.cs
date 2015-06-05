@@ -129,9 +129,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(16, 16);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 750);
+            this.pictureBox1.Size = new System.Drawing.Size(750, 750);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -153,7 +153,7 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(899, 649);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 23);
             this.comboBox1.TabIndex = 9;
@@ -390,32 +390,38 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(840, 411);
+            this.label2.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(796, 347);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 15);
+            this.label2.Size = new System.Drawing.Size(63, 43);
             this.label2.TabIndex = 47;
             this.label2.Text = "one";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(840, 538);
+            this.label3.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.Location = new System.Drawing.Point(796, 488);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 15);
+            this.label3.Size = new System.Drawing.Size(64, 43);
             this.label3.TabIndex = 48;
             this.label3.Text = "two";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(839, 76);
+            this.label4.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label4.Location = new System.Drawing.Point(795, 75);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 15);
+            this.label4.Size = new System.Drawing.Size(94, 43);
             this.label4.TabIndex = 49;
             this.label4.Text = "メイン";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label6
             // 
@@ -424,16 +430,16 @@
             this.label6.Location = new System.Drawing.Point(572, 174);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(162, 36);
+            this.label6.Size = new System.Drawing.Size(99, 36);
             this.label6.TabIndex = 51;
-            this.label6.Text = "トータルスコア";
+            this.label6.Text = "スタミナ";
             // 
             // comboBox2
             // 
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(899, 695);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(160, 23);
             this.comboBox2.TabIndex = 52;
@@ -442,7 +448,7 @@
             // pictureBox26
             // 
             this.pictureBox26.Location = new System.Drawing.Point(7, 95);
-            this.pictureBox26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox26.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(76, 66);
             this.pictureBox26.TabIndex = 53;
@@ -451,7 +457,7 @@
             // pictureBox27
             // 
             this.pictureBox27.Location = new System.Drawing.Point(423, 19);
-            this.pictureBox27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox27.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox27.Name = "pictureBox27";
             this.pictureBox27.Size = new System.Drawing.Size(76, 66);
             this.pictureBox27.TabIndex = 54;
@@ -460,7 +466,7 @@
             // pictureBox28
             // 
             this.pictureBox28.Location = new System.Drawing.Point(423, 92);
-            this.pictureBox28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox28.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox28.Name = "pictureBox28";
             this.pictureBox28.Size = new System.Drawing.Size(76, 66);
             this.pictureBox28.TabIndex = 55;
@@ -535,74 +541,74 @@
             // fish100count
             // 
             this.fish100count.AutoSize = true;
-            this.fish100count.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.fish100count.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fish100count.Location = new System.Drawing.Point(157, 119);
             this.fish100count.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fish100count.Name = "fish100count";
-            this.fish100count.Size = new System.Drawing.Size(21, 27);
+            this.fish100count.Size = new System.Drawing.Size(27, 36);
             this.fish100count.TabIndex = 68;
             this.fish100count.Text = "0";
             // 
             // fish300count
             // 
             this.fish300count.AutoSize = true;
-            this.fish300count.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.fish300count.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fish300count.Location = new System.Drawing.Point(573, 51);
             this.fish300count.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fish300count.Name = "fish300count";
-            this.fish300count.Size = new System.Drawing.Size(21, 27);
+            this.fish300count.Size = new System.Drawing.Size(27, 36);
             this.fish300count.TabIndex = 69;
             this.fish300count.Text = "0";
             // 
             // fish500count
             // 
             this.fish500count.AutoSize = true;
-            this.fish500count.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.fish500count.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fish500count.Location = new System.Drawing.Point(573, 126);
             this.fish500count.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fish500count.Name = "fish500count";
-            this.fish500count.Size = new System.Drawing.Size(21, 27);
+            this.fish500count.Size = new System.Drawing.Size(27, 36);
             this.fish500count.TabIndex = 70;
             this.fish500count.Text = "0";
             // 
             // fish100score
             // 
             this.fish100score.AutoSize = true;
-            this.fish100score.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.fish100score.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fish100score.Location = new System.Drawing.Point(344, 119);
             this.fish100score.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fish100score.Name = "fish100score";
-            this.fish100score.Size = new System.Drawing.Size(21, 27);
+            this.fish100score.Size = new System.Drawing.Size(27, 36);
             this.fish100score.TabIndex = 71;
             this.fish100score.Text = "0";
             // 
             // fish300score
             // 
             this.fish300score.AutoSize = true;
-            this.fish300score.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.fish300score.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fish300score.Location = new System.Drawing.Point(760, 51);
             this.fish300score.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fish300score.Name = "fish300score";
-            this.fish300score.Size = new System.Drawing.Size(21, 27);
+            this.fish300score.Size = new System.Drawing.Size(27, 36);
             this.fish300score.TabIndex = 72;
             this.fish300score.Text = "0";
             // 
             // fish500score
             // 
             this.fish500score.AutoSize = true;
-            this.fish500score.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.fish500score.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fish500score.Location = new System.Drawing.Point(760, 126);
             this.fish500score.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.fish500score.Name = "fish500score";
-            this.fish500score.Size = new System.Drawing.Size(21, 27);
+            this.fish500score.Size = new System.Drawing.Size(27, 36);
             this.fish500score.TabIndex = 73;
             this.fish500score.Text = "0";
             // 
             // totalscorelabel
             // 
             this.totalscorelabel.AutoSize = true;
-            this.totalscorelabel.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.totalscorelabel.Location = new System.Drawing.Point(754, 174);
+            this.totalscorelabel.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalscorelabel.Location = new System.Drawing.Point(730, 174);
             this.totalscorelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.totalscorelabel.Name = "totalscorelabel";
             this.totalscorelabel.Size = new System.Drawing.Size(27, 36);
@@ -627,7 +633,7 @@
             this.orderreset_button.BackColor = System.Drawing.Color.White;
             this.orderreset_button.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.orderreset_button.Location = new System.Drawing.Point(1547, 880);
-            this.orderreset_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.orderreset_button.Margin = new System.Windows.Forms.Padding(4);
             this.orderreset_button.Name = "orderreset_button";
             this.orderreset_button.Size = new System.Drawing.Size(173, 62);
             this.orderreset_button.TabIndex = 76;
@@ -638,7 +644,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(7, 19);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(76, 66);
             this.pictureBox2.TabIndex = 77;
@@ -648,21 +654,21 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label20.Location = new System.Drawing.Point(97, 46);
+            this.label20.Location = new System.Drawing.Point(20, 46);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(27, 27);
+            this.label20.Size = new System.Drawing.Size(106, 27);
             this.label20.TabIndex = 78;
-            this.label20.Text = "×";
+            this.label20.Text = "歩数　　　 ×";
             // 
             // harapekocount
             // 
             this.harapekocount.AutoSize = true;
-            this.harapekocount.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.harapekocount.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.harapekocount.Location = new System.Drawing.Point(156, 46);
             this.harapekocount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.harapekocount.Name = "harapekocount";
-            this.harapekocount.Size = new System.Drawing.Size(21, 27);
+            this.harapekocount.Size = new System.Drawing.Size(27, 36);
             this.harapekocount.TabIndex = 79;
             this.harapekocount.Text = "0";
             // 
@@ -680,11 +686,11 @@
             // harapekoscore
             // 
             this.harapekoscore.AutoSize = true;
-            this.harapekoscore.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.harapekoscore.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.harapekoscore.Location = new System.Drawing.Point(344, 46);
             this.harapekoscore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.harapekoscore.Name = "harapekoscore";
-            this.harapekoscore.Size = new System.Drawing.Size(21, 27);
+            this.harapekoscore.Size = new System.Drawing.Size(27, 36);
             this.harapekoscore.TabIndex = 81;
             this.harapekoscore.Text = "0";
             // 
@@ -693,7 +699,7 @@
             this.undo_button.BackColor = System.Drawing.Color.White;
             this.undo_button.Font = new System.Drawing.Font("小塚ゴシック Pro-VI M", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.undo_button.Location = new System.Drawing.Point(1333, 882);
-            this.undo_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.undo_button.Margin = new System.Windows.Forms.Padding(4);
             this.undo_button.Name = "undo_button";
             this.undo_button.Size = new System.Drawing.Size(173, 62);
             this.undo_button.TabIndex = 82;
@@ -704,7 +710,7 @@
             // gobutton
             // 
             this.gobutton.Location = new System.Drawing.Point(899, 748);
-            this.gobutton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gobutton.Margin = new System.Windows.Forms.Padding(4);
             this.gobutton.Name = "gobutton";
             this.gobutton.Size = new System.Drawing.Size(115, 98);
             this.gobutton.TabIndex = 17;
@@ -715,7 +721,7 @@
             // turnleft_button
             // 
             this.turnleft_button.Location = new System.Drawing.Point(1021, 748);
-            this.turnleft_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.turnleft_button.Margin = new System.Windows.Forms.Padding(4);
             this.turnleft_button.Name = "turnleft_button";
             this.turnleft_button.Size = new System.Drawing.Size(115, 98);
             this.turnleft_button.TabIndex = 18;
@@ -726,7 +732,7 @@
             // turnright_button
             // 
             this.turnright_button.Location = new System.Drawing.Point(1144, 748);
-            this.turnright_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.turnright_button.Margin = new System.Windows.Forms.Padding(4);
             this.turnright_button.Name = "turnright_button";
             this.turnright_button.Size = new System.Drawing.Size(115, 98);
             this.turnright_button.TabIndex = 19;
@@ -737,7 +743,7 @@
             // catchfish_button
             // 
             this.catchfish_button.Location = new System.Drawing.Point(1267, 748);
-            this.catchfish_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.catchfish_button.Margin = new System.Windows.Forms.Padding(4);
             this.catchfish_button.Name = "catchfish_button";
             this.catchfish_button.Size = new System.Drawing.Size(115, 98);
             this.catchfish_button.TabIndex = 20;
@@ -748,7 +754,7 @@
             // one_button
             // 
             this.one_button.Location = new System.Drawing.Point(1389, 748);
-            this.one_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.one_button.Margin = new System.Windows.Forms.Padding(4);
             this.one_button.Name = "one_button";
             this.one_button.Size = new System.Drawing.Size(115, 98);
             this.one_button.TabIndex = 32;
@@ -759,7 +765,7 @@
             // two_button
             // 
             this.two_button.Location = new System.Drawing.Point(1512, 748);
-            this.two_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.two_button.Margin = new System.Windows.Forms.Padding(4);
             this.two_button.Name = "two_button";
             this.two_button.Size = new System.Drawing.Size(115, 98);
             this.two_button.TabIndex = 33;
@@ -810,9 +816,9 @@
             this.groupBox1.Controls.Add(this.pictureBox26);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(9, 784);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(805, 215);
             this.groupBox1.TabIndex = 83;
             this.groupBox1.TabStop = false;
@@ -869,7 +875,7 @@
             this.Controls.Add(this.movebutton);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "はらぺこネコのたべもの探しの旅";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
