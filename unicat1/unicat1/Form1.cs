@@ -27,7 +27,16 @@ namespace unicat1
         Image catr = Image.FromFile(@"../../素材/catr.png");
         Image catl = Image.FromFile(@"../../素材/catl.png");
         Image catd = Image.FromFile(@"../../素材/catd.png");
-       
+
+        ////画像ファイルを読み込んで、Imageオブジェクトを作成する
+        System.Drawing.Image command1 = System.Drawing.Image.FromFile(@"../../素材/up.png");
+        System.Drawing.Image command2 = System.Drawing.Image.FromFile(@"../../素材/left.png");
+        System.Drawing.Image command3 = System.Drawing.Image.FromFile(@"../../素材/right.png");
+        System.Drawing.Image command4 = System.Drawing.Image.FromFile(@"../../素材/catch.png");
+        System.Drawing.Image commandpanel = System.Drawing.Image.FromFile(@"../../素材/commandpanel.png");
+        System.Drawing.Image commandpanel2 = System.Drawing.Image.FromFile(@"../../素材/commandpanel2.png");
+        System.Drawing.Image loop1 = System.Drawing.Image.FromFile(@"../../素材/1.png");
+        System.Drawing.Image loop2 = System.Drawing.Image.FromFile(@"../../素材/2.png");
 
         Image cat;
         int[,] nowboard;
@@ -48,11 +57,6 @@ namespace unicat1
         //0=上、1=右、2=下、3=左
         int catdirection = 0;
 
-        //int upcount = 0;
-        //int rightcount = 0;
-        //int leftcount = 0;
-        //int catchcount = 0;
-
         int[] movecount;
         List<int> movelist = new List<int>() ;
         List<int> onelist = new List<int>();
@@ -63,19 +67,7 @@ namespace unicat1
         List<int[,]> boardlist = new List<int[,]>();
         PictureBox[] mainpicarray = new PictureBox[12];
         PictureBox[] onepicarray = new PictureBox[6];
-        PictureBox[] twopicarray = new PictureBox[6];
-
-        ////画像ファイルを読み込んで、Imageオブジェクトを作成する
-        System.Drawing.Image command1 = System.Drawing.Image.FromFile(@"../../素材/up.png");
-        System.Drawing.Image command2 = System.Drawing.Image.FromFile(@"../../素材/left.png");
-        System.Drawing.Image command3 = System.Drawing.Image.FromFile(@"../../素材/right.png");
-        System.Drawing.Image command4 = System.Drawing.Image.FromFile(@"../../素材/catch.png");
-        System.Drawing.Image commandpanel = System.Drawing.Image.FromFile(@"../../素材/commandpanel.png");
-        System.Drawing.Image commandpanel2 = System.Drawing.Image.FromFile(@"../../素材/commandpanel2.png");
-        System.Drawing.Image loop1 = System.Drawing.Image.FromFile(@"../../素材/1.png");
-        System.Drawing.Image loop2 = System.Drawing.Image.FromFile(@"../../素材/2.png");
-
-      
+        PictureBox[] twopicarray = new PictureBox[6];      
 
         //盤面情報をCSVファイルから読み込み
         string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
@@ -109,6 +101,7 @@ namespace unicat1
             comboBox2.Items.Add("メイン");
             comboBox2.Items.Add("one");
             comboBox2.Items.Add("two");
+
 
             mainpicarray[0] = main1;
             mainpicarray[1] = main2;
@@ -166,17 +159,6 @@ namespace unicat1
             //ImageオブジェクトのGraphicsオブジェクトを作成する
             g = Graphics.FromImage(canvas);
 
-            //ランダム
-            //for (int i = 0; i < xmax ; i++)
-            //{
-            //    for (int j = 0; j < ymax; j++)
-            //    {
-            //        int a = rand.Int(10);
-
-            //        if (a < 6) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
-            //        else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
-            //    }
-            //}
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
 
@@ -612,10 +594,6 @@ namespace unicat1
                     }
                 }
 
-                //harapekocount.Text = footcount.ToString();
-                //harapekoscore.Text = (-footcount * 5).ToString();
-
-
             }
 
             int totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
@@ -637,9 +615,6 @@ namespace unicat1
                 }
 
             }
-
-            //totalscorelabel.Text = (100 +totalscore).ToString();
-            //totalscorelabel.Refresh();
 
             if (foodcount == 0)
             {
@@ -665,13 +640,7 @@ namespace unicat1
                 scorereset();
             }
 
-        }
-
-      
-
-      
-
-     
+        }    
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
