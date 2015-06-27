@@ -17,6 +17,8 @@ namespace unicat1
     public partial class Form1 : Form
     {
         Graphics g;
+
+        //画像を変数に格納する
         Image back = Image.FromFile(@"../../素材/back.png");
         Image road = Image.FromFile(@"../../素材/road.png");
         Image fish = Image.FromFile(@"../../素材/fish.png");
@@ -26,8 +28,16 @@ namespace unicat1
         Image catr = Image.FromFile(@"../../素材/catr.png");
         Image catl = Image.FromFile(@"../../素材/catl.png");
         Image catd = Image.FromFile(@"../../素材/catd.png");
-       
+        Image command1 = Image.FromFile(@"../../素材/up.png");
+        Image command2 = Image.FromFile(@"../../素材/left.png");
+        Image command3 = Image.FromFile(@"../../素材/right.png");
+        Image command4 = Image.FromFile(@"../../素材/catch.png");
+        Image commandpanel = Image.FromFile(@"../../素材/commandpanel.png");
+        Image commandpanel2 = Image.FromFile(@"../../素材/commandpanel2.png");
+        Image loop1 = Image.FromFile(@"../../素材/1.png");
+        Image loop2 = Image.FromFile(@"../../素材/2.png");
         Image cat;
+
         int[,] nowboard;
         int xmax = 10, ymax = 10;
 
@@ -57,18 +67,7 @@ namespace unicat1
         PictureBox[] mainpicarray = new PictureBox[12];
         PictureBox[] onepicarray = new PictureBox[6];
         PictureBox[] twopicarray = new PictureBox[6];
-
-        ////画像ファイルを読み込んで、Imageオブジェクトを作成する
-        System.Drawing.Image command1 = System.Drawing.Image.FromFile(@"../../素材/up.png");
-        System.Drawing.Image command2 = System.Drawing.Image.FromFile(@"../../素材/left.png");
-        System.Drawing.Image command3 = System.Drawing.Image.FromFile(@"../../素材/right.png");
-        System.Drawing.Image command4 = System.Drawing.Image.FromFile(@"../../素材/catch.png");
-        System.Drawing.Image commandpanel = System.Drawing.Image.FromFile(@"../../素材/commandpanel.png");
-        System.Drawing.Image commandpanel2 = System.Drawing.Image.FromFile(@"../../素材/commandpanel2.png");
-        System.Drawing.Image loop1 = System.Drawing.Image.FromFile(@"../../素材/1.png");
-        System.Drawing.Image loop2 = System.Drawing.Image.FromFile(@"../../素材/2.png");
-
-      
+     
 
         //盤面情報をCSVファイルから読み込み
         string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
@@ -86,18 +85,15 @@ namespace unicat1
             cat = catu;
             
             RandomMT rand = new RandomMT();
-            comboBox1.Items.Add("stage1");        //ループ回そう
-            comboBox1.Items.Add("stage2");        //PictureBoxは配列で動的に生成できるそうです
-            comboBox1.Items.Add("stage3");
-            comboBox1.Items.Add("stage4");
-            comboBox1.Items.Add("stage5");
-            comboBox1.Items.Add("stage6");
-            comboBox1.Items.Add("stage7");
-            comboBox1.Items.Add("stage8");
-            comboBox1.Items.Add("stage9");
-            //comboBox1.Items.Add("stage10");
-            //comboBox1.Items.Add("stage11");
-            //comboBox1.Items.Add("stage12");
+
+            //コンボボックスにステージ名を自動で追加
+            for (int i = 0; i < files.Length; i++)
+            {
+                var stagename = Path.GetFileName(files[i]);
+                stagename = stagename.Replace(".csv", "");
+                comboBox1.Items.Add(stagename);
+
+            }
 
             comboBox2.Items.Add("メイン");
             comboBox2.Items.Add("one");
@@ -163,7 +159,6 @@ namespace unicat1
             comboBox2.SelectedIndex = 0;
 
             //盤面情報をCSVファイルから読み込み
-            //string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
             foreach (var n in files)
             {
                 using (StreamReader sr = new StreamReader(n, Encoding.GetEncoding(932)))
@@ -214,6 +209,7 @@ namespace unicat1
 
             footcount++;
             int xmove = 0, ymove = 0;
+            //方向と端にいるかどうかで移動の変化量を決める
             if (direction == 0)
             {
                 if (catposy != 0) ymove = -1;
@@ -235,7 +231,8 @@ namespace unicat1
 
             }
 
-            if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)
+
+            if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先に壁がなければ
             {
                 for (int i = 0; i <= pictureBox1.Width / xmax; i = i + 1)
                 {
@@ -276,7 +273,7 @@ namespace unicat1
             }
         }
 
-        private void catd_change()
+        private void catd_change()  //ネコの方向転換をする(イラストの変更)
         {
             footcount++;
 
@@ -569,7 +566,6 @@ namespace unicat1
 
         private void movebutton_Click_1(object sender, EventArgs e)
         {
-            //footcount += movelist.Count;
 
             //movelistに格納された番号にしたがって命令を実行
             for (int i = 0; i < movelist.Count; i++)
@@ -594,14 +590,9 @@ namespace unicat1
                     }
                 }
 
-                //harapekocount.Text = footcount.ToString();
-                //harapekoscore.Text = (-footcount * 5).ToString();
-
-
             }
 
             int totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
-
 
             if (totalscore <= -100)
             {
@@ -619,9 +610,6 @@ namespace unicat1
                 }
 
             }
-
-            //totalscorelabel.Text = (100 +totalscore).ToString();
-            //totalscorelabel.Refresh();
 
             if (foodcount == 0)
             {
@@ -648,12 +636,6 @@ namespace unicat1
             }
 
         }
-
-      
-
-      
-
-     
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
