@@ -19,7 +19,6 @@ namespace unicat1
         Graphics g;
         Image back = Image.FromFile(@"../../素材/back.png");
         Image road = Image.FromFile(@"../../素材/road.png");
-        //Image catharapeko = Image.FromFile(@"../../素材/catharapeko.png");
         Image fish = Image.FromFile(@"../../素材/fish.png");
         Image fish2 = Image.FromFile(@"../../素材/fish2.png");
         Image fish3 = Image.FromFile(@"../../素材/fish3.png");
@@ -28,7 +27,6 @@ namespace unicat1
         Image catl = Image.FromFile(@"../../素材/catl.png");
         Image catd = Image.FromFile(@"../../素材/catd.png");
        
-
         Image cat;
         int[,] nowboard;
         int xmax = 10, ymax = 10;
@@ -48,15 +46,10 @@ namespace unicat1
         //0=上、1=右、2=下、3=左
         int catdirection = 0;
 
-        //int upcount = 0;
-        //int rightcount = 0;
-        //int leftcount = 0;
-        //int catchcount = 0;
-
         int[] movecount;
-        List<int> movelist = new List<int>() ;
-        List<int> onelist = new List<int>();
-        List<int> twolist = new List<int>();
+        List<int> movelist = new List<int>() ;  //メインボックスの命令リスト
+        List<int> onelist = new List<int>();    //１ボックスの命令リスト
+        List<int> twolist = new List<int>();    //２ボックスの命令リスト
 
         int Score=0;
 
@@ -166,17 +159,6 @@ namespace unicat1
             //ImageオブジェクトのGraphicsオブジェクトを作成する
             g = Graphics.FromImage(canvas);
 
-            //ランダム
-            //for (int i = 0; i < xmax ; i++)
-            //{
-            //    for (int j = 0; j < ymax; j++)
-            //    {
-            //        int a = rand.Int(10);
-
-            //        if (a < 6) g.DrawImage(road, i * road.Width, j * road.Height, road.Width, road.Height);
-            //        else g.DrawImage(back, i * back.Width, j * back.Height, back.Width, back.Height);
-            //    }
-            //}
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
 
