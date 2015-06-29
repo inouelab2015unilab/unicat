@@ -51,7 +51,6 @@ namespace unicat1
         int mainpiccount = 0;
         int onepiccount = 0;
         int twopiccount = 0;
-        int totalscore = 0;
 
         //0=上、1=右、2=下、3=左
         int catdirection = 0;
@@ -65,7 +64,7 @@ namespace unicat1
 
         List<int[,]> boardlist = new List<int[,]>();
         PictureBox[] mainpicarray = new PictureBox[12];
-        PictureBox[] onepicarray = new PictureBox[6];
+        PictureBox[] onepicarray;
         PictureBox[] twopicarray = new PictureBox[6];
      
 
@@ -99,42 +98,18 @@ namespace unicat1
             comboBox2.Items.Add("one");
             comboBox2.Items.Add("two");
 
-            mainpicarray[0] = main1;
-            mainpicarray[1] = main2;
-            mainpicarray[2] = main3;
-            mainpicarray[3] = main4;
-            mainpicarray[4] = main5;
-            mainpicarray[5] = main6;
-            mainpicarray[6] = main7;
-            mainpicarray[7] = main8;
-            mainpicarray[8] = main9;
-            mainpicarray[9] = main10;
-            mainpicarray[10] = main11;
-            mainpicarray[11] = main12;
-            onepicarray[0] = one1;
-            onepicarray[1] = one2;
-            onepicarray[2] = one3;
-            onepicarray[3] = one4;
-            onepicarray[4] = one5;
-            onepicarray[5] = one6;
-            twopicarray[5] = two6;
-            twopicarray[4] = two5;
-            twopicarray[3] = two4;
-            twopicarray[2] = two3;
-            twopicarray[1] = two2;
-            twopicarray[0] = two1;
+            //ピクチャーボックス配列に各ピクチャーボックスを格納
+            mainpicarray = new PictureBox[] { main1, main2, main3, main4, main5, main6,main7, main8, main9, main10, main11, main12 };
+            onepicarray = new PictureBox[] { one1, one2, one3, one4, one5, one6 };
+            twopicarray = new PictureBox[] { two1, two2, two3, two4, two5, two6 };
 
-            for (int i = 0; i < 12; i++)
-            {
-                mainpicarray[i].Image = commandpanel;
-            }
 
-            for (int i = 0; i < 6; i++)
-            {
-                onepicarray[i].Image = commandpanel2;
-                twopicarray[i].Image = commandpanel2;
-            }
+            //命令パネルの背景を設置
+            foreach (var n in mainpicarray) n.Image = commandpanel;
+            foreach (var n in onepicarray) n.Image = commandpanel2;
+            foreach (var n in twopicarray) n.Image = commandpanel2;
 
+            //命令ボタンの背景を設置
             gobutton.BackgroundImage = Image.FromFile(@"../../素材/up.png");
             turnleft_button.BackgroundImage = Image.FromFile(@"../../素材/left.png");
             turnright_button.BackgroundImage = Image.FromFile(@"../../素材/right.png");
@@ -155,10 +130,10 @@ namespace unicat1
             //ImageオブジェクトのGraphicsオブジェクトを作成する
             g = Graphics.FromImage(canvas);
 
-            comboBox1.SelectedIndex = 0;
+            comboBox1.SelectedIndex = 0;    //コンボボックスの初期値
             comboBox2.SelectedIndex = 0;
 
-            //盤面情報をCSVファイルから読み込み
+            //盤面情報をCSVファイルから読み込み、boardlistに格納(要素は二次元配列)
             foreach (var n in files)
             {
                 using (StreamReader sr = new StreamReader(n, Encoding.GetEncoding(932)))
@@ -192,7 +167,6 @@ namespace unicat1
 
             //PictureBox1に表示する
             pictureBox1.Image = canvas;
-            //pictureBox2.Image = catharapeko;
             pictureBox26.Image = fish;
             pictureBox27.Image = fish2;
             pictureBox28.Image = fish3;
@@ -210,27 +184,10 @@ namespace unicat1
             footcount++;
             int xmove = 0, ymove = 0;
             //方向と端にいるかどうかで移動の変化量を決める
-            if (direction == 0)
-            {
-                if (catposy != 0) ymove = -1;
-
-            }
-            if (direction == 2)
-            {
-                if (catposy != ymax - 1) ymove = 1;
-
-            }
-            if (direction == 1)
-            {
-                if (catposx != xmax - 1) xmove = 1;
-
-            }
-            if (direction == 3)
-            {
-                if (catposx != 0) xmove = -1;
-
-            }
-
+            if (direction == 0 && catposy != 0)        ymove = -1;
+            if (direction == 2 && catposy != ymax - 1) ymove = 1;
+            if (direction == 1 && catposx != xmax - 1) xmove = 1;
+            if (direction == 3 && catposx != 0)        xmove = -1;
 
             if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先に壁がなければ
             {
@@ -264,7 +221,7 @@ namespace unicat1
                 catposy += ymove;
                 harapekocount.Text = footcount.ToString();
                 harapekoscore.Text = (-footcount * 5).ToString();
-                totalscorelabel.Text = (100+fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+                totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
                 totalscorelabel.Refresh();
                 harapekocount.Refresh();
                 harapekoscore.Refresh();
@@ -310,32 +267,13 @@ namespace unicat1
             Thread.Sleep(200);
         }
 
-        //矢印キーでネコ移動
+        //矢印キーでネコ移動(おまじない)
         protected override bool ProcessDialogKey(Keys keyData)
         {
-            //左キーが押されているか調べる
-            if ((keyData & Keys.KeyCode) == Keys.Up)
-            {
-                catmove(0);
-                return true;
-            }
-            if ((keyData & Keys.KeyCode) == Keys.Down)
-            {
-                catmove(2);
-
-                return true;
-            } if ((keyData & Keys.KeyCode) == Keys.Right)
-            {
-                catmove(1);
-
-                return true;
-            } if ((keyData & Keys.KeyCode) == Keys.Left)
-            {
-                catmove(3);
-
-                return true;
-            }
-
+            if ((keyData & Keys.KeyCode) == Keys.Up) { catmove(0); return true; }
+            if ((keyData & Keys.KeyCode) == Keys.Down) { catmove(2); return true; }
+            if ((keyData & Keys.KeyCode) == Keys.Right) { catmove(1); return true; }
+            if ((keyData & Keys.KeyCode) == Keys.Left) { catmove(3); return true; }
             return base.ProcessDialogKey(keyData);
         }
 
@@ -346,7 +284,6 @@ namespace unicat1
             e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
 
         }
-
         private void button4_Paint(object sender, PaintEventArgs e)
         {
             Button btn = (Button)sender;
@@ -354,7 +291,6 @@ namespace unicat1
             e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
 
         }
-
         private void button5_Paint(object sender, PaintEventArgs e)
         {
             Button btn = (Button)sender;
@@ -362,7 +298,6 @@ namespace unicat1
             e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
 
         }
-
         private void button6_Paint(object sender, PaintEventArgs e)
         {
             Button btn = (Button)sender;
@@ -456,12 +391,12 @@ namespace unicat1
             {
                 try
                 {
-                    if (orderimage != loop1 || orderimage != loop2)
-                    {
+                    //if (orderimage != loop1 || orderimage != loop2)
+                    //{
                         onepicarray[onepiccount].Image = orderimage;
                         onelist.Add(ordernum);
                         onepiccount += 1;
-                    }
+                    //}
                 }
                 catch { }
             }
@@ -469,12 +404,12 @@ namespace unicat1
             {
                 try
                 {
-                    if (orderimage != loop1 || orderimage != loop2)
-                    {
+                    //if (orderimage != loop1 || orderimage != loop2)
+                    //{
                         twopicarray[twopiccount].Image = orderimage;
                         twolist.Add(ordernum);
                         twopiccount += 1;
-                    }
+                    //}
                 }
                 catch { }
             }
@@ -503,64 +438,54 @@ namespace unicat1
 
         private void one_button_Click(object sender, EventArgs e)
         {
-            if (comboBox2.SelectedIndex == 0)
-            {
+            //if (comboBox2.SelectedIndex == 0)
+            //{
                 orderclick(4, loop1);
-            }
+            //}
         }
 
         private void two_button_Click(object sender, EventArgs e)
         {
-            if (comboBox2.SelectedIndex == 0)
-            {
+            //if (comboBox2.SelectedIndex == 0)
+            //{
                 orderclick(5, loop2);
-            }      
+            //}      
         }
 
         private void listcheck(List<int> list,int index)
         {
-            if (list[index] == 0)
-            {
-                catmove(catdirection);
-            }
+            if (list[index] == 0) catmove(catdirection);
 
             else if (list[index] == 1)
             {
-                if (catdirection == 0)
-                {
-                    catdirection = 3;
-                }
-                else
-                {
-                    catdirection -= 1;
-                }
+                if (catdirection == 0)catdirection = 3;
+                else catdirection -= 1;
 
                 catd_change();
-               
             }
 
             else if (list[index] == 2)
             {
-                if (catdirection == 0)
-                {
-                    catdirection = 1;
-                }
-                else if (catdirection == 3) catdirection = 0;
-                else
-                {
-
-                    catdirection += 1;
-                }
+                if (catdirection == 3) catdirection = 0;
+                else catdirection += 1;
 
                 catd_change();
-              
             }
-
 
             else if (list[index] == 3)
             {
                 catchfish(catposx, catposy);
             }
+            //if (list[index] == 4)
+            //{
+            //    for (int j = 0; j < onelist.Count; j++) listcheck(onelist, j);
+            //}
+
+            //if (list[index] == 5)
+            //{
+            //    for (int j = 0; j < twolist.Count; j++) listcheck(twolist, j);
+
+            //}
 
         }
 
