@@ -38,15 +38,16 @@ namespace unicat1
         Image loop2 = Image.FromFile(@"../../素材/2.png");
         Image cat;
 
-        int[,] nowboard;
-        int xmax = 10, ymax = 10;
+        int[,] nowboard;    //現在選択されている盤面のデータ
+        int xmax = 10, ymax = 10;   //盤面のサイズ
 
-        int catposx;
+        int catposx;    
         int catposy;
         int footcount;
         int fishcount;
         int fish2count;
         int fish3count;
+        int totalscore;
 
         int mainpiccount = 0;
         int onepiccount = 0;
@@ -213,6 +214,7 @@ namespace unicat1
                     }
 
                     g.DrawImage(cat, catposx * pictureBox1.Width / xmax + xmove * i, catposy * pictureBox1.Height / ymax + ymove * i, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+                    //引数（画像、ｘ座標、y座標、width,height）
 
                     pictureBox1.Refresh();
                     Thread.Sleep(1);
@@ -226,8 +228,32 @@ namespace unicat1
                 harapekocount.Refresh();
                 harapekoscore.Refresh();
                 Thread.Sleep(100);
-
             }
+            else
+            {
+                for (int i = 1; i <= 10; i++)
+                {
+                    g.DrawImage(road, catposx * pictureBox1.Width / xmax , catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+                    g.DrawImage(cat, catposx * pictureBox1.Width / xmax + xmove * i, catposy * pictureBox1.Height / ymax + ymove * i, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+                    pictureBox1.Refresh();
+                    Thread.Sleep(5);
+                }
+                for (int i = 1; i <= 10; i++)
+                {
+                    g.DrawImage(back, (catposx + xmove) * pictureBox1.Width / xmax, (catposy + ymove) * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+                    g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+                    pictureBox1.Refresh();
+                    Thread.Sleep(5);
+                }
+                harapekocount.Text = footcount.ToString();
+                harapekoscore.Text = (-footcount * 5).ToString();
+                totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+                totalscorelabel.Refresh();
+                harapekocount.Refresh();
+                harapekoscore.Refresh();
+                Thread.Sleep(100);
+            }
+
         }
 
         private void catd_change()  //ネコの方向転換をする(イラストの変更)
@@ -347,7 +373,8 @@ namespace unicat1
                 }
             }
 
-                g.FillRectangle(Brushes.White, 0, 0, pictureBox1.Width, pictureBox1.Height);
+            g.FillRectangle(Brushes.White, 0, 0, pictureBox1.Width, pictureBox1.Height);
+            
             for (int i = 0; i < boardmat.GetLength(0); i++)
             {
                 for (int j = 0; j < (boardmat.Length / boardmat.GetLength(0)); j++)
@@ -438,18 +465,12 @@ namespace unicat1
 
         private void one_button_Click(object sender, EventArgs e)
         {
-            //if (comboBox2.SelectedIndex == 0)
-            //{
                 orderclick(4, loop1);
-            //}
         }
 
         private void two_button_Click(object sender, EventArgs e)
         {
-            //if (comboBox2.SelectedIndex == 0)
-            //{
                 orderclick(5, loop2);
-            //}      
         }
 
         private void listcheck(List<int> list,int index)
@@ -476,16 +497,25 @@ namespace unicat1
             {
                 catchfish(catposx, catposy);
             }
-            //if (list[index] == 4)
-            //{
-            //    for (int j = 0; j < onelist.Count; j++) listcheck(onelist, j);
-            //}
+            if (list[index] == 4)
+            {
+                for (int j = 0; j < onelist.Count; j++)
+                {
+                    listcheck(onelist, j);
+                    totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                    if (totalscore <= -100) break;
+                }
+            }
 
-            //if (list[index] == 5)
-            //{
-            //    for (int j = 0; j < twolist.Count; j++) listcheck(twolist, j);
-
-            //}
+            if (list[index] == 5)
+            {
+                for (int j = 0; j < twolist.Count; j++)
+                {
+                    listcheck(twolist, j);
+                    totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                    if (totalscore <= -100) break;
+                }
+            }
 
         }
 
@@ -496,38 +526,22 @@ namespace unicat1
             for (int i = 0; i < movelist.Count; i++)
             {
                 listcheck(movelist, i);
-
-                if (movelist[i] == 4)
-                {
-                    for (int j = 0; j < onelist.Count; j++)
-                    {
-                        listcheck(onelist, j);
-
-                    }
-                }
-
-                if (movelist[i] == 5)
-                {
-                    for (int j = 0; j < twolist.Count; j++)
-                    {
-                        listcheck(twolist, j);
-
-                    }
-                }
-
+                totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                if (totalscore <= -100) break;
             }
-
-            int totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
 
             if (totalscore <= -100)
             {
                 MessageBox.Show("死亡", "オーイ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else totalscorelabel.Text = (100 + totalscore).ToString();
-
+            else
+            {
+                totalscorelabel.Text = (100 + totalscore).ToString();
+                totalscorelabel.Refresh();
+            }
 
             int foodcount = 0;
-            for (int i = 0; i < nowboard.GetLength(0); i++)
+            for (int i = 0; i < nowboard.GetLength(0); i++) //盤面の食べ物の数を数える
             {
                 for (int j = 0; j < nowboard.GetLength(1); j++)
                 {
@@ -536,7 +550,7 @@ namespace unicat1
 
             }
 
-            if (foodcount == 0)
+            if (foodcount == 0) //全部食べられていたらクリア
             {
                 totalscorelabel.Text = (100 +totalscore).ToString();
                 totalscorelabel.Refresh();
