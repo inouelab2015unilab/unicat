@@ -17,9 +17,9 @@ namespace unicat1
     public partial class Form1 : Form
     {
         Graphics g;
-
+        
         //画像を変数に格納する
-        Image back = Image.FromFile(@"../../素材/back.png");
+        public Image back = Image.FromFile(@"../../素材/back.png");
         Image road = Image.FromFile(@"../../素材/road.png");
         Image fish = Image.FromFile(@"../../素材/fish.png");
         Image fish2 = Image.FromFile(@"../../素材/fish2.png");
@@ -39,16 +39,16 @@ namespace unicat1
         Image cat;
 
         int[,] nowboard;    //現在選択されている盤面のデータ
-        int xmax = 10, ymax = 10;   //盤面のサイズ
+        public int xmax = 10, ymax = 10;   //盤面のサイズ
 
-        int catposx;    
-        int catposy;
-        int footcount;
+        public int catposx;    
+        public int catposy;
+        public int footcount;
         int fishcount;
         int fish2count;
         int fish3count;
         int totalscore;
-
+        
         int mainpiccount = 0;
         int onepiccount = 0;
         int twopiccount = 0;
@@ -63,7 +63,7 @@ namespace unicat1
 
         int Score=0;
 
-        List<int[,]> boardlist = new List<int[,]>();
+        public List<int[,]> boardlist = new List<int[,]>();
         PictureBox[] mainpicarray = new PictureBox[12];
         PictureBox[] onepicarray;
         PictureBox[] twopicarray = new PictureBox[6];
@@ -179,119 +179,120 @@ namespace unicat1
         }
 
         //ネコがある方向に一つ進む
-        public void catmove(int direction)
-        {
+        //public void catmove(int direction)
+        //{
 
-            footcount++;
-            int xmove = 0, ymove = 0;
-            //方向と端にいるかどうかで移動の変化量を決める
-            if (direction == 0 && catposy != 0)        ymove = -1;
-            if (direction == 2 && catposy != ymax - 1) ymove = 1;
-            if (direction == 1 && catposx != xmax - 1) xmove = 1;
-            if (direction == 3 && catposx != 0)        xmove = -1;
+        //    footcount++;
+        //    int xmove = 0, ymove = 0;
+        //    //方向と端にいるかどうかで移動の変化量を決める
+        //    if (direction == 0 && catposy != 0)        ymove = -1;
+        //    if (direction == 2 && catposy != ymax - 1) ymove = 1;
+        //    if (direction == 1 && catposx != xmax - 1) xmove = 1;
+        //    if (direction == 3 && catposx != 0)        xmove = -1;
 
-            if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先に壁がなければ
-            {
-                for (int i = 0; i <= pictureBox1.Width / xmax; i = i + 1)
-                {
-                    if (i < pictureBox1.Width / xmax - 5) i = i + 4;
+        //    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先に壁がなければ
+        //    {
+        //        for (int i = 0; i <= pictureBox1.Width / xmax; i = i + 1)
+        //        {
+        //            if (i < pictureBox1.Width / xmax - 5) i = i + 4;
 
-                    if (nowboard[catposx, catposy] == 4)
-                    {
-                        g.DrawImage(fish, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-                    }
-                    else if (nowboard[catposx, catposy] == 5)
-                    {
-                        g.DrawImage(fish2, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-                    }
-                    else if (nowboard[catposx, catposy] == 6)
-                    {
-                        g.DrawImage(fish3, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-                    }
-                    else
-                    {
-                        g.DrawImage(road, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-                    }
+        //            if (nowboard[catposx, catposy] == 4)
+        //            {
+        //                g.DrawImage(fish, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+        //            }
+        //            else if (nowboard[catposx, catposy] == 5)
+        //            {
+        //                g.DrawImage(fish2, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+        //            }
+        //            else if (nowboard[catposx, catposy] == 6)
+        //            {
+        //                g.DrawImage(fish3, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+        //            }
+        //            else
+        //            {
+        //                g.DrawImage(road, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+        //            }
 
-                    g.DrawImage(cat, catposx * pictureBox1.Width / xmax + xmove * i, catposy * pictureBox1.Height / ymax + ymove * i, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-                    //引数（画像、ｘ座標、y座標、width,height）
+        //            g.DrawImage(cat, catposx * pictureBox1.Width / xmax + xmove * i, catposy * pictureBox1.Height / ymax + ymove * i, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+        //            //引数（画像、ｘ座標、y座標、width,height）
 
-                    pictureBox1.Refresh();
-                    Thread.Sleep(1);
-                }
-                catposx += xmove;
-                catposy += ymove;
-                harapekocount.Text = footcount.ToString();
-                harapekoscore.Text = (-footcount * 5).ToString();
-                totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
-                totalscorelabel.Refresh();
-                harapekocount.Refresh();
-                harapekoscore.Refresh();
-                Thread.Sleep(100);
-            }
-            else
-            {
-                for (int i = 1; i <= 10; i++)
-                {
-                    g.DrawImage(road, catposx * pictureBox1.Width / xmax , catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-                    g.DrawImage(cat, catposx * pictureBox1.Width / xmax + xmove * i, catposy * pictureBox1.Height / ymax + ymove * i, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-                    pictureBox1.Refresh();
-                    Thread.Sleep(5);
-                }
-                for (int i = 1; i <= 10; i++)
-                {
-                    g.DrawImage(back, (catposx + xmove) * pictureBox1.Width / xmax, (catposy + ymove) * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-                    g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-                    pictureBox1.Refresh();
-                    Thread.Sleep(5);
-                }
-                harapekocount.Text = footcount.ToString();
-                harapekoscore.Text = (-footcount * 5).ToString();
-                totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
-                totalscorelabel.Refresh();
-                harapekocount.Refresh();
-                harapekoscore.Refresh();
-                Thread.Sleep(100);
-            }
+        //            pictureBox1.Refresh();
+        //            Thread.Sleep(1);
+        //        }
+        //        catposx += xmove;
+        //        catposy += ymove;
+        //        harapekocount.Text = footcount.ToString();
+        //        harapekoscore.Text = (-footcount * 5).ToString();
+        //        totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+        //        totalscorelabel.Refresh();
+        //        harapekocount.Refresh();
+        //        harapekoscore.Refresh();
+        //        Thread.Sleep(100);
+        //    }
+        //    else
+        //    {
+        //        for (int i = 1; i <= 10; i++)
+        //        {
+        //            g.DrawImage(road, catposx * pictureBox1.Width / xmax , catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+        //            g.DrawImage(cat, catposx * pictureBox1.Width / xmax + xmove * i, catposy * pictureBox1.Height / ymax + ymove * i, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+        //            pictureBox1.Refresh();
+        //            Thread.Sleep(5);
+        //        }
+        //        for (int i = 1; i <= 10; i++)
+        //        {
+        //            g.DrawImage(back, (catposx + xmove) * pictureBox1.Width / xmax, (catposy + ymove) * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+        //            g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+        //            pictureBox1.Refresh();
+        //            Thread.Sleep(5);
+        //        }
+        //        harapekocount.Text = footcount.ToString();
+        //        harapekoscore.Text = (-footcount * 5).ToString();
+        //        totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+        //        totalscorelabel.Refresh();
+        //        harapekocount.Refresh();
+        //        harapekoscore.Refresh();
+        //        Thread.Sleep(100);
+        //    }
 
-        }
+        //}
 
-        private void catd_change()  //ネコの方向転換をする(イラストの変更)
-        {
-            footcount++;
+        //ネコの方向転換をする(イラストの変更)
+        //private void catd_change()
+        //{
+        //    footcount++;
+            
+        //    if (catdirection == 0)
+        //    {
+        //        cat = catu;
+        //        g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+        //    }
+        //    else if (catdirection == 1)
+        //    {
+        //        cat = catr;
+        //        g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
 
-            if (catdirection == 0)
-            {
-                cat = catu;
-                g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-            }
-            else if (catdirection == 1)
-            {
-                cat = catr;
-                g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+        //    }
+        //    else if (catdirection == 2)
+        //    {
+        //        cat = catd;
+        //        g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
 
-            }
-            else if (catdirection == 2)
-            {
-                cat = catd;
-                g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+        //    }
+        //    else if (catdirection == 3)
+        //    {
+        //        cat = catl;
+        //        g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
 
-            }
-            else if (catdirection == 3)
-            {
-                cat = catl;
-                g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-
-            }
-            harapekocount.Text = footcount.ToString();
-            harapekoscore.Text = (-footcount * 5).ToString();          
-            totalscorelabel.Text = (100+fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
-            totalscorelabel.Refresh();
-            harapekocount.Refresh();
-            harapekoscore.Refresh();          
-            pictureBox1.Refresh();
-            Thread.Sleep(200);
-        }
+        //    }
+        //    harapekocount.Text = footcount.ToString();
+        //    harapekoscore.Text = (-footcount * 5).ToString();          
+        //    totalscorelabel.Text = (100+fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+        //    totalscorelabel.Refresh();
+        //    harapekocount.Refresh();
+        //    harapekoscore.Refresh();          
+        //    pictureBox1.Refresh();
+        //    Thread.Sleep(200);
+        //}
 
         //矢印キーでネコ移動(おまじない)
         protected override bool ProcessDialogKey(Keys keyData)
@@ -597,7 +598,7 @@ namespace unicat1
                 label3.BackColor = Color.Yellow;
                 label2.BackColor = DefaultBackColor;
                 label4.BackColor = DefaultBackColor;
-
+                
             }
         }
 
@@ -631,8 +632,30 @@ namespace unicat1
                 fish500count.Text = fish3count.ToString();
                 fish500score.Text = (fish3count * Score).ToString();
             }
-
+            //cat_turn();
         }
+
+        //public void cat_turn()
+        //{
+        //    for (int i = 0; i <= 360; i=i+20)
+        //    {
+        //        double d = i / (180 / Math.PI);//傾けたい角度
+        //        //新しい座標位置を計算する
+        //        float x = catposx * pictureBox1.Width / xmax + (pictureBox1.Width / (2*xmax));   //ｘ座標
+        //        float y = catposy * pictureBox1.Height / ymax + (pictureBox1.Height / (2*ymax)); //ｙ座標
+        //        float x1 = x + (pictureBox1.Width / xmax) * (float)Math.Cos(d);
+        //        float y1 = y + (pictureBox1.Width / xmax) * (float)Math.Sin(d);
+        //        float x2 = x - (pictureBox1.Height / ymax) * (float)Math.Sin(d);
+        //        float y2 = y + (pictureBox1.Height / ymax) * (float)Math.Cos(d);
+        //        //PointF配列を作成
+        //        PointF[] destinationPoints = { new PointF(x, y), new PointF(x1, y1), new PointF(x2, y2) };
+        //        //画像を表示
+        //        g.DrawImage(cat, destinationPoints);
+        //        pictureBox1.Refresh();
+        //        Thread.Sleep(1);               
+        //    }
+ 
+        //}
 
 
         //スコア初期化
