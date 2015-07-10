@@ -419,12 +419,9 @@ namespace unicat1
             {
                 try
                 {
-                    //if (orderimage != loop1 || orderimage != loop2)
-                    //{
                         onepicarray[onepiccount].Image = orderimage;
                         onelist.Add(ordernum);
                         onepiccount += 1;
-                    //}
                 }
                 catch { }
             }
@@ -432,12 +429,9 @@ namespace unicat1
             {
                 try
                 {
-                    //if (orderimage != loop1 || orderimage != loop2)
-                    //{
                         twopicarray[twopiccount].Image = orderimage;
                         twolist.Add(ordernum);
                         twopiccount += 1;
-                    //}
                 }
                 catch { }
             }
