@@ -767,6 +767,12 @@ namespace unicat1
             comboBox2.SelectedIndex = 2;
         }
 
+        private void makeStage_button_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.Show();
+        }
+
  
     }
 }
