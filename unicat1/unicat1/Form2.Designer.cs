@@ -103,6 +103,7 @@
             this.pictureBox_back.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_back.TabIndex = 5;
             this.pictureBox_back.TabStop = false;
+            this.pictureBox_back.Click += new System.EventHandler(this.pictureBox_back_Click);
             // 
             // pictureBox_road
             // 
@@ -111,6 +112,7 @@
             this.pictureBox_road.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_road.TabIndex = 6;
             this.pictureBox_road.TabStop = false;
+            this.pictureBox_road.Click += new System.EventHandler(this.pictureBox_road_Click);
             // 
             // pictureBox_cat
             // 
@@ -119,6 +121,7 @@
             this.pictureBox_cat.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_cat.TabIndex = 7;
             this.pictureBox_cat.TabStop = false;
+            this.pictureBox_cat.Click += new System.EventHandler(this.pictureBox_cat_Click);
             // 
             // pictureBox_fish1
             // 
@@ -127,6 +130,7 @@
             this.pictureBox_fish1.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_fish1.TabIndex = 8;
             this.pictureBox_fish1.TabStop = false;
+            this.pictureBox_fish1.Click += new System.EventHandler(this.pictureBox_fish1_Click);
             // 
             // pictureBox_fish2
             // 
@@ -135,6 +139,7 @@
             this.pictureBox_fish2.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_fish2.TabIndex = 9;
             this.pictureBox_fish2.TabStop = false;
+            this.pictureBox_fish2.Click += new System.EventHandler(this.pictureBox_fish2_Click);
             // 
             // pictureBox_fish3
             // 
@@ -143,6 +148,7 @@
             this.pictureBox_fish3.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_fish3.TabIndex = 10;
             this.pictureBox_fish3.TabStop = false;
+            this.pictureBox_fish3.Click += new System.EventHandler(this.pictureBox_fish3_Click);
             // 
             // Form2
             // 

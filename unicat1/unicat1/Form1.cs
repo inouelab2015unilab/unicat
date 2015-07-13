@@ -295,14 +295,14 @@ namespace unicat1
         //}
 
         //矢印キーでネコ移動(おまじない)
-        protected override bool ProcessDialogKey(Keys keyData)
-        {
-            if ((keyData & Keys.KeyCode) == Keys.Up) { catmove(0); return true; }
-            if ((keyData & Keys.KeyCode) == Keys.Down) { catmove(2); return true; }
-            if ((keyData & Keys.KeyCode) == Keys.Right) { catmove(1); return true; }
-            if ((keyData & Keys.KeyCode) == Keys.Left) { catmove(3); return true; }
-            return base.ProcessDialogKey(keyData);
-        }
+        //protected override bool ProcessDialogKey(Keys keyData)
+        //{
+        //    if ((keyData & Keys.KeyCode) == Keys.Up) { catmove(0); return true; }
+        //    if ((keyData & Keys.KeyCode) == Keys.Down) { catmove(2); return true; }
+        //    if ((keyData & Keys.KeyCode) == Keys.Right) { catmove(1); return true; }
+        //    if ((keyData & Keys.KeyCode) == Keys.Left) { catmove(3); return true; }
+        //    return base.ProcessDialogKey(keyData);
+        //}
 
         private void button3_Paint(object sender, PaintEventArgs e)
         {
@@ -376,6 +376,7 @@ namespace unicat1
 
             g.FillRectangle(Brushes.White, 0, 0, pictureBox1.Width, pictureBox1.Height);
             
+            //道＝１、壁＝２、猫＝３、魚１＝４、魚２＝５、魚３＝６
             for (int i = 0; i < boardmat.GetLength(0); i++)
             {
                 for (int j = 0; j < (boardmat.Length / boardmat.GetLength(0)); j++)

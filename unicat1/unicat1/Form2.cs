@@ -33,6 +33,9 @@ namespace unicat1
         Image loop1 = Image.FromFile(@"../../素材/1.png");
         Image loop2 = Image.FromFile(@"../../素材/2.png");
         Image cat;
+        static int boardsize=5;
+        int cellnumber=0;
+        int[,] stage = new int[boardsize, boardsize];
         
         public Form2()
         {
@@ -62,20 +65,50 @@ namespace unicat1
             Bitmap canvas = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             g = Graphics.FromImage(canvas);
             g.FillRectangle(Brushes.White, 0, 0, pictureBox1.Width, pictureBox1.Height);
-            int boardsize = comboBox1.SelectedIndex + 5;
+            boardsize = comboBox1.SelectedIndex + 5;
             int cellsize = pictureBox1.Width / boardsize;
+            cellnumber = 2;
             for (int i = 0; i < boardsize; i++)
             {
                 for (int j = 0; j < boardsize; j++)
                 {
                     g.DrawImage(back, i * cellsize, j * cellsize, cellsize, cellsize);
+                    stage[i, j] = cellnumber;
                 }
             }
-
-            g.Dispose();
             pictureBox1.Image = canvas;
+            g.Dispose();
             pictureBox1.Refresh();
+        }
 
+        private void pictureBox_back_Click(object sender, EventArgs e)
+        {
+            cellnumber = 2;
+        }
+
+        private void pictureBox_road_Click(object sender, EventArgs e)
+        {
+            cellnumber = 1;
+        }
+
+        private void pictureBox_cat_Click(object sender, EventArgs e)
+        {
+            cellnumber = 3;
+        }
+
+        private void pictureBox_fish1_Click(object sender, EventArgs e)
+        {
+            cellnumber = 4;
+        }
+
+        private void pictureBox_fish2_Click(object sender, EventArgs e)
+        {
+            cellnumber = 5;
+        }
+
+        private void pictureBox_fish3_Click(object sender, EventArgs e)
+        {
+            cellnumber = 6;
         }
 
 
