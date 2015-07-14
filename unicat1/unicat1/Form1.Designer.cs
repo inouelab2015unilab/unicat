@@ -850,7 +850,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "はらぺこネコのたべもの探しの旅";
-            this.Activated += new System.EventHandler(this.Form1_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).EndInit();

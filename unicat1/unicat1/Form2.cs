@@ -150,41 +150,38 @@ namespace unicat1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            WriteCsv();
-            this.Close();
-        }
+            //メッセージボックスを表示する
+            DialogResult result = MessageBox.Show("ステージを保存しますか？",
+                "質問",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Exclamation,
+                MessageBoxDefaultButton.Button2);
 
-        private static void WriteCsv()
-        {
-            try
+            //何が選択されたか調べる
+            if (result == DialogResult.OK)
             {
-                // appendをtrueにすると，既存のファイルに追記
-                //         falseにすると，ファイルを新規作成する
-                var append = false;
-                // 出力用のファイルを開く
-                using (var sw = new System.IO.StreamWriter(@"../../boardmatrix/test.csv", append))
+                try
                 {
-                    for (int j = 0; j < stage.GetLength(1); j++)
+                    // 出力用のファイルを開く
+                    using (var sw = new System.IO.StreamWriter(@"../../boardmatrix/test.csv", false))
                     {
-                        for (int i = 0; i < stage.GetLength(0); i++)
+                        for (int j = 0; j < stage.GetLength(1); j++)
                         {
-                            if (i != stage.GetLength(0) - 1)
+                            for (int i = 0; i < stage.GetLength(0); i++)
                             {
-                                sw.Write(stage[i, j] + ",");
-                            }
-                            else
-                            {
-                                sw.WriteLine(stage[i, j]);
+                                if (i != stage.GetLength(0) - 1) sw.Write(stage[i, j] + ",");
+                                else sw.WriteLine(stage[i, j]);
                             }
                         }
                     }
                 }
+                catch { }
+
+
+                Application.Restart();
             }
-            catch (System.Exception e)
-            {
-                // ファイルを開くのに失敗したときエラーメッセージを表示
-                System.Console.WriteLine(e.Message);
-            }
+            else if (result == DialogResult.Cancel) { }
         }
+
     }
 }

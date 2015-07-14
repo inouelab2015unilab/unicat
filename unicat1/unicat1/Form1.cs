@@ -773,40 +773,6 @@ namespace unicat1
             Form2 form2 = new Form2();
             form2.Show();
         }
-
-        //private void Form1_Activated(object sender, EventArgs e)
-        //{
-        //    //盤面情報をCSVファイルから読み込み、boardlistに格納(要素は二次元配列)
-        //    foreach (var n in files)
-        //    {
-        //        using (StreamReader sr = new StreamReader(n, Encoding.GetEncoding(932)))
-        //        {
-        //            List<string> templist = new List<string>();
-
-        //            while (!sr.EndOfStream)
-        //            {
-        //                string s = sr.ReadLine();
-        //                templist.Add(s);
-        //            }
-        //            xmax = templist.Count;
-        //            string[] a = templist[0].Split(',');
-        //            ymax = a.Length;
-        //            int[,] temp = new int[xmax, ymax];
-
-        //            for (int y = 0; y < ymax; y++)
-        //            {
-        //                string[] arraytemp = templist[y].Split(',');
-        //                for (int x = 0; x < xmax; x++)
-        //                {
-        //                    temp[x, y] = int.Parse(arraytemp[x]);
-        //                }
-        //            }
-        //            boardlist.Add(temp);
-        //        }
-
-        //    }
-        //}
-
  
     }
 }
