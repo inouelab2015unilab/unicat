@@ -39,6 +39,8 @@
             this.pictureBox_fish1 = new System.Windows.Forms.PictureBox();
             this.pictureBox_fish2 = new System.Windows.Forms.PictureBox();
             this.pictureBox_fish3 = new System.Windows.Forms.PictureBox();
+            this.selected_pictureBox = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_back)).BeginInit();
@@ -47,6 +49,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fish1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fish2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fish3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selected_pictureBox)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -57,12 +61,13 @@
             this.pictureBox1.Size = new System.Drawing.Size(400, 400);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(6, 50);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 46);
+            this.button1.Size = new System.Drawing.Size(132, 25);
             this.button1.TabIndex = 1;
             this.button1.Text = "ステージ作成";
             this.button1.UseVisualStyleBackColor = true;
@@ -83,22 +88,23 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(418, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(144, 102);
+            this.groupBox1.Size = new System.Drawing.Size(144, 83);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(424, 360);
+            this.button2.Location = new System.Drawing.Point(424, 383);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(132, 52);
+            this.button2.Size = new System.Drawing.Size(132, 29);
             this.button2.TabIndex = 4;
             this.button2.Text = "保存";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox_back
             // 
-            this.pictureBox_back.Location = new System.Drawing.Point(424, 120);
+            this.pictureBox_back.Location = new System.Drawing.Point(424, 182);
             this.pictureBox_back.Name = "pictureBox_back";
             this.pictureBox_back.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_back.TabIndex = 5;
@@ -107,7 +113,7 @@
             // 
             // pictureBox_road
             // 
-            this.pictureBox_road.Location = new System.Drawing.Point(496, 120);
+            this.pictureBox_road.Location = new System.Drawing.Point(496, 182);
             this.pictureBox_road.Name = "pictureBox_road";
             this.pictureBox_road.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_road.TabIndex = 6;
@@ -116,7 +122,7 @@
             // 
             // pictureBox_cat
             // 
-            this.pictureBox_cat.Location = new System.Drawing.Point(424, 197);
+            this.pictureBox_cat.Location = new System.Drawing.Point(424, 249);
             this.pictureBox_cat.Name = "pictureBox_cat";
             this.pictureBox_cat.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_cat.TabIndex = 7;
@@ -125,7 +131,7 @@
             // 
             // pictureBox_fish1
             // 
-            this.pictureBox_fish1.Location = new System.Drawing.Point(496, 197);
+            this.pictureBox_fish1.Location = new System.Drawing.Point(496, 249);
             this.pictureBox_fish1.Name = "pictureBox_fish1";
             this.pictureBox_fish1.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_fish1.TabIndex = 8;
@@ -134,7 +140,7 @@
             // 
             // pictureBox_fish2
             // 
-            this.pictureBox_fish2.Location = new System.Drawing.Point(424, 275);
+            this.pictureBox_fish2.Location = new System.Drawing.Point(424, 317);
             this.pictureBox_fish2.Name = "pictureBox_fish2";
             this.pictureBox_fish2.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_fish2.TabIndex = 9;
@@ -143,18 +149,38 @@
             // 
             // pictureBox_fish3
             // 
-            this.pictureBox_fish3.Location = new System.Drawing.Point(496, 275);
+            this.pictureBox_fish3.Location = new System.Drawing.Point(496, 317);
             this.pictureBox_fish3.Name = "pictureBox_fish3";
             this.pictureBox_fish3.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_fish3.TabIndex = 10;
             this.pictureBox_fish3.TabStop = false;
             this.pictureBox_fish3.Click += new System.EventHandler(this.pictureBox_fish3_Click);
             // 
+            // selected_pictureBox
+            // 
+            this.selected_pictureBox.Location = new System.Drawing.Point(10, 19);
+            this.selected_pictureBox.Name = "selected_pictureBox";
+            this.selected_pictureBox.Size = new System.Drawing.Size(60, 60);
+            this.selected_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.selected_pictureBox.TabIndex = 11;
+            this.selected_pictureBox.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.selected_pictureBox);
+            this.groupBox2.Location = new System.Drawing.Point(448, 90);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(78, 86);
+            this.groupBox2.TabIndex = 12;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "選択中";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(574, 421);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBox_fish3);
             this.Controls.Add(this.pictureBox_fish2);
             this.Controls.Add(this.pictureBox_fish1);
@@ -175,6 +201,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fish1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fish2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fish3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selected_pictureBox)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -192,5 +220,7 @@
         private System.Windows.Forms.PictureBox pictureBox_fish1;
         private System.Windows.Forms.PictureBox pictureBox_fish2;
         private System.Windows.Forms.PictureBox pictureBox_fish3;
+        private System.Windows.Forms.PictureBox selected_pictureBox;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

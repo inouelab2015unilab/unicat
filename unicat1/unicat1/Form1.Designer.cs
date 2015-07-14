@@ -140,7 +140,7 @@
             this.movebutton.BackColor = System.Drawing.Color.White;
             this.movebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.movebutton.Location = new System.Drawing.Point(676, 706);
-            this.movebutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.movebutton.Margin = new System.Windows.Forms.Padding(2);
             this.movebutton.Name = "movebutton";
             this.movebutton.Size = new System.Drawing.Size(130, 50);
             this.movebutton.TabIndex = 1;
@@ -160,7 +160,7 @@
             // main2
             // 
             this.main2.Location = new System.Drawing.Point(774, 58);
-            this.main2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main2.Margin = new System.Windows.Forms.Padding(2);
             this.main2.Name = "main2";
             this.main2.Size = new System.Drawing.Size(100, 100);
             this.main2.TabIndex = 11;
@@ -171,7 +171,7 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button2.Location = new System.Drawing.Point(824, 519);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 30);
             this.button2.TabIndex = 16;
@@ -182,7 +182,7 @@
             // main1
             // 
             this.main1.Location = new System.Drawing.Point(670, 58);
-            this.main1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main1.Margin = new System.Windows.Forms.Padding(2);
             this.main1.Name = "main1";
             this.main1.Size = new System.Drawing.Size(100, 100);
             this.main1.TabIndex = 21;
@@ -191,7 +191,7 @@
             // main3
             // 
             this.main3.Location = new System.Drawing.Point(878, 58);
-            this.main3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main3.Margin = new System.Windows.Forms.Padding(2);
             this.main3.Name = "main3";
             this.main3.Size = new System.Drawing.Size(100, 100);
             this.main3.TabIndex = 22;
@@ -200,7 +200,7 @@
             // main4
             // 
             this.main4.Location = new System.Drawing.Point(982, 58);
-            this.main4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main4.Margin = new System.Windows.Forms.Padding(2);
             this.main4.Name = "main4";
             this.main4.Size = new System.Drawing.Size(100, 100);
             this.main4.TabIndex = 23;
@@ -209,7 +209,7 @@
             // main5
             // 
             this.main5.Location = new System.Drawing.Point(1086, 58);
-            this.main5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main5.Margin = new System.Windows.Forms.Padding(2);
             this.main5.Name = "main5";
             this.main5.Size = new System.Drawing.Size(100, 100);
             this.main5.TabIndex = 24;
@@ -218,7 +218,7 @@
             // main6
             // 
             this.main6.Location = new System.Drawing.Point(1190, 58);
-            this.main6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main6.Margin = new System.Windows.Forms.Padding(2);
             this.main6.Name = "main6";
             this.main6.Size = new System.Drawing.Size(100, 100);
             this.main6.TabIndex = 25;
@@ -227,7 +227,7 @@
             // main7
             // 
             this.main7.Location = new System.Drawing.Point(670, 162);
-            this.main7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main7.Margin = new System.Windows.Forms.Padding(2);
             this.main7.Name = "main7";
             this.main7.Size = new System.Drawing.Size(100, 100);
             this.main7.TabIndex = 26;
@@ -236,7 +236,7 @@
             // main8
             // 
             this.main8.Location = new System.Drawing.Point(774, 162);
-            this.main8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main8.Margin = new System.Windows.Forms.Padding(2);
             this.main8.Name = "main8";
             this.main8.Size = new System.Drawing.Size(100, 100);
             this.main8.TabIndex = 27;
@@ -245,7 +245,7 @@
             // main9
             // 
             this.main9.Location = new System.Drawing.Point(878, 162);
-            this.main9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main9.Margin = new System.Windows.Forms.Padding(2);
             this.main9.Name = "main9";
             this.main9.Size = new System.Drawing.Size(100, 100);
             this.main9.TabIndex = 28;
@@ -254,7 +254,7 @@
             // main10
             // 
             this.main10.Location = new System.Drawing.Point(982, 162);
-            this.main10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main10.Margin = new System.Windows.Forms.Padding(2);
             this.main10.Name = "main10";
             this.main10.Size = new System.Drawing.Size(100, 100);
             this.main10.TabIndex = 29;
@@ -263,7 +263,7 @@
             // main11
             // 
             this.main11.Location = new System.Drawing.Point(1086, 162);
-            this.main11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main11.Margin = new System.Windows.Forms.Padding(2);
             this.main11.Name = "main11";
             this.main11.Size = new System.Drawing.Size(100, 100);
             this.main11.TabIndex = 30;
@@ -272,7 +272,7 @@
             // main12
             // 
             this.main12.Location = new System.Drawing.Point(1190, 162);
-            this.main12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main12.Margin = new System.Windows.Forms.Padding(2);
             this.main12.Name = "main12";
             this.main12.Size = new System.Drawing.Size(100, 100);
             this.main12.TabIndex = 31;
@@ -281,7 +281,7 @@
             // one1
             // 
             this.one1.Location = new System.Drawing.Point(670, 276);
-            this.one1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.one1.Margin = new System.Windows.Forms.Padding(2);
             this.one1.Name = "one1";
             this.one1.Size = new System.Drawing.Size(100, 100);
             this.one1.TabIndex = 34;
@@ -290,7 +290,7 @@
             // one2
             // 
             this.one2.Location = new System.Drawing.Point(774, 276);
-            this.one2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.one2.Margin = new System.Windows.Forms.Padding(2);
             this.one2.Name = "one2";
             this.one2.Size = new System.Drawing.Size(100, 100);
             this.one2.TabIndex = 35;
@@ -299,7 +299,7 @@
             // one3
             // 
             this.one3.Location = new System.Drawing.Point(878, 276);
-            this.one3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.one3.Margin = new System.Windows.Forms.Padding(2);
             this.one3.Name = "one3";
             this.one3.Size = new System.Drawing.Size(100, 100);
             this.one3.TabIndex = 36;
@@ -308,7 +308,7 @@
             // one4
             // 
             this.one4.Location = new System.Drawing.Point(982, 276);
-            this.one4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.one4.Margin = new System.Windows.Forms.Padding(2);
             this.one4.Name = "one4";
             this.one4.Size = new System.Drawing.Size(100, 100);
             this.one4.TabIndex = 37;
@@ -317,7 +317,7 @@
             // one5
             // 
             this.one5.Location = new System.Drawing.Point(1086, 276);
-            this.one5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.one5.Margin = new System.Windows.Forms.Padding(2);
             this.one5.Name = "one5";
             this.one5.Size = new System.Drawing.Size(100, 100);
             this.one5.TabIndex = 38;
@@ -326,7 +326,7 @@
             // one6
             // 
             this.one6.Location = new System.Drawing.Point(1190, 276);
-            this.one6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.one6.Margin = new System.Windows.Forms.Padding(2);
             this.one6.Name = "one6";
             this.one6.Size = new System.Drawing.Size(100, 100);
             this.one6.TabIndex = 39;
@@ -335,7 +335,7 @@
             // two6
             // 
             this.two6.Location = new System.Drawing.Point(1190, 388);
-            this.two6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.two6.Margin = new System.Windows.Forms.Padding(2);
             this.two6.Name = "two6";
             this.two6.Size = new System.Drawing.Size(100, 100);
             this.two6.TabIndex = 45;
@@ -344,7 +344,7 @@
             // two5
             // 
             this.two5.Location = new System.Drawing.Point(1086, 388);
-            this.two5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.two5.Margin = new System.Windows.Forms.Padding(2);
             this.two5.Name = "two5";
             this.two5.Size = new System.Drawing.Size(100, 100);
             this.two5.TabIndex = 44;
@@ -353,7 +353,7 @@
             // two4
             // 
             this.two4.Location = new System.Drawing.Point(982, 388);
-            this.two4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.two4.Margin = new System.Windows.Forms.Padding(2);
             this.two4.Name = "two4";
             this.two4.Size = new System.Drawing.Size(100, 100);
             this.two4.TabIndex = 43;
@@ -362,7 +362,7 @@
             // two3
             // 
             this.two3.Location = new System.Drawing.Point(878, 388);
-            this.two3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.two3.Margin = new System.Windows.Forms.Padding(2);
             this.two3.Name = "two3";
             this.two3.Size = new System.Drawing.Size(100, 100);
             this.two3.TabIndex = 42;
@@ -371,7 +371,7 @@
             // two2
             // 
             this.two2.Location = new System.Drawing.Point(774, 388);
-            this.two2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.two2.Margin = new System.Windows.Forms.Padding(2);
             this.two2.Name = "two2";
             this.two2.Size = new System.Drawing.Size(100, 100);
             this.two2.TabIndex = 41;
@@ -380,7 +380,7 @@
             // two1
             // 
             this.two1.Location = new System.Drawing.Point(670, 388);
-            this.two1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.two1.Margin = new System.Windows.Forms.Padding(2);
             this.two1.Name = "two1";
             this.two1.Size = new System.Drawing.Size(100, 100);
             this.two1.TabIndex = 40;
@@ -598,7 +598,7 @@
             this.button9.BackColor = System.Drawing.Color.White;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button9.Location = new System.Drawing.Point(837, 706);
-            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(130, 50);
             this.button9.TabIndex = 75;
@@ -788,7 +788,7 @@
             // makeStage_button
             // 
             this.makeStage_button.Location = new System.Drawing.Point(1147, 530);
-            this.makeStage_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.makeStage_button.Margin = new System.Windows.Forms.Padding(2);
             this.makeStage_button.Name = "makeStage_button";
             this.makeStage_button.Size = new System.Drawing.Size(93, 33);
             this.makeStage_button.TabIndex = 84;
@@ -850,6 +850,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "はらぺこネコのたべもの探しの旅";
+            this.Activated += new System.EventHandler(this.Form1_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).EndInit();

@@ -39,11 +39,9 @@ namespace unicat1
         Image cat;
 
         int[,] nowboard;    //現在選択されている盤面のデータ
-        public int xmax = 10, ymax = 10;   //盤面のサイズ
-
-        public int catposx;    
-        public int catposy;
-        public int footcount;
+        int xmax = 10, ymax = 10;   //盤面のサイズ       
+        int catposx,catposy;    
+        int footcount;
         int fishcount;
         int fish2count;
         int fish3count;
@@ -176,7 +174,9 @@ namespace unicat1
             pictureBox26.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox27.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox28.SizeMode = PictureBoxSizeMode.StretchImage;
+            
         }
+
 
         //ネコがある方向に一つ進む
         //public void catmove(int direction)
@@ -773,6 +773,39 @@ namespace unicat1
             Form2 form2 = new Form2();
             form2.Show();
         }
+
+        //private void Form1_Activated(object sender, EventArgs e)
+        //{
+        //    //盤面情報をCSVファイルから読み込み、boardlistに格納(要素は二次元配列)
+        //    foreach (var n in files)
+        //    {
+        //        using (StreamReader sr = new StreamReader(n, Encoding.GetEncoding(932)))
+        //        {
+        //            List<string> templist = new List<string>();
+
+        //            while (!sr.EndOfStream)
+        //            {
+        //                string s = sr.ReadLine();
+        //                templist.Add(s);
+        //            }
+        //            xmax = templist.Count;
+        //            string[] a = templist[0].Split(',');
+        //            ymax = a.Length;
+        //            int[,] temp = new int[xmax, ymax];
+
+        //            for (int y = 0; y < ymax; y++)
+        //            {
+        //                string[] arraytemp = templist[y].Split(',');
+        //                for (int x = 0; x < xmax; x++)
+        //                {
+        //                    temp[x, y] = int.Parse(arraytemp[x]);
+        //                }
+        //            }
+        //            boardlist.Add(temp);
+        //        }
+
+        //    }
+        //}
 
  
     }
