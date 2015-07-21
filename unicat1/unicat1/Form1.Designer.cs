@@ -89,23 +89,23 @@
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.makeStage_button = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.two1 = new System.Windows.Forms.PictureBox();
-            this.two2 = new System.Windows.Forms.PictureBox();
-            this.two3 = new System.Windows.Forms.PictureBox();
-            this.two4 = new System.Windows.Forms.PictureBox();
-            this.two5 = new System.Windows.Forms.PictureBox();
+            this.main_Box = new System.Windows.Forms.GroupBox();
+            this.one_Box = new System.Windows.Forms.GroupBox();
+            this.two_Box = new System.Windows.Forms.GroupBox();
             this.two6 = new System.Windows.Forms.PictureBox();
+            this.two5 = new System.Windows.Forms.PictureBox();
+            this.two4 = new System.Windows.Forms.PictureBox();
+            this.two3 = new System.Windows.Forms.PictureBox();
+            this.two2 = new System.Windows.Forms.PictureBox();
+            this.two1 = new System.Windows.Forms.PictureBox();
+            this.if_Box = new System.Windows.Forms.GroupBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.mosimo6 = new System.Windows.Forms.PictureBox();
+            this.mosimo2 = new System.Windows.Forms.PictureBox();
             this.mosimo5 = new System.Windows.Forms.PictureBox();
+            this.mosimo1 = new System.Windows.Forms.PictureBox();
             this.mosimo4 = new System.Windows.Forms.PictureBox();
             this.mosimo3 = new System.Windows.Forms.PictureBox();
-            this.mosimo2 = new System.Windows.Forms.PictureBox();
-            this.mosimo1 = new System.Windows.Forms.PictureBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.if_button = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -134,22 +134,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.two1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.two2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.two3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.two4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.two5)).BeginInit();
+            this.main_Box.SuspendLayout();
+            this.one_Box.SuspendLayout();
+            this.two_Box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.two6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.two5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.two4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.two3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.two2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.two1)).BeginInit();
+            this.if_Box.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mosimo6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mosimo5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mosimo4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mosimo3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo1)).BeginInit();
             this.groupBox_music.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -808,117 +808,56 @@
             this.makeStage_button.UseVisualStyleBackColor = true;
             this.makeStage_button.Click += new System.EventHandler(this.makeStage_button_Click);
             // 
-            // groupBox2
+            // main_Box
             // 
-            this.groupBox2.Controls.Add(this.main12);
-            this.groupBox2.Controls.Add(this.main11);
-            this.groupBox2.Controls.Add(this.main10);
-            this.groupBox2.Controls.Add(this.main9);
-            this.groupBox2.Controls.Add(this.main8);
-            this.groupBox2.Controls.Add(this.main7);
-            this.groupBox2.Controls.Add(this.main6);
-            this.groupBox2.Controls.Add(this.main5);
-            this.groupBox2.Controls.Add(this.main4);
-            this.groupBox2.Controls.Add(this.main3);
-            this.groupBox2.Controls.Add(this.main1);
-            this.groupBox2.Controls.Add(this.main2);
-            this.groupBox2.Location = new System.Drawing.Point(632, 9);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(667, 237);
-            this.groupBox2.TabIndex = 85;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.main_Box.Controls.Add(this.main12);
+            this.main_Box.Controls.Add(this.main11);
+            this.main_Box.Controls.Add(this.main10);
+            this.main_Box.Controls.Add(this.main9);
+            this.main_Box.Controls.Add(this.main8);
+            this.main_Box.Controls.Add(this.main7);
+            this.main_Box.Controls.Add(this.main6);
+            this.main_Box.Controls.Add(this.main5);
+            this.main_Box.Controls.Add(this.main4);
+            this.main_Box.Controls.Add(this.main3);
+            this.main_Box.Controls.Add(this.main1);
+            this.main_Box.Controls.Add(this.main2);
+            this.main_Box.Location = new System.Drawing.Point(632, 9);
+            this.main_Box.Name = "main_Box";
+            this.main_Box.Size = new System.Drawing.Size(667, 237);
+            this.main_Box.TabIndex = 85;
+            this.main_Box.TabStop = false;
+            this.main_Box.Text = "メイン";
             // 
-            // groupBox3
+            // one_Box
             // 
-            this.groupBox3.Controls.Add(this.one6);
-            this.groupBox3.Controls.Add(this.one5);
-            this.groupBox3.Controls.Add(this.one4);
-            this.groupBox3.Controls.Add(this.one3);
-            this.groupBox3.Controls.Add(this.one2);
-            this.groupBox3.Controls.Add(this.one1);
-            this.groupBox3.Location = new System.Drawing.Point(629, 249);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(670, 130);
-            this.groupBox3.TabIndex = 86;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "groupBox3";
+            this.one_Box.Controls.Add(this.one6);
+            this.one_Box.Controls.Add(this.one5);
+            this.one_Box.Controls.Add(this.one4);
+            this.one_Box.Controls.Add(this.one3);
+            this.one_Box.Controls.Add(this.one2);
+            this.one_Box.Controls.Add(this.one1);
+            this.one_Box.Location = new System.Drawing.Point(629, 249);
+            this.one_Box.Name = "one_Box";
+            this.one_Box.Size = new System.Drawing.Size(670, 130);
+            this.one_Box.TabIndex = 86;
+            this.one_Box.TabStop = false;
+            this.one_Box.Text = "ONE";
             // 
-            // groupBox4
+            // two_Box
             // 
-            this.groupBox4.Controls.Add(this.two6);
-            this.groupBox4.Controls.Add(this.two5);
-            this.groupBox4.Controls.Add(this.two4);
-            this.groupBox4.Controls.Add(this.two3);
-            this.groupBox4.Controls.Add(this.two2);
-            this.groupBox4.Controls.Add(this.two1);
-            this.groupBox4.Location = new System.Drawing.Point(630, 381);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(669, 131);
-            this.groupBox4.TabIndex = 87;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.comboBox3);
-            this.groupBox5.Controls.Add(this.mosimo6);
-            this.groupBox5.Controls.Add(this.mosimo2);
-            this.groupBox5.Controls.Add(this.mosimo5);
-            this.groupBox5.Controls.Add(this.mosimo1);
-            this.groupBox5.Controls.Add(this.mosimo4);
-            this.groupBox5.Controls.Add(this.mosimo3);
-            this.groupBox5.Location = new System.Drawing.Point(629, 518);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(670, 162);
-            this.groupBox5.TabIndex = 88;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "groupBox5";
-            // 
-            // two1
-            // 
-            this.two1.Location = new System.Drawing.Point(17, 20);
-            this.two1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.two1.Name = "two1";
-            this.two1.Size = new System.Drawing.Size(100, 100);
-            this.two1.TabIndex = 40;
-            this.two1.TabStop = false;
-            // 
-            // two2
-            // 
-            this.two2.Location = new System.Drawing.Point(123, 20);
-            this.two2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.two2.Name = "two2";
-            this.two2.Size = new System.Drawing.Size(100, 100);
-            this.two2.TabIndex = 41;
-            this.two2.TabStop = false;
-            // 
-            // two3
-            // 
-            this.two3.Location = new System.Drawing.Point(229, 20);
-            this.two3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.two3.Name = "two3";
-            this.two3.Size = new System.Drawing.Size(100, 100);
-            this.two3.TabIndex = 42;
-            this.two3.TabStop = false;
-            // 
-            // two4
-            // 
-            this.two4.Location = new System.Drawing.Point(335, 20);
-            this.two4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.two4.Name = "two4";
-            this.two4.Size = new System.Drawing.Size(100, 100);
-            this.two4.TabIndex = 43;
-            this.two4.TabStop = false;
-            // 
-            // two5
-            // 
-            this.two5.Location = new System.Drawing.Point(441, 20);
-            this.two5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.two5.Name = "two5";
-            this.two5.Size = new System.Drawing.Size(100, 100);
-            this.two5.TabIndex = 44;
-            this.two5.TabStop = false;
+            this.two_Box.Controls.Add(this.two6);
+            this.two_Box.Controls.Add(this.two5);
+            this.two_Box.Controls.Add(this.two4);
+            this.two_Box.Controls.Add(this.two3);
+            this.two_Box.Controls.Add(this.two2);
+            this.two_Box.Controls.Add(this.two1);
+            this.two_Box.Location = new System.Drawing.Point(630, 381);
+            this.two_Box.Name = "two_Box";
+            this.two_Box.Size = new System.Drawing.Size(669, 131);
+            this.two_Box.TabIndex = 87;
+            this.two_Box.TabStop = false;
+            this.two_Box.Text = "TWO";
             // 
             // two6
             // 
@@ -929,6 +868,77 @@
             this.two6.TabIndex = 45;
             this.two6.TabStop = false;
             // 
+            // two5
+            // 
+            this.two5.Location = new System.Drawing.Point(441, 20);
+            this.two5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.two5.Name = "two5";
+            this.two5.Size = new System.Drawing.Size(100, 100);
+            this.two5.TabIndex = 44;
+            this.two5.TabStop = false;
+            // 
+            // two4
+            // 
+            this.two4.Location = new System.Drawing.Point(335, 20);
+            this.two4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.two4.Name = "two4";
+            this.two4.Size = new System.Drawing.Size(100, 100);
+            this.two4.TabIndex = 43;
+            this.two4.TabStop = false;
+            // 
+            // two3
+            // 
+            this.two3.Location = new System.Drawing.Point(229, 20);
+            this.two3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.two3.Name = "two3";
+            this.two3.Size = new System.Drawing.Size(100, 100);
+            this.two3.TabIndex = 42;
+            this.two3.TabStop = false;
+            // 
+            // two2
+            // 
+            this.two2.Location = new System.Drawing.Point(123, 20);
+            this.two2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.two2.Name = "two2";
+            this.two2.Size = new System.Drawing.Size(100, 100);
+            this.two2.TabIndex = 41;
+            this.two2.TabStop = false;
+            // 
+            // two1
+            // 
+            this.two1.Location = new System.Drawing.Point(17, 20);
+            this.two1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.two1.Name = "two1";
+            this.two1.Size = new System.Drawing.Size(100, 100);
+            this.two1.TabIndex = 40;
+            this.two1.TabStop = false;
+            // 
+            // if_Box
+            // 
+            this.if_Box.Controls.Add(this.comboBox3);
+            this.if_Box.Controls.Add(this.mosimo6);
+            this.if_Box.Controls.Add(this.mosimo2);
+            this.if_Box.Controls.Add(this.mosimo5);
+            this.if_Box.Controls.Add(this.mosimo1);
+            this.if_Box.Controls.Add(this.mosimo4);
+            this.if_Box.Controls.Add(this.mosimo3);
+            this.if_Box.Location = new System.Drawing.Point(629, 518);
+            this.if_Box.Name = "if_Box";
+            this.if_Box.Size = new System.Drawing.Size(670, 162);
+            this.if_Box.TabIndex = 88;
+            this.if_Box.TabStop = false;
+            this.if_Box.Text = "もしもボックス";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(18, 21);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(160, 23);
+            this.comboBox3.TabIndex = 89;
+            // 
             // mosimo6
             // 
             this.mosimo6.Location = new System.Drawing.Point(548, 50);
@@ -938,6 +948,15 @@
             this.mosimo6.TabIndex = 51;
             this.mosimo6.TabStop = false;
             // 
+            // mosimo2
+            // 
+            this.mosimo2.Location = new System.Drawing.Point(124, 50);
+            this.mosimo2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mosimo2.Name = "mosimo2";
+            this.mosimo2.Size = new System.Drawing.Size(100, 100);
+            this.mosimo2.TabIndex = 47;
+            this.mosimo2.TabStop = false;
+            // 
             // mosimo5
             // 
             this.mosimo5.Location = new System.Drawing.Point(442, 50);
@@ -946,6 +965,15 @@
             this.mosimo5.Size = new System.Drawing.Size(100, 100);
             this.mosimo5.TabIndex = 50;
             this.mosimo5.TabStop = false;
+            // 
+            // mosimo1
+            // 
+            this.mosimo1.Location = new System.Drawing.Point(18, 50);
+            this.mosimo1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mosimo1.Name = "mosimo1";
+            this.mosimo1.Size = new System.Drawing.Size(100, 100);
+            this.mosimo1.TabIndex = 46;
+            this.mosimo1.TabStop = false;
             // 
             // mosimo4
             // 
@@ -965,34 +993,6 @@
             this.mosimo3.TabIndex = 48;
             this.mosimo3.TabStop = false;
             // 
-            // mosimo2
-            // 
-            this.mosimo2.Location = new System.Drawing.Point(124, 50);
-            this.mosimo2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.mosimo2.Name = "mosimo2";
-            this.mosimo2.Size = new System.Drawing.Size(100, 100);
-            this.mosimo2.TabIndex = 47;
-            this.mosimo2.TabStop = false;
-            // 
-            // mosimo1
-            // 
-            this.mosimo1.Location = new System.Drawing.Point(18, 50);
-            this.mosimo1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.mosimo1.Name = "mosimo1";
-            this.mosimo1.Size = new System.Drawing.Size(100, 100);
-            this.mosimo1.TabIndex = 46;
-            this.mosimo1.TabStop = false;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(18, 21);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(160, 23);
-            this.comboBox3.TabIndex = 89;
-            // 
             // if_button
             // 
             this.if_button.Location = new System.Drawing.Point(1352, 716);
@@ -1002,6 +1002,7 @@
             this.if_button.TabIndex = 89;
             this.if_button.Text = "if_button";
             this.if_button.UseVisualStyleBackColor = true;
+            this.if_button.Click += new System.EventHandler(this.if_button_Click);
             // 
             // radioButton1
             // 
@@ -1045,13 +1046,13 @@
             this.ClientSize = new System.Drawing.Size(1482, 853);
             this.Controls.Add(this.groupBox_music);
             this.Controls.Add(this.if_button);
-            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.if_Box);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.two_Box);
+            this.Controls.Add(this.one_Box);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.main_Box);
             this.Controls.Add(this.makeStage_button);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.undo_button);
@@ -1102,22 +1103,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.two1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.two2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.two3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.two4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.two5)).EndInit();
+            this.main_Box.ResumeLayout(false);
+            this.one_Box.ResumeLayout(false);
+            this.two_Box.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.two6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.two5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.two4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.two3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.two2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.two1)).EndInit();
+            this.if_Box.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mosimo6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mosimo5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mosimo4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mosimo3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo1)).EndInit();
             this.groupBox_music.ResumeLayout(false);
             this.groupBox_music.PerformLayout();
             this.ResumeLayout(false);
@@ -1188,16 +1189,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button makeStage_button;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox main_Box;
+        private System.Windows.Forms.GroupBox one_Box;
+        private System.Windows.Forms.GroupBox two_Box;
         private System.Windows.Forms.PictureBox two6;
         private System.Windows.Forms.PictureBox two5;
         private System.Windows.Forms.PictureBox two4;
         private System.Windows.Forms.PictureBox two3;
         private System.Windows.Forms.PictureBox two2;
         private System.Windows.Forms.PictureBox two1;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox if_Box;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.PictureBox mosimo6;
         private System.Windows.Forms.PictureBox mosimo2;

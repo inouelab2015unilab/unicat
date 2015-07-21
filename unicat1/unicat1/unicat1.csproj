@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="素材\1.png" />
+    <Content Include="素材\if.png" />
     <Content Include="素材\2.png" />
     <Content Include="素材\back.png" />
     <Content Include="素材\BGM.wav" />

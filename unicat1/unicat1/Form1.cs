@@ -36,6 +36,7 @@ namespace unicat1
         Image commandpanel2 = Image.FromFile(@"../../素材/commandpanel2.png");
         Image loop1 = Image.FromFile(@"../../素材/1.png");
         Image loop2 = Image.FromFile(@"../../素材/2.png");
+        Image pic_if = Image.FromFile(@"../../素材/if.png");
         Image cat;
 
         int[,] nowboard;    //現在選択されている盤面のデータ
@@ -50,6 +51,7 @@ namespace unicat1
         int mainpiccount = 0;
         int onepiccount = 0;
         int twopiccount = 0;
+        int mosimopiccount = 0;
 
         //0=上、1=右、2=下、3=左
         int catdirection = 0;
@@ -58,6 +60,7 @@ namespace unicat1
         List<int> movelist = new List<int>() ;  //メインボックスの命令リスト
         List<int> onelist = new List<int>();    //１ボックスの命令リスト
         List<int> twolist = new List<int>();    //２ボックスの命令リスト
+        List<int> mosimolist = new List<int>();    //２ボックスの命令リスト
 
         int Score=0;
 
@@ -65,6 +68,7 @@ namespace unicat1
         PictureBox[] mainpicarray = new PictureBox[12];
         PictureBox[] onepicarray;
         PictureBox[] twopicarray = new PictureBox[6];
+        PictureBox[] mosimopicarray = new PictureBox[6];
         SoundPlayer Hoge = new SoundPlayer(@"../../素材/BGM.wav");
 
         //盤面情報をCSVファイルから読み込み
@@ -74,7 +78,7 @@ namespace unicat1
         {
             InitializeComponent();
 
-            radioButton1.Checked = true;
+            radioButton1.Checked = false;
             //音楽流す
             if (radioButton1.Checked == true)
             {
@@ -99,17 +103,23 @@ namespace unicat1
             comboBox2.Items.Add("メイン");
             comboBox2.Items.Add("one");
             comboBox2.Items.Add("two");
+            comboBox2.Items.Add("もしも");
+            comboBox3.Items.Add("もしも前に壁があったら");
+            comboBox3.Items.Add("もしも左に壁があったら");
+            comboBox3.Items.Add("もしも右に壁があったら");
 
             //ピクチャーボックス配列に各ピクチャーボックスを格納
             mainpicarray = new PictureBox[] { main1, main2, main3, main4, main5, main6,main7, main8, main9, main10, main11, main12 };
             onepicarray = new PictureBox[] { one1, one2, one3, one4, one5, one6 };
             twopicarray = new PictureBox[] { two1, two2, two3, two4, two5, two6 };
+            mosimopicarray = new PictureBox[] { mosimo1, mosimo2, mosimo3, mosimo4, mosimo5, mosimo6 };
 
 
             //命令パネルの背景を設置
             foreach (var n in mainpicarray) n.Image = commandpanel;
             foreach (var n in onepicarray) n.Image = commandpanel2;
             foreach (var n in twopicarray) n.Image = commandpanel2;
+            foreach (var n in mosimopicarray) n.Image = commandpanel2;
 
             //命令ボタンの背景を設置
             gobutton.BackgroundImage = Image.FromFile(@"../../素材/up.png");
@@ -118,6 +128,7 @@ namespace unicat1
             catchfish_button.BackgroundImage = Image.FromFile(@"../../素材/catch.png");
             one_button.BackgroundImage = Image.FromFile(@"../../素材/1.png");
             two_button.BackgroundImage = Image.FromFile(@"../../素材/2.png");
+            if_button.BackgroundImage = Image.FromFile(@"../../素材/if.png");
 
             gobutton.Paint += new PaintEventHandler(button3_Paint);
             turnleft_button.Paint += new PaintEventHandler(button4_Paint);
@@ -125,6 +136,7 @@ namespace unicat1
             catchfish_button.Paint += new PaintEventHandler(button6_Paint);
             one_button.Paint += new PaintEventHandler(button7_Paint);
             two_button.Paint += new PaintEventHandler(button8_Paint);
+            if_button.Paint += new PaintEventHandler(button8_Paint);
 
             //描画先とするImageオブジェクトを作成する
             Bitmap canvas = new Bitmap(pictureBox1.Width, pictureBox1.Height);
@@ -133,7 +145,8 @@ namespace unicat1
             g = Graphics.FromImage(canvas);
 
             comboBox1.SelectedIndex = 0;    //コンボボックスの初期値
-            comboBox2.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0; 
+            comboBox3.SelectedIndex = 0;
 
             //盤面情報をCSVファイルから読み込み、boardlistに格納(要素は二次元配列)
             foreach (var n in files)
@@ -348,7 +361,6 @@ namespace unicat1
             Button btn = (Button)sender;
             //ボタンの背景画像をボタンの大きさに合わせて描画
             e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -433,9 +445,19 @@ namespace unicat1
             {
                 try
                 {
-                        twopicarray[twopiccount].Image = orderimage;
-                        twolist.Add(ordernum);
-                        twopiccount += 1;
+                    twopicarray[twopiccount].Image = orderimage;
+                    twolist.Add(ordernum);
+                    twopiccount += 1;
+                }
+                catch { }
+            }
+            else if (comboBox2.SelectedIndex == 3)
+            {
+                try
+                {
+                    mosimopicarray[mosimopiccount].Image = orderimage;
+                    mosimolist.Add(ordernum);
+                    mosimopiccount += 1;
                 }
                 catch { }
             }
@@ -471,7 +493,11 @@ namespace unicat1
         {
                 orderclick(5, loop2);
         }
-
+       private void if_button_Click(object sender, EventArgs e)
+        {
+            orderclick(6, pic_if);
+        }
+ 
         private void listcheck(List<int> list,int index)
         {
             if (list[index] == 0) catmove(catdirection);
@@ -514,6 +540,70 @@ namespace unicat1
                     totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
                     if (totalscore <= -100) break;
                 }
+            }
+            if (list[index] == 6)
+            {
+                int xmove = 0, ymove = 0;
+                if (comboBox3.SelectedIndex == 0)
+                {        //catdirection 0=上、1=右、2=下、3=左
+                    //方向と端にいるかどうかで移動の変化量を決める
+                    if (catdirection == 0 && catposy != 0) ymove = -1;
+                    if (catdirection == 2 && catposy != ymax - 1) ymove = 1;
+                    if (catdirection == 1 && catposx != xmax - 1) xmove = 1;
+                    if (catdirection == 3 && catposx != 0) xmove = -1;
+                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先に壁がなければ
+                    {
+                        for (int j = 0; j < mosimolist.Count; j++)
+                        {
+                            listcheck(mosimolist, j);
+                            totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                            if (totalscore <= -100) break;
+                        }
+
+                    }
+                }
+                if (comboBox3.SelectedIndex == 1)
+                {
+                    //方向と端にいるかどうかで移動の変化量を決める
+                    if (catdirection == 0 && catposy != 0) xmove = -1;
+                    if (catdirection == 2 && catposy != ymax - 1) xmove = 1;
+                    if (catdirection == 1 && catposx != xmax - 1) ymove = -1;
+                    if (catdirection == 3 && catposx != 0) ymove = 1;
+                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先に壁がなければ
+                    {
+                        for (int j = 0; j < mosimolist.Count; j++)
+                        {
+                            listcheck(mosimolist, j);
+                            totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                            if (totalscore <= -100) break;
+                        }
+
+                    }
+                }
+                if (comboBox3.SelectedIndex == 2)
+                {
+                    //方向と端にいるかどうかで移動の変化量を決める
+                    if (catdirection == 0 && catposy != 0) xmove = 1;
+                    if (catdirection == 2 && catposy != ymax - 1) xmove = -1;
+                    if (catdirection == 1 && catposx != xmax - 1) ymove = 1;
+                    if (catdirection == 3 && catposx != 0) ymove = -1;
+                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先に壁がなければ
+                    {
+                        for (int j = 0; j < mosimolist.Count; j++)
+                        {
+                            listcheck(mosimolist, j);
+                            totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                            if (totalscore <= -100) break;
+                        }
+
+                    }
+                }
+                //for (int j = 0; j < mosimolist.Count; j++)
+                //{
+                //    listcheck(mosimolist, j);
+                //    totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                //    if (totalscore <= -100) break;
+                //}
             }
 
         }
@@ -582,13 +672,20 @@ namespace unicat1
                 label4.BackColor = Color.Yellow;
                 label2.BackColor = DefaultBackColor;
                 label3.BackColor = DefaultBackColor;
-
+                main_Box.BackColor = Color.LightCyan;
+                one_Box.BackColor = DefaultBackColor;
+                two_Box.BackColor = DefaultBackColor;
+                if_Box.BackColor = DefaultBackColor;
             }
             if (comboBox2.SelectedIndex == 1)
             {
                 label2.BackColor = Color.Yellow;
                 label4.BackColor = DefaultBackColor;
                 label3.BackColor = DefaultBackColor;
+                main_Box.BackColor = DefaultBackColor;
+                one_Box.BackColor = Color.LightCyan;
+                two_Box.BackColor = DefaultBackColor;
+                if_Box.BackColor = DefaultBackColor;
 
             }
             if (comboBox2.SelectedIndex == 2)
@@ -596,7 +693,22 @@ namespace unicat1
                 label3.BackColor = Color.Yellow;
                 label2.BackColor = DefaultBackColor;
                 label4.BackColor = DefaultBackColor;
-                
+                main_Box.BackColor = DefaultBackColor;
+                one_Box.BackColor = DefaultBackColor;
+                two_Box.BackColor = Color.LightCyan;
+                if_Box.BackColor = DefaultBackColor;
+
+            }
+            if (comboBox2.SelectedIndex == 3)
+            {
+                label3.BackColor = Color.Yellow;
+                label2.BackColor = DefaultBackColor;
+                label4.BackColor = DefaultBackColor;
+                main_Box.BackColor = DefaultBackColor;
+                one_Box.BackColor = DefaultBackColor;
+                two_Box.BackColor = DefaultBackColor;
+                if_Box.BackColor = Color.LightCyan;
+
             }
         }
 
@@ -690,10 +802,12 @@ namespace unicat1
             movelist.Clear();
             onelist.Clear();
             twolist.Clear();
+            mosimolist.Clear();
 
             mainpiccount = 0;
             onepiccount = 0;
             twopiccount = 0;
+            mosimopiccount = 0;
 
             for (int i = 0; i < 12; i++)
             {
@@ -704,6 +818,7 @@ namespace unicat1
             {
                 onepicarray[i].Image = commandpanel2;
                 twopicarray[i].Image = commandpanel2;
+                mosimopicarray[i].Image = commandpanel2;
             }
 
         }
@@ -752,6 +867,19 @@ namespace unicat1
                 if (twolist.Count > 0)
                 {
                     twolist.Remove(twolist[twolist.Count - 1]);
+                }
+            }
+            if (comboBox2.SelectedIndex == 3)
+            {
+                if (mosimopiccount < 0) mosimopiccount = 0;
+                else if (mosimopiccount > 0)
+                {
+                    mosimopicarray[mosimopiccount - 1].Image = commandpanel2;
+                    mosimopiccount--;
+                }
+                if (mosimolist.Count > 0)
+                {
+                    mosimolist.Remove(mosimolist[mosimolist.Count - 1]);
                 }
             }
         }
