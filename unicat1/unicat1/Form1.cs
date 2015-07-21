@@ -65,7 +65,7 @@ namespace unicat1
         PictureBox[] mainpicarray = new PictureBox[12];
         PictureBox[] onepicarray;
         PictureBox[] twopicarray = new PictureBox[6];
-     
+        SoundPlayer Hoge = new SoundPlayer(@"../../素材/BGM.wav");
 
         //盤面情報をCSVファイルから読み込み
         string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
@@ -73,11 +73,14 @@ namespace unicat1
         public Form1()
         {
             InitializeComponent();
-            
-            //音楽流す
-            SoundPlayer Hoge = new SoundPlayer(@"../../素材/BGM.wav");
-            Hoge.PlayLooping();
 
+            radioButton1.Checked = true;
+            //音楽流す
+            if (radioButton1.Checked == true)
+            {
+                SoundPlayer Hoge = new SoundPlayer(@"../../素材/BGM.wav");
+                Hoge.PlayLooping();
+            }
             movecount = new int[12];
 
             cat = catu;
@@ -772,6 +775,18 @@ namespace unicat1
         {
             Form2 form2 = new Form2();
             form2.Show();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked == true)
+            {
+                Hoge.PlayLooping();
+            }
+            else
+            {
+                Hoge.Stop();
+            }
         }
  
     }
