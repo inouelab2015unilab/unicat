@@ -45,16 +45,12 @@ namespace unicat1
             pictureBox_cat.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox_fish1.Image = fish;
             pictureBox_fish1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox_fish2.Image = fish2;
-            pictureBox_fish2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox_fish3.Image = fish3;
-            pictureBox_fish3.SizeMode = PictureBoxSizeMode.StretchImage;
             for (int i = 5; i <= 10; i++)
             {
                 comboBox1.Items.Add(i+"×"+i);
             }
             comboBox1.SelectedIndex = 0;
-            
+            textBox1.Text = "新しいステージ" + (System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv").Count()-8);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -160,10 +156,12 @@ namespace unicat1
             //何が選択されたか調べる
             if (result == DialogResult.OK)
             {
+
                 try
                 {
                     // 出力用のファイルを開く
-                    using (var sw = new System.IO.StreamWriter(@"../../boardmatrix/test.csv", false))
+                    string filepas = "../../boardmatrix/" + textBox1.Text + ".csv";
+                    using (var sw = new System.IO.StreamWriter(@filepas, false))
                     {
                         for (int j = 0; j < stage.GetLength(1); j++)
                         {

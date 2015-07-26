@@ -17,7 +17,7 @@ namespace unicat1
     public partial class Form1 : Form
     {
         Graphics g;
-        
+
         //画像を変数に格納する
         public Image back = Image.FromFile(@"../../素材/back.png");
         Image road = Image.FromFile(@"../../素材/road.png");
@@ -41,13 +41,13 @@ namespace unicat1
 
         int[,] nowboard;    //現在選択されている盤面のデータ
         int xmax = 10, ymax = 10;   //盤面のサイズ       
-        int catposx,catposy;    
+        int catposx, catposy;
         int footcount;
         int fishcount;
         int fish2count;
         int fish3count;
         int totalscore;
-        
+
         int mainpiccount = 0;
         int onepiccount = 0;
         int twopiccount = 0;
@@ -57,12 +57,13 @@ namespace unicat1
         int catdirection = 0;
 
         int[] movecount;
-        List<int> movelist = new List<int>() ;  //メインボックスの命令リスト
+        int selectBox = 0;
+        List<int> movelist = new List<int>();  //メインボックスの命令リスト
         List<int> onelist = new List<int>();    //１ボックスの命令リスト
         List<int> twolist = new List<int>();    //２ボックスの命令リスト
         List<int> mosimolist = new List<int>();    //２ボックスの命令リスト
 
-        int Score=0;
+        int Score = 0;
 
         public List<int[,]> boardlist = new List<int[,]>();
         PictureBox[] mainpicarray = new PictureBox[12];
@@ -73,12 +74,13 @@ namespace unicat1
 
         //盤面情報をCSVファイルから読み込み
         string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
-        
+
         public Form1()
         {
             InitializeComponent();
 
-            radioButton1.Checked = false;
+            radioButton2.Checked = true;
+            radioButton_main.Checked = true;
             //音楽流す
             if (radioButton1.Checked == true)
             {
@@ -88,7 +90,7 @@ namespace unicat1
             movecount = new int[12];
 
             cat = catu;
-            
+
             RandomMT rand = new RandomMT();
 
             //コンボボックスにステージ名を自動で追加
@@ -100,16 +102,12 @@ namespace unicat1
 
             }
 
-            comboBox2.Items.Add("メイン");
-            comboBox2.Items.Add("one");
-            comboBox2.Items.Add("two");
-            comboBox2.Items.Add("もしも");
             comboBox3.Items.Add("もしも前に壁があったら");
             comboBox3.Items.Add("もしも左に壁があったら");
             comboBox3.Items.Add("もしも右に壁があったら");
 
             //ピクチャーボックス配列に各ピクチャーボックスを格納
-            mainpicarray = new PictureBox[] { main1, main2, main3, main4, main5, main6,main7, main8, main9, main10, main11, main12 };
+            mainpicarray = new PictureBox[] { main1, main2, main3, main4, main5, main6, main7, main8, main9, main10, main11, main12 };
             onepicarray = new PictureBox[] { one1, one2, one3, one4, one5, one6 };
             twopicarray = new PictureBox[] { two1, two2, two3, two4, two5, two6 };
             mosimopicarray = new PictureBox[] { mosimo1, mosimo2, mosimo3, mosimo4, mosimo5, mosimo6 };
@@ -145,7 +143,7 @@ namespace unicat1
             g = Graphics.FromImage(canvas);
 
             comboBox1.SelectedIndex = 0;    //コンボボックスの初期値
-            comboBox2.SelectedIndex = 0; 
+            selectBox = 0;
             comboBox3.SelectedIndex = 0;
 
             //盤面情報をCSVファイルから読み込み、boardlistに格納(要素は二次元配列)
@@ -183,142 +181,15 @@ namespace unicat1
             //PictureBox1に表示する
             pictureBox1.Image = canvas;
             pictureBox26.Image = fish;
-            pictureBox27.Image = fish2;
-            pictureBox28.Image = fish3;
+            //pictureBox27.Image = fish2;
+            //pictureBox28.Image = fish3;
             //画像の大きさをPictureBoxに合わせる
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox26.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox27.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox28.SizeMode = PictureBoxSizeMode.StretchImage;
-            
+            //pictureBox27.SizeMode = PictureBoxSizeMode.StretchImage;
+            //pictureBox28.SizeMode = PictureBoxSizeMode.StretchImage;
+
         }
-
-
-        //ネコがある方向に一つ進む
-        //public void catmove(int direction)
-        //{
-
-        //    footcount++;
-        //    int xmove = 0, ymove = 0;
-        //    //方向と端にいるかどうかで移動の変化量を決める
-        //    if (direction == 0 && catposy != 0)        ymove = -1;
-        //    if (direction == 2 && catposy != ymax - 1) ymove = 1;
-        //    if (direction == 1 && catposx != xmax - 1) xmove = 1;
-        //    if (direction == 3 && catposx != 0)        xmove = -1;
-
-        //    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先に壁がなければ
-        //    {
-        //        for (int i = 0; i <= pictureBox1.Width / xmax; i = i + 1)
-        //        {
-        //            if (i < pictureBox1.Width / xmax - 5) i = i + 4;
-
-        //            if (nowboard[catposx, catposy] == 4)
-        //            {
-        //                g.DrawImage(fish, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-        //            }
-        //            else if (nowboard[catposx, catposy] == 5)
-        //            {
-        //                g.DrawImage(fish2, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-        //            }
-        //            else if (nowboard[catposx, catposy] == 6)
-        //            {
-        //                g.DrawImage(fish3, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-        //            }
-        //            else
-        //            {
-        //                g.DrawImage(road, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-        //            }
-
-        //            g.DrawImage(cat, catposx * pictureBox1.Width / xmax + xmove * i, catposy * pictureBox1.Height / ymax + ymove * i, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-        //            //引数（画像、ｘ座標、y座標、width,height）
-
-        //            pictureBox1.Refresh();
-        //            Thread.Sleep(1);
-        //        }
-        //        catposx += xmove;
-        //        catposy += ymove;
-        //        harapekocount.Text = footcount.ToString();
-        //        harapekoscore.Text = (-footcount * 5).ToString();
-        //        totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
-        //        totalscorelabel.Refresh();
-        //        harapekocount.Refresh();
-        //        harapekoscore.Refresh();
-        //        Thread.Sleep(100);
-        //    }
-        //    else
-        //    {
-        //        for (int i = 1; i <= 10; i++)
-        //        {
-        //            g.DrawImage(road, catposx * pictureBox1.Width / xmax , catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-        //            g.DrawImage(cat, catposx * pictureBox1.Width / xmax + xmove * i, catposy * pictureBox1.Height / ymax + ymove * i, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-        //            pictureBox1.Refresh();
-        //            Thread.Sleep(5);
-        //        }
-        //        for (int i = 1; i <= 10; i++)
-        //        {
-        //            g.DrawImage(back, (catposx + xmove) * pictureBox1.Width / xmax, (catposy + ymove) * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-        //            g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-        //            pictureBox1.Refresh();
-        //            Thread.Sleep(5);
-        //        }
-        //        harapekocount.Text = footcount.ToString();
-        //        harapekoscore.Text = (-footcount * 5).ToString();
-        //        totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
-        //        totalscorelabel.Refresh();
-        //        harapekocount.Refresh();
-        //        harapekoscore.Refresh();
-        //        Thread.Sleep(100);
-        //    }
-
-        //}
-
-        //ネコの方向転換をする(イラストの変更)
-        //private void catd_change()
-        //{
-        //    footcount++;
-            
-        //    if (catdirection == 0)
-        //    {
-        //        cat = catu;
-        //        g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-        //    }
-        //    else if (catdirection == 1)
-        //    {
-        //        cat = catr;
-        //        g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-
-        //    }
-        //    else if (catdirection == 2)
-        //    {
-        //        cat = catd;
-        //        g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-
-        //    }
-        //    else if (catdirection == 3)
-        //    {
-        //        cat = catl;
-        //        g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
-
-        //    }
-        //    harapekocount.Text = footcount.ToString();
-        //    harapekoscore.Text = (-footcount * 5).ToString();          
-        //    totalscorelabel.Text = (100+fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
-        //    totalscorelabel.Refresh();
-        //    harapekocount.Refresh();
-        //    harapekoscore.Refresh();          
-        //    pictureBox1.Refresh();
-        //    Thread.Sleep(200);
-        //}
-
-        //矢印キーでネコ移動(おまじない)
-        //protected override bool ProcessDialogKey(Keys keyData)
-        //{
-        //    if ((keyData & Keys.KeyCode) == Keys.Up) { catmove(0); return true; }
-        //    if ((keyData & Keys.KeyCode) == Keys.Down) { catmove(2); return true; }
-        //    if ((keyData & Keys.KeyCode) == Keys.Right) { catmove(1); return true; }
-        //    if ((keyData & Keys.KeyCode) == Keys.Left) { catmove(3); return true; }
-        //    return base.ProcessDialogKey(keyData);
-        //}
 
         private void button3_Paint(object sender, PaintEventArgs e)
         {
@@ -370,6 +241,7 @@ namespace unicat1
             fishcount = 0;
             fish2count = 0;
             fish3count = 0;
+            catdirection = 0;
             harapekocount.Text = harapekoscore.Text = 0.ToString();
 
         }
@@ -385,12 +257,12 @@ namespace unicat1
             {
                 for (int j = 0; j < boardmat.GetLength(1); j++)
                 {
-                    nowboard[i,j] = boardmat[i, j];
+                    nowboard[i, j] = boardmat[i, j];
                 }
             }
 
             g.FillRectangle(Brushes.White, 0, 0, pictureBox1.Width, pictureBox1.Height);
-            
+
             //道＝１、壁＝２、猫＝３、魚１＝４、魚２＝５、魚３＝６
             for (int i = 0; i < boardmat.GetLength(0); i++)
             {
@@ -419,9 +291,9 @@ namespace unicat1
         }
 
         //引数に命令番号と表示画像をとって命令情報を管理するメソッド
-        private void orderclick(int ordernum,Image orderimage)
+        private void orderclick(int ordernum, Image orderimage)
         {
-            if (comboBox2.SelectedIndex == 0)
+            if (selectBox == 0)
             {
                 try
                 {
@@ -431,17 +303,17 @@ namespace unicat1
                 }
                 catch { }
             }
-            else if (comboBox2.SelectedIndex == 1)
+            else if (selectBox == 1)
             {
                 try
                 {
-                        onepicarray[onepiccount].Image = orderimage;
-                        onelist.Add(ordernum);
-                        onepiccount += 1;
+                    onepicarray[onepiccount].Image = orderimage;
+                    onelist.Add(ordernum);
+                    onepiccount += 1;
                 }
                 catch { }
             }
-            else if (comboBox2.SelectedIndex == 2)
+            else if (selectBox == 2)
             {
                 try
                 {
@@ -451,7 +323,7 @@ namespace unicat1
                 }
                 catch { }
             }
-            else if (comboBox2.SelectedIndex == 3)
+            else if (selectBox == 3)
             {
                 try
                 {
@@ -466,145 +338,163 @@ namespace unicat1
 
         private void go_button_Click(object sender, EventArgs e)
         {
-            orderclick(0,command1);
+            orderclick(0, command1);
         }
 
         private void turnleft_button_Click(object sender, EventArgs e)
         {
-            orderclick(1,command2);
+            orderclick(1, command2);
         }
 
         private void turnright_button_Click(object sender, EventArgs e)
         {
-            orderclick(2,command3);
+            orderclick(2, command3);
         }
 
         private void catchfish_button_Click_1(object sender, EventArgs e)
         {
-            orderclick(3,command4);
+            orderclick(3, command4);
         }
 
         private void one_button_Click(object sender, EventArgs e)
         {
-                orderclick(4, loop1);
+            orderclick(4, loop1);
         }
 
         private void two_button_Click(object sender, EventArgs e)
         {
-                orderclick(5, loop2);
+            orderclick(5, loop2);
         }
-       private void if_button_Click(object sender, EventArgs e)
+        private void if_button_Click(object sender, EventArgs e)
         {
             orderclick(6, pic_if);
         }
- 
-        private void listcheck(List<int> list,int index)
+
+        private void listcheck(List<int> list, int index)
         {
-            if (list[index] == 0) catmove(catdirection);
-
-            else if (list[index] == 1)
+            if (checkfood() != 0)
             {
-                if (catdirection == 0)catdirection = 3;
-                else catdirection -= 1;
+                if (list[index] == 0) catmove(catdirection);
 
-                catd_change();
-            }
-
-            else if (list[index] == 2)
-            {
-                if (catdirection == 3) catdirection = 0;
-                else catdirection += 1;
-
-                catd_change();
-            }
-
-            else if (list[index] == 3)
-            {
-                catchfish(catposx, catposy);
-            }
-            if (list[index] == 4)
-            {
-                for (int j = 0; j < onelist.Count; j++)
+                else if (list[index] == 1)
                 {
-                    listcheck(onelist, j);
-                    totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
-                    if (totalscore <= -100) break;
-                }
-            }
+                    if (catdirection == 0) catdirection = 3;
+                    else catdirection -= 1;
 
-            if (list[index] == 5)
-            {
-                for (int j = 0; j < twolist.Count; j++)
-                {
-                    listcheck(twolist, j);
-                    totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
-                    if (totalscore <= -100) break;
+                    catd_change();
                 }
-            }
-            if (list[index] == 6)
-            {
-                int xmove = 0, ymove = 0;
-                if (comboBox3.SelectedIndex == 0)
-                {        //catdirection 0=上、1=右、2=下、3=左
-                    //方向と端にいるかどうかで移動の変化量を決める
-                    if (catdirection == 0 && catposy != 0) ymove = -1;
-                    if (catdirection == 2 && catposy != ymax - 1) ymove = 1;
-                    if (catdirection == 1 && catposx != xmax - 1) xmove = 1;
-                    if (catdirection == 3 && catposx != 0) xmove = -1;
-                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先に壁がなければ
+
+                else if (list[index] == 2)
+                {
+                    if (catdirection == 3) catdirection = 0;
+                    else catdirection += 1;
+
+                    catd_change();
+                }
+
+                else if (list[index] == 3)
+                {
+                    catchfish(catposx, catposy);
+                }
+                if (list[index] == 4)
+                {
+                    for (int j = 0; j < onelist.Count; j++)
                     {
-                        for (int j = 0; j < mosimolist.Count; j++)
-                        {
-                            listcheck(mosimolist, j);
-                            totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
-                            if (totalscore <= -100) break;
-                        }
-
+                        listcheck(onelist, j);
+                        totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                        if (totalscore <= -100) break;
                     }
                 }
-                if (comboBox3.SelectedIndex == 1)
-                {
-                    //方向と端にいるかどうかで移動の変化量を決める
-                    if (catdirection == 0 && catposy != 0) xmove = -1;
-                    if (catdirection == 2 && catposy != ymax - 1) xmove = 1;
-                    if (catdirection == 1 && catposx != xmax - 1) ymove = -1;
-                    if (catdirection == 3 && catposx != 0) ymove = 1;
-                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先に壁がなければ
-                    {
-                        for (int j = 0; j < mosimolist.Count; j++)
-                        {
-                            listcheck(mosimolist, j);
-                            totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
-                            if (totalscore <= -100) break;
-                        }
 
+                if (list[index] == 5)
+                {
+                    for (int j = 0; j < twolist.Count; j++)
+                    {
+                        listcheck(twolist, j);
+                        totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                        if (totalscore <= -100) break;
                     }
                 }
-                if (comboBox3.SelectedIndex == 2)
+                if (list[index] == 6)
                 {
-                    //方向と端にいるかどうかで移動の変化量を決める
-                    if (catdirection == 0 && catposy != 0) xmove = 1;
-                    if (catdirection == 2 && catposy != ymax - 1) xmove = -1;
-                    if (catdirection == 1 && catposx != xmax - 1) ymove = 1;
-                    if (catdirection == 3 && catposx != 0) ymove = -1;
-                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先に壁がなければ
-                    {
-                        for (int j = 0; j < mosimolist.Count; j++)
+                    int xmove = 0, ymove = 0;
+                    if (comboBox3.SelectedIndex == 0)
+                    {        //catdirection 0=上、1=右、2=下、3=左
+                        //方向と端にいるかどうかで移動の変化量を決める
+                        if (catdirection == 0 && catposy != 0) ymove = -1;
+                        if (catdirection == 2 && catposy != ymax - 1) ymove = 1;
+                        if (catdirection == 1 && catposx != xmax - 1) xmove = 1;
+                        if (catdirection == 3 && catposx != 0) xmove = -1;
+                        if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先に壁がなければ
                         {
-                            listcheck(mosimolist, j);
-                            totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
-                            if (totalscore <= -100) break;
-                        }
+                            for (int j = 0; j < mosimolist.Count; j++)
+                            {
+                                listcheck(mosimolist, j);
+                                totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                                if (totalscore <= -100) break;
+                            }
 
+                        }
                     }
+
+                    if (comboBox3.SelectedIndex == 1)
+                    {
+                        //方向と端にいるかどうかで移動の変化量を決める
+                        if (catdirection == 0 && catposy != 0) xmove = -1;
+                        if (catdirection == 2 && catposy != ymax - 1) xmove = 1;
+                        if (catdirection == 1 && catposx != xmax - 1) ymove = -1;
+                        if (catdirection == 3 && catposx != 0) ymove = 1;
+                        if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先に壁がなければ
+                        {
+                            for (int j = 0; j < mosimolist.Count; j++)
+                            {
+                                listcheck(mosimolist, j);
+                                totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                                if (totalscore <= -100) break;
+                            }
+
+                        }
+                    }
+                    if (comboBox3.SelectedIndex == 2)
+                    {
+                        //方向と端にいるかどうかで移動の変化量を決める
+                        if (catdirection == 0 && catposy != 0) xmove = 1;
+                        if (catdirection == 2 && catposy != ymax - 1) xmove = -1;
+                        if (catdirection == 1 && catposx != xmax - 1) ymove = 1;
+                        if (catdirection == 3 && catposx != 0) ymove = -1;
+                        if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先に壁がなければ
+                        {
+                            for (int j = 0; j < mosimolist.Count; j++)
+                            {
+                                listcheck(mosimolist, j);
+                                totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                                if (totalscore <= -100) break;
+                            }
+
+                        }
+                    }
+                    //for (int j = 0; j < mosimolist.Count; j++)
+                    //{
+                    //    listcheck(mosimolist, j);
+                    //    totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                    //    if (totalscore <= -100) break;
+                    //}
                 }
-                //for (int j = 0; j < mosimolist.Count; j++)
-                //{
-                //    listcheck(mosimolist, j);
-                //    totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
-                //    if (totalscore <= -100) break;
-                //}
             }
+        }
+
+        public int checkfood()
+        {
+            int foodcount = 0;
+            for (int i = 0; i < nowboard.GetLength(0); i++) //盤面の食べ物の数を数える
+            {
+                for (int j = 0; j < nowboard.GetLength(1); j++)
+                {
+                    if (nowboard[i, j] == 4 || nowboard[i, j] == 5 || nowboard[i, j] == 6) foodcount++;
+                }
+
+            }
+            return foodcount;
 
         }
 
@@ -629,7 +519,7 @@ namespace unicat1
                 totalscorelabel.Refresh();
             }
 
-            int foodcount = 0;
+            int foodcount = checkfood();
             for (int i = 0; i < nowboard.GetLength(0); i++) //盤面の食べ物の数を数える
             {
                 for (int j = 0; j < nowboard.GetLength(1); j++)
@@ -641,7 +531,7 @@ namespace unicat1
 
             if (foodcount == 0) //全部食べられていたらクリア
             {
-                totalscorelabel.Text = (100 +totalscore).ToString();
+                totalscorelabel.Text = (100 + totalscore).ToString();
                 totalscorelabel.Refresh();
                 MessageBox.Show("オメ", "おおっ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 try
@@ -665,49 +555,37 @@ namespace unicat1
 
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void SelectedBoxChanged()
         {
-            if (comboBox2.SelectedIndex == 0)
+            if (selectBox == 0)
             {
-                label4.BackColor = Color.Yellow;
-                label2.BackColor = DefaultBackColor;
-                label3.BackColor = DefaultBackColor;
-                main_Box.BackColor = Color.LightCyan;
+                main_Box.BackColor = Color.Yellow;
                 one_Box.BackColor = DefaultBackColor;
                 two_Box.BackColor = DefaultBackColor;
                 if_Box.BackColor = DefaultBackColor;
             }
-            if (comboBox2.SelectedIndex == 1)
+            if (selectBox == 1)
             {
-                label2.BackColor = Color.Yellow;
-                label4.BackColor = DefaultBackColor;
-                label3.BackColor = DefaultBackColor;
                 main_Box.BackColor = DefaultBackColor;
-                one_Box.BackColor = Color.LightCyan;
+                one_Box.BackColor = Color.Yellow;
                 two_Box.BackColor = DefaultBackColor;
                 if_Box.BackColor = DefaultBackColor;
 
             }
-            if (comboBox2.SelectedIndex == 2)
+            if (selectBox == 2)
             {
-                label3.BackColor = Color.Yellow;
-                label2.BackColor = DefaultBackColor;
-                label4.BackColor = DefaultBackColor;
                 main_Box.BackColor = DefaultBackColor;
                 one_Box.BackColor = DefaultBackColor;
-                two_Box.BackColor = Color.LightCyan;
+                two_Box.BackColor = Color.Yellow;
                 if_Box.BackColor = DefaultBackColor;
 
             }
-            if (comboBox2.SelectedIndex == 3)
+            if (selectBox == 3)
             {
-                label3.BackColor = Color.Yellow;
-                label2.BackColor = DefaultBackColor;
-                label4.BackColor = DefaultBackColor;
                 main_Box.BackColor = DefaultBackColor;
                 one_Box.BackColor = DefaultBackColor;
                 two_Box.BackColor = DefaultBackColor;
-                if_Box.BackColor = Color.LightCyan;
+                if_Box.BackColor = Color.Yellow;
 
             }
         }
@@ -717,8 +595,8 @@ namespace unicat1
         {
             //魚の位置確認
             int[,] fishtemp = nowboard;
-         
-            if (nowboard[catposx,catposy]==4)
+
+            if (nowboard[catposx, catposy] == 4)
             {
                 nowboard[catposx, catposy] = 1;
                 Score = 100;
@@ -726,45 +604,48 @@ namespace unicat1
                 fish100count.Text = fishcount.ToString();
                 fish100score.Text = (fishcount * Score).ToString();
             }
-            if (nowboard[catposx,catposy]==5)
+            if (nowboard[catposx, catposy] == 5)
             {
                 nowboard[catposx, catposy] = 1;
                 Score = 300;
                 fish2count += 1;
-                fish300count.Text = fish2count.ToString();
-                fish300score.Text = (fish2count * Score).ToString();
+                //fish300count.Text = fish2count.ToString();
+                //fish300score.Text = (fish2count * Score).ToString();
             }
-            if (nowboard[catposx,catposy]==6)
+            if (nowboard[catposx, catposy] == 6)
             {
                 nowboard[catposx, catposy] = 1;
                 Score = 500;
                 fish3count += 1;
-                fish500count.Text = fish3count.ToString();
-                fish500score.Text = (fish3count * Score).ToString();
+                //fish500count.Text = fish3count.ToString();
+                //fish500score.Text = (fish3count * Score).ToString();
             }
-            //cat_turn();
+            // cat_turn();
         }
 
         //public void cat_turn()
         //{
-        //    for (int i = 0; i <= 360; i=i+20)
+        //    for (int i = 0; i <= 360; i = i + 20)
         //    {
         //        double d = i / (180 / Math.PI);//傾けたい角度
         //        //新しい座標位置を計算する
-        //        float x = catposx * pictureBox1.Width / xmax + (pictureBox1.Width / (2*xmax));   //ｘ座標
-        //        float y = catposy * pictureBox1.Height / ymax + (pictureBox1.Height / (2*ymax)); //ｙ座標
-        //        float x1 = x + (pictureBox1.Width / xmax) * (float)Math.Cos(d);
-        //        float y1 = y + (pictureBox1.Width / xmax) * (float)Math.Sin(d);
-        //        float x2 = x - (pictureBox1.Height / ymax) * (float)Math.Sin(d);
-        //        float y2 = y + (pictureBox1.Height / ymax) * (float)Math.Cos(d);
+        //        float x = catposx * pictureBox1.Width / xmax + (pictureBox1.Width / (2 * xmax));   //中心のｘ座標
+        //        float y = catposy * pictureBox1.Height / ymax + (pictureBox1.Height / (2 * ymax)); //中心のｙ座標
+        //        float r = (float)Math.Sqrt(Math.Pow(pictureBox1.Width / xmax,2) +Math.Pow( pictureBox1.Height / ymax,2)); //中心のｙ座標
+        //        float xx = x - r * (float)Math.Cos(d)/2;
+        //        float yy = y - r * (float)Math.Sin(d)/2;
+        //        float x1 = xx + (pictureBox1.Width / xmax) * (float)Math.Cos(d);
+        //        float y1 = yy + (pictureBox1.Width / xmax) * (float)Math.Sin(d);
+        //        float x2 = xx - (pictureBox1.Height / ymax) * (float)Math.Sin(d);
+        //        float y2 = yy + (pictureBox1.Height / ymax) * (float)Math.Cos(d);
         //        //PointF配列を作成
-        //        PointF[] destinationPoints = { new PointF(x, y), new PointF(x1, y1), new PointF(x2, y2) };
+        //        PointF[] destinationPoints = { new PointF(xx, yy), new PointF(x1, y1), new PointF(x2, y2) };
         //        //画像を表示
         //        g.DrawImage(cat, destinationPoints);
         //        pictureBox1.Refresh();
-        //        Thread.Sleep(1);               
+        //        Thread.Sleep(1);
         //    }
- 
+
         //}
 
 
@@ -772,19 +653,19 @@ namespace unicat1
         private void scorereset()
         {
             fishcount = 0;
-            fish2count=0;
-            fish3count=0;
+            fish2count = 0;
+            fish3count = 0;
             footcount = 0;
             fish100count.Text = fishcount.ToString();
             fish100score.Text = (fishcount * Score).ToString();
-            fish300count.Text = fishcount.ToString();
-            fish300score.Text = (fishcount * Score).ToString();
-            fish500count.Text = fishcount.ToString();
-            fish500score.Text = (fishcount * Score).ToString();
+            //fish300count.Text = fishcount.ToString();
+            //fish300score.Text = (fishcount * Score).ToString();
+            //fish500count.Text = fishcount.ToString();
+            //fish500score.Text = (fishcount * Score).ToString();
 
             harapekocount.Text = footcount.ToString();
             harapekoscore.Text = (-footcount * 5).ToString();
-            totalscorelabel.Text = (100+fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+            totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
             totalscorelabel.Refresh();
 
         }
@@ -827,7 +708,7 @@ namespace unicat1
         //命令を一つ消す
         private void undo_button_Click(object sender, EventArgs e)
         {
-            if (comboBox2.SelectedIndex == 0)
+            if (selectBox == 0)
             {
                 if (mainpiccount < 0) mainpiccount = 0;
                 else if (mainpiccount > 0)
@@ -836,13 +717,14 @@ namespace unicat1
                     mainpiccount--;
                 }
                 if (movelist.Count > 0)
-                {                                                                               //スレッド分けたいです
-                    movelist.Remove(movelist[movelist.Count - 1]);
+                {
+                    //movelist.Remove(movelist[movelist.Count - 1]);
+                    movelist.RemoveAt(movelist.Count - 1);
                 }
 
             }
 
-            if (comboBox2.SelectedIndex == 1)
+            if (selectBox == 1)
             {
                 if (onepiccount < 0) onepiccount = 0;
                 else if (onepiccount > 0)
@@ -852,11 +734,12 @@ namespace unicat1
                 }
                 if (onelist.Count > 0)
                 {
-                    onelist.Remove(onelist[onelist.Count - 1]);
+                    //onelist.Remove(onelist[onelist.Count - 1]);
+                    onelist.RemoveAt(onelist.Count - 1);
                 }
             }
 
-            if (comboBox2.SelectedIndex == 2)
+            if (selectBox == 2)
             {
                 if (twopiccount < 0) twopiccount = 0;
                 else if (twopiccount > 0)
@@ -866,10 +749,11 @@ namespace unicat1
                 }
                 if (twolist.Count > 0)
                 {
-                    twolist.Remove(twolist[twolist.Count - 1]);
+                    //twolist.Remove(twolist[twolist.Count - 1]);
+                    twolist.RemoveAt(twolist.Count - 1);
                 }
             }
-            if (comboBox2.SelectedIndex == 3)
+            if (selectBox == 3)
             {
                 if (mosimopiccount < 0) mosimopiccount = 0;
                 else if (mosimopiccount > 0)
@@ -879,24 +763,25 @@ namespace unicat1
                 }
                 if (mosimolist.Count > 0)
                 {
-                    mosimolist.Remove(mosimolist[mosimolist.Count - 1]);
+                    //mosimolist.Remove(mosimolist[mosimolist.Count - 1]);
+                    mosimolist.RemoveAt(mosimolist.Count - 1);
                 }
             }
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-            comboBox2.SelectedIndex = 0;
+            selectBox = 0;
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-            comboBox2.SelectedIndex = 1;
+            selectBox = 1;
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-            comboBox2.SelectedIndex = 2;
+            selectBox = 2;
         }
 
         private void makeStage_button_Click(object sender, EventArgs e)
@@ -907,15 +792,46 @@ namespace unicat1
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (radioButton1.Checked == true)
-            {
-                Hoge.PlayLooping();
-            }
-            else
-            {
-                Hoge.Stop();
-            }
+            if (radioButton1.Checked == true) Hoge.PlayLooping();
+            else Hoge.Stop();
         }
- 
+
+        private void radioButton_main_CheckedChanged(object sender, EventArgs e)
+        {
+            SelectedBoxChanged();
+            if (radioButton_1.Checked == true) selectBox = 1;
+            if (radioButton_2.Checked == true) selectBox = 2;
+            if (radioButton_mosimo.Checked == true) selectBox = 3;
+        }
+
+        private void radioButton_1_CheckedChanged(object sender, EventArgs e)
+        {
+            SelectedBoxChanged();
+            if (radioButton_main.Checked == true) selectBox = 0;
+            if (radioButton_1.Checked == true) selectBox = 1;
+            if (radioButton_2.Checked == true) selectBox = 2;
+            if (radioButton_mosimo.Checked == true) selectBox = 3;
+
+        }
+
+        private void radioButton_2_CheckedChanged(object sender, EventArgs e)
+        {
+            SelectedBoxChanged();
+            if (radioButton_main.Checked == true) selectBox = 0;
+            if (radioButton_1.Checked == true) selectBox = 1;
+            if (radioButton_2.Checked == true) selectBox = 2;
+            if (radioButton_mosimo.Checked == true) selectBox = 3;
+
+        }
+
+        private void radioButton_mosimo_CheckedChanged(object sender, EventArgs e)
+        {
+            SelectedBoxChanged();
+            if (radioButton_main.Checked == true) selectBox = 0;
+            if (radioButton_1.Checked == true) selectBox = 1;
+            if (radioButton_2.Checked == true) selectBox = 2;
+            if (radioButton_mosimo.Checked == true) selectBox = 3;
+        }
+
     }
 }

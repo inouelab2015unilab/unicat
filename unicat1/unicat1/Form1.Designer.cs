@@ -50,26 +50,12 @@
             this.one4 = new System.Windows.Forms.PictureBox();
             this.one5 = new System.Windows.Forms.PictureBox();
             this.one6 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.pictureBox26 = new System.Windows.Forms.PictureBox();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
-            this.pictureBox28 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.fish100count = new System.Windows.Forms.Label();
-            this.fish300count = new System.Windows.Forms.Label();
-            this.fish500count = new System.Windows.Forms.Label();
             this.fish100score = new System.Windows.Forms.Label();
-            this.fish300score = new System.Windows.Forms.Label();
-            this.fish500score = new System.Windows.Forms.Label();
             this.totalscorelabel = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.orderreset_button = new System.Windows.Forms.Button();
@@ -110,6 +96,12 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox_music = new System.Windows.Forms.GroupBox();
+            this.radioButton_main = new System.Windows.Forms.RadioButton();
+            this.radioButton_1 = new System.Windows.Forms.RadioButton();
+            this.radioButton_2 = new System.Windows.Forms.RadioButton();
+            this.radioButton_mosimo = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).BeginInit();
@@ -130,8 +122,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.one5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.one6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.main_Box.SuspendLayout();
@@ -151,6 +141,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.mosimo4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mosimo3)).BeginInit();
             this.groupBox_music.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -166,7 +158,7 @@
             // 
             this.movebutton.BackColor = System.Drawing.Color.White;
             this.movebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.movebutton.Location = new System.Drawing.Point(1319, 616);
+            this.movebutton.Location = new System.Drawing.Point(4, 265);
             this.movebutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.movebutton.Name = "movebutton";
             this.movebutton.Size = new System.Drawing.Size(150, 60);
@@ -179,7 +171,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1319, 174);
+            this.comboBox1.Location = new System.Drawing.Point(1320, 269);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(150, 23);
@@ -198,7 +190,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(1319, 232);
+            this.button2.Location = new System.Drawing.Point(1320, 299);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(150, 38);
@@ -360,63 +352,16 @@
             this.one6.TabIndex = 39;
             this.one6.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(1378, 16);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 29);
-            this.label2.TabIndex = 47;
-            this.label2.Text = "one";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(1432, 16);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 29);
-            this.label3.TabIndex = 48;
-            this.label3.Text = "two";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(1318, 16);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 29);
-            this.label4.TabIndex = 49;
-            this.label4.Text = "メイン";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(411, 174);
+            this.label6.Location = new System.Drawing.Point(251, 120);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 25);
             this.label6.TabIndex = 51;
             this.label6.Text = "スタミナ";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(1318, 49);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 23);
-            this.comboBox2.TabIndex = 52;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // pictureBox26
             // 
@@ -426,24 +371,6 @@
             this.pictureBox26.Size = new System.Drawing.Size(76, 66);
             this.pictureBox26.TabIndex = 53;
             this.pictureBox26.TabStop = false;
-            // 
-            // pictureBox27
-            // 
-            this.pictureBox27.Location = new System.Drawing.Point(257, 19);
-            this.pictureBox27.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(76, 66);
-            this.pictureBox27.TabIndex = 54;
-            this.pictureBox27.TabStop = false;
-            // 
-            // pictureBox28
-            // 
-            this.pictureBox28.Location = new System.Drawing.Point(257, 92);
-            this.pictureBox28.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(76, 66);
-            this.pictureBox28.TabIndex = 55;
-            this.pictureBox28.TabStop = false;
             // 
             // label7
             // 
@@ -456,28 +383,6 @@
             this.label7.TabIndex = 62;
             this.label7.Text = "×";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label8.Location = new System.Drawing.Point(351, 51);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(18, 18);
-            this.label8.TabIndex = 63;
-            this.label8.Text = "×";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label9.Location = new System.Drawing.Point(351, 126);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(18, 18);
-            this.label9.TabIndex = 64;
-            this.label9.Text = "×";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -488,28 +393,6 @@
             this.label10.Size = new System.Drawing.Size(24, 18);
             this.label10.TabIndex = 65;
             this.label10.Text = "＝";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label11.Location = new System.Drawing.Point(472, 51);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(24, 18);
-            this.label11.TabIndex = 66;
-            this.label11.Text = "＝";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label12.Location = new System.Drawing.Point(472, 126);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(24, 18);
-            this.label12.TabIndex = 67;
-            this.label12.Text = "＝";
             // 
             // fish100count
             // 
@@ -522,28 +405,6 @@
             this.fish100count.TabIndex = 68;
             this.fish100count.Text = "0";
             // 
-            // fish300count
-            // 
-            this.fish300count.AutoSize = true;
-            this.fish300count.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fish300count.Location = new System.Drawing.Point(407, 51);
-            this.fish300count.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.fish300count.Name = "fish300count";
-            this.fish300count.Size = new System.Drawing.Size(24, 25);
-            this.fish300count.TabIndex = 69;
-            this.fish300count.Text = "0";
-            // 
-            // fish500count
-            // 
-            this.fish500count.AutoSize = true;
-            this.fish500count.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fish500count.Location = new System.Drawing.Point(407, 126);
-            this.fish500count.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.fish500count.Name = "fish500count";
-            this.fish500count.Size = new System.Drawing.Size(24, 25);
-            this.fish500count.TabIndex = 70;
-            this.fish500count.Text = "0";
-            // 
             // fish100score
             // 
             this.fish100score.AutoSize = true;
@@ -555,33 +416,11 @@
             this.fish100score.TabIndex = 71;
             this.fish100score.Text = "0";
             // 
-            // fish300score
-            // 
-            this.fish300score.AutoSize = true;
-            this.fish300score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fish300score.Location = new System.Drawing.Point(534, 51);
-            this.fish300score.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.fish300score.Name = "fish300score";
-            this.fish300score.Size = new System.Drawing.Size(24, 25);
-            this.fish300score.TabIndex = 72;
-            this.fish300score.Text = "0";
-            // 
-            // fish500score
-            // 
-            this.fish500score.AutoSize = true;
-            this.fish500score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fish500score.Location = new System.Drawing.Point(534, 126);
-            this.fish500score.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.fish500score.Name = "fish500score";
-            this.fish500score.Size = new System.Drawing.Size(24, 25);
-            this.fish500score.TabIndex = 73;
-            this.fish500score.Text = "0";
-            // 
             // totalscorelabel
             // 
             this.totalscorelabel.AutoSize = true;
             this.totalscorelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalscorelabel.Location = new System.Drawing.Point(534, 174);
+            this.totalscorelabel.Location = new System.Drawing.Point(374, 120);
             this.totalscorelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.totalscorelabel.Name = "totalscorelabel";
             this.totalscorelabel.Size = new System.Drawing.Size(24, 25);
@@ -592,7 +431,7 @@
             // 
             this.button9.BackColor = System.Drawing.Color.White;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button9.Location = new System.Drawing.Point(1320, 539);
+            this.button9.Location = new System.Drawing.Point(4, 188);
             this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(150, 60);
@@ -605,7 +444,7 @@
             // 
             this.orderreset_button.BackColor = System.Drawing.Color.White;
             this.orderreset_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.orderreset_button.Location = new System.Drawing.Point(1319, 452);
+            this.orderreset_button.Location = new System.Drawing.Point(4, 101);
             this.orderreset_button.Margin = new System.Windows.Forms.Padding(4);
             this.orderreset_button.Name = "orderreset_button";
             this.orderreset_button.Size = new System.Drawing.Size(150, 60);
@@ -671,7 +510,7 @@
             // 
             this.undo_button.BackColor = System.Drawing.Color.White;
             this.undo_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.undo_button.Location = new System.Drawing.Point(1319, 363);
+            this.undo_button.Location = new System.Drawing.Point(5, 22);
             this.undo_button.Margin = new System.Windows.Forms.Padding(4);
             this.undo_button.Name = "undo_button";
             this.undo_button.Size = new System.Drawing.Size(150, 60);
@@ -772,34 +611,24 @@
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.totalscorelabel);
-            this.groupBox1.Controls.Add(this.fish500score);
-            this.groupBox1.Controls.Add(this.fish300score);
             this.groupBox1.Controls.Add(this.fish100score);
-            this.groupBox1.Controls.Add(this.fish500count);
-            this.groupBox1.Controls.Add(this.fish300count);
             this.groupBox1.Controls.Add(this.fish100count);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.pictureBox28);
-            this.groupBox1.Controls.Add(this.pictureBox27);
             this.groupBox1.Controls.Add(this.pictureBox26);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(13, 631);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(603, 215);
+            this.groupBox1.Size = new System.Drawing.Size(420, 195);
             this.groupBox1.TabIndex = 83;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "スコア";
             // 
             // makeStage_button
             // 
-            this.makeStage_button.Location = new System.Drawing.Point(1319, 294);
+            this.makeStage_button.Location = new System.Drawing.Point(1319, 28);
             this.makeStage_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.makeStage_button.Name = "makeStage_button";
             this.makeStage_button.Size = new System.Drawing.Size(150, 41);
@@ -1031,34 +860,102 @@
             // 
             this.groupBox_music.Controls.Add(this.radioButton2);
             this.groupBox_music.Controls.Add(this.radioButton1);
-            this.groupBox_music.Location = new System.Drawing.Point(1320, 94);
+            this.groupBox_music.Location = new System.Drawing.Point(1320, 76);
             this.groupBox_music.Name = "groupBox_music";
             this.groupBox_music.Size = new System.Drawing.Size(150, 52);
             this.groupBox_music.TabIndex = 92;
             this.groupBox_music.TabStop = false;
             this.groupBox_music.Text = "音楽";
             // 
+            // radioButton_main
+            // 
+            this.radioButton_main.AutoSize = true;
+            this.radioButton_main.Location = new System.Drawing.Point(28, 27);
+            this.radioButton_main.Name = "radioButton_main";
+            this.radioButton_main.Size = new System.Drawing.Size(102, 19);
+            this.radioButton_main.TabIndex = 93;
+            this.radioButton_main.TabStop = true;
+            this.radioButton_main.Text = "メインボックス";
+            this.radioButton_main.UseVisualStyleBackColor = true;
+            this.radioButton_main.CheckedChanged += new System.EventHandler(this.radioButton_main_CheckedChanged);
+            // 
+            // radioButton_1
+            // 
+            this.radioButton_1.AutoSize = true;
+            this.radioButton_1.Location = new System.Drawing.Point(28, 51);
+            this.radioButton_1.Name = "radioButton_1";
+            this.radioButton_1.Size = new System.Drawing.Size(80, 19);
+            this.radioButton_1.TabIndex = 94;
+            this.radioButton_1.TabStop = true;
+            this.radioButton_1.Text = "１ボックス";
+            this.radioButton_1.UseVisualStyleBackColor = true;
+            this.radioButton_1.CheckedChanged += new System.EventHandler(this.radioButton_1_CheckedChanged);
+            // 
+            // radioButton_2
+            // 
+            this.radioButton_2.AutoSize = true;
+            this.radioButton_2.Location = new System.Drawing.Point(28, 76);
+            this.radioButton_2.Name = "radioButton_2";
+            this.radioButton_2.Size = new System.Drawing.Size(80, 19);
+            this.radioButton_2.TabIndex = 95;
+            this.radioButton_2.TabStop = true;
+            this.radioButton_2.Text = "２ボックス";
+            this.radioButton_2.UseVisualStyleBackColor = true;
+            this.radioButton_2.CheckedChanged += new System.EventHandler(this.radioButton_2_CheckedChanged);
+            // 
+            // radioButton_mosimo
+            // 
+            this.radioButton_mosimo.AutoSize = true;
+            this.radioButton_mosimo.Location = new System.Drawing.Point(28, 101);
+            this.radioButton_mosimo.Name = "radioButton_mosimo";
+            this.radioButton_mosimo.Size = new System.Drawing.Size(103, 19);
+            this.radioButton_mosimo.TabIndex = 96;
+            this.radioButton_mosimo.TabStop = true;
+            this.radioButton_mosimo.Text = "もしもボックス";
+            this.radioButton_mosimo.UseVisualStyleBackColor = true;
+            this.radioButton_mosimo.CheckedChanged += new System.EventHandler(this.radioButton_mosimo_CheckedChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.radioButton_mosimo);
+            this.groupBox2.Controls.Add(this.radioButton_2);
+            this.groupBox2.Controls.Add(this.radioButton_1);
+            this.groupBox2.Controls.Add(this.radioButton_main);
+            this.groupBox2.Location = new System.Drawing.Point(464, 700);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(152, 126);
+            this.groupBox2.TabIndex = 97;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "選択中";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.undo_button);
+            this.groupBox3.Controls.Add(this.orderreset_button);
+            this.groupBox3.Controls.Add(this.button9);
+            this.groupBox3.Controls.Add(this.movebutton);
+            this.groupBox3.Location = new System.Drawing.Point(1315, 351);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(162, 328);
+            this.groupBox3.TabIndex = 98;
+            this.groupBox3.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(1482, 853);
+            this.ClientSize = new System.Drawing.Size(1501, 838);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox_music);
             this.Controls.Add(this.if_button);
             this.Controls.Add(this.if_Box);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.two_Box);
             this.Controls.Add(this.one_Box);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.main_Box);
             this.Controls.Add(this.makeStage_button);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.undo_button);
-            this.Controls.Add(this.orderreset_button);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.two_button);
@@ -1069,7 +966,6 @@
             this.Controls.Add(this.gobutton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.movebutton);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -1098,8 +994,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.one5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.one6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1121,6 +1015,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.mosimo3)).EndInit();
             this.groupBox_music.ResumeLayout(false);
             this.groupBox_music.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1150,26 +1047,12 @@
         private System.Windows.Forms.PictureBox one4;
         private System.Windows.Forms.PictureBox one5;
         private System.Windows.Forms.PictureBox one6;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.PictureBox pictureBox26;
-        private System.Windows.Forms.PictureBox pictureBox27;
-        private System.Windows.Forms.PictureBox pictureBox28;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label fish100count;
-        private System.Windows.Forms.Label fish300count;
-        private System.Windows.Forms.Label fish500count;
         private System.Windows.Forms.Label fish100score;
-        private System.Windows.Forms.Label fish300score;
-        private System.Windows.Forms.Label fish500score;
         private System.Windows.Forms.Label totalscorelabel;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button orderreset_button;
@@ -1210,6 +1093,12 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.GroupBox groupBox_music;
+        private System.Windows.Forms.RadioButton radioButton_main;
+        private System.Windows.Forms.RadioButton radioButton_1;
+        private System.Windows.Forms.RadioButton radioButton_2;
+        private System.Windows.Forms.RadioButton radioButton_mosimo;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

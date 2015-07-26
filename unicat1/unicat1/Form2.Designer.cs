@@ -37,18 +37,16 @@
             this.pictureBox_road = new System.Windows.Forms.PictureBox();
             this.pictureBox_cat = new System.Windows.Forms.PictureBox();
             this.pictureBox_fish1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox_fish2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox_fish3 = new System.Windows.Forms.PictureBox();
             this.selected_pictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_back)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_road)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_cat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fish1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fish2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fish3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selected_pictureBox)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +55,7 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(500, 500);
             this.pictureBox1.TabIndex = 0;
@@ -67,7 +65,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(8, 62);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 31);
             this.button1.TabIndex = 1;
@@ -80,7 +78,7 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(8, 22);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(175, 23);
             this.comboBox1.TabIndex = 2;
@@ -90,9 +88,9 @@
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(557, 5);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(192, 104);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
@@ -100,7 +98,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(565, 479);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(176, 36);
             this.button2.TabIndex = 4;
@@ -111,7 +109,7 @@
             // pictureBox_back
             // 
             this.pictureBox_back.Location = new System.Drawing.Point(565, 228);
-            this.pictureBox_back.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_back.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_back.Name = "pictureBox_back";
             this.pictureBox_back.Size = new System.Drawing.Size(80, 75);
             this.pictureBox_back.TabIndex = 5;
@@ -121,7 +119,7 @@
             // pictureBox_road
             // 
             this.pictureBox_road.Location = new System.Drawing.Point(661, 228);
-            this.pictureBox_road.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_road.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_road.Name = "pictureBox_road";
             this.pictureBox_road.Size = new System.Drawing.Size(80, 75);
             this.pictureBox_road.TabIndex = 6;
@@ -131,7 +129,7 @@
             // pictureBox_cat
             // 
             this.pictureBox_cat.Location = new System.Drawing.Point(565, 311);
-            this.pictureBox_cat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_cat.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_cat.Name = "pictureBox_cat";
             this.pictureBox_cat.Size = new System.Drawing.Size(80, 75);
             this.pictureBox_cat.TabIndex = 7;
@@ -141,37 +139,17 @@
             // pictureBox_fish1
             // 
             this.pictureBox_fish1.Location = new System.Drawing.Point(661, 311);
-            this.pictureBox_fish1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_fish1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_fish1.Name = "pictureBox_fish1";
             this.pictureBox_fish1.Size = new System.Drawing.Size(80, 75);
             this.pictureBox_fish1.TabIndex = 8;
             this.pictureBox_fish1.TabStop = false;
             this.pictureBox_fish1.Click += new System.EventHandler(this.pictureBox_fish1_Click);
             // 
-            // pictureBox_fish2
-            // 
-            this.pictureBox_fish2.Location = new System.Drawing.Point(565, 396);
-            this.pictureBox_fish2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox_fish2.Name = "pictureBox_fish2";
-            this.pictureBox_fish2.Size = new System.Drawing.Size(80, 75);
-            this.pictureBox_fish2.TabIndex = 9;
-            this.pictureBox_fish2.TabStop = false;
-            this.pictureBox_fish2.Click += new System.EventHandler(this.pictureBox_fish2_Click);
-            // 
-            // pictureBox_fish3
-            // 
-            this.pictureBox_fish3.Location = new System.Drawing.Point(661, 396);
-            this.pictureBox_fish3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox_fish3.Name = "pictureBox_fish3";
-            this.pictureBox_fish3.Size = new System.Drawing.Size(80, 75);
-            this.pictureBox_fish3.TabIndex = 10;
-            this.pictureBox_fish3.TabStop = false;
-            this.pictureBox_fish3.Click += new System.EventHandler(this.pictureBox_fish3_Click);
-            // 
             // selected_pictureBox
             // 
             this.selected_pictureBox.Location = new System.Drawing.Point(13, 24);
-            this.selected_pictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.selected_pictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.selected_pictureBox.Name = "selected_pictureBox";
             this.selected_pictureBox.Size = new System.Drawing.Size(80, 75);
             this.selected_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -182,22 +160,38 @@
             // 
             this.groupBox2.Controls.Add(this.selected_pictureBox);
             this.groupBox2.Location = new System.Drawing.Point(597, 112);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(104, 108);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "選択中";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(565, 450);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(175, 22);
+            this.textBox1.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(562, 432);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 15);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "ステージ名";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(765, 526);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.pictureBox_fish3);
-            this.Controls.Add(this.pictureBox_fish2);
             this.Controls.Add(this.pictureBox_fish1);
             this.Controls.Add(this.pictureBox_cat);
             this.Controls.Add(this.pictureBox_road);
@@ -214,11 +208,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_road)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_cat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fish1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fish2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_fish3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selected_pictureBox)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -233,9 +226,9 @@
         private System.Windows.Forms.PictureBox pictureBox_road;
         private System.Windows.Forms.PictureBox pictureBox_cat;
         private System.Windows.Forms.PictureBox pictureBox_fish1;
-        private System.Windows.Forms.PictureBox pictureBox_fish2;
-        private System.Windows.Forms.PictureBox pictureBox_fish3;
         private System.Windows.Forms.PictureBox selected_pictureBox;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
