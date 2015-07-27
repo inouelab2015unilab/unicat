@@ -147,10 +147,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(16, 16);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(600, 600);
+            this.pictureBox1.Size = new System.Drawing.Size(480, 480);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -158,10 +157,10 @@
             // 
             this.movebutton.BackColor = System.Drawing.Color.White;
             this.movebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.movebutton.Location = new System.Drawing.Point(4, 265);
-            this.movebutton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.movebutton.Location = new System.Drawing.Point(3, 212);
+            this.movebutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.movebutton.Name = "movebutton";
-            this.movebutton.Size = new System.Drawing.Size(150, 60);
+            this.movebutton.Size = new System.Drawing.Size(112, 48);
             this.movebutton.TabIndex = 1;
             this.movebutton.Text = "ねこ移動";
             this.movebutton.UseVisualStyleBackColor = false;
@@ -171,18 +170,18 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1320, 269);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Location = new System.Drawing.Point(1025, 216);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 23);
+            this.comboBox1.Size = new System.Drawing.Size(114, 20);
             this.comboBox1.TabIndex = 9;
             // 
             // main2
             // 
-            this.main2.Location = new System.Drawing.Point(121, 19);
-            this.main2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.main2.Location = new System.Drawing.Point(91, 15);
+            this.main2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.main2.Name = "main2";
-            this.main2.Size = new System.Drawing.Size(100, 100);
+            this.main2.Size = new System.Drawing.Size(75, 80);
+            this.main2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main2.TabIndex = 11;
             this.main2.TabStop = false;
             // 
@@ -190,10 +189,10 @@
             // 
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(1320, 299);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(1025, 240);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 38);
+            this.button2.Size = new System.Drawing.Size(112, 30);
             this.button2.TabIndex = 16;
             this.button2.Text = "ステージ選択";
             this.button2.UseVisualStyleBackColor = false;
@@ -201,154 +200,171 @@
             // 
             // main1
             // 
-            this.main1.Location = new System.Drawing.Point(15, 19);
-            this.main1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.main1.Location = new System.Drawing.Point(11, 15);
+            this.main1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.main1.Name = "main1";
-            this.main1.Size = new System.Drawing.Size(100, 100);
+            this.main1.Size = new System.Drawing.Size(75, 80);
+            this.main1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main1.TabIndex = 21;
             this.main1.TabStop = false;
             // 
             // main3
             // 
-            this.main3.Location = new System.Drawing.Point(227, 19);
-            this.main3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.main3.Location = new System.Drawing.Point(170, 15);
+            this.main3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.main3.Name = "main3";
-            this.main3.Size = new System.Drawing.Size(100, 100);
+            this.main3.Size = new System.Drawing.Size(75, 80);
+            this.main3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main3.TabIndex = 22;
             this.main3.TabStop = false;
             // 
             // main4
             // 
-            this.main4.Location = new System.Drawing.Point(333, 19);
-            this.main4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.main4.Location = new System.Drawing.Point(250, 15);
+            this.main4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.main4.Name = "main4";
-            this.main4.Size = new System.Drawing.Size(100, 100);
+            this.main4.Size = new System.Drawing.Size(75, 80);
+            this.main4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main4.TabIndex = 23;
             this.main4.TabStop = false;
             // 
             // main5
             // 
-            this.main5.Location = new System.Drawing.Point(439, 19);
-            this.main5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.main5.Location = new System.Drawing.Point(329, 15);
+            this.main5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.main5.Name = "main5";
-            this.main5.Size = new System.Drawing.Size(100, 100);
+            this.main5.Size = new System.Drawing.Size(75, 80);
+            this.main5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main5.TabIndex = 24;
             this.main5.TabStop = false;
             // 
             // main6
             // 
-            this.main6.Location = new System.Drawing.Point(545, 19);
-            this.main6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.main6.Location = new System.Drawing.Point(409, 15);
+            this.main6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.main6.Name = "main6";
-            this.main6.Size = new System.Drawing.Size(100, 100);
+            this.main6.Size = new System.Drawing.Size(75, 80);
+            this.main6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main6.TabIndex = 25;
             this.main6.TabStop = false;
             // 
             // main7
             // 
-            this.main7.Location = new System.Drawing.Point(15, 123);
-            this.main7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.main7.Location = new System.Drawing.Point(11, 98);
+            this.main7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.main7.Name = "main7";
-            this.main7.Size = new System.Drawing.Size(100, 100);
+            this.main7.Size = new System.Drawing.Size(75, 80);
+            this.main7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main7.TabIndex = 26;
             this.main7.TabStop = false;
             // 
             // main8
             // 
-            this.main8.Location = new System.Drawing.Point(121, 123);
-            this.main8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.main8.Location = new System.Drawing.Point(91, 98);
+            this.main8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.main8.Name = "main8";
-            this.main8.Size = new System.Drawing.Size(100, 100);
+            this.main8.Size = new System.Drawing.Size(75, 80);
+            this.main8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main8.TabIndex = 27;
             this.main8.TabStop = false;
             // 
             // main9
             // 
-            this.main9.Location = new System.Drawing.Point(227, 123);
-            this.main9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.main9.Location = new System.Drawing.Point(170, 98);
+            this.main9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.main9.Name = "main9";
-            this.main9.Size = new System.Drawing.Size(100, 100);
+            this.main9.Size = new System.Drawing.Size(75, 80);
+            this.main9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main9.TabIndex = 28;
             this.main9.TabStop = false;
             // 
             // main10
             // 
-            this.main10.Location = new System.Drawing.Point(333, 123);
-            this.main10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.main10.Location = new System.Drawing.Point(250, 98);
+            this.main10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.main10.Name = "main10";
-            this.main10.Size = new System.Drawing.Size(100, 100);
+            this.main10.Size = new System.Drawing.Size(75, 80);
+            this.main10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main10.TabIndex = 29;
             this.main10.TabStop = false;
             // 
             // main11
             // 
-            this.main11.Location = new System.Drawing.Point(439, 123);
-            this.main11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.main11.Location = new System.Drawing.Point(329, 98);
+            this.main11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.main11.Name = "main11";
-            this.main11.Size = new System.Drawing.Size(100, 100);
+            this.main11.Size = new System.Drawing.Size(75, 80);
+            this.main11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main11.TabIndex = 30;
             this.main11.TabStop = false;
             // 
             // main12
             // 
-            this.main12.Location = new System.Drawing.Point(545, 123);
-            this.main12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.main12.Location = new System.Drawing.Point(409, 98);
+            this.main12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.main12.Name = "main12";
-            this.main12.Size = new System.Drawing.Size(100, 100);
+            this.main12.Size = new System.Drawing.Size(75, 80);
+            this.main12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main12.TabIndex = 31;
             this.main12.TabStop = false;
             // 
             // one1
             // 
-            this.one1.Location = new System.Drawing.Point(18, 20);
-            this.one1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.one1.Location = new System.Drawing.Point(14, 16);
+            this.one1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.one1.Name = "one1";
-            this.one1.Size = new System.Drawing.Size(100, 100);
+            this.one1.Size = new System.Drawing.Size(75, 80);
+            this.one1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.one1.TabIndex = 34;
             this.one1.TabStop = false;
             // 
             // one2
             // 
-            this.one2.Location = new System.Drawing.Point(124, 20);
-            this.one2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.one2.Location = new System.Drawing.Point(93, 16);
+            this.one2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.one2.Name = "one2";
-            this.one2.Size = new System.Drawing.Size(100, 100);
+            this.one2.Size = new System.Drawing.Size(75, 80);
+            this.one2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.one2.TabIndex = 35;
             this.one2.TabStop = false;
             // 
             // one3
             // 
-            this.one3.Location = new System.Drawing.Point(230, 20);
-            this.one3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.one3.Location = new System.Drawing.Point(172, 16);
+            this.one3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.one3.Name = "one3";
-            this.one3.Size = new System.Drawing.Size(100, 100);
+            this.one3.Size = new System.Drawing.Size(75, 80);
+            this.one3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.one3.TabIndex = 36;
             this.one3.TabStop = false;
             // 
             // one4
             // 
-            this.one4.Location = new System.Drawing.Point(336, 20);
-            this.one4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.one4.Location = new System.Drawing.Point(252, 16);
+            this.one4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.one4.Name = "one4";
-            this.one4.Size = new System.Drawing.Size(100, 100);
+            this.one4.Size = new System.Drawing.Size(75, 80);
+            this.one4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.one4.TabIndex = 37;
             this.one4.TabStop = false;
             // 
             // one5
             // 
-            this.one5.Location = new System.Drawing.Point(442, 20);
-            this.one5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.one5.Location = new System.Drawing.Point(332, 16);
+            this.one5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.one5.Name = "one5";
-            this.one5.Size = new System.Drawing.Size(100, 100);
+            this.one5.Size = new System.Drawing.Size(75, 80);
+            this.one5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.one5.TabIndex = 38;
             this.one5.TabStop = false;
             // 
             // one6
             // 
-            this.one6.Location = new System.Drawing.Point(548, 20);
-            this.one6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.one6.Location = new System.Drawing.Point(411, 16);
+            this.one6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.one6.Name = "one6";
-            this.one6.Size = new System.Drawing.Size(100, 100);
+            this.one6.Size = new System.Drawing.Size(75, 80);
+            this.one6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.one6.TabIndex = 39;
             this.one6.TabStop = false;
             // 
@@ -356,19 +372,17 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(251, 120);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(188, 96);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 25);
+            this.label6.Size = new System.Drawing.Size(59, 20);
             this.label6.TabIndex = 51;
             this.label6.Text = "スタミナ";
             // 
             // pictureBox26
             // 
-            this.pictureBox26.Location = new System.Drawing.Point(7, 95);
-            this.pictureBox26.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox26.Location = new System.Drawing.Point(5, 76);
             this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(76, 66);
+            this.pictureBox26.Size = new System.Drawing.Size(57, 53);
             this.pictureBox26.TabIndex = 53;
             this.pictureBox26.TabStop = false;
             // 
@@ -376,10 +390,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(91, 119);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(68, 95);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(18, 18);
+            this.label7.Size = new System.Drawing.Size(15, 15);
             this.label7.TabIndex = 62;
             this.label7.Text = "×";
             // 
@@ -387,10 +400,9 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label10.Location = new System.Drawing.Point(159, 119);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(119, 95);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(24, 18);
+            this.label10.Size = new System.Drawing.Size(20, 15);
             this.label10.TabIndex = 65;
             this.label10.Text = "＝";
             // 
@@ -398,10 +410,9 @@
             // 
             this.fish100count.AutoSize = true;
             this.fish100count.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fish100count.Location = new System.Drawing.Point(118, 119);
-            this.fish100count.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.fish100count.Location = new System.Drawing.Point(88, 95);
             this.fish100count.Name = "fish100count";
-            this.fish100count.Size = new System.Drawing.Size(24, 25);
+            this.fish100count.Size = new System.Drawing.Size(19, 20);
             this.fish100count.TabIndex = 68;
             this.fish100count.Text = "0";
             // 
@@ -409,10 +420,9 @@
             // 
             this.fish100score.AutoSize = true;
             this.fish100score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fish100score.Location = new System.Drawing.Point(199, 119);
-            this.fish100score.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.fish100score.Location = new System.Drawing.Point(149, 95);
             this.fish100score.Name = "fish100score";
-            this.fish100score.Size = new System.Drawing.Size(24, 25);
+            this.fish100score.Size = new System.Drawing.Size(19, 20);
             this.fish100score.TabIndex = 71;
             this.fish100score.Text = "0";
             // 
@@ -420,10 +430,9 @@
             // 
             this.totalscorelabel.AutoSize = true;
             this.totalscorelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalscorelabel.Location = new System.Drawing.Point(374, 120);
-            this.totalscorelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totalscorelabel.Location = new System.Drawing.Point(280, 96);
             this.totalscorelabel.Name = "totalscorelabel";
-            this.totalscorelabel.Size = new System.Drawing.Size(24, 25);
+            this.totalscorelabel.Size = new System.Drawing.Size(19, 20);
             this.totalscorelabel.TabIndex = 74;
             this.totalscorelabel.Text = "0";
             // 
@@ -431,10 +440,10 @@
             // 
             this.button9.BackColor = System.Drawing.Color.White;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button9.Location = new System.Drawing.Point(4, 188);
-            this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button9.Location = new System.Drawing.Point(3, 150);
+            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(150, 60);
+            this.button9.Size = new System.Drawing.Size(112, 48);
             this.button9.TabIndex = 75;
             this.button9.Text = "ねこ戻す";
             this.button9.UseVisualStyleBackColor = false;
@@ -444,10 +453,9 @@
             // 
             this.orderreset_button.BackColor = System.Drawing.Color.White;
             this.orderreset_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.orderreset_button.Location = new System.Drawing.Point(4, 101);
-            this.orderreset_button.Margin = new System.Windows.Forms.Padding(4);
+            this.orderreset_button.Location = new System.Drawing.Point(3, 81);
             this.orderreset_button.Name = "orderreset_button";
-            this.orderreset_button.Size = new System.Drawing.Size(150, 60);
+            this.orderreset_button.Size = new System.Drawing.Size(112, 48);
             this.orderreset_button.TabIndex = 76;
             this.orderreset_button.Text = "命令初期化";
             this.orderreset_button.UseVisualStyleBackColor = false;
@@ -455,10 +463,9 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(7, 19);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Location = new System.Drawing.Point(5, 15);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(76, 66);
+            this.pictureBox2.Size = new System.Drawing.Size(57, 53);
             this.pictureBox2.TabIndex = 77;
             this.pictureBox2.TabStop = false;
             // 
@@ -466,10 +473,9 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label20.Location = new System.Drawing.Point(20, 46);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Location = new System.Drawing.Point(15, 37);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(88, 18);
+            this.label20.Size = new System.Drawing.Size(72, 15);
             this.label20.TabIndex = 78;
             this.label20.Text = "歩数　　　 ×";
             // 
@@ -477,10 +483,9 @@
             // 
             this.harapekocount.AutoSize = true;
             this.harapekocount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.harapekocount.Location = new System.Drawing.Point(117, 46);
-            this.harapekocount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.harapekocount.Location = new System.Drawing.Point(88, 37);
             this.harapekocount.Name = "harapekocount";
-            this.harapekocount.Size = new System.Drawing.Size(24, 25);
+            this.harapekocount.Size = new System.Drawing.Size(19, 20);
             this.harapekocount.TabIndex = 79;
             this.harapekocount.Text = "0";
             // 
@@ -488,10 +493,9 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label22.Location = new System.Drawing.Point(159, 46);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Location = new System.Drawing.Point(119, 37);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(24, 18);
+            this.label22.Size = new System.Drawing.Size(20, 15);
             this.label22.TabIndex = 80;
             this.label22.Text = "＝";
             // 
@@ -499,10 +503,9 @@
             // 
             this.harapekoscore.AutoSize = true;
             this.harapekoscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.harapekoscore.Location = new System.Drawing.Point(199, 46);
-            this.harapekoscore.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.harapekoscore.Location = new System.Drawing.Point(149, 37);
             this.harapekoscore.Name = "harapekoscore";
-            this.harapekoscore.Size = new System.Drawing.Size(24, 25);
+            this.harapekoscore.Size = new System.Drawing.Size(19, 20);
             this.harapekoscore.TabIndex = 81;
             this.harapekoscore.Text = "0";
             // 
@@ -510,10 +513,9 @@
             // 
             this.undo_button.BackColor = System.Drawing.Color.White;
             this.undo_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.undo_button.Location = new System.Drawing.Point(5, 22);
-            this.undo_button.Margin = new System.Windows.Forms.Padding(4);
+            this.undo_button.Location = new System.Drawing.Point(4, 18);
             this.undo_button.Name = "undo_button";
-            this.undo_button.Size = new System.Drawing.Size(150, 60);
+            this.undo_button.Size = new System.Drawing.Size(112, 48);
             this.undo_button.TabIndex = 82;
             this.undo_button.Text = "一つ消す";
             this.undo_button.UseVisualStyleBackColor = false;
@@ -521,10 +523,9 @@
             // 
             // gobutton
             // 
-            this.gobutton.Location = new System.Drawing.Point(644, 716);
-            this.gobutton.Margin = new System.Windows.Forms.Padding(4);
+            this.gobutton.Location = new System.Drawing.Point(483, 573);
             this.gobutton.Name = "gobutton";
-            this.gobutton.Size = new System.Drawing.Size(110, 110);
+            this.gobutton.Size = new System.Drawing.Size(82, 88);
             this.gobutton.TabIndex = 17;
             this.gobutton.Text = "gobutton";
             this.gobutton.UseVisualStyleBackColor = true;
@@ -532,10 +533,9 @@
             // 
             // turnleft_button
             // 
-            this.turnleft_button.Location = new System.Drawing.Point(762, 716);
-            this.turnleft_button.Margin = new System.Windows.Forms.Padding(4);
+            this.turnleft_button.Location = new System.Drawing.Point(572, 573);
             this.turnleft_button.Name = "turnleft_button";
-            this.turnleft_button.Size = new System.Drawing.Size(110, 110);
+            this.turnleft_button.Size = new System.Drawing.Size(82, 88);
             this.turnleft_button.TabIndex = 18;
             this.turnleft_button.Text = "turnleft_button";
             this.turnleft_button.UseVisualStyleBackColor = true;
@@ -543,10 +543,9 @@
             // 
             // turnright_button
             // 
-            this.turnright_button.Location = new System.Drawing.Point(880, 714);
-            this.turnright_button.Margin = new System.Windows.Forms.Padding(4);
+            this.turnright_button.Location = new System.Drawing.Point(660, 571);
             this.turnright_button.Name = "turnright_button";
-            this.turnright_button.Size = new System.Drawing.Size(110, 110);
+            this.turnright_button.Size = new System.Drawing.Size(82, 88);
             this.turnright_button.TabIndex = 19;
             this.turnright_button.Text = "turnright_button";
             this.turnright_button.UseVisualStyleBackColor = true;
@@ -554,10 +553,9 @@
             // 
             // catchfish_button
             // 
-            this.catchfish_button.Location = new System.Drawing.Point(998, 716);
-            this.catchfish_button.Margin = new System.Windows.Forms.Padding(4);
+            this.catchfish_button.Location = new System.Drawing.Point(748, 573);
             this.catchfish_button.Name = "catchfish_button";
-            this.catchfish_button.Size = new System.Drawing.Size(110, 110);
+            this.catchfish_button.Size = new System.Drawing.Size(82, 88);
             this.catchfish_button.TabIndex = 20;
             this.catchfish_button.Text = "catchfish_button";
             this.catchfish_button.UseVisualStyleBackColor = true;
@@ -565,10 +563,9 @@
             // 
             // one_button
             // 
-            this.one_button.Location = new System.Drawing.Point(1116, 716);
-            this.one_button.Margin = new System.Windows.Forms.Padding(4);
+            this.one_button.Location = new System.Drawing.Point(837, 573);
             this.one_button.Name = "one_button";
-            this.one_button.Size = new System.Drawing.Size(110, 110);
+            this.one_button.Size = new System.Drawing.Size(82, 88);
             this.one_button.TabIndex = 32;
             this.one_button.Text = "one_button";
             this.one_button.UseVisualStyleBackColor = true;
@@ -576,10 +573,9 @@
             // 
             // two_button
             // 
-            this.two_button.Location = new System.Drawing.Point(1234, 716);
-            this.two_button.Margin = new System.Windows.Forms.Padding(4);
+            this.two_button.Location = new System.Drawing.Point(926, 573);
             this.two_button.Name = "two_button";
-            this.two_button.Size = new System.Drawing.Size(110, 110);
+            this.two_button.Size = new System.Drawing.Size(82, 88);
             this.two_button.TabIndex = 33;
             this.two_button.Text = "two_button";
             this.two_button.UseVisualStyleBackColor = true;
@@ -589,18 +585,16 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 15);
+            this.label1.Size = new System.Drawing.Size(0, 12);
             this.label1.TabIndex = 46;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(496, 182);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(372, 146);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 15);
+            this.label5.Size = new System.Drawing.Size(0, 12);
             this.label5.TabIndex = 50;
             // 
             // groupBox1
@@ -617,21 +611,19 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.pictureBox26);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(13, 631);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(10, 505);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(420, 195);
+            this.groupBox1.Size = new System.Drawing.Size(315, 156);
             this.groupBox1.TabIndex = 83;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "スコア";
             // 
             // makeStage_button
             // 
-            this.makeStage_button.Location = new System.Drawing.Point(1319, 28);
-            this.makeStage_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.makeStage_button.Location = new System.Drawing.Point(1024, 23);
+            this.makeStage_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.makeStage_button.Name = "makeStage_button";
-            this.makeStage_button.Size = new System.Drawing.Size(150, 41);
+            this.makeStage_button.Size = new System.Drawing.Size(112, 33);
             this.makeStage_button.TabIndex = 84;
             this.makeStage_button.Text = "ステージ作成";
             this.makeStage_button.UseVisualStyleBackColor = true;
@@ -651,9 +643,11 @@
             this.main_Box.Controls.Add(this.main3);
             this.main_Box.Controls.Add(this.main1);
             this.main_Box.Controls.Add(this.main2);
-            this.main_Box.Location = new System.Drawing.Point(632, 9);
+            this.main_Box.Location = new System.Drawing.Point(509, 8);
+            this.main_Box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.main_Box.Name = "main_Box";
-            this.main_Box.Size = new System.Drawing.Size(667, 237);
+            this.main_Box.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main_Box.Size = new System.Drawing.Size(500, 190);
             this.main_Box.TabIndex = 85;
             this.main_Box.TabStop = false;
             this.main_Box.Text = "メイン";
@@ -666,9 +660,11 @@
             this.one_Box.Controls.Add(this.one3);
             this.one_Box.Controls.Add(this.one2);
             this.one_Box.Controls.Add(this.one1);
-            this.one_Box.Location = new System.Drawing.Point(629, 249);
+            this.one_Box.Location = new System.Drawing.Point(507, 200);
+            this.one_Box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.one_Box.Name = "one_Box";
-            this.one_Box.Size = new System.Drawing.Size(670, 130);
+            this.one_Box.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.one_Box.Size = new System.Drawing.Size(502, 104);
             this.one_Box.TabIndex = 86;
             this.one_Box.TabStop = false;
             this.one_Box.Text = "ONE";
@@ -681,64 +677,72 @@
             this.two_Box.Controls.Add(this.two3);
             this.two_Box.Controls.Add(this.two2);
             this.two_Box.Controls.Add(this.two1);
-            this.two_Box.Location = new System.Drawing.Point(630, 381);
+            this.two_Box.Location = new System.Drawing.Point(507, 306);
+            this.two_Box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.two_Box.Name = "two_Box";
-            this.two_Box.Size = new System.Drawing.Size(669, 131);
+            this.two_Box.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.two_Box.Size = new System.Drawing.Size(502, 105);
             this.two_Box.TabIndex = 87;
             this.two_Box.TabStop = false;
             this.two_Box.Text = "TWO";
             // 
             // two6
             // 
-            this.two6.Location = new System.Drawing.Point(547, 20);
-            this.two6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.two6.Location = new System.Drawing.Point(410, 16);
+            this.two6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.two6.Name = "two6";
-            this.two6.Size = new System.Drawing.Size(100, 100);
+            this.two6.Size = new System.Drawing.Size(75, 80);
+            this.two6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two6.TabIndex = 45;
             this.two6.TabStop = false;
             // 
             // two5
             // 
-            this.two5.Location = new System.Drawing.Point(441, 20);
-            this.two5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.two5.Location = new System.Drawing.Point(331, 16);
+            this.two5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.two5.Name = "two5";
-            this.two5.Size = new System.Drawing.Size(100, 100);
+            this.two5.Size = new System.Drawing.Size(75, 80);
+            this.two5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two5.TabIndex = 44;
             this.two5.TabStop = false;
             // 
             // two4
             // 
-            this.two4.Location = new System.Drawing.Point(335, 20);
-            this.two4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.two4.Location = new System.Drawing.Point(251, 16);
+            this.two4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.two4.Name = "two4";
-            this.two4.Size = new System.Drawing.Size(100, 100);
+            this.two4.Size = new System.Drawing.Size(75, 80);
+            this.two4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two4.TabIndex = 43;
             this.two4.TabStop = false;
             // 
             // two3
             // 
-            this.two3.Location = new System.Drawing.Point(229, 20);
-            this.two3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.two3.Location = new System.Drawing.Point(172, 16);
+            this.two3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.two3.Name = "two3";
-            this.two3.Size = new System.Drawing.Size(100, 100);
+            this.two3.Size = new System.Drawing.Size(75, 80);
+            this.two3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two3.TabIndex = 42;
             this.two3.TabStop = false;
             // 
             // two2
             // 
-            this.two2.Location = new System.Drawing.Point(123, 20);
-            this.two2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.two2.Location = new System.Drawing.Point(92, 16);
+            this.two2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.two2.Name = "two2";
-            this.two2.Size = new System.Drawing.Size(100, 100);
+            this.two2.Size = new System.Drawing.Size(75, 80);
+            this.two2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two2.TabIndex = 41;
             this.two2.TabStop = false;
             // 
             // two1
             // 
-            this.two1.Location = new System.Drawing.Point(17, 20);
-            this.two1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.two1.Location = new System.Drawing.Point(13, 16);
+            this.two1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.two1.Name = "two1";
-            this.two1.Size = new System.Drawing.Size(100, 100);
+            this.two1.Size = new System.Drawing.Size(75, 80);
+            this.two1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two1.TabIndex = 40;
             this.two1.TabStop = false;
             // 
@@ -751,9 +755,11 @@
             this.if_Box.Controls.Add(this.mosimo1);
             this.if_Box.Controls.Add(this.mosimo4);
             this.if_Box.Controls.Add(this.mosimo3);
-            this.if_Box.Location = new System.Drawing.Point(629, 518);
+            this.if_Box.Location = new System.Drawing.Point(507, 415);
+            this.if_Box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.if_Box.Name = "if_Box";
-            this.if_Box.Size = new System.Drawing.Size(670, 162);
+            this.if_Box.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.if_Box.Size = new System.Drawing.Size(502, 130);
             this.if_Box.TabIndex = 88;
             this.if_Box.TabStop = false;
             this.if_Box.Text = "もしもボックス";
@@ -762,72 +768,76 @@
             // 
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(18, 21);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox3.Location = new System.Drawing.Point(14, 17);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(160, 23);
+            this.comboBox3.Size = new System.Drawing.Size(121, 20);
             this.comboBox3.TabIndex = 89;
             // 
             // mosimo6
             // 
-            this.mosimo6.Location = new System.Drawing.Point(548, 50);
-            this.mosimo6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mosimo6.Location = new System.Drawing.Point(411, 40);
+            this.mosimo6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mosimo6.Name = "mosimo6";
-            this.mosimo6.Size = new System.Drawing.Size(100, 100);
+            this.mosimo6.Size = new System.Drawing.Size(75, 80);
+            this.mosimo6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo6.TabIndex = 51;
             this.mosimo6.TabStop = false;
             // 
             // mosimo2
             // 
-            this.mosimo2.Location = new System.Drawing.Point(124, 50);
-            this.mosimo2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mosimo2.Location = new System.Drawing.Point(93, 40);
+            this.mosimo2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mosimo2.Name = "mosimo2";
-            this.mosimo2.Size = new System.Drawing.Size(100, 100);
+            this.mosimo2.Size = new System.Drawing.Size(75, 80);
+            this.mosimo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo2.TabIndex = 47;
             this.mosimo2.TabStop = false;
             // 
             // mosimo5
             // 
-            this.mosimo5.Location = new System.Drawing.Point(442, 50);
-            this.mosimo5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mosimo5.Location = new System.Drawing.Point(332, 40);
+            this.mosimo5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mosimo5.Name = "mosimo5";
-            this.mosimo5.Size = new System.Drawing.Size(100, 100);
+            this.mosimo5.Size = new System.Drawing.Size(75, 80);
+            this.mosimo5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo5.TabIndex = 50;
             this.mosimo5.TabStop = false;
             // 
             // mosimo1
             // 
-            this.mosimo1.Location = new System.Drawing.Point(18, 50);
-            this.mosimo1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mosimo1.Location = new System.Drawing.Point(14, 40);
+            this.mosimo1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mosimo1.Name = "mosimo1";
-            this.mosimo1.Size = new System.Drawing.Size(100, 100);
+            this.mosimo1.Size = new System.Drawing.Size(75, 80);
+            this.mosimo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo1.TabIndex = 46;
             this.mosimo1.TabStop = false;
             // 
             // mosimo4
             // 
-            this.mosimo4.Location = new System.Drawing.Point(336, 50);
-            this.mosimo4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mosimo4.Location = new System.Drawing.Point(252, 40);
+            this.mosimo4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mosimo4.Name = "mosimo4";
-            this.mosimo4.Size = new System.Drawing.Size(100, 100);
+            this.mosimo4.Size = new System.Drawing.Size(75, 80);
+            this.mosimo4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo4.TabIndex = 49;
             this.mosimo4.TabStop = false;
             // 
             // mosimo3
             // 
-            this.mosimo3.Location = new System.Drawing.Point(230, 50);
-            this.mosimo3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.mosimo3.Location = new System.Drawing.Point(172, 40);
+            this.mosimo3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mosimo3.Name = "mosimo3";
-            this.mosimo3.Size = new System.Drawing.Size(100, 100);
+            this.mosimo3.Size = new System.Drawing.Size(75, 80);
+            this.mosimo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo3.TabIndex = 48;
             this.mosimo3.TabStop = false;
             // 
             // if_button
             // 
-            this.if_button.Location = new System.Drawing.Point(1352, 716);
-            this.if_button.Margin = new System.Windows.Forms.Padding(4);
+            this.if_button.Location = new System.Drawing.Point(1014, 573);
             this.if_button.Name = "if_button";
-            this.if_button.Size = new System.Drawing.Size(110, 110);
+            this.if_button.Size = new System.Drawing.Size(82, 88);
             this.if_button.TabIndex = 89;
             this.if_button.Text = "if_button";
             this.if_button.UseVisualStyleBackColor = true;
@@ -836,9 +846,10 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(18, 19);
+            this.radioButton1.Location = new System.Drawing.Point(14, 15);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(44, 19);
+            this.radioButton1.Size = new System.Drawing.Size(35, 16);
             this.radioButton1.TabIndex = 90;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "on";
@@ -848,9 +859,10 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(74, 21);
+            this.radioButton2.Location = new System.Drawing.Point(56, 17);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(46, 19);
+            this.radioButton2.Size = new System.Drawing.Size(37, 16);
             this.radioButton2.TabIndex = 91;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "off";
@@ -860,9 +872,11 @@
             // 
             this.groupBox_music.Controls.Add(this.radioButton2);
             this.groupBox_music.Controls.Add(this.radioButton1);
-            this.groupBox_music.Location = new System.Drawing.Point(1320, 76);
+            this.groupBox_music.Location = new System.Drawing.Point(1025, 62);
+            this.groupBox_music.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox_music.Name = "groupBox_music";
-            this.groupBox_music.Size = new System.Drawing.Size(150, 52);
+            this.groupBox_music.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox_music.Size = new System.Drawing.Size(112, 42);
             this.groupBox_music.TabIndex = 92;
             this.groupBox_music.TabStop = false;
             this.groupBox_music.Text = "音楽";
@@ -870,9 +884,10 @@
             // radioButton_main
             // 
             this.radioButton_main.AutoSize = true;
-            this.radioButton_main.Location = new System.Drawing.Point(28, 27);
+            this.radioButton_main.Location = new System.Drawing.Point(21, 22);
+            this.radioButton_main.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton_main.Name = "radioButton_main";
-            this.radioButton_main.Size = new System.Drawing.Size(102, 19);
+            this.radioButton_main.Size = new System.Drawing.Size(83, 16);
             this.radioButton_main.TabIndex = 93;
             this.radioButton_main.TabStop = true;
             this.radioButton_main.Text = "メインボックス";
@@ -882,9 +897,10 @@
             // radioButton_1
             // 
             this.radioButton_1.AutoSize = true;
-            this.radioButton_1.Location = new System.Drawing.Point(28, 51);
+            this.radioButton_1.Location = new System.Drawing.Point(21, 41);
+            this.radioButton_1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton_1.Name = "radioButton_1";
-            this.radioButton_1.Size = new System.Drawing.Size(80, 19);
+            this.radioButton_1.Size = new System.Drawing.Size(65, 16);
             this.radioButton_1.TabIndex = 94;
             this.radioButton_1.TabStop = true;
             this.radioButton_1.Text = "１ボックス";
@@ -894,9 +910,10 @@
             // radioButton_2
             // 
             this.radioButton_2.AutoSize = true;
-            this.radioButton_2.Location = new System.Drawing.Point(28, 76);
+            this.radioButton_2.Location = new System.Drawing.Point(21, 61);
+            this.radioButton_2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton_2.Name = "radioButton_2";
-            this.radioButton_2.Size = new System.Drawing.Size(80, 19);
+            this.radioButton_2.Size = new System.Drawing.Size(65, 16);
             this.radioButton_2.TabIndex = 95;
             this.radioButton_2.TabStop = true;
             this.radioButton_2.Text = "２ボックス";
@@ -906,9 +923,10 @@
             // radioButton_mosimo
             // 
             this.radioButton_mosimo.AutoSize = true;
-            this.radioButton_mosimo.Location = new System.Drawing.Point(28, 101);
+            this.radioButton_mosimo.Location = new System.Drawing.Point(21, 81);
+            this.radioButton_mosimo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.radioButton_mosimo.Name = "radioButton_mosimo";
-            this.radioButton_mosimo.Size = new System.Drawing.Size(103, 19);
+            this.radioButton_mosimo.Size = new System.Drawing.Size(84, 16);
             this.radioButton_mosimo.TabIndex = 96;
             this.radioButton_mosimo.TabStop = true;
             this.radioButton_mosimo.Text = "もしもボックス";
@@ -921,9 +939,11 @@
             this.groupBox2.Controls.Add(this.radioButton_2);
             this.groupBox2.Controls.Add(this.radioButton_1);
             this.groupBox2.Controls.Add(this.radioButton_main);
-            this.groupBox2.Location = new System.Drawing.Point(464, 700);
+            this.groupBox2.Location = new System.Drawing.Point(348, 560);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(152, 126);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(114, 101);
             this.groupBox2.TabIndex = 97;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "選択中";
@@ -934,18 +954,20 @@
             this.groupBox3.Controls.Add(this.orderreset_button);
             this.groupBox3.Controls.Add(this.button9);
             this.groupBox3.Controls.Add(this.movebutton);
-            this.groupBox3.Location = new System.Drawing.Point(1315, 351);
+            this.groupBox3.Location = new System.Drawing.Point(1021, 282);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(162, 328);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Size = new System.Drawing.Size(122, 262);
             this.groupBox3.TabIndex = 98;
             this.groupBox3.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(1501, 838);
+            this.ClientSize = new System.Drawing.Size(1155, 670);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox_music);
@@ -968,7 +990,6 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

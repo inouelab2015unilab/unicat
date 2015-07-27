@@ -620,33 +620,38 @@ namespace unicat1
                 //fish500count.Text = fish3count.ToString();
                 //fish500score.Text = (fish3count * Score).ToString();
             }
-            // cat_turn();
+            cat_turn();
         }
 
-        //public void cat_turn()
-        //{
-        //    for (int i = 0; i <= 360; i = i + 20)
-        //    {
-        //        double d = i / (180 / Math.PI);//傾けたい角度
-        //        //新しい座標位置を計算する
-        //        float x = catposx * pictureBox1.Width / xmax + (pictureBox1.Width / (2 * xmax));   //中心のｘ座標
-        //        float y = catposy * pictureBox1.Height / ymax + (pictureBox1.Height / (2 * ymax)); //中心のｙ座標
-        //        float r = (float)Math.Sqrt(Math.Pow(pictureBox1.Width / xmax,2) +Math.Pow( pictureBox1.Height / ymax,2)); //中心のｙ座標
-        //        float xx = x - r * (float)Math.Cos(d)/2;
-        //        float yy = y - r * (float)Math.Sin(d)/2;
-        //        float x1 = xx + (pictureBox1.Width / xmax) * (float)Math.Cos(d);
-        //        float y1 = yy + (pictureBox1.Width / xmax) * (float)Math.Sin(d);
-        //        float x2 = xx - (pictureBox1.Height / ymax) * (float)Math.Sin(d);
-        //        float y2 = yy + (pictureBox1.Height / ymax) * (float)Math.Cos(d);
-        //        //PointF配列を作成
-        //        PointF[] destinationPoints = { new PointF(xx, yy), new PointF(x1, y1), new PointF(x2, y2) };
-        //        //画像を表示
-        //        g.DrawImage(cat, destinationPoints);
-        //        pictureBox1.Refresh();
-        //        Thread.Sleep(1);
-        //    }
+        public void cat_turn()
+        {
+            for (int i = 0; i <= 360; i = i + 20)
+            {
+                double d = (i + 45) / (180 / Math.PI);//傾けたい角度
+                float a = (float)Math.Sqrt(Math.Pow(pictureBox1.Width / (2*xmax), 2) + Math.Pow(pictureBox1.Height / (2*ymax), 2));//傾けたい角度
+                //新しい座標位置を計算する
+                float x = catposx * pictureBox1.Width / xmax + (pictureBox1.Width / (2 * xmax));   //中心のｘ座標
+                float y = catposy * pictureBox1.Height / ymax + (pictureBox1.Height / (2 * ymax)); //中心のｙ座標
+                float r = (float)Math.Sqrt(Math.Pow(pictureBox1.Width / xmax, 2) + Math.Pow(pictureBox1.Height / ymax, 2)); //中心のｙ座標
+                float xx = x - (pictureBox1.Width / xmax) * (float)Math.Cos(d) / 2;
+                float yy = y - (pictureBox1.Height / ymax) * (float)Math.Sin(d) / 2;
+                float x1 = xx + a * (float)Math.Cos(i / (180 / Math.PI)) ;
+                float y1 = yy + a * (float)Math.Sin(i / (180 / Math.PI)) ;
+                float x2 = xx - a * (float)Math.Sin(i / (180 / Math.PI)) ;
+                float y2 = yy + a * (float)Math.Cos(i / (180 / Math.PI)) ;
+                //PointF配列を作成
+                PointF[] destinationPoints = { new PointF(xx, yy), new PointF(x1, y1), new PointF(x2, y2) };
+                //画像を表示
+                g.DrawImage(road, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);                
+                g.DrawImage(cat, destinationPoints);
+                pictureBox1.Refresh();
+                Thread.Sleep(10);
+            }
+            g.DrawImage(cat, catposx * pictureBox1.Width / xmax , catposy * pictureBox1.Height / ymax , pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+            pictureBox1.Refresh();
+            Thread.Sleep(10);
 
-        //}
+        }
 
 
         //スコア初期化
@@ -718,7 +723,6 @@ namespace unicat1
                 }
                 if (movelist.Count > 0)
                 {
-                    //movelist.Remove(movelist[movelist.Count - 1]);
                     movelist.RemoveAt(movelist.Count - 1);
                 }
 
@@ -734,7 +738,6 @@ namespace unicat1
                 }
                 if (onelist.Count > 0)
                 {
-                    //onelist.Remove(onelist[onelist.Count - 1]);
                     onelist.RemoveAt(onelist.Count - 1);
                 }
             }
@@ -749,7 +752,6 @@ namespace unicat1
                 }
                 if (twolist.Count > 0)
                 {
-                    //twolist.Remove(twolist[twolist.Count - 1]);
                     twolist.RemoveAt(twolist.Count - 1);
                 }
             }
@@ -763,7 +765,6 @@ namespace unicat1
                 }
                 if (mosimolist.Count > 0)
                 {
-                    //mosimolist.Remove(mosimolist[mosimolist.Count - 1]);
                     mosimolist.RemoveAt(mosimolist.Count - 1);
                 }
             }
