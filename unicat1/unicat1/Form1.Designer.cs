@@ -158,7 +158,7 @@
             this.movebutton.BackColor = System.Drawing.Color.White;
             this.movebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.movebutton.Location = new System.Drawing.Point(3, 212);
-            this.movebutton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.movebutton.Margin = new System.Windows.Forms.Padding(2);
             this.movebutton.Name = "movebutton";
             this.movebutton.Size = new System.Drawing.Size(112, 48);
             this.movebutton.TabIndex = 1;
@@ -178,7 +178,7 @@
             // main2
             // 
             this.main2.Location = new System.Drawing.Point(91, 15);
-            this.main2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main2.Margin = new System.Windows.Forms.Padding(2);
             this.main2.Name = "main2";
             this.main2.Size = new System.Drawing.Size(75, 80);
             this.main2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -190,7 +190,7 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button2.Location = new System.Drawing.Point(1025, 240);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 30);
             this.button2.TabIndex = 16;
@@ -201,7 +201,7 @@
             // main1
             // 
             this.main1.Location = new System.Drawing.Point(11, 15);
-            this.main1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main1.Margin = new System.Windows.Forms.Padding(2);
             this.main1.Name = "main1";
             this.main1.Size = new System.Drawing.Size(75, 80);
             this.main1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -211,7 +211,7 @@
             // main3
             // 
             this.main3.Location = new System.Drawing.Point(170, 15);
-            this.main3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main3.Margin = new System.Windows.Forms.Padding(2);
             this.main3.Name = "main3";
             this.main3.Size = new System.Drawing.Size(75, 80);
             this.main3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -221,7 +221,7 @@
             // main4
             // 
             this.main4.Location = new System.Drawing.Point(250, 15);
-            this.main4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main4.Margin = new System.Windows.Forms.Padding(2);
             this.main4.Name = "main4";
             this.main4.Size = new System.Drawing.Size(75, 80);
             this.main4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -231,7 +231,7 @@
             // main5
             // 
             this.main5.Location = new System.Drawing.Point(329, 15);
-            this.main5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main5.Margin = new System.Windows.Forms.Padding(2);
             this.main5.Name = "main5";
             this.main5.Size = new System.Drawing.Size(75, 80);
             this.main5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -241,7 +241,7 @@
             // main6
             // 
             this.main6.Location = new System.Drawing.Point(409, 15);
-            this.main6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main6.Margin = new System.Windows.Forms.Padding(2);
             this.main6.Name = "main6";
             this.main6.Size = new System.Drawing.Size(75, 80);
             this.main6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -251,7 +251,7 @@
             // main7
             // 
             this.main7.Location = new System.Drawing.Point(11, 98);
-            this.main7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main7.Margin = new System.Windows.Forms.Padding(2);
             this.main7.Name = "main7";
             this.main7.Size = new System.Drawing.Size(75, 80);
             this.main7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -261,7 +261,7 @@
             // main8
             // 
             this.main8.Location = new System.Drawing.Point(91, 98);
-            this.main8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main8.Margin = new System.Windows.Forms.Padding(2);
             this.main8.Name = "main8";
             this.main8.Size = new System.Drawing.Size(75, 80);
             this.main8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -271,7 +271,7 @@
             // main9
             // 
             this.main9.Location = new System.Drawing.Point(170, 98);
-            this.main9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main9.Margin = new System.Windows.Forms.Padding(2);
             this.main9.Name = "main9";
             this.main9.Size = new System.Drawing.Size(75, 80);
             this.main9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -281,7 +281,7 @@
             // main10
             // 
             this.main10.Location = new System.Drawing.Point(250, 98);
-            this.main10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main10.Margin = new System.Windows.Forms.Padding(2);
             this.main10.Name = "main10";
             this.main10.Size = new System.Drawing.Size(75, 80);
             this.main10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -291,7 +291,7 @@
             // main11
             // 
             this.main11.Location = new System.Drawing.Point(329, 98);
-            this.main11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main11.Margin = new System.Windows.Forms.Padding(2);
             this.main11.Name = "main11";
             this.main11.Size = new System.Drawing.Size(75, 80);
             this.main11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -301,7 +301,7 @@
             // main12
             // 
             this.main12.Location = new System.Drawing.Point(409, 98);
-            this.main12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main12.Margin = new System.Windows.Forms.Padding(2);
             this.main12.Name = "main12";
             this.main12.Size = new System.Drawing.Size(75, 80);
             this.main12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -311,7 +311,7 @@
             // one1
             // 
             this.one1.Location = new System.Drawing.Point(14, 16);
-            this.one1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.one1.Margin = new System.Windows.Forms.Padding(2);
             this.one1.Name = "one1";
             this.one1.Size = new System.Drawing.Size(75, 80);
             this.one1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -321,7 +321,7 @@
             // one2
             // 
             this.one2.Location = new System.Drawing.Point(93, 16);
-            this.one2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.one2.Margin = new System.Windows.Forms.Padding(2);
             this.one2.Name = "one2";
             this.one2.Size = new System.Drawing.Size(75, 80);
             this.one2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -331,7 +331,7 @@
             // one3
             // 
             this.one3.Location = new System.Drawing.Point(172, 16);
-            this.one3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.one3.Margin = new System.Windows.Forms.Padding(2);
             this.one3.Name = "one3";
             this.one3.Size = new System.Drawing.Size(75, 80);
             this.one3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -341,7 +341,7 @@
             // one4
             // 
             this.one4.Location = new System.Drawing.Point(252, 16);
-            this.one4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.one4.Margin = new System.Windows.Forms.Padding(2);
             this.one4.Name = "one4";
             this.one4.Size = new System.Drawing.Size(75, 80);
             this.one4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -351,7 +351,7 @@
             // one5
             // 
             this.one5.Location = new System.Drawing.Point(332, 16);
-            this.one5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.one5.Margin = new System.Windows.Forms.Padding(2);
             this.one5.Name = "one5";
             this.one5.Size = new System.Drawing.Size(75, 80);
             this.one5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -361,7 +361,7 @@
             // one6
             // 
             this.one6.Location = new System.Drawing.Point(411, 16);
-            this.one6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.one6.Margin = new System.Windows.Forms.Padding(2);
             this.one6.Name = "one6";
             this.one6.Size = new System.Drawing.Size(75, 80);
             this.one6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -441,7 +441,7 @@
             this.button9.BackColor = System.Drawing.Color.White;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.button9.Location = new System.Drawing.Point(3, 150);
-            this.button9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(112, 48);
             this.button9.TabIndex = 75;
@@ -621,7 +621,7 @@
             // makeStage_button
             // 
             this.makeStage_button.Location = new System.Drawing.Point(1024, 23);
-            this.makeStage_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.makeStage_button.Margin = new System.Windows.Forms.Padding(2);
             this.makeStage_button.Name = "makeStage_button";
             this.makeStage_button.Size = new System.Drawing.Size(112, 33);
             this.makeStage_button.TabIndex = 84;
@@ -644,9 +644,9 @@
             this.main_Box.Controls.Add(this.main1);
             this.main_Box.Controls.Add(this.main2);
             this.main_Box.Location = new System.Drawing.Point(509, 8);
-            this.main_Box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main_Box.Margin = new System.Windows.Forms.Padding(2);
             this.main_Box.Name = "main_Box";
-            this.main_Box.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.main_Box.Padding = new System.Windows.Forms.Padding(2);
             this.main_Box.Size = new System.Drawing.Size(500, 190);
             this.main_Box.TabIndex = 85;
             this.main_Box.TabStop = false;
@@ -661,9 +661,9 @@
             this.one_Box.Controls.Add(this.one2);
             this.one_Box.Controls.Add(this.one1);
             this.one_Box.Location = new System.Drawing.Point(507, 200);
-            this.one_Box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.one_Box.Margin = new System.Windows.Forms.Padding(2);
             this.one_Box.Name = "one_Box";
-            this.one_Box.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.one_Box.Padding = new System.Windows.Forms.Padding(2);
             this.one_Box.Size = new System.Drawing.Size(502, 104);
             this.one_Box.TabIndex = 86;
             this.one_Box.TabStop = false;
@@ -678,9 +678,9 @@
             this.two_Box.Controls.Add(this.two2);
             this.two_Box.Controls.Add(this.two1);
             this.two_Box.Location = new System.Drawing.Point(507, 306);
-            this.two_Box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.two_Box.Margin = new System.Windows.Forms.Padding(2);
             this.two_Box.Name = "two_Box";
-            this.two_Box.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.two_Box.Padding = new System.Windows.Forms.Padding(2);
             this.two_Box.Size = new System.Drawing.Size(502, 105);
             this.two_Box.TabIndex = 87;
             this.two_Box.TabStop = false;
@@ -689,7 +689,7 @@
             // two6
             // 
             this.two6.Location = new System.Drawing.Point(410, 16);
-            this.two6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.two6.Margin = new System.Windows.Forms.Padding(2);
             this.two6.Name = "two6";
             this.two6.Size = new System.Drawing.Size(75, 80);
             this.two6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -699,7 +699,7 @@
             // two5
             // 
             this.two5.Location = new System.Drawing.Point(331, 16);
-            this.two5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.two5.Margin = new System.Windows.Forms.Padding(2);
             this.two5.Name = "two5";
             this.two5.Size = new System.Drawing.Size(75, 80);
             this.two5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -709,7 +709,7 @@
             // two4
             // 
             this.two4.Location = new System.Drawing.Point(251, 16);
-            this.two4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.two4.Margin = new System.Windows.Forms.Padding(2);
             this.two4.Name = "two4";
             this.two4.Size = new System.Drawing.Size(75, 80);
             this.two4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -719,7 +719,7 @@
             // two3
             // 
             this.two3.Location = new System.Drawing.Point(172, 16);
-            this.two3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.two3.Margin = new System.Windows.Forms.Padding(2);
             this.two3.Name = "two3";
             this.two3.Size = new System.Drawing.Size(75, 80);
             this.two3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -729,7 +729,7 @@
             // two2
             // 
             this.two2.Location = new System.Drawing.Point(92, 16);
-            this.two2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.two2.Margin = new System.Windows.Forms.Padding(2);
             this.two2.Name = "two2";
             this.two2.Size = new System.Drawing.Size(75, 80);
             this.two2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -739,7 +739,7 @@
             // two1
             // 
             this.two1.Location = new System.Drawing.Point(13, 16);
-            this.two1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.two1.Margin = new System.Windows.Forms.Padding(2);
             this.two1.Name = "two1";
             this.two1.Size = new System.Drawing.Size(75, 80);
             this.two1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -756,9 +756,9 @@
             this.if_Box.Controls.Add(this.mosimo4);
             this.if_Box.Controls.Add(this.mosimo3);
             this.if_Box.Location = new System.Drawing.Point(507, 415);
-            this.if_Box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.if_Box.Margin = new System.Windows.Forms.Padding(2);
             this.if_Box.Name = "if_Box";
-            this.if_Box.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.if_Box.Padding = new System.Windows.Forms.Padding(2);
             this.if_Box.Size = new System.Drawing.Size(502, 130);
             this.if_Box.TabIndex = 88;
             this.if_Box.TabStop = false;
@@ -776,7 +776,7 @@
             // mosimo6
             // 
             this.mosimo6.Location = new System.Drawing.Point(411, 40);
-            this.mosimo6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mosimo6.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo6.Name = "mosimo6";
             this.mosimo6.Size = new System.Drawing.Size(75, 80);
             this.mosimo6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -786,7 +786,7 @@
             // mosimo2
             // 
             this.mosimo2.Location = new System.Drawing.Point(93, 40);
-            this.mosimo2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mosimo2.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo2.Name = "mosimo2";
             this.mosimo2.Size = new System.Drawing.Size(75, 80);
             this.mosimo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -796,7 +796,7 @@
             // mosimo5
             // 
             this.mosimo5.Location = new System.Drawing.Point(332, 40);
-            this.mosimo5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mosimo5.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo5.Name = "mosimo5";
             this.mosimo5.Size = new System.Drawing.Size(75, 80);
             this.mosimo5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -806,7 +806,7 @@
             // mosimo1
             // 
             this.mosimo1.Location = new System.Drawing.Point(14, 40);
-            this.mosimo1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mosimo1.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo1.Name = "mosimo1";
             this.mosimo1.Size = new System.Drawing.Size(75, 80);
             this.mosimo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -816,7 +816,7 @@
             // mosimo4
             // 
             this.mosimo4.Location = new System.Drawing.Point(252, 40);
-            this.mosimo4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mosimo4.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo4.Name = "mosimo4";
             this.mosimo4.Size = new System.Drawing.Size(75, 80);
             this.mosimo4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -826,7 +826,7 @@
             // mosimo3
             // 
             this.mosimo3.Location = new System.Drawing.Point(172, 40);
-            this.mosimo3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mosimo3.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo3.Name = "mosimo3";
             this.mosimo3.Size = new System.Drawing.Size(75, 80);
             this.mosimo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -847,7 +847,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(14, 15);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(35, 16);
             this.radioButton1.TabIndex = 90;
@@ -860,7 +860,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(56, 17);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(37, 16);
             this.radioButton2.TabIndex = 91;
@@ -873,9 +873,9 @@
             this.groupBox_music.Controls.Add(this.radioButton2);
             this.groupBox_music.Controls.Add(this.radioButton1);
             this.groupBox_music.Location = new System.Drawing.Point(1025, 62);
-            this.groupBox_music.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox_music.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox_music.Name = "groupBox_music";
-            this.groupBox_music.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox_music.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox_music.Size = new System.Drawing.Size(112, 42);
             this.groupBox_music.TabIndex = 92;
             this.groupBox_music.TabStop = false;
@@ -885,7 +885,7 @@
             // 
             this.radioButton_main.AutoSize = true;
             this.radioButton_main.Location = new System.Drawing.Point(21, 22);
-            this.radioButton_main.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton_main.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton_main.Name = "radioButton_main";
             this.radioButton_main.Size = new System.Drawing.Size(83, 16);
             this.radioButton_main.TabIndex = 93;
@@ -898,7 +898,7 @@
             // 
             this.radioButton_1.AutoSize = true;
             this.radioButton_1.Location = new System.Drawing.Point(21, 41);
-            this.radioButton_1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton_1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton_1.Name = "radioButton_1";
             this.radioButton_1.Size = new System.Drawing.Size(65, 16);
             this.radioButton_1.TabIndex = 94;
@@ -911,7 +911,7 @@
             // 
             this.radioButton_2.AutoSize = true;
             this.radioButton_2.Location = new System.Drawing.Point(21, 61);
-            this.radioButton_2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton_2.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton_2.Name = "radioButton_2";
             this.radioButton_2.Size = new System.Drawing.Size(65, 16);
             this.radioButton_2.TabIndex = 95;
@@ -924,7 +924,7 @@
             // 
             this.radioButton_mosimo.AutoSize = true;
             this.radioButton_mosimo.Location = new System.Drawing.Point(21, 81);
-            this.radioButton_mosimo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton_mosimo.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton_mosimo.Name = "radioButton_mosimo";
             this.radioButton_mosimo.Size = new System.Drawing.Size(84, 16);
             this.radioButton_mosimo.TabIndex = 96;
@@ -940,9 +940,9 @@
             this.groupBox2.Controls.Add(this.radioButton_1);
             this.groupBox2.Controls.Add(this.radioButton_main);
             this.groupBox2.Location = new System.Drawing.Point(348, 560);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(114, 101);
             this.groupBox2.TabIndex = 97;
             this.groupBox2.TabStop = false;
@@ -955,9 +955,9 @@
             this.groupBox3.Controls.Add(this.button9);
             this.groupBox3.Controls.Add(this.movebutton);
             this.groupBox3.Location = new System.Drawing.Point(1021, 282);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(122, 262);
             this.groupBox3.TabIndex = 98;
             this.groupBox3.TabStop = false;
@@ -966,6 +966,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(1155, 670);
             this.Controls.Add(this.groupBox3);
