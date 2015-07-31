@@ -102,9 +102,9 @@ namespace unicat1
 
             }
 
-            comboBox3.Items.Add("もしも前に壁があったら");
-            comboBox3.Items.Add("もしも左に壁があったら");
-            comboBox3.Items.Add("もしも右に壁があったら");
+            comboBox3.Items.Add("もしも前に壁がなかったら");
+            comboBox3.Items.Add("もしも左に壁がなかったら");
+            comboBox3.Items.Add("もしも右に壁がなかったら");
 
             //ピクチャーボックス配列に各ピクチャーボックスを格納
             mainpicarray = new PictureBox[] { main1, main2, main3, main4, main5, main6, main7, main8, main9, main10, main11, main12 };
@@ -426,7 +426,7 @@ namespace unicat1
                         if (catdirection == 2 && catposy != ymax - 1) ymove = 1;
                         if (catdirection == 1 && catposx != xmax - 1) xmove = 1;
                         if (catdirection == 3 && catposx != 0) xmove = -1;
-                        if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先に壁がなければ
+                        if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先に壁ならば
                         {
                             for (int j = 0; j < mosimolist.Count; j++)
                             {
@@ -445,7 +445,7 @@ namespace unicat1
                         if (catdirection == 2 && catposy != ymax - 1) xmove = 1;
                         if (catdirection == 1 && catposx != xmax - 1) ymove = -1;
                         if (catdirection == 3 && catposx != 0) ymove = 1;
-                        if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先に壁がなければ
+                        if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先に壁ならば
                         {
                             for (int j = 0; j < mosimolist.Count; j++)
                             {
@@ -463,7 +463,7 @@ namespace unicat1
                         if (catdirection == 2 && catposy != ymax - 1) xmove = -1;
                         if (catdirection == 1 && catposx != xmax - 1) ymove = 1;
                         if (catdirection == 3 && catposx != 0) ymove = -1;
-                        if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先に壁がなければ
+                        if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先に壁ならば
                         {
                             for (int j = 0; j < mosimolist.Count; j++)
                             {
@@ -882,7 +882,6 @@ namespace unicat1
                 mosimopicarray[index].Refresh();
             }
         }
-
 
     }
 }

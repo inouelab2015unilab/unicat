@@ -541,6 +541,7 @@
             // 
             // gobutton
             // 
+            this.gobutton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gobutton.Location = new System.Drawing.Point(483, 573);
             this.gobutton.Name = "gobutton";
             this.gobutton.Size = new System.Drawing.Size(82, 88);
@@ -551,6 +552,7 @@
             // 
             // turnleft_button
             // 
+            this.turnleft_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.turnleft_button.Location = new System.Drawing.Point(572, 573);
             this.turnleft_button.Name = "turnleft_button";
             this.turnleft_button.Size = new System.Drawing.Size(82, 88);
@@ -561,6 +563,7 @@
             // 
             // turnright_button
             // 
+            this.turnright_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.turnright_button.Location = new System.Drawing.Point(660, 571);
             this.turnright_button.Name = "turnright_button";
             this.turnright_button.Size = new System.Drawing.Size(82, 88);
@@ -571,6 +574,7 @@
             // 
             // catchfish_button
             // 
+            this.catchfish_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.catchfish_button.Location = new System.Drawing.Point(748, 573);
             this.catchfish_button.Name = "catchfish_button";
             this.catchfish_button.Size = new System.Drawing.Size(82, 88);
@@ -581,6 +585,7 @@
             // 
             // one_button
             // 
+            this.one_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.one_button.Location = new System.Drawing.Point(837, 573);
             this.one_button.Name = "one_button";
             this.one_button.Size = new System.Drawing.Size(82, 88);
@@ -591,6 +596,7 @@
             // 
             // two_button
             // 
+            this.two_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.two_button.Location = new System.Drawing.Point(926, 573);
             this.two_button.Name = "two_button";
             this.two_button.Size = new System.Drawing.Size(82, 88);
@@ -865,6 +871,7 @@
             // 
             // if_button
             // 
+            this.if_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.if_button.Location = new System.Drawing.Point(1014, 573);
             this.if_button.Name = "if_button";
             this.if_button.Size = new System.Drawing.Size(82, 88);

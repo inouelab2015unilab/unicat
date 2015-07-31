@@ -156,29 +156,51 @@ namespace unicat1
             //何が選択されたか調べる
             if (result == DialogResult.OK)
             {
-
-                try
+                if (check() == true)
                 {
-                    // 出力用のファイルを開く
-                    string filepas = "../../boardmatrix/" + textBox1.Text + ".csv";
-                    using (var sw = new System.IO.StreamWriter(@filepas, false))
+                    try
                     {
-                        for (int j = 0; j < stage.GetLength(1); j++)
+                        // 出力用のファイルを開く
+                        string filepas = "../../boardmatrix/" + textBox1.Text + ".csv";
+                        using (var sw = new System.IO.StreamWriter(@filepas, false))
                         {
-                            for (int i = 0; i < stage.GetLength(0); i++)
+                            for (int j = 0; j < stage.GetLength(1); j++)
                             {
-                                if (i != stage.GetLength(0) - 1) sw.Write(stage[i, j] + ",");
-                                else sw.WriteLine(stage[i, j]);
+                                for (int i = 0; i < stage.GetLength(0); i++)
+                                {
+                                    if (i != stage.GetLength(0) - 1) sw.Write(stage[i, j] + ",");
+                                    else sw.WriteLine(stage[i, j]);
+                                }
                             }
                         }
                     }
+                    catch { }
+
+                    Application.Restart();
                 }
-                catch { }
-
-
-                Application.Restart();
+                else
+                {
+                    MessageBox.Show("ネコを１匹、魚を１匹以上セットしてください", "注意", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else if (result == DialogResult.Cancel) { }
+                else if (result == DialogResult.Cancel) { }
+        }
+
+        private bool check()
+        {
+            int c = 0;
+            int f = 0;
+            for (int j = 0; j < stage.GetLength(1); j++)
+            {
+                for (int i = 0; i < stage.GetLength(0); i++)
+                {
+                    if (stage[i, j] == 3) c++;
+                    if (stage[i, j] == 4) f++;
+
+                }
+            }
+            if (0 < c && 0 < f) return true;
+            else return false;
         }
 
     }
