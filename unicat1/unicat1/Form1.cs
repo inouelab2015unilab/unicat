@@ -374,6 +374,7 @@ namespace unicat1
         {
             if (checkfood() != 0)
             {
+                orderFlash(list,index);
                 if (list[index] == 0) catmove(catdirection);
 
                 else if (list[index] == 1)
@@ -396,7 +397,7 @@ namespace unicat1
                 {
                     catchfish(catposx, catposy);
                 }
-                if (list[index] == 4)
+                else if (list[index] == 4)
                 {
                     for (int j = 0; j < onelist.Count; j++)
                     {
@@ -406,7 +407,7 @@ namespace unicat1
                     }
                 }
 
-                if (list[index] == 5)
+                else if (list[index] == 5)
                 {
                     for (int j = 0; j < twolist.Count; j++)
                     {
@@ -415,7 +416,7 @@ namespace unicat1
                         if (totalscore <= -100) break;
                     }
                 }
-                if (list[index] == 6)
+                else if (list[index] == 6)
                 {
                     int xmove = 0, ymove = 0;
                     if (comboBox3.SelectedIndex == 0)
@@ -480,6 +481,7 @@ namespace unicat1
                     //    if (totalscore <= -100) break;
                     //}
                 }
+                orderFlashBack(list, index);
             }
         }
 
@@ -833,6 +835,54 @@ namespace unicat1
             if (radioButton_2.Checked == true) selectBox = 2;
             if (radioButton_mosimo.Checked == true) selectBox = 3;
         }
+
+        private void orderFlash(List<int> list, int index)//実行している命令の縁を赤くする
+        {
+            if (list == movelist)
+            {
+                mainpicarray[index].BackColor = Color.Red;
+                mainpicarray[index].Refresh();
+            }
+            if (list == onelist)
+            {
+                onepicarray[index].BackColor = Color.Red;
+                onepicarray[index].Refresh();
+            }
+            if (list == twolist)
+            {
+                twopicarray[index].BackColor = Color.Red;
+                twopicarray[index].Refresh();
+            }
+            if (list == mosimolist)
+            {
+                mosimopicarray[index].BackColor = Color.Red;
+                mosimopicarray[index].Refresh();
+            }
+        }
+        private void orderFlashBack(List<int> list, int index)//実行している命令の縁を赤くする
+        {
+            if (list == movelist)
+            {
+                mainpicarray[index].BackColor = main_Box.BackColor;
+                mainpicarray[index].Refresh();
+            }
+            if (list == onelist)
+            {
+                onepicarray[index].BackColor =one_Box.BackColor;
+                onepicarray[index].Refresh();
+            }
+            if (list == twolist)
+            {
+                twopicarray[index].BackColor = two_Box.BackColor;
+                twopicarray[index].Refresh();
+            }
+            if (list == mosimolist)
+            {
+                mosimopicarray[index].BackColor = if_Box.BackColor;
+                mosimopicarray[index].Refresh();
+            }
+        }
+
 
     }
 }

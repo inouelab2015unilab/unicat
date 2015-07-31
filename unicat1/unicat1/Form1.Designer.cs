@@ -180,6 +180,7 @@
             this.main2.Location = new System.Drawing.Point(91, 15);
             this.main2.Margin = new System.Windows.Forms.Padding(2);
             this.main2.Name = "main2";
+            this.main2.Padding = new System.Windows.Forms.Padding(2);
             this.main2.Size = new System.Drawing.Size(75, 80);
             this.main2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main2.TabIndex = 11;
@@ -203,6 +204,7 @@
             this.main1.Location = new System.Drawing.Point(11, 15);
             this.main1.Margin = new System.Windows.Forms.Padding(2);
             this.main1.Name = "main1";
+            this.main1.Padding = new System.Windows.Forms.Padding(2);
             this.main1.Size = new System.Drawing.Size(75, 80);
             this.main1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main1.TabIndex = 21;
@@ -213,6 +215,7 @@
             this.main3.Location = new System.Drawing.Point(170, 15);
             this.main3.Margin = new System.Windows.Forms.Padding(2);
             this.main3.Name = "main3";
+            this.main3.Padding = new System.Windows.Forms.Padding(2);
             this.main3.Size = new System.Drawing.Size(75, 80);
             this.main3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main3.TabIndex = 22;
@@ -223,6 +226,7 @@
             this.main4.Location = new System.Drawing.Point(250, 15);
             this.main4.Margin = new System.Windows.Forms.Padding(2);
             this.main4.Name = "main4";
+            this.main4.Padding = new System.Windows.Forms.Padding(2);
             this.main4.Size = new System.Drawing.Size(75, 80);
             this.main4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main4.TabIndex = 23;
@@ -233,6 +237,7 @@
             this.main5.Location = new System.Drawing.Point(329, 15);
             this.main5.Margin = new System.Windows.Forms.Padding(2);
             this.main5.Name = "main5";
+            this.main5.Padding = new System.Windows.Forms.Padding(2);
             this.main5.Size = new System.Drawing.Size(75, 80);
             this.main5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main5.TabIndex = 24;
@@ -243,6 +248,7 @@
             this.main6.Location = new System.Drawing.Point(409, 15);
             this.main6.Margin = new System.Windows.Forms.Padding(2);
             this.main6.Name = "main6";
+            this.main6.Padding = new System.Windows.Forms.Padding(2);
             this.main6.Size = new System.Drawing.Size(75, 80);
             this.main6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main6.TabIndex = 25;
@@ -253,6 +259,7 @@
             this.main7.Location = new System.Drawing.Point(11, 98);
             this.main7.Margin = new System.Windows.Forms.Padding(2);
             this.main7.Name = "main7";
+            this.main7.Padding = new System.Windows.Forms.Padding(2);
             this.main7.Size = new System.Drawing.Size(75, 80);
             this.main7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main7.TabIndex = 26;
@@ -263,6 +270,7 @@
             this.main8.Location = new System.Drawing.Point(91, 98);
             this.main8.Margin = new System.Windows.Forms.Padding(2);
             this.main8.Name = "main8";
+            this.main8.Padding = new System.Windows.Forms.Padding(2);
             this.main8.Size = new System.Drawing.Size(75, 80);
             this.main8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main8.TabIndex = 27;
@@ -273,6 +281,7 @@
             this.main9.Location = new System.Drawing.Point(170, 98);
             this.main9.Margin = new System.Windows.Forms.Padding(2);
             this.main9.Name = "main9";
+            this.main9.Padding = new System.Windows.Forms.Padding(2);
             this.main9.Size = new System.Drawing.Size(75, 80);
             this.main9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main9.TabIndex = 28;
@@ -283,6 +292,7 @@
             this.main10.Location = new System.Drawing.Point(250, 98);
             this.main10.Margin = new System.Windows.Forms.Padding(2);
             this.main10.Name = "main10";
+            this.main10.Padding = new System.Windows.Forms.Padding(2);
             this.main10.Size = new System.Drawing.Size(75, 80);
             this.main10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main10.TabIndex = 29;
@@ -293,6 +303,7 @@
             this.main11.Location = new System.Drawing.Point(329, 98);
             this.main11.Margin = new System.Windows.Forms.Padding(2);
             this.main11.Name = "main11";
+            this.main11.Padding = new System.Windows.Forms.Padding(2);
             this.main11.Size = new System.Drawing.Size(75, 80);
             this.main11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main11.TabIndex = 30;
@@ -303,6 +314,7 @@
             this.main12.Location = new System.Drawing.Point(409, 98);
             this.main12.Margin = new System.Windows.Forms.Padding(2);
             this.main12.Name = "main12";
+            this.main12.Padding = new System.Windows.Forms.Padding(2);
             this.main12.Size = new System.Drawing.Size(75, 80);
             this.main12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main12.TabIndex = 31;
@@ -313,6 +325,7 @@
             this.one1.Location = new System.Drawing.Point(14, 16);
             this.one1.Margin = new System.Windows.Forms.Padding(2);
             this.one1.Name = "one1";
+            this.one1.Padding = new System.Windows.Forms.Padding(2);
             this.one1.Size = new System.Drawing.Size(75, 80);
             this.one1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.one1.TabIndex = 34;
@@ -323,6 +336,7 @@
             this.one2.Location = new System.Drawing.Point(93, 16);
             this.one2.Margin = new System.Windows.Forms.Padding(2);
             this.one2.Name = "one2";
+            this.one2.Padding = new System.Windows.Forms.Padding(2);
             this.one2.Size = new System.Drawing.Size(75, 80);
             this.one2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.one2.TabIndex = 35;
@@ -333,6 +347,7 @@
             this.one3.Location = new System.Drawing.Point(172, 16);
             this.one3.Margin = new System.Windows.Forms.Padding(2);
             this.one3.Name = "one3";
+            this.one3.Padding = new System.Windows.Forms.Padding(2);
             this.one3.Size = new System.Drawing.Size(75, 80);
             this.one3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.one3.TabIndex = 36;
@@ -343,6 +358,7 @@
             this.one4.Location = new System.Drawing.Point(252, 16);
             this.one4.Margin = new System.Windows.Forms.Padding(2);
             this.one4.Name = "one4";
+            this.one4.Padding = new System.Windows.Forms.Padding(2);
             this.one4.Size = new System.Drawing.Size(75, 80);
             this.one4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.one4.TabIndex = 37;
@@ -353,6 +369,7 @@
             this.one5.Location = new System.Drawing.Point(332, 16);
             this.one5.Margin = new System.Windows.Forms.Padding(2);
             this.one5.Name = "one5";
+            this.one5.Padding = new System.Windows.Forms.Padding(2);
             this.one5.Size = new System.Drawing.Size(75, 80);
             this.one5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.one5.TabIndex = 38;
@@ -363,6 +380,7 @@
             this.one6.Location = new System.Drawing.Point(411, 16);
             this.one6.Margin = new System.Windows.Forms.Padding(2);
             this.one6.Name = "one6";
+            this.one6.Padding = new System.Windows.Forms.Padding(2);
             this.one6.Size = new System.Drawing.Size(75, 80);
             this.one6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.one6.TabIndex = 39;
@@ -691,6 +709,7 @@
             this.two6.Location = new System.Drawing.Point(410, 16);
             this.two6.Margin = new System.Windows.Forms.Padding(2);
             this.two6.Name = "two6";
+            this.two6.Padding = new System.Windows.Forms.Padding(2);
             this.two6.Size = new System.Drawing.Size(75, 80);
             this.two6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two6.TabIndex = 45;
@@ -701,6 +720,7 @@
             this.two5.Location = new System.Drawing.Point(331, 16);
             this.two5.Margin = new System.Windows.Forms.Padding(2);
             this.two5.Name = "two5";
+            this.two5.Padding = new System.Windows.Forms.Padding(2);
             this.two5.Size = new System.Drawing.Size(75, 80);
             this.two5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two5.TabIndex = 44;
@@ -711,6 +731,7 @@
             this.two4.Location = new System.Drawing.Point(251, 16);
             this.two4.Margin = new System.Windows.Forms.Padding(2);
             this.two4.Name = "two4";
+            this.two4.Padding = new System.Windows.Forms.Padding(2);
             this.two4.Size = new System.Drawing.Size(75, 80);
             this.two4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two4.TabIndex = 43;
@@ -721,6 +742,7 @@
             this.two3.Location = new System.Drawing.Point(172, 16);
             this.two3.Margin = new System.Windows.Forms.Padding(2);
             this.two3.Name = "two3";
+            this.two3.Padding = new System.Windows.Forms.Padding(2);
             this.two3.Size = new System.Drawing.Size(75, 80);
             this.two3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two3.TabIndex = 42;
@@ -731,6 +753,7 @@
             this.two2.Location = new System.Drawing.Point(92, 16);
             this.two2.Margin = new System.Windows.Forms.Padding(2);
             this.two2.Name = "two2";
+            this.two2.Padding = new System.Windows.Forms.Padding(2);
             this.two2.Size = new System.Drawing.Size(75, 80);
             this.two2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two2.TabIndex = 41;
@@ -741,6 +764,7 @@
             this.two1.Location = new System.Drawing.Point(13, 16);
             this.two1.Margin = new System.Windows.Forms.Padding(2);
             this.two1.Name = "two1";
+            this.two1.Padding = new System.Windows.Forms.Padding(2);
             this.two1.Size = new System.Drawing.Size(75, 80);
             this.two1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two1.TabIndex = 40;
@@ -770,7 +794,7 @@
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(14, 17);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 20);
+            this.comboBox3.Size = new System.Drawing.Size(183, 20);
             this.comboBox3.TabIndex = 89;
             // 
             // mosimo6
@@ -778,6 +802,7 @@
             this.mosimo6.Location = new System.Drawing.Point(411, 40);
             this.mosimo6.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo6.Name = "mosimo6";
+            this.mosimo6.Padding = new System.Windows.Forms.Padding(2);
             this.mosimo6.Size = new System.Drawing.Size(75, 80);
             this.mosimo6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo6.TabIndex = 51;
@@ -788,6 +813,7 @@
             this.mosimo2.Location = new System.Drawing.Point(93, 40);
             this.mosimo2.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo2.Name = "mosimo2";
+            this.mosimo2.Padding = new System.Windows.Forms.Padding(2);
             this.mosimo2.Size = new System.Drawing.Size(75, 80);
             this.mosimo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo2.TabIndex = 47;
@@ -798,6 +824,7 @@
             this.mosimo5.Location = new System.Drawing.Point(332, 40);
             this.mosimo5.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo5.Name = "mosimo5";
+            this.mosimo5.Padding = new System.Windows.Forms.Padding(2);
             this.mosimo5.Size = new System.Drawing.Size(75, 80);
             this.mosimo5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo5.TabIndex = 50;
@@ -808,6 +835,7 @@
             this.mosimo1.Location = new System.Drawing.Point(14, 40);
             this.mosimo1.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo1.Name = "mosimo1";
+            this.mosimo1.Padding = new System.Windows.Forms.Padding(2);
             this.mosimo1.Size = new System.Drawing.Size(75, 80);
             this.mosimo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo1.TabIndex = 46;
@@ -818,6 +846,7 @@
             this.mosimo4.Location = new System.Drawing.Point(252, 40);
             this.mosimo4.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo4.Name = "mosimo4";
+            this.mosimo4.Padding = new System.Windows.Forms.Padding(2);
             this.mosimo4.Size = new System.Drawing.Size(75, 80);
             this.mosimo4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo4.TabIndex = 49;
@@ -828,6 +857,7 @@
             this.mosimo3.Location = new System.Drawing.Point(172, 40);
             this.mosimo3.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo3.Name = "mosimo3";
+            this.mosimo3.Padding = new System.Windows.Forms.Padding(2);
             this.mosimo3.Size = new System.Drawing.Size(75, 80);
             this.mosimo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo3.TabIndex = 48;
