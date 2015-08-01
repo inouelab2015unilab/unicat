@@ -117,32 +117,38 @@ namespace unicat1
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            Point p = this.pictureBox1.PointToScreen(new Point(0, 0));
-            int x = e.X / cellsize;
-            int y = e.Y / cellsize;
-            if (cellnumber != 3)
+            try
             {
-                g.DrawImage(imageset[cellnumber], x * cellsize, y * cellsize, cellsize, cellsize);
-                stage[x, y] = cellnumber;
-            }
-            else
-            {
-                for(int i=0;i<stage.GetLength(0);i++){
-                    for (int j = 0; j < stage.GetLength(1); j++)
+                Point p = this.pictureBox1.PointToScreen(new Point(0, 0));
+                int x = e.X / cellsize;
+                int y = e.Y / cellsize;
+                if (cellnumber != 3)
+                {
+                    g.DrawImage(imageset[cellnumber], x * cellsize, y * cellsize, cellsize, cellsize);
+                    stage[x, y] = cellnumber;
+                }
+                else
+                {
+                    for (int i = 0; i < stage.GetLength(0); i++)
                     {
-                        if (stage[i, j] == 3)
+                        for (int j = 0; j < stage.GetLength(1); j++)
                         {
-                            g.DrawImage(road, i * cellsize, j * cellsize, cellsize, cellsize);
-                            stage[i, j] = 1;
-                            break;
+                            if (stage[i, j] == 3)
+                            {
+                                g.DrawImage(road, i * cellsize, j * cellsize, cellsize, cellsize);
+                                stage[i, j] = 1;
+                                break;
+                            }
                         }
                     }
+                    g.DrawImage(imageset[cellnumber], x * cellsize, y * cellsize, cellsize, cellsize);
+                    stage[x, y] = cellnumber;
                 }
-                g.DrawImage(imageset[cellnumber], x * cellsize, y * cellsize, cellsize, cellsize);
-                stage[x, y] = cellnumber;
+                pictureBox1.Refresh();
             }
-            pictureBox1.Refresh();
+            catch { }
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {

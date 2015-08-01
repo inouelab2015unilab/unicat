@@ -17,6 +17,7 @@ namespace unicat1
     public partial class Form1 : Form
     {
         Graphics g;
+        Graphics g2;
 
         //画像を変数に格納する
         public Image back = Image.FromFile(@"../../素材/back.png");
@@ -48,6 +49,7 @@ namespace unicat1
         int fish3count;
         int totalscore;
 
+        int power = 100;
         int mainpiccount = 0;
         int onepiccount = 0;
         int twopiccount = 0;
@@ -78,7 +80,6 @@ namespace unicat1
         public Form1()
         {
             InitializeComponent();
-
             radioButton2.Checked = true;
             radioButton_main.Checked = true;
             //音楽流す
@@ -112,7 +113,6 @@ namespace unicat1
             twopicarray = new PictureBox[] { two1, two2, two3, two4, two5, two6 };
             mosimopicarray = new PictureBox[] { mosimo1, mosimo2, mosimo3, mosimo4, mosimo5, mosimo6 };
 
-
             //命令パネルの背景を設置
             foreach (var n in mainpicarray) n.Image = commandpanel;
             foreach (var n in onepicarray) n.Image = commandpanel2;
@@ -128,19 +128,21 @@ namespace unicat1
             two_button.BackgroundImage = Image.FromFile(@"../../素材/2.png");
             if_button.BackgroundImage = Image.FromFile(@"../../素材/if.png");
 
-            gobutton.Paint += new PaintEventHandler(button3_Paint);
-            turnleft_button.Paint += new PaintEventHandler(button4_Paint);
-            turnright_button.Paint += new PaintEventHandler(button5_Paint);
-            catchfish_button.Paint += new PaintEventHandler(button6_Paint);
-            one_button.Paint += new PaintEventHandler(button7_Paint);
-            two_button.Paint += new PaintEventHandler(button8_Paint);
-            if_button.Paint += new PaintEventHandler(button8_Paint);
+            gobutton.Paint += new PaintEventHandler(button_Paint);
+            turnleft_button.Paint += new PaintEventHandler(button_Paint);
+            turnright_button.Paint += new PaintEventHandler(button_Paint);
+            catchfish_button.Paint += new PaintEventHandler(button_Paint);
+            one_button.Paint += new PaintEventHandler(button_Paint);
+            two_button.Paint += new PaintEventHandler(button_Paint);
+            if_button.Paint += new PaintEventHandler(button_Paint);
 
             //描画先とするImageオブジェクトを作成する
             Bitmap canvas = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            Bitmap power_canvas = new Bitmap(power_pictureBox.Width, power_pictureBox.Height);
 
             //ImageオブジェクトのGraphicsオブジェクトを作成する
             g = Graphics.FromImage(canvas);
+            g2 = Graphics.FromImage(power_canvas);
 
             comboBox1.SelectedIndex = 0;    //コンボボックスの初期値
             selectBox = 0;
@@ -180,60 +182,23 @@ namespace unicat1
 
             //PictureBox1に表示する
             pictureBox1.Image = canvas;
+            power_pictureBox.Image = power_canvas;
             pictureBox26.Image = fish;
-            //pictureBox27.Image = fish2;
-            //pictureBox28.Image = fish3;
             //画像の大きさをPictureBoxに合わせる
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox26.SizeMode = PictureBoxSizeMode.StretchImage;
-            //pictureBox27.SizeMode = PictureBoxSizeMode.StretchImage;
-            //pictureBox28.SizeMode = PictureBoxSizeMode.StretchImage;
+            powerPaint();
+            foodlabel.Text = checkfood().ToString();
+            foodlabel.Refresh();
 
         }
 
-        private void button3_Paint(object sender, PaintEventArgs e)
+        private void button_Paint(object sender, PaintEventArgs e)
         {
             Button btn = (Button)sender;
             //ボタンの背景画像をボタンの大きさに合わせて描画
             e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
 
         }
-        private void button4_Paint(object sender, PaintEventArgs e)
-        {
-            Button btn = (Button)sender;
-            //ボタンの背景画像をボタンの大きさに合わせて描画
-            e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
-
-        }
-        private void button5_Paint(object sender, PaintEventArgs e)
-        {
-            Button btn = (Button)sender;
-            //ボタンの背景画像をボタンの大きさに合わせて描画
-            e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
-
-        }
-        private void button6_Paint(object sender, PaintEventArgs e)
-        {
-            Button btn = (Button)sender;
-            //ボタンの背景画像をボタンの大きさに合わせて描画
-            e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
-
-        }
-
-        private void button7_Paint(object sender, PaintEventArgs e)
-        {
-            Button btn = (Button)sender;
-            //ボタンの背景画像をボタンの大きさに合わせて描画
-            e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
-
-        }
-        private void button8_Paint(object sender, PaintEventArgs e)
-        {
-            Button btn = (Button)sender;
-            //ボタンの背景画像をボタンの大きさに合わせて描画
-            e.Graphics.DrawImage(btn.BackgroundImage, btn.ClientRectangle);
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             makeboard(boardlist[comboBox1.SelectedIndex]);
@@ -242,7 +207,7 @@ namespace unicat1
             fish2count = 0;
             fish3count = 0;
             catdirection = 0;
-            harapekocount.Text = harapekoscore.Text = 0.ToString();
+            //harapekocount.Text = harapekoscore.Text = 0.ToString();
 
         }
 
@@ -287,6 +252,8 @@ namespace unicat1
 
             }
             scorereset();
+            foodlabel.Text = checkfood().ToString();
+            foodlabel.Refresh();
             pictureBox1.Refresh();
         }
 
@@ -372,11 +339,12 @@ namespace unicat1
 
         private void listcheck(List<int> list, int index)
         {
-            if (checkfood() != 0)
+            if (checkfood() != 0&&0<power)
             {
+                usePower(list, index);
+                powerPaint();
                 orderFlash(list,index);
                 if (list[index] == 0) catmove(catdirection);
-
                 else if (list[index] == 1)
                 {
                     if (catdirection == 0) catdirection = 3;
@@ -384,7 +352,6 @@ namespace unicat1
 
                     catd_change();
                 }
-
                 else if (list[index] == 2)
                 {
                     if (catdirection == 3) catdirection = 0;
@@ -392,7 +359,6 @@ namespace unicat1
 
                     catd_change();
                 }
-
                 else if (list[index] == 3)
                 {
                     catchfish(catposx, catposy);
@@ -434,11 +400,9 @@ namespace unicat1
                                 totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
                                 if (totalscore <= -100) break;
                             }
-
                         }
                     }
-
-                    if (comboBox3.SelectedIndex == 1)
+                    else if (comboBox3.SelectedIndex == 1)
                     {
                         //方向と端にいるかどうかで移動の変化量を決める
                         if (catdirection == 0 && catposy != 0) xmove = -1;
@@ -456,7 +420,7 @@ namespace unicat1
 
                         }
                     }
-                    if (comboBox3.SelectedIndex == 2)
+                    else if (comboBox3.SelectedIndex == 2)
                     {
                         //方向と端にいるかどうかで移動の変化量を決める
                         if (catdirection == 0 && catposy != 0) xmove = 1;
@@ -474,13 +438,9 @@ namespace unicat1
 
                         }
                     }
-                    //for (int j = 0; j < mosimolist.Count; j++)
-                    //{
-                    //    listcheck(mosimolist, j);
-                    //    totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
-                    //    if (totalscore <= -100) break;
-                    //}
                 }
+                foodlabel.Text = checkfood().ToString();
+                foodlabel.Refresh();
                 orderFlashBack(list, index);
             }
         }
@@ -494,7 +454,6 @@ namespace unicat1
                 {
                     if (nowboard[i, j] == 4 || nowboard[i, j] == 5 || nowboard[i, j] == 6) foodcount++;
                 }
-
             }
             return foodcount;
 
@@ -506,22 +465,12 @@ namespace unicat1
             //movelistに格納された番号にしたがって命令を実行
             for (int i = 0; i < movelist.Count; i++)
             {
-                listcheck(movelist, i);
-                totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
-                if (totalscore <= -100) break;
-            }
-
-            if (totalscore <= -100)
-            {
-                MessageBox.Show("死亡", "オーイ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                totalscorelabel.Text = (100 + totalscore).ToString();
-                totalscorelabel.Refresh();
+                listcheck(movelist, i);                
             }
 
             int foodcount = checkfood();
+            foodlabel.Text = checkfood().ToString();
+            foodlabel.Refresh();
             for (int i = 0; i < nowboard.GetLength(0); i++) //盤面の食べ物の数を数える
             {
                 for (int j = 0; j < nowboard.GetLength(1); j++)
@@ -531,10 +480,14 @@ namespace unicat1
 
             }
 
-            if (foodcount == 0) //全部食べられていたらクリア
+            if (power <= 0)
             {
-                totalscorelabel.Text = (100 + totalscore).ToString();
-                totalscorelabel.Refresh();
+                MessageBox.Show("死亡", "オーイ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                makeboard(boardlist[comboBox1.SelectedIndex]);
+                scorereset();
+            }
+            else if (foodcount == 0) //全部食べられていたらクリア
+            {
                 MessageBox.Show("オメ", "おおっ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 try
                 {
@@ -603,8 +556,8 @@ namespace unicat1
                 nowboard[catposx, catposy] = 1;
                 Score = 100;
                 fishcount += 1;
-                fish100count.Text = fishcount.ToString();
-                fish100score.Text = (fishcount * Score).ToString();
+                foodlabel.Text = fishcount.ToString();
+                //fish100score.Text = (fishcount * Score).ToString();
             }
             if (nowboard[catposx, catposy] == 5)
             {
@@ -663,20 +616,20 @@ namespace unicat1
             fish2count = 0;
             fish3count = 0;
             footcount = 0;
-            fish100count.Text = fishcount.ToString();
-            fish100score.Text = (fishcount * Score).ToString();
+            foodlabel.Text = fishcount.ToString();
+            //fish100score.Text = (fishcount * Score).ToString();
             //fish300count.Text = fishcount.ToString();
             //fish300score.Text = (fishcount * Score).ToString();
             //fish500count.Text = fishcount.ToString();
             //fish500score.Text = (fishcount * Score).ToString();
-
-            harapekocount.Text = footcount.ToString();
-            harapekoscore.Text = (-footcount * 5).ToString();
-            totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
-            totalscorelabel.Refresh();
+            power = 100;
+            powerPaint();
+            //harapekocount.Text = footcount.ToString();
+            //harapekoscore.Text = (-footcount * 5).ToString();
+            //totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+            //totalscorelabel.Refresh();
 
         }
-
 
         private void button9_Click(object sender, EventArgs e)
         {
@@ -883,5 +836,32 @@ namespace unicat1
             }
         }
 
+        private void powerPaint()
+        {
+            int x=power_pictureBox.Width/20;
+            int y=power_pictureBox.Height;
+            int s=power/5;
+            Brush br = Brushes.LightGreen; ;
+            if (s <= 5) br = Brushes.Red;
+            else if (5 < s && s <= 10) br = Brushes.Yellow;
+            else if (10 < s && s <= 20) br = Brushes.GreenYellow;
+
+            g2.FillRectangle(Brushes.Black, 0, 0, power_pictureBox.Width, power_pictureBox.Height);
+            for (int i = 0; i < s; i++)
+            {
+                g2.FillRectangle(br, i * x, 0, x-2, y-2);
+            }
+            power_pictureBox.Refresh();
+        }
+
+        private void usePower(List<int> list,int index)
+        {
+            if (list == movelist) power -= 10;
+            else if (list == onelist) power -= 5;
+            else if (list == twolist) power -= 5;
+            else if (list == mosimolist) power -= 10;
+            if (list[index] == 3) power = 100;
+        }
+    
     }
 }

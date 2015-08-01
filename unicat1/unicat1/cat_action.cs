@@ -59,12 +59,12 @@ namespace unicat1
                 }
                 catposx += xmove;
                 catposy += ymove;
-                harapekocount.Text = footcount.ToString();
-                harapekoscore.Text = (-footcount * 5).ToString();
-                totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
-                totalscorelabel.Refresh();
-                harapekocount.Refresh();
-                harapekoscore.Refresh();
+                //harapekocount.Text = footcount.ToString();
+                //harapekoscore.Text = (-footcount * 5).ToString();
+                //totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+                //totalscorelabel.Refresh();
+                //harapekocount.Refresh();
+                //harapekoscore.Refresh();
                 Thread.Sleep(100);
             }
             else
@@ -83,12 +83,12 @@ namespace unicat1
                     pictureBox1.Refresh();
                     Thread.Sleep(5);
                 }
-                harapekocount.Text = footcount.ToString();
-                harapekoscore.Text = (-footcount * 5).ToString();
-                totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
-                totalscorelabel.Refresh();
-                harapekocount.Refresh();
-                harapekoscore.Refresh();
+                //harapekocount.Text = footcount.ToString();
+                //harapekoscore.Text = (-footcount * 5).ToString();
+                //totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+                //totalscorelabel.Refresh();
+                //harapekocount.Refresh();
+                //harapekoscore.Refresh();
                 Thread.Sleep(100);
             }
 
@@ -120,12 +120,12 @@ namespace unicat1
                 g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
 
             }
-            harapekocount.Text = footcount.ToString();
-            harapekoscore.Text = (-footcount * 5).ToString();
-            totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
-            totalscorelabel.Refresh();
-            harapekocount.Refresh();
-            harapekoscore.Refresh();
+            //harapekocount.Text = footcount.ToString();
+            //harapekoscore.Text = (-footcount * 5).ToString();
+            //totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
+            //totalscorelabel.Refresh();
+            //harapekocount.Refresh();
+            //harapekoscore.Refresh();
             pictureBox1.Refresh();
             Thread.Sleep(200);
         }

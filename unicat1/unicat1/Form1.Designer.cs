@@ -51,19 +51,10 @@
             this.one5 = new System.Windows.Forms.PictureBox();
             this.one6 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.fish100count = new System.Windows.Forms.Label();
-            this.fish100score = new System.Windows.Forms.Label();
-            this.totalscorelabel = new System.Windows.Forms.Label();
+            this.foodlabel = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.orderreset_button = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.harapekocount = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.harapekoscore = new System.Windows.Forms.Label();
             this.undo_button = new System.Windows.Forms.Button();
             this.gobutton = new System.Windows.Forms.Button();
             this.turnleft_button = new System.Windows.Forms.Button();
@@ -102,6 +93,10 @@
             this.radioButton_mosimo = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.power_pictureBox = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).BeginInit();
@@ -121,8 +116,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.one4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.one5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.one6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.main_Box.SuspendLayout();
             this.one_Box.SuspendLayout();
@@ -143,6 +136,8 @@
             this.groupBox_music.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.power_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -390,69 +385,31 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label6.Location = new System.Drawing.Point(188, 96);
+            this.label6.Location = new System.Drawing.Point(8, 496);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 20);
+            this.label6.Size = new System.Drawing.Size(43, 20);
             this.label6.TabIndex = 51;
-            this.label6.Text = "スタミナ";
-            // 
-            // pictureBox26
-            // 
-            this.pictureBox26.Location = new System.Drawing.Point(5, 76);
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(57, 53);
-            this.pictureBox26.TabIndex = 53;
-            this.pictureBox26.TabStop = false;
+            this.label6.Text = "体力";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(68, 95);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 40);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(15, 15);
+            this.label7.Size = new System.Drawing.Size(115, 37);
             this.label7.TabIndex = 62;
-            this.label7.Text = "×";
+            this.label7.Text = "のこりの";
             // 
-            // label10
+            // foodlabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label10.Location = new System.Drawing.Point(119, 95);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(20, 15);
-            this.label10.TabIndex = 65;
-            this.label10.Text = "＝";
-            // 
-            // fish100count
-            // 
-            this.fish100count.AutoSize = true;
-            this.fish100count.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fish100count.Location = new System.Drawing.Point(88, 95);
-            this.fish100count.Name = "fish100count";
-            this.fish100count.Size = new System.Drawing.Size(19, 20);
-            this.fish100count.TabIndex = 68;
-            this.fish100count.Text = "0";
-            // 
-            // fish100score
-            // 
-            this.fish100score.AutoSize = true;
-            this.fish100score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fish100score.Location = new System.Drawing.Point(149, 95);
-            this.fish100score.Name = "fish100score";
-            this.fish100score.Size = new System.Drawing.Size(19, 20);
-            this.fish100score.TabIndex = 71;
-            this.fish100score.Text = "0";
-            // 
-            // totalscorelabel
-            // 
-            this.totalscorelabel.AutoSize = true;
-            this.totalscorelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalscorelabel.Location = new System.Drawing.Point(280, 96);
-            this.totalscorelabel.Name = "totalscorelabel";
-            this.totalscorelabel.Size = new System.Drawing.Size(19, 20);
-            this.totalscorelabel.TabIndex = 74;
-            this.totalscorelabel.Text = "0";
+            this.foodlabel.AutoSize = true;
+            this.foodlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foodlabel.Location = new System.Drawing.Point(231, 25);
+            this.foodlabel.Name = "foodlabel";
+            this.foodlabel.Size = new System.Drawing.Size(52, 55);
+            this.foodlabel.TabIndex = 68;
+            this.foodlabel.Text = "0";
             // 
             // button9
             // 
@@ -479,54 +436,6 @@
             this.orderreset_button.UseVisualStyleBackColor = false;
             this.orderreset_button.Click += new System.EventHandler(this.orderreset_button_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(5, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(57, 53);
-            this.pictureBox2.TabIndex = 77;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label20.Location = new System.Drawing.Point(15, 37);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(72, 15);
-            this.label20.TabIndex = 78;
-            this.label20.Text = "歩数　　　 ×";
-            // 
-            // harapekocount
-            // 
-            this.harapekocount.AutoSize = true;
-            this.harapekocount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.harapekocount.Location = new System.Drawing.Point(88, 37);
-            this.harapekocount.Name = "harapekocount";
-            this.harapekocount.Size = new System.Drawing.Size(19, 20);
-            this.harapekocount.TabIndex = 79;
-            this.harapekocount.Text = "0";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label22.Location = new System.Drawing.Point(119, 37);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(20, 15);
-            this.label22.TabIndex = 80;
-            this.label22.Text = "＝";
-            // 
-            // harapekoscore
-            // 
-            this.harapekoscore.AutoSize = true;
-            this.harapekoscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.harapekoscore.Location = new System.Drawing.Point(149, 37);
-            this.harapekoscore.Name = "harapekoscore";
-            this.harapekoscore.Size = new System.Drawing.Size(19, 20);
-            this.harapekoscore.TabIndex = 81;
-            this.harapekoscore.Text = "0";
-            // 
             // undo_button
             // 
             this.undo_button.BackColor = System.Drawing.Color.White;
@@ -542,7 +451,7 @@
             // gobutton
             // 
             this.gobutton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gobutton.Location = new System.Drawing.Point(483, 573);
+            this.gobutton.Location = new System.Drawing.Point(531, 573);
             this.gobutton.Name = "gobutton";
             this.gobutton.Size = new System.Drawing.Size(82, 88);
             this.gobutton.TabIndex = 17;
@@ -553,7 +462,7 @@
             // turnleft_button
             // 
             this.turnleft_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.turnleft_button.Location = new System.Drawing.Point(572, 573);
+            this.turnleft_button.Location = new System.Drawing.Point(620, 573);
             this.turnleft_button.Name = "turnleft_button";
             this.turnleft_button.Size = new System.Drawing.Size(82, 88);
             this.turnleft_button.TabIndex = 18;
@@ -564,7 +473,7 @@
             // turnright_button
             // 
             this.turnright_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.turnright_button.Location = new System.Drawing.Point(660, 571);
+            this.turnright_button.Location = new System.Drawing.Point(708, 571);
             this.turnright_button.Name = "turnright_button";
             this.turnright_button.Size = new System.Drawing.Size(82, 88);
             this.turnright_button.TabIndex = 19;
@@ -575,7 +484,7 @@
             // catchfish_button
             // 
             this.catchfish_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.catchfish_button.Location = new System.Drawing.Point(748, 573);
+            this.catchfish_button.Location = new System.Drawing.Point(796, 573);
             this.catchfish_button.Name = "catchfish_button";
             this.catchfish_button.Size = new System.Drawing.Size(82, 88);
             this.catchfish_button.TabIndex = 20;
@@ -586,7 +495,7 @@
             // one_button
             // 
             this.one_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.one_button.Location = new System.Drawing.Point(837, 573);
+            this.one_button.Location = new System.Drawing.Point(885, 573);
             this.one_button.Name = "one_button";
             this.one_button.Size = new System.Drawing.Size(82, 88);
             this.one_button.TabIndex = 32;
@@ -597,7 +506,7 @@
             // two_button
             // 
             this.two_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.two_button.Location = new System.Drawing.Point(926, 573);
+            this.two_button.Location = new System.Drawing.Point(974, 573);
             this.two_button.Name = "two_button";
             this.two_button.Size = new System.Drawing.Size(82, 88);
             this.two_button.TabIndex = 33;
@@ -623,24 +532,16 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.harapekoscore);
-            this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.harapekocount);
-            this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.totalscorelabel);
-            this.groupBox1.Controls.Add(this.fish100score);
-            this.groupBox1.Controls.Add(this.fish100count);
-            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.foodlabel);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.pictureBox26);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(10, 505);
+            this.groupBox1.Location = new System.Drawing.Point(20, 559);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(315, 156);
+            this.groupBox1.Size = new System.Drawing.Size(352, 100);
             this.groupBox1.TabIndex = 83;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "スコア";
             // 
             // makeStage_button
             // 
@@ -715,7 +616,7 @@
             this.two6.Location = new System.Drawing.Point(410, 16);
             this.two6.Margin = new System.Windows.Forms.Padding(2);
             this.two6.Name = "two6";
-            this.two6.Padding = new System.Windows.Forms.Padding(2);
+            this.two6.Padding = new System.Windows.Forms.Padding(3);
             this.two6.Size = new System.Drawing.Size(75, 80);
             this.two6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two6.TabIndex = 45;
@@ -726,7 +627,7 @@
             this.two5.Location = new System.Drawing.Point(331, 16);
             this.two5.Margin = new System.Windows.Forms.Padding(2);
             this.two5.Name = "two5";
-            this.two5.Padding = new System.Windows.Forms.Padding(2);
+            this.two5.Padding = new System.Windows.Forms.Padding(3);
             this.two5.Size = new System.Drawing.Size(75, 80);
             this.two5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two5.TabIndex = 44;
@@ -737,7 +638,7 @@
             this.two4.Location = new System.Drawing.Point(251, 16);
             this.two4.Margin = new System.Windows.Forms.Padding(2);
             this.two4.Name = "two4";
-            this.two4.Padding = new System.Windows.Forms.Padding(2);
+            this.two4.Padding = new System.Windows.Forms.Padding(3);
             this.two4.Size = new System.Drawing.Size(75, 80);
             this.two4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two4.TabIndex = 43;
@@ -748,7 +649,7 @@
             this.two3.Location = new System.Drawing.Point(172, 16);
             this.two3.Margin = new System.Windows.Forms.Padding(2);
             this.two3.Name = "two3";
-            this.two3.Padding = new System.Windows.Forms.Padding(2);
+            this.two3.Padding = new System.Windows.Forms.Padding(3);
             this.two3.Size = new System.Drawing.Size(75, 80);
             this.two3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two3.TabIndex = 42;
@@ -759,7 +660,7 @@
             this.two2.Location = new System.Drawing.Point(92, 16);
             this.two2.Margin = new System.Windows.Forms.Padding(2);
             this.two2.Name = "two2";
-            this.two2.Padding = new System.Windows.Forms.Padding(2);
+            this.two2.Padding = new System.Windows.Forms.Padding(3);
             this.two2.Size = new System.Drawing.Size(75, 80);
             this.two2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two2.TabIndex = 41;
@@ -770,7 +671,7 @@
             this.two1.Location = new System.Drawing.Point(13, 16);
             this.two1.Margin = new System.Windows.Forms.Padding(2);
             this.two1.Name = "two1";
-            this.two1.Padding = new System.Windows.Forms.Padding(2);
+            this.two1.Padding = new System.Windows.Forms.Padding(3);
             this.two1.Size = new System.Drawing.Size(75, 80);
             this.two1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.two1.TabIndex = 40;
@@ -808,7 +709,7 @@
             this.mosimo6.Location = new System.Drawing.Point(411, 40);
             this.mosimo6.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo6.Name = "mosimo6";
-            this.mosimo6.Padding = new System.Windows.Forms.Padding(2);
+            this.mosimo6.Padding = new System.Windows.Forms.Padding(3);
             this.mosimo6.Size = new System.Drawing.Size(75, 80);
             this.mosimo6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo6.TabIndex = 51;
@@ -819,7 +720,7 @@
             this.mosimo2.Location = new System.Drawing.Point(93, 40);
             this.mosimo2.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo2.Name = "mosimo2";
-            this.mosimo2.Padding = new System.Windows.Forms.Padding(2);
+            this.mosimo2.Padding = new System.Windows.Forms.Padding(3);
             this.mosimo2.Size = new System.Drawing.Size(75, 80);
             this.mosimo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo2.TabIndex = 47;
@@ -830,7 +731,7 @@
             this.mosimo5.Location = new System.Drawing.Point(332, 40);
             this.mosimo5.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo5.Name = "mosimo5";
-            this.mosimo5.Padding = new System.Windows.Forms.Padding(2);
+            this.mosimo5.Padding = new System.Windows.Forms.Padding(3);
             this.mosimo5.Size = new System.Drawing.Size(75, 80);
             this.mosimo5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo5.TabIndex = 50;
@@ -841,7 +742,7 @@
             this.mosimo1.Location = new System.Drawing.Point(14, 40);
             this.mosimo1.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo1.Name = "mosimo1";
-            this.mosimo1.Padding = new System.Windows.Forms.Padding(2);
+            this.mosimo1.Padding = new System.Windows.Forms.Padding(3);
             this.mosimo1.Size = new System.Drawing.Size(75, 80);
             this.mosimo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo1.TabIndex = 46;
@@ -852,7 +753,7 @@
             this.mosimo4.Location = new System.Drawing.Point(252, 40);
             this.mosimo4.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo4.Name = "mosimo4";
-            this.mosimo4.Padding = new System.Windows.Forms.Padding(2);
+            this.mosimo4.Padding = new System.Windows.Forms.Padding(3);
             this.mosimo4.Size = new System.Drawing.Size(75, 80);
             this.mosimo4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo4.TabIndex = 49;
@@ -863,7 +764,7 @@
             this.mosimo3.Location = new System.Drawing.Point(172, 40);
             this.mosimo3.Margin = new System.Windows.Forms.Padding(2);
             this.mosimo3.Name = "mosimo3";
-            this.mosimo3.Padding = new System.Windows.Forms.Padding(2);
+            this.mosimo3.Padding = new System.Windows.Forms.Padding(3);
             this.mosimo3.Size = new System.Drawing.Size(75, 80);
             this.mosimo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.mosimo3.TabIndex = 48;
@@ -872,7 +773,7 @@
             // if_button
             // 
             this.if_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.if_button.Location = new System.Drawing.Point(1014, 573);
+            this.if_button.Location = new System.Drawing.Point(1062, 573);
             this.if_button.Name = "if_button";
             this.if_button.Size = new System.Drawing.Size(82, 88);
             this.if_button.TabIndex = 89;
@@ -976,11 +877,11 @@
             this.groupBox2.Controls.Add(this.radioButton_2);
             this.groupBox2.Controls.Add(this.radioButton_1);
             this.groupBox2.Controls.Add(this.radioButton_main);
-            this.groupBox2.Location = new System.Drawing.Point(348, 560);
+            this.groupBox2.Location = new System.Drawing.Point(398, 560);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(114, 101);
+            this.groupBox2.Size = new System.Drawing.Size(120, 100);
             this.groupBox2.TabIndex = 97;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "選択中";
@@ -999,6 +900,44 @@
             this.groupBox3.TabIndex = 98;
             this.groupBox3.TabStop = false;
             // 
+            // power_pictureBox
+            // 
+            this.power_pictureBox.BackColor = System.Drawing.Color.Black;
+            this.power_pictureBox.Location = new System.Drawing.Point(10, 515);
+            this.power_pictureBox.Name = "power_pictureBox";
+            this.power_pictureBox.Padding = new System.Windows.Forms.Padding(1);
+            this.power_pictureBox.Size = new System.Drawing.Size(480, 20);
+            this.power_pictureBox.TabIndex = 77;
+            this.power_pictureBox.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(182, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 37);
+            this.label2.TabIndex = 72;
+            this.label2.Text = "は";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(277, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 37);
+            this.label3.TabIndex = 73;
+            this.label3.Text = "ひき";
+            // 
+            // pictureBox26
+            // 
+            this.pictureBox26.Location = new System.Drawing.Point(122, 25);
+            this.pictureBox26.Name = "pictureBox26";
+            this.pictureBox26.Size = new System.Drawing.Size(57, 53);
+            this.pictureBox26.TabIndex = 53;
+            this.pictureBox26.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1010,6 +949,8 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox_music);
             this.Controls.Add(this.if_button);
+            this.Controls.Add(this.power_pictureBox);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.if_Box);
             this.Controls.Add(this.two_Box);
             this.Controls.Add(this.one_Box);
@@ -1052,8 +993,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.one4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.one5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.one6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.main_Box.ResumeLayout(false);
@@ -1077,6 +1016,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.power_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1107,19 +1048,10 @@
         private System.Windows.Forms.PictureBox one5;
         private System.Windows.Forms.PictureBox one6;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox26;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label fish100count;
-        private System.Windows.Forms.Label fish100score;
-        private System.Windows.Forms.Label totalscorelabel;
+        private System.Windows.Forms.Label foodlabel;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button orderreset_button;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label harapekocount;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label harapekoscore;
         private System.Windows.Forms.Button undo_button;
         private System.Windows.Forms.Button gobutton;
         private System.Windows.Forms.Button turnleft_button;
@@ -1158,6 +1090,10 @@
         private System.Windows.Forms.RadioButton radioButton_mosimo;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.PictureBox power_pictureBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox26;
     }
 }
 
