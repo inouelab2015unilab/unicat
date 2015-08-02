@@ -407,6 +407,8 @@ namespace unicat1
                                     if (totalscore <= -100) break;
                                 }
                             }
+                            else { Thread.Sleep(200); }
+
                         }
                         catch { }
                     }
@@ -429,8 +431,10 @@ namespace unicat1
                                 }
 
                             }
+                            else { Thread.Sleep(200); }
+
                         }
-                        catch { }
+                        catch {  }
                     }
                     else if (comboBox3.SelectedIndex == 2)
                     {
@@ -451,6 +455,8 @@ namespace unicat1
                                 }
 
                             }
+                            else { Thread.Sleep(200); }
+
                         }
                         catch { }
                     }
