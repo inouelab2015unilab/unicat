@@ -228,6 +228,7 @@ namespace unicat1
 
             g.FillRectangle(Brushes.White, 0, 0, pictureBox1.Width, pictureBox1.Height);
 
+
             //道＝１、壁＝２、猫＝３、魚１＝４、魚２＝５、魚３＝６
             for (int i = 0; i < boardmat.GetLength(0); i++)
             {
