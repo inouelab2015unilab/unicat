@@ -78,15 +78,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="boardmatrix\stage1.csv" />
-    <None Include="boardmatrix\stage2.csv" />
-    <None Include="boardmatrix\stage3.csv" />
-    <None Include="boardmatrix\stage4.csv" />
-    <None Include="boardmatrix\stage5.csv" />
-    <None Include="boardmatrix\stage6.csv" />
-    <None Include="boardmatrix\stage7.csv" />
-    <None Include="boardmatrix\stage8.csv" />
-    <None Include="boardmatrix\stage9.csv" />
+    <None Include="boardmatrix\stage01.csv" />
+    <None Include="boardmatrix\stage02.csv" />
+    <None Include="boardmatrix\stage03.csv" />
+    <None Include="boardmatrix\stage04.csv" />
+    <None Include="boardmatrix\stage05.csv" />
+    <None Include="boardmatrix\stage06.csv" />
+    <None Include="boardmatrix\stage07.csv" />
+    <None Include="boardmatrix\stage08.csv" />
+    <None Include="boardmatrix\stage09.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

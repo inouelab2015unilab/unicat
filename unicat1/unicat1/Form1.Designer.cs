@@ -32,7 +32,6 @@
             this.movebutton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.main2 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.main1 = new System.Windows.Forms.PictureBox();
             this.main3 = new System.Windows.Forms.PictureBox();
             this.main4 = new System.Windows.Forms.PictureBox();
@@ -51,8 +50,6 @@
             this.one5 = new System.Windows.Forms.PictureBox();
             this.one6 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.foodlabel = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.orderreset_button = new System.Windows.Forms.Button();
             this.undo_button = new System.Windows.Forms.Button();
@@ -64,10 +61,6 @@
             this.two_button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.makeStage_button = new System.Windows.Forms.Button();
             this.main_Box = new System.Windows.Forms.GroupBox();
             this.one_Box = new System.Windows.Forms.GroupBox();
@@ -97,6 +90,14 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.power_pictureBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.foodlabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox_order = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).BeginInit();
@@ -116,8 +117,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.one4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.one5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.one6)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             this.main_Box.SuspendLayout();
             this.one_Box.SuspendLayout();
             this.two_Box.SuspendLayout();
@@ -138,6 +137,8 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.power_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
+            this.groupBox_order.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -152,12 +153,12 @@
             // 
             this.movebutton.BackColor = System.Drawing.Color.White;
             this.movebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.movebutton.Location = new System.Drawing.Point(3, 212);
+            this.movebutton.Location = new System.Drawing.Point(8, 185);
             this.movebutton.Margin = new System.Windows.Forms.Padding(2);
             this.movebutton.Name = "movebutton";
-            this.movebutton.Size = new System.Drawing.Size(112, 48);
+            this.movebutton.Size = new System.Drawing.Size(112, 81);
             this.movebutton.TabIndex = 1;
-            this.movebutton.Text = "ねこ移動";
+            this.movebutton.Text = "命令実行";
             this.movebutton.UseVisualStyleBackColor = false;
             this.movebutton.Click += new System.EventHandler(this.movebutton_Click_1);
             // 
@@ -166,10 +167,11 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1025, 211);
+            this.comboBox1.Location = new System.Drawing.Point(1024, 146);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(110, 24);
             this.comboBox1.TabIndex = 9;
+            this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
             // main2
             // 
@@ -181,19 +183,6 @@
             this.main2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.main2.TabIndex = 11;
             this.main2.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button2.Location = new System.Drawing.Point(1025, 240);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 30);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "ステージ選択";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // main1
             // 
@@ -392,36 +381,16 @@
             this.label6.TabIndex = 51;
             this.label6.Text = "体力";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 40);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 37);
-            this.label7.TabIndex = 62;
-            this.label7.Text = "のこりの";
-            // 
-            // foodlabel
-            // 
-            this.foodlabel.AutoSize = true;
-            this.foodlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foodlabel.Location = new System.Drawing.Point(231, 25);
-            this.foodlabel.Name = "foodlabel";
-            this.foodlabel.Size = new System.Drawing.Size(52, 55);
-            this.foodlabel.TabIndex = 68;
-            this.foodlabel.Text = "0";
-            // 
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.White;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button9.Location = new System.Drawing.Point(3, 150);
+            this.button9.Location = new System.Drawing.Point(8, 127);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(112, 48);
             this.button9.TabIndex = 75;
-            this.button9.Text = "ねこ戻す";
+            this.button9.Text = "やり直し";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -429,11 +398,11 @@
             // 
             this.orderreset_button.BackColor = System.Drawing.Color.White;
             this.orderreset_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.orderreset_button.Location = new System.Drawing.Point(3, 81);
+            this.orderreset_button.Location = new System.Drawing.Point(6, 71);
             this.orderreset_button.Name = "orderreset_button";
             this.orderreset_button.Size = new System.Drawing.Size(112, 48);
             this.orderreset_button.TabIndex = 76;
-            this.orderreset_button.Text = "命令初期化";
+            this.orderreset_button.Text = "命令全消去";
             this.orderreset_button.UseVisualStyleBackColor = false;
             this.orderreset_button.Click += new System.EventHandler(this.orderreset_button_Click);
             // 
@@ -441,18 +410,18 @@
             // 
             this.undo_button.BackColor = System.Drawing.Color.White;
             this.undo_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.undo_button.Location = new System.Drawing.Point(4, 18);
+            this.undo_button.Location = new System.Drawing.Point(5, 17);
             this.undo_button.Name = "undo_button";
             this.undo_button.Size = new System.Drawing.Size(112, 48);
             this.undo_button.TabIndex = 82;
-            this.undo_button.Text = "一つ消す";
+            this.undo_button.Text = "命令一つ消去";
             this.undo_button.UseVisualStyleBackColor = false;
             this.undo_button.Click += new System.EventHandler(this.undo_button_Click);
             // 
             // gobutton
             // 
             this.gobutton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gobutton.Location = new System.Drawing.Point(531, 573);
+            this.gobutton.Location = new System.Drawing.Point(11, 10);
             this.gobutton.Name = "gobutton";
             this.gobutton.Size = new System.Drawing.Size(82, 88);
             this.gobutton.TabIndex = 17;
@@ -463,7 +432,7 @@
             // turnleft_button
             // 
             this.turnleft_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.turnleft_button.Location = new System.Drawing.Point(620, 573);
+            this.turnleft_button.Location = new System.Drawing.Point(99, 10);
             this.turnleft_button.Name = "turnleft_button";
             this.turnleft_button.Size = new System.Drawing.Size(82, 88);
             this.turnleft_button.TabIndex = 18;
@@ -474,7 +443,7 @@
             // turnright_button
             // 
             this.turnright_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.turnright_button.Location = new System.Drawing.Point(708, 571);
+            this.turnright_button.Location = new System.Drawing.Point(187, 10);
             this.turnright_button.Name = "turnright_button";
             this.turnright_button.Size = new System.Drawing.Size(82, 88);
             this.turnright_button.TabIndex = 19;
@@ -485,7 +454,7 @@
             // catchfish_button
             // 
             this.catchfish_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.catchfish_button.Location = new System.Drawing.Point(796, 573);
+            this.catchfish_button.Location = new System.Drawing.Point(275, 10);
             this.catchfish_button.Name = "catchfish_button";
             this.catchfish_button.Size = new System.Drawing.Size(82, 88);
             this.catchfish_button.TabIndex = 20;
@@ -496,7 +465,7 @@
             // one_button
             // 
             this.one_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.one_button.Location = new System.Drawing.Point(885, 573);
+            this.one_button.Location = new System.Drawing.Point(364, 10);
             this.one_button.Name = "one_button";
             this.one_button.Size = new System.Drawing.Size(82, 88);
             this.one_button.TabIndex = 32;
@@ -507,7 +476,7 @@
             // two_button
             // 
             this.two_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.two_button.Location = new System.Drawing.Point(974, 573);
+            this.two_button.Location = new System.Drawing.Point(453, 10);
             this.two_button.Name = "two_button";
             this.two_button.Size = new System.Drawing.Size(82, 88);
             this.two_button.TabIndex = 33;
@@ -530,47 +499,6 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(0, 12);
             this.label5.TabIndex = 50;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.foodlabel);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.pictureBox26);
-            this.groupBox1.Location = new System.Drawing.Point(20, 559);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(373, 100);
-            this.groupBox1.TabIndex = 83;
-            this.groupBox1.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(304, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 37);
-            this.label3.TabIndex = 73;
-            this.label3.Text = "ひき";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(182, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 37);
-            this.label2.TabIndex = 72;
-            this.label2.Text = "は";
-            // 
-            // pictureBox26
-            // 
-            this.pictureBox26.Location = new System.Drawing.Point(122, 25);
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(57, 53);
-            this.pictureBox26.TabIndex = 53;
-            this.pictureBox26.TabStop = false;
             // 
             // makeStage_button
             // 
@@ -802,7 +730,7 @@
             // if_button
             // 
             this.if_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.if_button.Location = new System.Drawing.Point(1062, 573);
+            this.if_button.Location = new System.Drawing.Point(541, 10);
             this.if_button.Name = "if_button";
             this.if_button.Size = new System.Drawing.Size(82, 88);
             this.if_button.TabIndex = 89;
@@ -910,7 +838,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(120, 100);
+            this.groupBox2.Size = new System.Drawing.Size(110, 100);
             this.groupBox2.TabIndex = 97;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "選択中";
@@ -921,11 +849,11 @@
             this.groupBox3.Controls.Add(this.orderreset_button);
             this.groupBox3.Controls.Add(this.button9);
             this.groupBox3.Controls.Add(this.movebutton);
-            this.groupBox3.Location = new System.Drawing.Point(1021, 282);
+            this.groupBox3.Location = new System.Drawing.Point(1021, 270);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(122, 262);
+            this.groupBox3.Size = new System.Drawing.Size(122, 274);
             this.groupBox3.TabIndex = 98;
             this.groupBox3.TabStop = false;
             // 
@@ -939,17 +867,106 @@
             this.power_pictureBox.TabIndex = 77;
             this.power_pictureBox.TabStop = false;
             // 
+            // pictureBox26
+            // 
+            this.pictureBox26.Location = new System.Drawing.Point(130, 577);
+            this.pictureBox26.Name = "pictureBox26";
+            this.pictureBox26.Size = new System.Drawing.Size(57, 53);
+            this.pictureBox26.TabIndex = 53;
+            this.pictureBox26.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(14, 592);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(115, 37);
+            this.label7.TabIndex = 62;
+            this.label7.Text = "のこりの";
+            // 
+            // foodlabel
+            // 
+            this.foodlabel.AutoSize = true;
+            this.foodlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foodlabel.Location = new System.Drawing.Point(239, 577);
+            this.foodlabel.Name = "foodlabel";
+            this.foodlabel.Size = new System.Drawing.Size(52, 55);
+            this.foodlabel.TabIndex = 68;
+            this.foodlabel.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(190, 592);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 37);
+            this.label2.TabIndex = 72;
+            this.label2.Text = "は";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(312, 592);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 37);
+            this.label3.TabIndex = 73;
+            this.label3.Text = "ひき";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1021, 128);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 12);
+            this.label4.TabIndex = 99;
+            this.label4.Text = "現在のステージは";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(1109, 174);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(25, 12);
+            this.label8.TabIndex = 100;
+            this.label8.Text = "です";
+            // 
+            // groupBox_order
+            // 
+            this.groupBox_order.BackColor = System.Drawing.Color.Pink;
+            this.groupBox_order.Controls.Add(this.if_button);
+            this.groupBox_order.Controls.Add(this.two_button);
+            this.groupBox_order.Controls.Add(this.one_button);
+            this.groupBox_order.Controls.Add(this.catchfish_button);
+            this.groupBox_order.Controls.Add(this.turnright_button);
+            this.groupBox_order.Controls.Add(this.turnleft_button);
+            this.groupBox_order.Controls.Add(this.gobutton);
+            this.groupBox_order.Location = new System.Drawing.Point(521, 560);
+            this.groupBox_order.Name = "groupBox_order";
+            this.groupBox_order.Size = new System.Drawing.Size(630, 103);
+            this.groupBox_order.TabIndex = 101;
+            this.groupBox_order.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(1155, 670);
+            this.ClientSize = new System.Drawing.Size(1160, 670);
+            this.Controls.Add(this.groupBox_order);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.foodlabel);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox_music);
-            this.Controls.Add(this.if_button);
+            this.Controls.Add(this.pictureBox26);
             this.Controls.Add(this.power_pictureBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.if_Box);
@@ -957,16 +974,8 @@
             this.Controls.Add(this.one_Box);
             this.Controls.Add(this.main_Box);
             this.Controls.Add(this.makeStage_button);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.two_button);
-            this.Controls.Add(this.one_button);
-            this.Controls.Add(this.catchfish_button);
-            this.Controls.Add(this.turnright_button);
-            this.Controls.Add(this.turnleft_button);
-            this.Controls.Add(this.gobutton);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -994,9 +1003,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.one4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.one5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.one6)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             this.main_Box.ResumeLayout(false);
             this.one_Box.ResumeLayout(false);
             this.two_Box.ResumeLayout(false);
@@ -1019,6 +1025,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.power_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
+            this.groupBox_order.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1030,7 +1038,6 @@
         private System.Windows.Forms.Button movebutton;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox main2;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox main1;
         private System.Windows.Forms.PictureBox main3;
         private System.Windows.Forms.PictureBox main4;
@@ -1049,8 +1056,6 @@
         private System.Windows.Forms.PictureBox one5;
         private System.Windows.Forms.PictureBox one6;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label foodlabel;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button orderreset_button;
         private System.Windows.Forms.Button undo_button;
@@ -1062,7 +1067,6 @@
         private System.Windows.Forms.Button two_button;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button makeStage_button;
         private System.Windows.Forms.GroupBox main_Box;
         private System.Windows.Forms.GroupBox one_Box;
@@ -1092,9 +1096,14 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.PictureBox power_pictureBox;
+        private System.Windows.Forms.PictureBox pictureBox26;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label foodlabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox26;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox_order;
     }
 }
 

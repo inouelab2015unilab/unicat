@@ -496,28 +496,31 @@ namespace unicat1
 
             if (power <= 0)
             {
-                MessageBox.Show("死亡", "オーイ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("力尽きてしまいました", "残念！", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 makeboard(boardlist[comboBox1.SelectedIndex]);
                 scorereset();
             }
             else if (foodcount == 0) //全部食べられていたらクリア
             {
-                MessageBox.Show("オメ", "おおっ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult result = MessageBox.Show("次に進みますか？", "ステージクリア！", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 try
                 {
-                    makeboard(boardlist[comboBox1.SelectedIndex + 1]);
-                    comboBox1.SelectedIndex++;
+                    if (result == DialogResult.Yes)
+                    {
+                        makeboard(boardlist[comboBox1.SelectedIndex + 1]);
+                        comboBox1.SelectedIndex++;
+                    }
                 }
                 catch
                 {
-                    MessageBox.Show("全クリ", "ムム...?", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("全ステージクリア！", "おめでとう！", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
 
             }
             else
             {
-                MessageBox.Show("残念", "あーあ。。。", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("アルゴリズムを見直してみよう！", "残念！", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 makeboard(boardlist[comboBox1.SelectedIndex]);
                 scorereset();
             }
@@ -883,6 +886,19 @@ namespace unicat1
                 else if (list == mosimolist) power -= 10;
             }
         }
+
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            makeboard(boardlist[comboBox1.SelectedIndex]);
+            footcount = 0;
+            fishcount = 0;
+            fish2count = 0;
+            fish3count = 0;
+            catdirection = 0;
+            //harapekocount.Text = harapekoscore.Text = 0.ToString();
+
+        }
+
     
     }
 }
