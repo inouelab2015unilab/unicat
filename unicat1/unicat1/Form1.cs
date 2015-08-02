@@ -878,12 +878,12 @@ namespace unicat1
 
         private void usePower(List<int> list,int index)//体力の消費
         {
-            if (list[index] == 0 || list[index] == 1 || list[index] == 2 || list[index] == 3)
+            if (list[index] == 0 || list[index] == 1 || list[index] == 2 || list[index] == 3||list[index]==6)
             {
                 if (list == movelist) power -= 10;
                 else if (list == onelist) power -= 5;
                 else if (list == twolist) power -= 5;
-                else if (list == mosimolist) power -= 10;
+                else if (list == mosimolist) power -= 5;
             }
         }
 
