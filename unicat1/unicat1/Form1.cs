@@ -103,9 +103,9 @@ namespace unicat1
 
             }
 
-            comboBox3.Items.Add("もしも前に壁がなかったら");
-            comboBox3.Items.Add("もしも左に壁がなかったら");
-            comboBox3.Items.Add("もしも右に壁がなかったら");
+            comboBox3.Items.Add("もしも、前に壁がなかったら");
+            comboBox3.Items.Add("もしも、左に壁がなかったら");
+            comboBox3.Items.Add("もしも、右に壁がなかったら");
 
             //ピクチャーボックス配列に各ピクチャーボックスを格納
             mainpicarray = new PictureBox[] { main1, main2, main3, main4, main5, main6, main7, main8, main9, main10, main11, main12 };
@@ -341,10 +341,13 @@ namespace unicat1
         {
             if (checkfood() != 0&&0<power)
             {
-                usePower(list, index);
-                powerPaint();
-                orderFlash(list,index);
-                if (list[index] == 0) catmove(catdirection);
+                usePower(list, index);//体力消費
+                powerPaint();//体力描画
+                orderFlash(list,index);//使用中の命令を赤くする
+                if (list[index] == 0)
+                {
+                    catmove(catdirection);
+                }
                 else if (list[index] == 1)
                 {
                     if (catdirection == 0) catdirection = 3;
@@ -388,55 +391,67 @@ namespace unicat1
                     if (comboBox3.SelectedIndex == 0)
                     {        //catdirection 0=上、1=右、2=下、3=左
                         //方向と端にいるかどうかで移動の変化量を決める
-                        if (catdirection == 0 && catposy != 0) ymove = -1;
-                        if (catdirection == 2 && catposy != ymax - 1) ymove = 1;
-                        if (catdirection == 1 && catposx != xmax - 1) xmove = 1;
-                        if (catdirection == 3 && catposx != 0) xmove = -1;
-                        if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先に壁ならば
+                        if (catdirection == 0) ymove = -1;
+                        if (catdirection == 2) ymove = 1;
+                        if (catdirection == 1) xmove = 1;
+                        if (catdirection == 3) xmove = -1;
+                        try
                         {
-                            for (int j = 0; j < mosimolist.Count; j++)
+                            if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先が壁じゃない
                             {
-                                listcheck(mosimolist, j);
-                                totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
-                                if (totalscore <= -100) break;
+                                for (int j = 0; j < mosimolist.Count; j++)
+                                {
+                                    listcheck(mosimolist, j);
+                                    totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                                    if (totalscore <= -100) break;
+                                }
                             }
                         }
+                        catch { }
                     }
                     else if (comboBox3.SelectedIndex == 1)
                     {
                         //方向と端にいるかどうかで移動の変化量を決める
-                        if (catdirection == 0 && catposy != 0) xmove = -1;
-                        if (catdirection == 2 && catposy != ymax - 1) xmove = 1;
-                        if (catdirection == 1 && catposx != xmax - 1) ymove = -1;
-                        if (catdirection == 3 && catposx != 0) ymove = 1;
-                        if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先に壁ならば
+                        if (catdirection == 0) xmove = -1;
+                        if (catdirection == 2) xmove = 1;
+                        if (catdirection == 1) ymove = -1;
+                        if (catdirection == 3) ymove = 1;
+                        try
                         {
-                            for (int j = 0; j < mosimolist.Count; j++)
+                            if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先が壁じゃない
                             {
-                                listcheck(mosimolist, j);
-                                totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
-                                if (totalscore <= -100) break;
-                            }
+                                for (int j = 0; j < mosimolist.Count; j++)
+                                {
+                                    listcheck(mosimolist, j);
+                                    //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                                    //if (totalscore <= -100) break;
+                                }
 
+                            }
                         }
+                        catch { }
                     }
                     else if (comboBox3.SelectedIndex == 2)
                     {
                         //方向と端にいるかどうかで移動の変化量を決める
-                        if (catdirection == 0 && catposy != 0) xmove = 1;
-                        if (catdirection == 2 && catposy != ymax - 1) xmove = -1;
-                        if (catdirection == 1 && catposx != xmax - 1) ymove = 1;
-                        if (catdirection == 3 && catposx != 0) ymove = -1;
-                        if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先に壁ならば
+                        if (catdirection == 0) xmove = 1;
+                        if (catdirection == 2) xmove = -1;
+                        if (catdirection == 1) ymove = 1;
+                        if (catdirection == 3) ymove = -1;
+                        try
                         {
-                            for (int j = 0; j < mosimolist.Count; j++)
+                            if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先が壁じゃない
                             {
-                                listcheck(mosimolist, j);
-                                totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
-                                if (totalscore <= -100) break;
-                            }
+                                for (int j = 0; j < mosimolist.Count; j++)
+                                {
+                                    listcheck(mosimolist, j);
+                                    //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                                    //if (totalscore <= -100) break;
+                                }
 
+                            }
                         }
+                        catch { }
                     }
                 }
                 foodlabel.Text = checkfood().ToString();
@@ -444,7 +459,6 @@ namespace unicat1
                 orderFlashBack(list, index);
             }
         }
-
         public int checkfood()
         {
             int foodcount = 0;
@@ -518,6 +532,7 @@ namespace unicat1
                 one_Box.BackColor = DefaultBackColor;
                 two_Box.BackColor = DefaultBackColor;
                 if_Box.BackColor = DefaultBackColor;
+                comboBox3.Enabled = false;
             }
             if (selectBox == 1)
             {
@@ -525,6 +540,7 @@ namespace unicat1
                 one_Box.BackColor = Color.Yellow;
                 two_Box.BackColor = DefaultBackColor;
                 if_Box.BackColor = DefaultBackColor;
+                comboBox3.Enabled = false;
 
             }
             if (selectBox == 2)
@@ -533,6 +549,7 @@ namespace unicat1
                 one_Box.BackColor = DefaultBackColor;
                 two_Box.BackColor = Color.Yellow;
                 if_Box.BackColor = DefaultBackColor;
+                comboBox3.Enabled = false;
 
             }
             if (selectBox == 3)
@@ -541,7 +558,7 @@ namespace unicat1
                 one_Box.BackColor = DefaultBackColor;
                 two_Box.BackColor = DefaultBackColor;
                 if_Box.BackColor = Color.Yellow;
-
+                comboBox3.Enabled = true;
             }
         }
 
@@ -557,6 +574,8 @@ namespace unicat1
                 Score = 100;
                 fishcount += 1;
                 foodlabel.Text = fishcount.ToString();
+                power = 100;
+                powerPaint();
                 //fish100score.Text = (fishcount * Score).ToString();
             }
             if (nowboard[catposx, catposy] == 5)
@@ -616,7 +635,7 @@ namespace unicat1
             fish2count = 0;
             fish3count = 0;
             footcount = 0;
-            foodlabel.Text = fishcount.ToString();
+            foodlabel.Text = checkfood().ToString();
             //fish100score.Text = (fishcount * Score).ToString();
             //fish300count.Text = fishcount.ToString();
             //fish300score.Text = (fishcount * Score).ToString();
@@ -836,7 +855,7 @@ namespace unicat1
             }
         }
 
-        private void powerPaint()
+        private void powerPaint()//体力の描画
         {
             int x=power_pictureBox.Width/20;
             int y=power_pictureBox.Height;
@@ -854,13 +873,15 @@ namespace unicat1
             power_pictureBox.Refresh();
         }
 
-        private void usePower(List<int> list,int index)
+        private void usePower(List<int> list,int index)//体力の消費
         {
-            if (list == movelist) power -= 10;
-            else if (list == onelist) power -= 5;
-            else if (list == twolist) power -= 5;
-            else if (list == mosimolist) power -= 10;
-            if (list[index] == 3) power = 100;
+            if (list[index] == 0 || list[index] == 1 || list[index] == 2 || list[index] == 3)
+            {
+                if (list == movelist) power -= 10;
+                else if (list == onelist) power -= 5;
+                else if (list == twolist) power -= 5;
+                else if (list == mosimolist) power -= 10;
+            }
         }
     
     }

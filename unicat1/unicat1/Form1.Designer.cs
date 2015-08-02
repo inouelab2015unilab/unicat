@@ -65,6 +65,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.makeStage_button = new System.Windows.Forms.Button();
             this.main_Box = new System.Windows.Forms.GroupBox();
             this.one_Box = new System.Windows.Forms.GroupBox();
@@ -94,9 +97,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.power_pictureBox = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).BeginInit();
@@ -117,6 +117,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.one5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.one6)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             this.main_Box.SuspendLayout();
             this.one_Box.SuspendLayout();
             this.two_Box.SuspendLayout();
@@ -137,7 +138,6 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.power_pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -164,10 +164,11 @@
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1025, 216);
+            this.comboBox1.Location = new System.Drawing.Point(1025, 211);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(114, 20);
+            this.comboBox1.Size = new System.Drawing.Size(110, 24);
             this.comboBox1.TabIndex = 9;
             // 
             // main2
@@ -539,9 +540,37 @@
             this.groupBox1.Controls.Add(this.pictureBox26);
             this.groupBox1.Location = new System.Drawing.Point(20, 559);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(352, 100);
+            this.groupBox1.Size = new System.Drawing.Size(373, 100);
             this.groupBox1.TabIndex = 83;
             this.groupBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(304, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 37);
+            this.label3.TabIndex = 73;
+            this.label3.Text = "ひき";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(182, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 37);
+            this.label2.TabIndex = 72;
+            this.label2.Text = "は";
+            // 
+            // pictureBox26
+            // 
+            this.pictureBox26.Location = new System.Drawing.Point(122, 25);
+            this.pictureBox26.Name = "pictureBox26";
+            this.pictureBox26.Size = new System.Drawing.Size(57, 53);
+            this.pictureBox26.TabIndex = 53;
+            this.pictureBox26.TabStop = false;
             // 
             // makeStage_button
             // 
@@ -910,34 +939,6 @@
             this.power_pictureBox.TabIndex = 77;
             this.power_pictureBox.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(182, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 37);
-            this.label2.TabIndex = 72;
-            this.label2.Text = "は";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(277, 40);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 37);
-            this.label3.TabIndex = 73;
-            this.label3.Text = "ひき";
-            // 
-            // pictureBox26
-            // 
-            this.pictureBox26.Location = new System.Drawing.Point(122, 25);
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(57, 53);
-            this.pictureBox26.TabIndex = 53;
-            this.pictureBox26.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -995,6 +996,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.one6)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             this.main_Box.ResumeLayout(false);
             this.one_Box.ResumeLayout(false);
             this.two_Box.ResumeLayout(false);
@@ -1017,7 +1019,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.power_pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
