@@ -369,9 +369,9 @@ namespace unicat1
                 }
                 else if (list[index] == 4)
                 {
-                    for (int j = 0; j < onelist.Count; j++)
+                    for (int k = 0; k < onelist.Count; k++)
                     {
-                        listcheck(onelist, j);
+                        listcheck(onelist, k);
                         totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
                         if (totalscore <= -100) break;
                     }
@@ -410,7 +410,10 @@ namespace unicat1
                             else { Thread.Sleep(200); }
 
                         }
-                        catch { }
+                        catch 
+                        {
+                            int a;
+                        }
                     }
                     else if (comboBox3.SelectedIndex == 1)
                     {
@@ -419,6 +422,7 @@ namespace unicat1
                         if (catdirection == 2) xmove = 1;
                         if (catdirection == 1) ymove = -1;
                         if (catdirection == 3) ymove = 1;
+                        
                         try
                         {
                             if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先が壁じゃない
@@ -434,7 +438,7 @@ namespace unicat1
                             else { Thread.Sleep(200); }
 
                         }
-                        catch {  }
+                        catch { }
                     }
                     else if (comboBox3.SelectedIndex == 2)
                     {
@@ -480,9 +484,33 @@ namespace unicat1
 
         }
 
+        //private bool check_inf()
+        //{
+        //    int one_c = 0;
+        //    for (int i = 0; i < onelist.Count; i++)
+        //    {
+        //        if (onelist[i] == 0 || onelist[i] == 1 || onelist[i] == 2 || onelist[i] == 3)
+        //        {
+        //            one_c++;
+        //        }
+        //        else { break; }
+        //    }
+        //    int two_c = 0;
+        //    for (int i = 0; i < twolist.Count; i++)
+        //    {
+        //        if (twolist[i] == 0 || twolist[i] == 1 || twolist[i] == 2 || twolist[i] == 3)
+        //        {
+        //            two_c++;
+        //        }
+        //        else { break; }
+        //    }
+        //    if (one_c != 0 || two_c != 0) return true;
+        //    else return false;
+        //}
+
         private void movebutton_Click_1(object sender, EventArgs e)
         {
-
+            
             //movelistに格納された番号にしたがって命令を実行
             for (int i = 0; i < movelist.Count; i++)
             {
@@ -527,7 +555,7 @@ namespace unicat1
             }
             else
             {
-                MessageBox.Show("アルゴリズムを見直してみよう！", "残念！", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("プログラムを見直してみよう！", "残念！", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 makeboard(boardlist[comboBox1.SelectedIndex]);
                 scorereset();
             }
@@ -646,18 +674,8 @@ namespace unicat1
             fish3count = 0;
             footcount = 0;
             foodlabel.Text = checkfood().ToString();
-            //fish100score.Text = (fishcount * Score).ToString();
-            //fish300count.Text = fishcount.ToString();
-            //fish300score.Text = (fishcount * Score).ToString();
-            //fish500count.Text = fishcount.ToString();
-            //fish500score.Text = (fishcount * Score).ToString();
             power = 100;
             powerPaint();
-            //harapekocount.Text = footcount.ToString();
-            //harapekoscore.Text = (-footcount * 5).ToString();
-            //totalscorelabel.Text = (100 + fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5).ToString();
-            //totalscorelabel.Refresh();
-
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -885,13 +903,10 @@ namespace unicat1
 
         private void usePower(List<int> list,int index)//体力の消費
         {
-            if (list[index] == 0 || list[index] == 1 || list[index] == 2 || list[index] == 3||list[index]==6)
-            {
                 if (list == movelist) power -= 10;
                 else if (list == onelist) power -= 5;
                 else if (list == twolist) power -= 5;
                 else if (list == mosimolist) power -= 5;
-            }
         }
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
