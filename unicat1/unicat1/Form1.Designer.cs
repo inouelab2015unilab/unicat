@@ -98,6 +98,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox_order = new System.Windows.Forms.GroupBox();
+            this.button_orderone = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).BeginInit();
@@ -135,6 +136,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mosimo3)).BeginInit();
             this.groupBox_music.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.power_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             this.groupBox_order.SuspendLayout();
@@ -152,12 +154,12 @@
             // 
             this.movebutton.BackColor = System.Drawing.Color.White;
             this.movebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.movebutton.Location = new System.Drawing.Point(1045, 424);
+            this.movebutton.Location = new System.Drawing.Point(14, 228);
             this.movebutton.Margin = new System.Windows.Forms.Padding(2);
             this.movebutton.Name = "movebutton";
-            this.movebutton.Size = new System.Drawing.Size(112, 81);
+            this.movebutton.Size = new System.Drawing.Size(112, 63);
             this.movebutton.TabIndex = 1;
-            this.movebutton.Text = "命令実行";
+            this.movebutton.Text = "命令全部実行";
             this.movebutton.UseVisualStyleBackColor = false;
             this.movebutton.Click += new System.EventHandler(this.movebutton_Click_1);
             // 
@@ -844,11 +846,13 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button_orderone);
+            this.groupBox3.Controls.Add(this.movebutton);
             this.groupBox3.Location = new System.Drawing.Point(1031, 244);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(138, 272);
+            this.groupBox3.Size = new System.Drawing.Size(138, 301);
             this.groupBox3.TabIndex = 98;
             this.groupBox3.TabStop = false;
             // 
@@ -944,6 +948,18 @@
             this.groupBox_order.TabIndex = 101;
             this.groupBox_order.TabStop = false;
             // 
+            // button_orderone
+            // 
+            this.button_orderone.BackColor = System.Drawing.Color.White;
+            this.button_orderone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_orderone.Location = new System.Drawing.Point(14, 175);
+            this.button_orderone.Name = "button_orderone";
+            this.button_orderone.Size = new System.Drawing.Size(112, 48);
+            this.button_orderone.TabIndex = 102;
+            this.button_orderone.Text = "命令一つ実行";
+            this.button_orderone.UseVisualStyleBackColor = false;
+            this.button_orderone.Click += new System.EventHandler(this.button_orderone_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -956,7 +972,6 @@
             this.Controls.Add(this.groupBox_order);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.movebutton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -1022,6 +1037,7 @@
             this.groupBox_music.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.power_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             this.groupBox_order.ResumeLayout(false);
@@ -1102,6 +1118,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox_order;
+        private System.Windows.Forms.Button button_orderone;
     }
 }
 

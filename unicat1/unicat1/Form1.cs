@@ -49,6 +49,7 @@ namespace unicat1
         int fish3count;
         int totalscore;
 
+        int orderone_count;
         int power = 100;
         int mainpiccount = 0;
         int onepiccount = 0;
@@ -512,7 +513,7 @@ namespace unicat1
         {
             
             //movelistに格納された番号にしたがって命令を実行
-            for (int i = 0; i < movelist.Count; i++)
+            for (int i = orderone_count; i < movelist.Count; i++)
             {
                 listcheck(movelist, i);                
             }
@@ -669,6 +670,7 @@ namespace unicat1
         //スコア初期化
         private void scorereset()
         {
+            orderone_count = 0;
             fishcount = 0;
             fish2count = 0;
             fish3count = 0;
@@ -921,6 +923,46 @@ namespace unicat1
 
         }
 
+        private void button_orderone_Click(object sender, EventArgs e)
+        {
+            if (movelist.Count != 0)
+            {
+                listcheck(movelist, orderone_count);
+                if (orderone_count == movelist.Count - 1)
+                {
+                    if (checkfood() == 0)
+                    {
+                        DialogResult result = MessageBox.Show("次に進みますか？", "ステージクリア！", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        try
+                        {
+                            if (result == DialogResult.Yes)
+                            {
+                                makeboard(boardlist[comboBox1.SelectedIndex + 1]);
+                                comboBox1.SelectedIndex++;
+                            }
+                        }
+                        catch
+                        {
+                            MessageBox.Show("全ステージクリア！", "おめでとう！", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("プログラムを見直してみよう！", "残念！", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        makeboard(boardlist[comboBox1.SelectedIndex]);
+                        scorereset();
+                    }
+                }
+                else orderone_count++;
+            }
+            else
+            {
+                MessageBox.Show("プログラムを見直してみよう！", "残念！", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                makeboard(boardlist[comboBox1.SelectedIndex]);
+                scorereset();
+
+            }
+        }
     
     }
 }
