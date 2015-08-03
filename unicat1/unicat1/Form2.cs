@@ -15,15 +15,15 @@ namespace unicat1
         Graphics g;
 
         //画像を変数に格納する
-        static Image back = Image.FromFile(@"../../素材/back.png");
-        static Image road = Image.FromFile(@"../../素材/road.png");
-        static Image fish = Image.FromFile(@"../../素材/fish.png");
-        static Image fish2 = Image.FromFile(@"../../素材/fish2.png");
-        static Image fish3 = Image.FromFile(@"../../素材/fish3.png");
-        Image catu = Image.FromFile(@"../../素材/cat.png");
-        Image catr = Image.FromFile(@"../../素材/catr.png");
-        Image catl = Image.FromFile(@"../../素材/catl.png");
-        static Image catd = Image.FromFile(@"../../素材/catd.png");
+        static Image back = Image.FromFile(@"素材/back.png");
+        static Image road = Image.FromFile(@"素材/road.png");
+        static Image fish = Image.FromFile(@"素材/fish.png");
+        static Image fish2 = Image.FromFile(@"素材/fish2.png");
+        static Image fish3 = Image.FromFile(@"素材/fish3.png");
+        Image catu = Image.FromFile(@"素材/cat.png");
+        Image catr = Image.FromFile(@"素材/catr.png");
+        Image catl = Image.FromFile(@"素材/catl.png");
+        static Image catd = Image.FromFile(@"素材/catd.png");
         Image cat;
         Image[] imageset = { back, road, back, catd, fish,fish2,fish3};
         static int boardsize=5;
@@ -50,7 +50,7 @@ namespace unicat1
                 comboBox1.Items.Add(i+"×"+i);
             }
             comboBox1.SelectedIndex = 0;
-            textBox1.Text = "新しいステージ" + (System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv").Count()-8);
+            textBox1.Text = "新しいステージ" + (System.IO.Directory.GetFiles("boardmatrix/", "*.csv").Count()-12);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -167,7 +167,7 @@ namespace unicat1
                     try
                     {
                         // 出力用のファイルを開く
-                        string filepas = "../../boardmatrix/" + textBox1.Text + ".csv";
+                        string filepas = "boardmatrix/" + textBox1.Text + ".csv";
                         using (var sw = new System.IO.StreamWriter(@filepas, false))
                         {
                             for (int j = 0; j < stage.GetLength(1); j++)

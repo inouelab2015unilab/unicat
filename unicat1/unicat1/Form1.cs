@@ -20,24 +20,24 @@ namespace unicat1
         Graphics g2;
 
         //画像を変数に格納する
-        public Image back = Image.FromFile(@"../../素材/back.png");
-        Image road = Image.FromFile(@"../../素材/road.png");
-        Image fish = Image.FromFile(@"../../素材/fish.png");
-        Image fish2 = Image.FromFile(@"../../素材/fish2.png");
-        Image fish3 = Image.FromFile(@"../../素材/fish3.png");
-        Image catu = Image.FromFile(@"../../素材/cat.png");
-        Image catr = Image.FromFile(@"../../素材/catr.png");
-        Image catl = Image.FromFile(@"../../素材/catl.png");
-        Image catd = Image.FromFile(@"../../素材/catd.png");
-        Image command1 = Image.FromFile(@"../../素材/up.png");
-        Image command2 = Image.FromFile(@"../../素材/left.png");
-        Image command3 = Image.FromFile(@"../../素材/right.png");
-        Image command4 = Image.FromFile(@"../../素材/catch.png");
-        Image commandpanel = Image.FromFile(@"../../素材/commandpanel.png");
-        Image commandpanel2 = Image.FromFile(@"../../素材/commandpanel2.png");
-        Image loop1 = Image.FromFile(@"../../素材/1.png");
-        Image loop2 = Image.FromFile(@"../../素材/2.png");
-        Image pic_if = Image.FromFile(@"../../素材/if.png");
+        public Image back = Image.FromFile(@"素材/back.png");
+        Image road = Image.FromFile(@"素材/road.png");
+        Image fish = Image.FromFile(@"素材/fish.png");
+        Image fish2 = Image.FromFile(@"素材/fish2.png");
+        Image fish3 = Image.FromFile(@"素材/fish3.png");
+        Image catu = Image.FromFile(@"素材/cat.png");
+        Image catr = Image.FromFile(@"素材/catr.png");
+        Image catl = Image.FromFile(@"素材/catl.png");
+        Image catd = Image.FromFile(@"素材/catd.png");
+        Image command1 = Image.FromFile(@"素材/up.png");
+        Image command2 = Image.FromFile(@"素材/left.png");
+        Image command3 = Image.FromFile(@"素材/right.png");
+        Image command4 = Image.FromFile(@"素材/catch.png");
+        Image commandpanel = Image.FromFile(@"素材/commandpanel.png");
+        Image commandpanel2 = Image.FromFile(@"素材/commandpanel2.png");
+        Image loop1 = Image.FromFile(@"素材/1.png");
+        Image loop2 = Image.FromFile(@"素材/2.png");
+        Image pic_if = Image.FromFile(@"素材/if.png");
         Image cat;
 
         int[,] nowboard;    //現在選択されている盤面のデータ
@@ -73,10 +73,10 @@ namespace unicat1
         PictureBox[] onepicarray;
         PictureBox[] twopicarray = new PictureBox[6];
         PictureBox[] mosimopicarray = new PictureBox[6];
-        SoundPlayer Hoge = new SoundPlayer(@"../../素材/BGM.wav");
+        SoundPlayer Hoge = new SoundPlayer(@"素材/BGM.wav");
 
         //盤面情報をCSVファイルから読み込み
-        string[] files = System.IO.Directory.GetFiles("../../boardmatrix/", "*.csv");
+        string[] files = System.IO.Directory.GetFiles("boardmatrix/", "*.csv");
 
         public Form1()
         {
@@ -86,7 +86,7 @@ namespace unicat1
             //音楽流す
             if (radioButton1.Checked == true)
             {
-                SoundPlayer Hoge = new SoundPlayer(@"../../素材/BGM.wav");
+                SoundPlayer Hoge = new SoundPlayer(@"素材/BGM.wav");
                 Hoge.PlayLooping();
             }
             movecount = new int[12];
@@ -121,13 +121,13 @@ namespace unicat1
             foreach (var n in mosimopicarray) n.Image = commandpanel2;
 
             //命令ボタンの背景を設置
-            gobutton.BackgroundImage = Image.FromFile(@"../../素材/up.png");
-            turnleft_button.BackgroundImage = Image.FromFile(@"../../素材/left.png");
-            turnright_button.BackgroundImage = Image.FromFile(@"../../素材/right.png");
-            catchfish_button.BackgroundImage = Image.FromFile(@"../../素材/catch.png");
-            one_button.BackgroundImage = Image.FromFile(@"../../素材/1.png");
-            two_button.BackgroundImage = Image.FromFile(@"../../素材/2.png");
-            if_button.BackgroundImage = Image.FromFile(@"../../素材/if.png");
+            gobutton.BackgroundImage = Image.FromFile(@"素材/up.png");
+            turnleft_button.BackgroundImage = Image.FromFile(@"素材/left.png");
+            turnright_button.BackgroundImage = Image.FromFile(@"素材/right.png");
+            catchfish_button.BackgroundImage = Image.FromFile(@"素材/catch.png");
+            one_button.BackgroundImage = Image.FromFile(@"素材/1.png");
+            two_button.BackgroundImage = Image.FromFile(@"素材/2.png");
+            if_button.BackgroundImage = Image.FromFile(@"素材/if.png");
 
             gobutton.Paint += new PaintEventHandler(button_Paint);
             turnleft_button.Paint += new PaintEventHandler(button_Paint);
