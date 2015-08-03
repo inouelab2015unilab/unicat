@@ -135,7 +135,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mosimo3)).BeginInit();
             this.groupBox_music.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.power_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             this.groupBox_order.SuspendLayout();
@@ -153,7 +152,7 @@
             // 
             this.movebutton.BackColor = System.Drawing.Color.White;
             this.movebutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.movebutton.Location = new System.Drawing.Point(8, 185);
+            this.movebutton.Location = new System.Drawing.Point(1045, 424);
             this.movebutton.Margin = new System.Windows.Forms.Padding(2);
             this.movebutton.Name = "movebutton";
             this.movebutton.Size = new System.Drawing.Size(112, 81);
@@ -167,9 +166,9 @@
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1024, 146);
+            this.comboBox1.Location = new System.Drawing.Point(1015, 146);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(110, 24);
+            this.comboBox1.Size = new System.Drawing.Size(168, 24);
             this.comboBox1.TabIndex = 9;
             this.comboBox1.SelectionChangeCommitted += new System.EventHandler(this.comboBox1_SelectionChangeCommitted);
             // 
@@ -385,7 +384,7 @@
             // 
             this.button9.BackColor = System.Drawing.Color.White;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button9.Location = new System.Drawing.Point(8, 127);
+            this.button9.Location = new System.Drawing.Point(1045, 366);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(112, 48);
@@ -398,7 +397,7 @@
             // 
             this.orderreset_button.BackColor = System.Drawing.Color.White;
             this.orderreset_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.orderreset_button.Location = new System.Drawing.Point(6, 71);
+            this.orderreset_button.Location = new System.Drawing.Point(1043, 310);
             this.orderreset_button.Name = "orderreset_button";
             this.orderreset_button.Size = new System.Drawing.Size(112, 48);
             this.orderreset_button.TabIndex = 76;
@@ -410,7 +409,7 @@
             // 
             this.undo_button.BackColor = System.Drawing.Color.White;
             this.undo_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.undo_button.Location = new System.Drawing.Point(5, 17);
+            this.undo_button.Location = new System.Drawing.Point(1042, 256);
             this.undo_button.Name = "undo_button";
             this.undo_button.Size = new System.Drawing.Size(112, 48);
             this.undo_button.TabIndex = 82;
@@ -502,10 +501,10 @@
             // 
             // makeStage_button
             // 
-            this.makeStage_button.Location = new System.Drawing.Point(1024, 23);
+            this.makeStage_button.Location = new System.Drawing.Point(1014, 23);
             this.makeStage_button.Margin = new System.Windows.Forms.Padding(2);
             this.makeStage_button.Name = "makeStage_button";
-            this.makeStage_button.Size = new System.Drawing.Size(112, 33);
+            this.makeStage_button.Size = new System.Drawing.Size(168, 33);
             this.makeStage_button.TabIndex = 84;
             this.makeStage_button.Text = "ステージ作成";
             this.makeStage_button.UseVisualStyleBackColor = true;
@@ -741,7 +740,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(14, 15);
+            this.radioButton1.Location = new System.Drawing.Point(4, 15);
             this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(35, 16);
@@ -754,7 +753,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(56, 17);
+            this.radioButton2.Location = new System.Drawing.Point(79, 16);
             this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(37, 16);
@@ -767,11 +766,11 @@
             // 
             this.groupBox_music.Controls.Add(this.radioButton2);
             this.groupBox_music.Controls.Add(this.radioButton1);
-            this.groupBox_music.Location = new System.Drawing.Point(1025, 62);
+            this.groupBox_music.Location = new System.Drawing.Point(1015, 62);
             this.groupBox_music.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox_music.Name = "groupBox_music";
             this.groupBox_music.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox_music.Size = new System.Drawing.Size(112, 42);
+            this.groupBox_music.Size = new System.Drawing.Size(167, 42);
             this.groupBox_music.TabIndex = 92;
             this.groupBox_music.TabStop = false;
             this.groupBox_music.Text = "音楽";
@@ -845,15 +844,11 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.undo_button);
-            this.groupBox3.Controls.Add(this.orderreset_button);
-            this.groupBox3.Controls.Add(this.button9);
-            this.groupBox3.Controls.Add(this.movebutton);
-            this.groupBox3.Location = new System.Drawing.Point(1021, 270);
+            this.groupBox3.Location = new System.Drawing.Point(1031, 244);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(122, 274);
+            this.groupBox3.Size = new System.Drawing.Size(138, 272);
             this.groupBox3.TabIndex = 98;
             this.groupBox3.TabStop = false;
             // 
@@ -918,7 +913,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1021, 128);
+            this.label4.Location = new System.Drawing.Point(1013, 128);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 12);
             this.label4.TabIndex = 99;
@@ -927,7 +922,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1109, 174);
+            this.label8.Location = new System.Drawing.Point(1159, 174);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(25, 12);
             this.label8.TabIndex = 100;
@@ -943,7 +938,7 @@
             this.groupBox_order.Controls.Add(this.turnright_button);
             this.groupBox_order.Controls.Add(this.turnleft_button);
             this.groupBox_order.Controls.Add(this.gobutton);
-            this.groupBox_order.Location = new System.Drawing.Point(521, 560);
+            this.groupBox_order.Location = new System.Drawing.Point(526, 559);
             this.groupBox_order.Name = "groupBox_order";
             this.groupBox_order.Size = new System.Drawing.Size(630, 103);
             this.groupBox_order.TabIndex = 101;
@@ -955,9 +950,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(1160, 670);
+            this.ClientSize = new System.Drawing.Size(1188, 670);
+            this.Controls.Add(this.undo_button);
+            this.Controls.Add(this.orderreset_button);
             this.Controls.Add(this.groupBox_order);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.movebutton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -1023,7 +1022,6 @@
             this.groupBox_music.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.power_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             this.groupBox_order.ResumeLayout(false);
