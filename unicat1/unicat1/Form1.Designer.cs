@@ -177,7 +177,7 @@
             // main2
             // 
             this.main2.Location = new System.Drawing.Point(91, 15);
-            this.main2.Margin = new System.Windows.Forms.Padding(2);
+            this.main2.Margin = new System.Windows.Forms.Padding(0);
             this.main2.Name = "main2";
             this.main2.Padding = new System.Windows.Forms.Padding(2);
             this.main2.Size = new System.Drawing.Size(75, 80);
@@ -188,7 +188,7 @@
             // main1
             // 
             this.main1.Location = new System.Drawing.Point(11, 15);
-            this.main1.Margin = new System.Windows.Forms.Padding(2);
+            this.main1.Margin = new System.Windows.Forms.Padding(0);
             this.main1.Name = "main1";
             this.main1.Padding = new System.Windows.Forms.Padding(2);
             this.main1.Size = new System.Drawing.Size(75, 80);
@@ -199,7 +199,7 @@
             // main3
             // 
             this.main3.Location = new System.Drawing.Point(170, 15);
-            this.main3.Margin = new System.Windows.Forms.Padding(2);
+            this.main3.Margin = new System.Windows.Forms.Padding(0);
             this.main3.Name = "main3";
             this.main3.Padding = new System.Windows.Forms.Padding(2);
             this.main3.Size = new System.Drawing.Size(75, 80);
@@ -210,7 +210,7 @@
             // main4
             // 
             this.main4.Location = new System.Drawing.Point(250, 15);
-            this.main4.Margin = new System.Windows.Forms.Padding(2);
+            this.main4.Margin = new System.Windows.Forms.Padding(0);
             this.main4.Name = "main4";
             this.main4.Padding = new System.Windows.Forms.Padding(2);
             this.main4.Size = new System.Drawing.Size(75, 80);
@@ -221,7 +221,7 @@
             // main5
             // 
             this.main5.Location = new System.Drawing.Point(329, 15);
-            this.main5.Margin = new System.Windows.Forms.Padding(2);
+            this.main5.Margin = new System.Windows.Forms.Padding(0);
             this.main5.Name = "main5";
             this.main5.Padding = new System.Windows.Forms.Padding(2);
             this.main5.Size = new System.Drawing.Size(75, 80);
@@ -232,7 +232,7 @@
             // main6
             // 
             this.main6.Location = new System.Drawing.Point(409, 15);
-            this.main6.Margin = new System.Windows.Forms.Padding(2);
+            this.main6.Margin = new System.Windows.Forms.Padding(0);
             this.main6.Name = "main6";
             this.main6.Padding = new System.Windows.Forms.Padding(2);
             this.main6.Size = new System.Drawing.Size(75, 80);
@@ -243,7 +243,7 @@
             // main7
             // 
             this.main7.Location = new System.Drawing.Point(11, 98);
-            this.main7.Margin = new System.Windows.Forms.Padding(2);
+            this.main7.Margin = new System.Windows.Forms.Padding(0);
             this.main7.Name = "main7";
             this.main7.Padding = new System.Windows.Forms.Padding(2);
             this.main7.Size = new System.Drawing.Size(75, 80);
@@ -254,7 +254,7 @@
             // main8
             // 
             this.main8.Location = new System.Drawing.Point(91, 98);
-            this.main8.Margin = new System.Windows.Forms.Padding(2);
+            this.main8.Margin = new System.Windows.Forms.Padding(0);
             this.main8.Name = "main8";
             this.main8.Padding = new System.Windows.Forms.Padding(2);
             this.main8.Size = new System.Drawing.Size(75, 80);
@@ -265,7 +265,7 @@
             // main9
             // 
             this.main9.Location = new System.Drawing.Point(170, 98);
-            this.main9.Margin = new System.Windows.Forms.Padding(2);
+            this.main9.Margin = new System.Windows.Forms.Padding(0);
             this.main9.Name = "main9";
             this.main9.Padding = new System.Windows.Forms.Padding(2);
             this.main9.Size = new System.Drawing.Size(75, 80);
@@ -276,7 +276,7 @@
             // main10
             // 
             this.main10.Location = new System.Drawing.Point(250, 98);
-            this.main10.Margin = new System.Windows.Forms.Padding(2);
+            this.main10.Margin = new System.Windows.Forms.Padding(0);
             this.main10.Name = "main10";
             this.main10.Padding = new System.Windows.Forms.Padding(2);
             this.main10.Size = new System.Drawing.Size(75, 80);
@@ -287,7 +287,7 @@
             // main11
             // 
             this.main11.Location = new System.Drawing.Point(329, 98);
-            this.main11.Margin = new System.Windows.Forms.Padding(2);
+            this.main11.Margin = new System.Windows.Forms.Padding(0);
             this.main11.Name = "main11";
             this.main11.Padding = new System.Windows.Forms.Padding(2);
             this.main11.Size = new System.Drawing.Size(75, 80);
@@ -298,7 +298,7 @@
             // main12
             // 
             this.main12.Location = new System.Drawing.Point(409, 98);
-            this.main12.Margin = new System.Windows.Forms.Padding(2);
+            this.main12.Margin = new System.Windows.Forms.Padding(0);
             this.main12.Name = "main12";
             this.main12.Padding = new System.Windows.Forms.Padding(2);
             this.main12.Size = new System.Drawing.Size(75, 80);
@@ -309,7 +309,7 @@
             // one1
             // 
             this.one1.Location = new System.Drawing.Point(14, 16);
-            this.one1.Margin = new System.Windows.Forms.Padding(2);
+            this.one1.Margin = new System.Windows.Forms.Padding(0);
             this.one1.Name = "one1";
             this.one1.Padding = new System.Windows.Forms.Padding(2);
             this.one1.Size = new System.Drawing.Size(75, 80);
@@ -320,7 +320,7 @@
             // one2
             // 
             this.one2.Location = new System.Drawing.Point(93, 16);
-            this.one2.Margin = new System.Windows.Forms.Padding(2);
+            this.one2.Margin = new System.Windows.Forms.Padding(0);
             this.one2.Name = "one2";
             this.one2.Padding = new System.Windows.Forms.Padding(2);
             this.one2.Size = new System.Drawing.Size(75, 80);
@@ -331,7 +331,7 @@
             // one3
             // 
             this.one3.Location = new System.Drawing.Point(172, 16);
-            this.one3.Margin = new System.Windows.Forms.Padding(2);
+            this.one3.Margin = new System.Windows.Forms.Padding(0);
             this.one3.Name = "one3";
             this.one3.Padding = new System.Windows.Forms.Padding(2);
             this.one3.Size = new System.Drawing.Size(75, 80);
@@ -342,7 +342,7 @@
             // one4
             // 
             this.one4.Location = new System.Drawing.Point(252, 16);
-            this.one4.Margin = new System.Windows.Forms.Padding(2);
+            this.one4.Margin = new System.Windows.Forms.Padding(0);
             this.one4.Name = "one4";
             this.one4.Padding = new System.Windows.Forms.Padding(2);
             this.one4.Size = new System.Drawing.Size(75, 80);
@@ -353,7 +353,7 @@
             // one5
             // 
             this.one5.Location = new System.Drawing.Point(332, 16);
-            this.one5.Margin = new System.Windows.Forms.Padding(2);
+            this.one5.Margin = new System.Windows.Forms.Padding(0);
             this.one5.Name = "one5";
             this.one5.Padding = new System.Windows.Forms.Padding(2);
             this.one5.Size = new System.Drawing.Size(75, 80);
@@ -364,7 +364,7 @@
             // one6
             // 
             this.one6.Location = new System.Drawing.Point(411, 16);
-            this.one6.Margin = new System.Windows.Forms.Padding(2);
+            this.one6.Margin = new System.Windows.Forms.Padding(0);
             this.one6.Name = "one6";
             this.one6.Padding = new System.Windows.Forms.Padding(2);
             this.one6.Size = new System.Drawing.Size(75, 80);
@@ -529,7 +529,7 @@
             this.main_Box.Location = new System.Drawing.Point(509, 8);
             this.main_Box.Margin = new System.Windows.Forms.Padding(2);
             this.main_Box.Name = "main_Box";
-            this.main_Box.Padding = new System.Windows.Forms.Padding(2);
+            this.main_Box.Padding = new System.Windows.Forms.Padding(0);
             this.main_Box.Size = new System.Drawing.Size(500, 190);
             this.main_Box.TabIndex = 85;
             this.main_Box.TabStop = false;
@@ -546,7 +546,7 @@
             this.one_Box.Location = new System.Drawing.Point(507, 200);
             this.one_Box.Margin = new System.Windows.Forms.Padding(2);
             this.one_Box.Name = "one_Box";
-            this.one_Box.Padding = new System.Windows.Forms.Padding(2);
+            this.one_Box.Padding = new System.Windows.Forms.Padding(0);
             this.one_Box.Size = new System.Drawing.Size(502, 104);
             this.one_Box.TabIndex = 86;
             this.one_Box.TabStop = false;
@@ -563,7 +563,7 @@
             this.two_Box.Location = new System.Drawing.Point(507, 306);
             this.two_Box.Margin = new System.Windows.Forms.Padding(2);
             this.two_Box.Name = "two_Box";
-            this.two_Box.Padding = new System.Windows.Forms.Padding(2);
+            this.two_Box.Padding = new System.Windows.Forms.Padding(0);
             this.two_Box.Size = new System.Drawing.Size(502, 105);
             this.two_Box.TabIndex = 87;
             this.two_Box.TabStop = false;
@@ -572,7 +572,7 @@
             // two6
             // 
             this.two6.Location = new System.Drawing.Point(410, 16);
-            this.two6.Margin = new System.Windows.Forms.Padding(2);
+            this.two6.Margin = new System.Windows.Forms.Padding(0);
             this.two6.Name = "two6";
             this.two6.Padding = new System.Windows.Forms.Padding(3);
             this.two6.Size = new System.Drawing.Size(75, 80);
@@ -583,7 +583,7 @@
             // two5
             // 
             this.two5.Location = new System.Drawing.Point(331, 16);
-            this.two5.Margin = new System.Windows.Forms.Padding(2);
+            this.two5.Margin = new System.Windows.Forms.Padding(0);
             this.two5.Name = "two5";
             this.two5.Padding = new System.Windows.Forms.Padding(3);
             this.two5.Size = new System.Drawing.Size(75, 80);
@@ -594,7 +594,7 @@
             // two4
             // 
             this.two4.Location = new System.Drawing.Point(251, 16);
-            this.two4.Margin = new System.Windows.Forms.Padding(2);
+            this.two4.Margin = new System.Windows.Forms.Padding(0);
             this.two4.Name = "two4";
             this.two4.Padding = new System.Windows.Forms.Padding(3);
             this.two4.Size = new System.Drawing.Size(75, 80);
@@ -605,7 +605,7 @@
             // two3
             // 
             this.two3.Location = new System.Drawing.Point(172, 16);
-            this.two3.Margin = new System.Windows.Forms.Padding(2);
+            this.two3.Margin = new System.Windows.Forms.Padding(0);
             this.two3.Name = "two3";
             this.two3.Padding = new System.Windows.Forms.Padding(3);
             this.two3.Size = new System.Drawing.Size(75, 80);
@@ -616,7 +616,7 @@
             // two2
             // 
             this.two2.Location = new System.Drawing.Point(92, 16);
-            this.two2.Margin = new System.Windows.Forms.Padding(2);
+            this.two2.Margin = new System.Windows.Forms.Padding(0);
             this.two2.Name = "two2";
             this.two2.Padding = new System.Windows.Forms.Padding(3);
             this.two2.Size = new System.Drawing.Size(75, 80);
@@ -627,7 +627,7 @@
             // two1
             // 
             this.two1.Location = new System.Drawing.Point(13, 16);
-            this.two1.Margin = new System.Windows.Forms.Padding(2);
+            this.two1.Margin = new System.Windows.Forms.Padding(0);
             this.two1.Name = "two1";
             this.two1.Padding = new System.Windows.Forms.Padding(3);
             this.two1.Size = new System.Drawing.Size(75, 80);
@@ -647,7 +647,7 @@
             this.if_Box.Location = new System.Drawing.Point(507, 415);
             this.if_Box.Margin = new System.Windows.Forms.Padding(2);
             this.if_Box.Name = "if_Box";
-            this.if_Box.Padding = new System.Windows.Forms.Padding(2);
+            this.if_Box.Padding = new System.Windows.Forms.Padding(0);
             this.if_Box.Size = new System.Drawing.Size(502, 130);
             this.if_Box.TabIndex = 88;
             this.if_Box.TabStop = false;
@@ -665,7 +665,7 @@
             // mosimo6
             // 
             this.mosimo6.Location = new System.Drawing.Point(411, 40);
-            this.mosimo6.Margin = new System.Windows.Forms.Padding(2);
+            this.mosimo6.Margin = new System.Windows.Forms.Padding(0);
             this.mosimo6.Name = "mosimo6";
             this.mosimo6.Padding = new System.Windows.Forms.Padding(3);
             this.mosimo6.Size = new System.Drawing.Size(75, 80);
@@ -676,7 +676,7 @@
             // mosimo2
             // 
             this.mosimo2.Location = new System.Drawing.Point(93, 40);
-            this.mosimo2.Margin = new System.Windows.Forms.Padding(2);
+            this.mosimo2.Margin = new System.Windows.Forms.Padding(0);
             this.mosimo2.Name = "mosimo2";
             this.mosimo2.Padding = new System.Windows.Forms.Padding(3);
             this.mosimo2.Size = new System.Drawing.Size(75, 80);
@@ -687,7 +687,7 @@
             // mosimo5
             // 
             this.mosimo5.Location = new System.Drawing.Point(332, 40);
-            this.mosimo5.Margin = new System.Windows.Forms.Padding(2);
+            this.mosimo5.Margin = new System.Windows.Forms.Padding(0);
             this.mosimo5.Name = "mosimo5";
             this.mosimo5.Padding = new System.Windows.Forms.Padding(3);
             this.mosimo5.Size = new System.Drawing.Size(75, 80);
@@ -698,7 +698,7 @@
             // mosimo1
             // 
             this.mosimo1.Location = new System.Drawing.Point(14, 40);
-            this.mosimo1.Margin = new System.Windows.Forms.Padding(2);
+            this.mosimo1.Margin = new System.Windows.Forms.Padding(0);
             this.mosimo1.Name = "mosimo1";
             this.mosimo1.Padding = new System.Windows.Forms.Padding(3);
             this.mosimo1.Size = new System.Drawing.Size(75, 80);
@@ -709,7 +709,7 @@
             // mosimo4
             // 
             this.mosimo4.Location = new System.Drawing.Point(252, 40);
-            this.mosimo4.Margin = new System.Windows.Forms.Padding(2);
+            this.mosimo4.Margin = new System.Windows.Forms.Padding(0);
             this.mosimo4.Name = "mosimo4";
             this.mosimo4.Padding = new System.Windows.Forms.Padding(3);
             this.mosimo4.Size = new System.Drawing.Size(75, 80);
@@ -720,7 +720,7 @@
             // mosimo3
             // 
             this.mosimo3.Location = new System.Drawing.Point(172, 40);
-            this.mosimo3.Margin = new System.Windows.Forms.Padding(2);
+            this.mosimo3.Margin = new System.Windows.Forms.Padding(0);
             this.mosimo3.Name = "mosimo3";
             this.mosimo3.Padding = new System.Windows.Forms.Padding(3);
             this.mosimo3.Size = new System.Drawing.Size(75, 80);
