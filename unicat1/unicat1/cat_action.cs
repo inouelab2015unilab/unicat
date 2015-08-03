@@ -131,13 +131,13 @@ namespace unicat1
         }
 
         //キーボードで移動
-        protected override bool ProcessDialogKey(Keys keyData)
-        {
-            if ((keyData & Keys.KeyCode) == Keys.Up) { catmove(0); return true; }
-            if ((keyData & Keys.KeyCode) == Keys.Down) { catmove(2); return true; }
-            if ((keyData & Keys.KeyCode) == Keys.Right) { catmove(1); return true; }
-            if ((keyData & Keys.KeyCode) == Keys.Left) { catmove(3); return true; }
-            return base.ProcessDialogKey(keyData);
-        }
+        //protected override bool ProcessDialogKey(Keys keyData)
+        //{
+            //if ((keyData & Keys.KeyCode) == Keys.Up) { catmove(0); return true; }
+            //if ((keyData & Keys.KeyCode) == Keys.Down) { catmove(2); return true; }
+            //if ((keyData & Keys.KeyCode) == Keys.Right) { catmove(1); return true; }
+            //if ((keyData & Keys.KeyCode) == Keys.Left) { catmove(3); return true; }
+            //return base.ProcessDialogKey(keyData);
+        //}
     }
 }

@@ -411,10 +411,7 @@ namespace unicat1
                             else { Thread.Sleep(200); }
 
                         }
-                        catch 
-                        {
-                            int a;
-                        }
+                        catch { }
                     }
                     else if (comboBox3.SelectedIndex == 1)
                     {
