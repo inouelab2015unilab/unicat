@@ -54,7 +54,10 @@ namespace unicat1
         int mainpiccount = 0;
         int onepiccount = 0;
         int twopiccount = 0;
-        int mosimopiccount = 0;
+        int mosimopiccount1 = 0;
+        int mosimopiccount2 = 0;
+        int mosimopiccount3 = 0;
+
 
         //0=上、1=右、2=下、3=左
         int catdirection = 0;
@@ -64,15 +67,19 @@ namespace unicat1
         List<int> movelist = new List<int>();  //メインボックスの命令リスト
         List<int> onelist = new List<int>();    //１ボックスの命令リスト
         List<int> twolist = new List<int>();    //２ボックスの命令リスト
-        List<int> mosimolist = new List<int>();    //２ボックスの命令リスト
-
+        List<int> mosimolist1 = new List<int>();    //２ボックスの命令リスト
+        List<int> mosimolist2 = new List<int>();
+        List<int> mosimolist3 = new List<int>();
         int Score = 0;
 
         public List<int[,]> boardlist = new List<int[,]>();
         PictureBox[] mainpicarray = new PictureBox[12];
         PictureBox[] onepicarray;
         PictureBox[] twopicarray = new PictureBox[6];
-        PictureBox[] mosimopicarray = new PictureBox[6];
+        PictureBox[] mosimopicarray1 = new PictureBox[6];
+        PictureBox[] mosimopicarray2 = new PictureBox[6];
+        PictureBox[] mosimopicarray3 = new PictureBox[6];
+
         SoundPlayer Hoge = new SoundPlayer(@"素材/BGM.wav");
 
         //盤面情報をCSVファイルから読み込み
@@ -85,12 +92,18 @@ namespace unicat1
             mainpicarray = new PictureBox[] { main1, main2, main3, main4, main5, main6, main7, main8, main9, main10, main11, main12 };
             onepicarray = new PictureBox[] { one1, one2, one3, one4, one5, one6 };
             twopicarray = new PictureBox[] { two1, two2, two3, two4, two5, two6 };
-            mosimopicarray = new PictureBox[] { mosimo1, mosimo2, mosimo3, mosimo4, mosimo5, mosimo6 };
+            mosimopicarray1 = new PictureBox[] { mosimo11, mosimo12, mosimo13, mosimo14, mosimo15, mosimo16 };
+            mosimopicarray2 = new PictureBox[] { mosimo21, mosimo22, mosimo23, mosimo24, mosimo25, mosimo26 };
+            mosimopicarray3 = new PictureBox[] { mosimo31, mosimo32, mosimo33, mosimo34, mosimo35, mosimo36 };
+
 
             foreach (var i in mainpicarray) i.Click += new EventHandler(main_Click);
             foreach (var i in onepicarray) i.Click += new EventHandler(one_Click);
             foreach (var i in twopicarray) i.Click += new EventHandler(two_Click);
-            foreach (var i in mosimopicarray) i.Click += new EventHandler(mosimo_Click);
+            foreach (var i in mosimopicarray1) i.Click += new EventHandler(mosimo1_Click);
+            foreach (var i in mosimopicarray2) i.Click += new EventHandler(mosimo2_Click);
+            foreach (var i in mosimopicarray3) i.Click += new EventHandler(mosimo3_Click);
+
             SelectedBoxChanged();
 
             radioButton2.Checked = true;
@@ -115,16 +128,24 @@ namespace unicat1
 
             }
 
-            comboBox3.Items.Add("もしも、前に壁がなかったら");
-            comboBox3.Items.Add("もしも、左に壁がなかったら");
-            comboBox3.Items.Add("もしも、右に壁がなかったら");
-
+            mosimocmb1.Items.Add("もしも、前に壁がなかったら");
+            mosimocmb1.Items.Add("もしも、左に壁がなかったら");
+            mosimocmb1.Items.Add("もしも、右に壁がなかったら");
+            mosimocmb2.Items.Add("もしも、前に壁がなかったら");
+            mosimocmb2.Items.Add("もしも、左に壁がなかったら");
+            mosimocmb2.Items.Add("もしも、右に壁がなかったら");
+            mosimocmb3.Items.Add("もしも、前に壁がなかったら");
+            mosimocmb3.Items.Add("もしも、左に壁がなかったら");
+            mosimocmb3.Items.Add("もしも、右に壁がなかったら");
 
             //命令パネルの背景を設置
             foreach (var n in mainpicarray) n.Image = commandpanel;
             foreach (var n in onepicarray) n.Image = commandpanel2;
             foreach (var n in twopicarray) n.Image = commandpanel2;
-            foreach (var n in mosimopicarray) n.Image = commandpanel2;
+            foreach (var n in mosimopicarray1) n.Image = commandpanel2;
+            foreach (var n in mosimopicarray2) n.Image = commandpanel2;
+            foreach (var n in mosimopicarray3) n.Image = commandpanel2;
+
 
             //命令ボタンの背景を設置
             gobutton.BackgroundImage = Image.FromFile(@"素材/up.png");
@@ -133,7 +154,7 @@ namespace unicat1
             catchfish_button.BackgroundImage = Image.FromFile(@"素材/catch.png");
             one_button.BackgroundImage = Image.FromFile(@"素材/1.png");
             two_button.BackgroundImage = Image.FromFile(@"素材/2.png");
-            if_button.BackgroundImage = Image.FromFile(@"素材/if.png");
+            if_button1.BackgroundImage = Image.FromFile(@"素材/if.png");
 
             gobutton.Paint += new PaintEventHandler(button_Paint);
             turnleft_button.Paint += new PaintEventHandler(button_Paint);
@@ -141,7 +162,7 @@ namespace unicat1
             catchfish_button.Paint += new PaintEventHandler(button_Paint);
             one_button.Paint += new PaintEventHandler(button_Paint);
             two_button.Paint += new PaintEventHandler(button_Paint);
-            if_button.Paint += new PaintEventHandler(button_Paint);
+            if_button1.Paint += new PaintEventHandler(button_Paint);
 
             //描画先とするImageオブジェクトを作成する
             Bitmap canvas = new Bitmap(pictureBox1.Width, pictureBox1.Height);
@@ -153,7 +174,10 @@ namespace unicat1
 
             comboBox1.SelectedIndex = 0;    //コンボボックスの初期値
             selectBox = 0;
-            comboBox3.SelectedIndex = 0;
+            mosimocmb1.SelectedIndex = 0;
+            mosimocmb2.SelectedIndex = 0;
+            mosimocmb3.SelectedIndex = 0;
+
 
             //盤面情報をCSVファイルから読み込み、boardlistに格納(要素は二次元配列)
             foreach (var n in files)
@@ -302,9 +326,29 @@ namespace unicat1
             {
                 try
                 {
-                    mosimopicarray[mosimopiccount].Image = orderimage;
-                    mosimolist.Add(ordernum);
-                    mosimopiccount += 1;
+                    mosimopicarray1[mosimopiccount1].Image = orderimage;
+                    mosimolist1.Add(ordernum);
+                    mosimopiccount1 += 1;
+                }
+                catch { }
+            }
+            else if (selectBox == 4)
+            {
+                try
+                {
+                    mosimopicarray2[mosimopiccount2].Image = orderimage;
+                    mosimolist2.Add(ordernum);
+                    mosimopiccount2 += 1;
+                }
+                catch { }
+            }
+            else if (selectBox == 5)
+            {
+                try
+                {
+                    mosimopicarray3[mosimopiccount3].Image = orderimage;
+                    mosimolist3.Add(ordernum);
+                    mosimopiccount3 += 1;
                 }
                 catch { }
             }
@@ -343,6 +387,92 @@ namespace unicat1
         private void if_button_Click(object sender, EventArgs e)
         {
             orderclick(6, pic_if);
+        }
+        private void if_button2_Click(object sender, EventArgs e)
+        {
+            orderclick(7, pic_if);
+
+        }
+        private void if_button3_Click(object sender, EventArgs e)
+        {
+            orderclick(8, pic_if);
+
+        }
+        private void mosimoaction(int cmbnum, List<int> mlist)
+        {
+            int xmove = 0, ymove = 0;
+            if (cmbnum == 0)
+            {        //catdirection 0=上、1=右、2=下、3=左
+                //方向と端にいるかどうかで移動の変化量を決める
+                if (catdirection == 0) ymove = -1;
+                if (catdirection == 2) ymove = 1;
+                if (catdirection == 1) xmove = 1;
+                if (catdirection == 3) xmove = -1;
+                try
+                {
+                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先が壁じゃない
+                    {
+                        for (int j = 0; j < mlist.Count; j++)
+                        {
+                            listcheck(mlist, j);
+                            totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                            if (totalscore <= -100) break;
+                        }
+                    }
+                    else { Thread.Sleep(200); }
+
+                }
+                catch { }
+            }
+            else if (cmbnum == 1)
+            {
+                //方向と端にいるかどうかで移動の変化量を決める
+                if (catdirection == 0) xmove = -1;
+                if (catdirection == 2) xmove = 1;
+                if (catdirection == 1) ymove = -1;
+                if (catdirection == 3) ymove = 1;
+
+                try
+                {
+                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先が壁じゃない
+                    {
+                        for (int j = 0; j < mlist.Count; j++)
+                        {
+                            listcheck(mlist, j);
+                            //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                            //if (totalscore <= -100) break;
+                        }
+
+                    }
+                    else { Thread.Sleep(200); }
+
+                }
+                catch { }
+            }
+            else if (cmbnum == 2)
+            {
+                //方向と端にいるかどうかで移動の変化量を決める
+                if (catdirection == 0) xmove = 1;
+                if (catdirection == 2) xmove = -1;
+                if (catdirection == 1) ymove = 1;
+                if (catdirection == 3) ymove = -1;
+                try
+                {
+                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先が壁じゃない
+                    {
+                        for (int j = 0; j < mlist.Count; j++)
+                        {
+                            listcheck(mlist, j);
+                            //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                            //if (totalscore <= -100) break;
+                        }
+
+                    }
+                    else { Thread.Sleep(200); }
+
+                }
+                catch { }
+            }
         }
 
         private void listcheck(List<int> list, int index)
@@ -395,80 +525,17 @@ namespace unicat1
                 }
                 else if (list[index] == 6)
                 {
-                    int xmove = 0, ymove = 0;
-                    if (comboBox3.SelectedIndex == 0)
-                    {        //catdirection 0=上、1=右、2=下、3=左
-                        //方向と端にいるかどうかで移動の変化量を決める
-                        if (catdirection == 0) ymove = -1;
-                        if (catdirection == 2) ymove = 1;
-                        if (catdirection == 1) xmove = 1;
-                        if (catdirection == 3) xmove = -1;
-                        try
-                        {
-                            if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先が壁じゃない
-                            {
-                                for (int j = 0; j < mosimolist.Count; j++)
-                                {
-                                    listcheck(mosimolist, j);
-                                    totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
-                                    if (totalscore <= -100) break;
-                                }
-                            }
-                            else { Thread.Sleep(200); }
-
-                        }
-                        catch { }
-                    }
-                    else if (comboBox3.SelectedIndex == 1)
-                    {
-                        //方向と端にいるかどうかで移動の変化量を決める
-                        if (catdirection == 0) xmove = -1;
-                        if (catdirection == 2) xmove = 1;
-                        if (catdirection == 1) ymove = -1;
-                        if (catdirection == 3) ymove = 1;
-                        
-                        try
-                        {
-                            if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先が壁じゃない
-                            {
-                                for (int j = 0; j < mosimolist.Count; j++)
-                                {
-                                    listcheck(mosimolist, j);
-                                    //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
-                                    //if (totalscore <= -100) break;
-                                }
-
-                            }
-                            else { Thread.Sleep(200); }
-
-                        }
-                        catch { }
-                    }
-                    else if (comboBox3.SelectedIndex == 2)
-                    {
-                        //方向と端にいるかどうかで移動の変化量を決める
-                        if (catdirection == 0) xmove = 1;
-                        if (catdirection == 2) xmove = -1;
-                        if (catdirection == 1) ymove = 1;
-                        if (catdirection == 3) ymove = -1;
-                        try
-                        {
-                            if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先が壁じゃない
-                            {
-                                for (int j = 0; j < mosimolist.Count; j++)
-                                {
-                                    listcheck(mosimolist, j);
-                                    //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
-                                    //if (totalscore <= -100) break;
-                                }
-
-                            }
-                            else { Thread.Sleep(200); }
-
-                        }
-                        catch { }
-                    }
+                    mosimoaction(mosimocmb1.SelectedIndex,mosimolist1);                  
                 }
+                else if (list[index] == 7)
+                {
+                    mosimoaction(mosimocmb2.SelectedIndex, mosimolist2);
+                }
+                else if (list[index] == 8)
+                {
+                    mosimoaction(mosimocmb3.SelectedIndex, mosimolist3);
+                }
+                
                 foodlabel.Text = checkfood().ToString();
                 foodlabel.Refresh();
                 orderFlashBack(list, index);
@@ -573,16 +640,26 @@ namespace unicat1
                 main_Box.BackColor = Color.Yellow;
                 one_Box.BackColor = DefaultBackColor;
                 two_Box.BackColor = DefaultBackColor;
-                if_Box.BackColor = DefaultBackColor;
-                comboBox3.Enabled = false;
+                tabPage1.BackColor = DefaultBackColor;
+                tabPage2.BackColor = DefaultBackColor;
+                tabPage3.BackColor = DefaultBackColor;
+                mosimocmb1.Enabled = false;
+                mosimocmb2.Enabled = false;
+                mosimocmb3.Enabled = false;
+
             }
             if (selectBox == 1)
             {
                 main_Box.BackColor = DefaultBackColor;
                 one_Box.BackColor = Color.Yellow;
                 two_Box.BackColor = DefaultBackColor;
-                if_Box.BackColor = DefaultBackColor;
-                comboBox3.Enabled = false;
+                tabPage1.BackColor = DefaultBackColor;
+                tabPage2.BackColor = DefaultBackColor;
+                tabPage3.BackColor = DefaultBackColor;
+                mosimocmb1.Enabled = false;
+                mosimocmb2.Enabled = false;
+                mosimocmb3.Enabled = false;
+
 
             }
             if (selectBox == 2)
@@ -590,8 +667,13 @@ namespace unicat1
                 main_Box.BackColor = DefaultBackColor;
                 one_Box.BackColor = DefaultBackColor;
                 two_Box.BackColor = Color.Yellow;
-                if_Box.BackColor = DefaultBackColor;
-                comboBox3.Enabled = false;
+                tabPage1.BackColor = DefaultBackColor;
+                tabPage2.BackColor = DefaultBackColor;
+                tabPage3.BackColor = DefaultBackColor;
+                mosimocmb1.Enabled = false;
+                mosimocmb2.Enabled = false;
+                mosimocmb3.Enabled = false;
+
 
             }
             if (selectBox == 3)
@@ -599,8 +681,39 @@ namespace unicat1
                 main_Box.BackColor = DefaultBackColor;
                 one_Box.BackColor = DefaultBackColor;
                 two_Box.BackColor = DefaultBackColor;
-                if_Box.BackColor = Color.Yellow;
-                comboBox3.Enabled = true;
+                tabPage1.BackColor = Color.Yellow;
+                tabPage2.BackColor = Color.Yellow;
+                tabPage3.BackColor = Color.Yellow;
+                mosimocmb1.Enabled = true;
+                mosimocmb2.Enabled = false;
+                mosimocmb3.Enabled = false;
+
+            }
+            if (selectBox == 4)
+            {
+                main_Box.BackColor = DefaultBackColor;
+                one_Box.BackColor = DefaultBackColor;
+                two_Box.BackColor = DefaultBackColor;
+                tabPage1.BackColor = Color.Yellow;
+                tabPage2.BackColor = Color.Yellow;
+                tabPage3.BackColor = Color.Yellow;
+                mosimocmb1.Enabled = false;
+                mosimocmb2.Enabled = true;
+                mosimocmb3.Enabled = false;
+
+            }
+            if (selectBox == 5)
+            {
+                main_Box.BackColor = DefaultBackColor;
+                one_Box.BackColor = DefaultBackColor;
+                two_Box.BackColor = DefaultBackColor;
+                tabPage1.BackColor = Color.Yellow;
+                tabPage2.BackColor = Color.Yellow;
+                tabPage3.BackColor = Color.Yellow;
+                mosimocmb1.Enabled = false;
+                mosimocmb2.Enabled = false;
+                mosimocmb3.Enabled = true;
+
             }
         }
 
@@ -695,12 +808,18 @@ namespace unicat1
             movelist.Clear();
             onelist.Clear();
             twolist.Clear();
-            mosimolist.Clear();
+            mosimolist1.Clear();
+            mosimolist2.Clear();
+            mosimolist3.Clear();
+
 
             mainpiccount = 0;
             onepiccount = 0;
             twopiccount = 0;
-            mosimopiccount = 0;
+            mosimopiccount1 = 0;
+            mosimopiccount2 = 0;
+            mosimopiccount3 = 0;
+
 
             for (int i = 0; i < 12; i++)
             {
@@ -711,7 +830,10 @@ namespace unicat1
             {
                 onepicarray[i].Image = commandpanel2;
                 twopicarray[i].Image = commandpanel2;
-                mosimopicarray[i].Image = commandpanel2;
+                mosimopicarray1[i].Image = commandpanel2;
+                mosimopicarray2[i].Image = commandpanel2;
+                mosimopicarray3[i].Image = commandpanel2;
+
             }
 
         }
@@ -764,15 +886,41 @@ namespace unicat1
             }
             if (selectBox == 3)
             {
-                if (mosimopiccount < 0) mosimopiccount = 0;
-                else if (mosimopiccount > 0)
+                if (mosimopiccount1 < 0) mosimopiccount1 = 0;
+                else if (mosimopiccount1 > 0)
                 {
-                    mosimopicarray[mosimopiccount - 1].Image = commandpanel2;
-                    mosimopiccount--;
+                    mosimopicarray1[mosimopiccount1 - 1].Image = commandpanel2;
+                    mosimopiccount1--;
                 }
-                if (mosimolist.Count > 0)
+                if (mosimolist1.Count > 0)
                 {
-                    mosimolist.RemoveAt(mosimolist.Count - 1);
+                    mosimolist1.RemoveAt(mosimolist1.Count - 1);
+                }
+            }
+            if (selectBox == 4)
+            {
+                if (mosimopiccount2 < 0) mosimopiccount2 = 0;
+                else if (mosimopiccount2 > 0)
+                {
+                    mosimopicarray2[mosimopiccount2 - 1].Image = commandpanel2;
+                    mosimopiccount2--;
+                }
+                if (mosimolist2.Count > 0)
+                {
+                    mosimolist2.RemoveAt(mosimolist2.Count - 1);
+                }
+            } 
+            if (selectBox == 5)
+            {
+                if (mosimopiccount3 < 0) mosimopiccount3 = 0;
+                else if (mosimopiccount3 > 0)
+                {
+                    mosimopicarray3[mosimopiccount3 - 1].Image = commandpanel2;
+                    mosimopiccount3--;
+                }
+                if (mosimolist3.Count > 0)
+                {
+                    mosimolist3.RemoveAt(mosimolist3.Count - 1);
                 }
             }
         }
@@ -822,10 +970,23 @@ namespace unicat1
                 twopicarray[index].BackColor = Color.Red;
                 twopicarray[index].Refresh();
             }
-            if (list == mosimolist)
+            if (list == mosimolist1)
             {
-                mosimopicarray[index].BackColor = Color.Red;
-                mosimopicarray[index].Refresh();
+                tabControl1.SelectedIndex = 0;
+                mosimopicarray1[index].BackColor = Color.Red;
+                mosimopicarray1[index].Refresh();
+            }
+            if (list == mosimolist2)
+            {
+                tabControl1.SelectedIndex = 1;
+                mosimopicarray2[index].BackColor = Color.Red;
+                mosimopicarray2[index].Refresh();
+            }
+            if (list == mosimolist3)
+            {
+                tabControl1.SelectedIndex = 2;
+                mosimopicarray3[index].BackColor = Color.Red;
+                mosimopicarray3[index].Refresh();
             }
         }
         private void orderFlashBack(List<int> list, int index)//実行している命令の縁を赤くする
@@ -845,10 +1006,20 @@ namespace unicat1
                 twopicarray[index].BackColor = two_Box.BackColor;
                 twopicarray[index].Refresh();
             }
-            if (list == mosimolist)
+            if (list == mosimolist1)
             {
-                mosimopicarray[index].BackColor = if_Box.BackColor;
-                mosimopicarray[index].Refresh();
+                mosimopicarray1[index].BackColor = tabPage1.BackColor;
+                mosimopicarray1[index].Refresh();
+            }
+            if (list == mosimolist2)
+            {
+                mosimopicarray2[index].BackColor = tabPage1.BackColor;
+                mosimopicarray2[index].Refresh();
+            }
+            if (list == mosimolist3)
+            {
+                mosimopicarray3[index].BackColor = tabPage1.BackColor;
+                mosimopicarray3[index].Refresh();
             }
         }
 
@@ -875,7 +1046,10 @@ namespace unicat1
                 if (list == movelist) power -= 10;
                 else if (list == onelist) power -= 5;
                 else if (list == twolist) power -= 5;
-                else if (list == mosimolist) power -= 5;
+                else if (list == mosimolist1) power -= 5;
+                else if (list == mosimolist2) power -= 5;
+                else if (list == mosimolist3) power -= 5;
+
         }
 
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
@@ -952,11 +1126,27 @@ namespace unicat1
             selectBox = 2;
             SelectedBoxChanged();
         }
-        private void mosimo_Click(object sender, EventArgs e)
+        private void mosimo1_Click(object sender, EventArgs e)
         {
             selectBox = 3;
             SelectedBoxChanged();
         }
+        private void mosimo2_Click(object sender, EventArgs e)
+        {
+            selectBox = 4;
+            SelectedBoxChanged();
+        }
+        private void mosimo3_Click(object sender, EventArgs e)
+        {
+            selectBox = 5;
+            SelectedBoxChanged();
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectBox = tabControl1.SelectedIndex + 3;
+            SelectedBoxChanged();
+        }     
     
     }
 }

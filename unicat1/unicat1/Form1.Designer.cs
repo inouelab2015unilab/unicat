@@ -71,15 +71,14 @@
             this.two3 = new System.Windows.Forms.PictureBox();
             this.two2 = new System.Windows.Forms.PictureBox();
             this.two1 = new System.Windows.Forms.PictureBox();
-            this.if_Box = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.mosimo6 = new System.Windows.Forms.PictureBox();
-            this.mosimo2 = new System.Windows.Forms.PictureBox();
-            this.mosimo5 = new System.Windows.Forms.PictureBox();
-            this.mosimo1 = new System.Windows.Forms.PictureBox();
-            this.mosimo4 = new System.Windows.Forms.PictureBox();
-            this.mosimo3 = new System.Windows.Forms.PictureBox();
-            this.if_button = new System.Windows.Forms.Button();
+            this.mosimocmb1 = new System.Windows.Forms.ComboBox();
+            this.mosimo16 = new System.Windows.Forms.PictureBox();
+            this.mosimo12 = new System.Windows.Forms.PictureBox();
+            this.mosimo15 = new System.Windows.Forms.PictureBox();
+            this.mosimo11 = new System.Windows.Forms.PictureBox();
+            this.mosimo14 = new System.Windows.Forms.PictureBox();
+            this.mosimo13 = new System.Windows.Forms.PictureBox();
+            this.if_button1 = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox_music = new System.Windows.Forms.GroupBox();
@@ -94,6 +93,26 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox_order = new System.Windows.Forms.GroupBox();
+            this.if_button3 = new System.Windows.Forms.Button();
+            this.if_button2 = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.mosimocmb2 = new System.Windows.Forms.ComboBox();
+            this.mosimo26 = new System.Windows.Forms.PictureBox();
+            this.mosimo21 = new System.Windows.Forms.PictureBox();
+            this.mosimo23 = new System.Windows.Forms.PictureBox();
+            this.mosimo25 = new System.Windows.Forms.PictureBox();
+            this.mosimo22 = new System.Windows.Forms.PictureBox();
+            this.mosimo24 = new System.Windows.Forms.PictureBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.mosimocmb3 = new System.Windows.Forms.ComboBox();
+            this.mosimo36 = new System.Windows.Forms.PictureBox();
+            this.mosimo31 = new System.Windows.Forms.PictureBox();
+            this.mosimo33 = new System.Windows.Forms.PictureBox();
+            this.mosimo35 = new System.Windows.Forms.PictureBox();
+            this.mosimo32 = new System.Windows.Forms.PictureBox();
+            this.mosimo34 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).BeginInit();
@@ -122,18 +141,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.two3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.two2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.two1)).BeginInit();
-            this.if_Box.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo13)).BeginInit();
             this.groupBox_music.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.power_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             this.groupBox_order.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo23)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo22)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo24)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo36)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo31)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo33)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo35)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo32)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo34)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -629,109 +663,91 @@
             this.two1.TabIndex = 40;
             this.two1.TabStop = false;
             // 
-            // if_Box
+            // mosimocmb1
             // 
-            this.if_Box.Controls.Add(this.comboBox3);
-            this.if_Box.Controls.Add(this.mosimo6);
-            this.if_Box.Controls.Add(this.mosimo2);
-            this.if_Box.Controls.Add(this.mosimo5);
-            this.if_Box.Controls.Add(this.mosimo1);
-            this.if_Box.Controls.Add(this.mosimo4);
-            this.if_Box.Controls.Add(this.mosimo3);
-            this.if_Box.Location = new System.Drawing.Point(507, 415);
-            this.if_Box.Margin = new System.Windows.Forms.Padding(2);
-            this.if_Box.Name = "if_Box";
-            this.if_Box.Padding = new System.Windows.Forms.Padding(0);
-            this.if_Box.Size = new System.Drawing.Size(502, 130);
-            this.if_Box.TabIndex = 88;
-            this.if_Box.TabStop = false;
-            this.if_Box.Text = "もしもボックス";
+            this.mosimocmb1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mosimocmb1.FormattingEnabled = true;
+            this.mosimocmb1.Location = new System.Drawing.Point(6, 6);
+            this.mosimocmb1.Name = "mosimocmb1";
+            this.mosimocmb1.Size = new System.Drawing.Size(183, 20);
+            this.mosimocmb1.TabIndex = 89;
             // 
-            // comboBox3
+            // mosimo16
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(14, 17);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(183, 20);
-            this.comboBox3.TabIndex = 89;
+            this.mosimo16.Location = new System.Drawing.Point(403, 29);
+            this.mosimo16.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo16.Name = "mosimo16";
+            this.mosimo16.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo16.Size = new System.Drawing.Size(75, 80);
+            this.mosimo16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo16.TabIndex = 51;
+            this.mosimo16.TabStop = false;
             // 
-            // mosimo6
+            // mosimo12
             // 
-            this.mosimo6.Location = new System.Drawing.Point(411, 40);
-            this.mosimo6.Margin = new System.Windows.Forms.Padding(0);
-            this.mosimo6.Name = "mosimo6";
-            this.mosimo6.Padding = new System.Windows.Forms.Padding(3);
-            this.mosimo6.Size = new System.Drawing.Size(75, 80);
-            this.mosimo6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mosimo6.TabIndex = 51;
-            this.mosimo6.TabStop = false;
+            this.mosimo12.Location = new System.Drawing.Point(85, 29);
+            this.mosimo12.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo12.Name = "mosimo12";
+            this.mosimo12.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo12.Size = new System.Drawing.Size(75, 80);
+            this.mosimo12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo12.TabIndex = 47;
+            this.mosimo12.TabStop = false;
             // 
-            // mosimo2
+            // mosimo15
             // 
-            this.mosimo2.Location = new System.Drawing.Point(93, 40);
-            this.mosimo2.Margin = new System.Windows.Forms.Padding(0);
-            this.mosimo2.Name = "mosimo2";
-            this.mosimo2.Padding = new System.Windows.Forms.Padding(3);
-            this.mosimo2.Size = new System.Drawing.Size(75, 80);
-            this.mosimo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mosimo2.TabIndex = 47;
-            this.mosimo2.TabStop = false;
+            this.mosimo15.Location = new System.Drawing.Point(324, 29);
+            this.mosimo15.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo15.Name = "mosimo15";
+            this.mosimo15.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo15.Size = new System.Drawing.Size(75, 80);
+            this.mosimo15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo15.TabIndex = 50;
+            this.mosimo15.TabStop = false;
             // 
-            // mosimo5
+            // mosimo11
             // 
-            this.mosimo5.Location = new System.Drawing.Point(332, 40);
-            this.mosimo5.Margin = new System.Windows.Forms.Padding(0);
-            this.mosimo5.Name = "mosimo5";
-            this.mosimo5.Padding = new System.Windows.Forms.Padding(3);
-            this.mosimo5.Size = new System.Drawing.Size(75, 80);
-            this.mosimo5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mosimo5.TabIndex = 50;
-            this.mosimo5.TabStop = false;
+            this.mosimo11.Location = new System.Drawing.Point(6, 29);
+            this.mosimo11.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo11.Name = "mosimo11";
+            this.mosimo11.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo11.Size = new System.Drawing.Size(75, 80);
+            this.mosimo11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo11.TabIndex = 46;
+            this.mosimo11.TabStop = false;
             // 
-            // mosimo1
+            // mosimo14
             // 
-            this.mosimo1.Location = new System.Drawing.Point(14, 40);
-            this.mosimo1.Margin = new System.Windows.Forms.Padding(0);
-            this.mosimo1.Name = "mosimo1";
-            this.mosimo1.Padding = new System.Windows.Forms.Padding(3);
-            this.mosimo1.Size = new System.Drawing.Size(75, 80);
-            this.mosimo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mosimo1.TabIndex = 46;
-            this.mosimo1.TabStop = false;
+            this.mosimo14.Location = new System.Drawing.Point(244, 29);
+            this.mosimo14.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo14.Name = "mosimo14";
+            this.mosimo14.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo14.Size = new System.Drawing.Size(75, 80);
+            this.mosimo14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo14.TabIndex = 49;
+            this.mosimo14.TabStop = false;
             // 
-            // mosimo4
+            // mosimo13
             // 
-            this.mosimo4.Location = new System.Drawing.Point(252, 40);
-            this.mosimo4.Margin = new System.Windows.Forms.Padding(0);
-            this.mosimo4.Name = "mosimo4";
-            this.mosimo4.Padding = new System.Windows.Forms.Padding(3);
-            this.mosimo4.Size = new System.Drawing.Size(75, 80);
-            this.mosimo4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mosimo4.TabIndex = 49;
-            this.mosimo4.TabStop = false;
+            this.mosimo13.Location = new System.Drawing.Point(164, 29);
+            this.mosimo13.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo13.Name = "mosimo13";
+            this.mosimo13.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo13.Size = new System.Drawing.Size(75, 80);
+            this.mosimo13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo13.TabIndex = 48;
+            this.mosimo13.TabStop = false;
             // 
-            // mosimo3
+            // if_button1
             // 
-            this.mosimo3.Location = new System.Drawing.Point(172, 40);
-            this.mosimo3.Margin = new System.Windows.Forms.Padding(0);
-            this.mosimo3.Name = "mosimo3";
-            this.mosimo3.Padding = new System.Windows.Forms.Padding(3);
-            this.mosimo3.Size = new System.Drawing.Size(75, 80);
-            this.mosimo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mosimo3.TabIndex = 48;
-            this.mosimo3.TabStop = false;
-            // 
-            // if_button
-            // 
-            this.if_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.if_button.Location = new System.Drawing.Point(541, 10);
-            this.if_button.Name = "if_button";
-            this.if_button.Size = new System.Drawing.Size(82, 88);
-            this.if_button.TabIndex = 89;
-            this.if_button.Text = "if_button";
-            this.if_button.UseVisualStyleBackColor = true;
-            this.if_button.Click += new System.EventHandler(this.if_button_Click);
+            this.if_button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.if_button1.Location = new System.Drawing.Point(541, 10);
+            this.if_button1.Name = "if_button1";
+            this.if_button1.Size = new System.Drawing.Size(82, 88);
+            this.if_button1.TabIndex = 89;
+            this.if_button1.Text = "if_button1";
+            this.if_button1.UseVisualStyleBackColor = true;
+            this.if_button1.Click += new System.EventHandler(this.if_button_Click);
             // 
             // radioButton1
             // 
@@ -874,18 +890,254 @@
             // groupBox_order
             // 
             this.groupBox_order.BackColor = System.Drawing.Color.Pink;
-            this.groupBox_order.Controls.Add(this.if_button);
+            this.groupBox_order.Controls.Add(this.if_button3);
+            this.groupBox_order.Controls.Add(this.if_button2);
+            this.groupBox_order.Controls.Add(this.if_button1);
             this.groupBox_order.Controls.Add(this.two_button);
             this.groupBox_order.Controls.Add(this.one_button);
             this.groupBox_order.Controls.Add(this.catchfish_button);
             this.groupBox_order.Controls.Add(this.turnright_button);
             this.groupBox_order.Controls.Add(this.turnleft_button);
             this.groupBox_order.Controls.Add(this.gobutton);
-            this.groupBox_order.Location = new System.Drawing.Point(526, 559);
+            this.groupBox_order.Location = new System.Drawing.Point(507, 559);
             this.groupBox_order.Name = "groupBox_order";
-            this.groupBox_order.Size = new System.Drawing.Size(630, 103);
+            this.groupBox_order.Size = new System.Drawing.Size(809, 103);
             this.groupBox_order.TabIndex = 101;
             this.groupBox_order.TabStop = false;
+            // 
+            // if_button3
+            // 
+            this.if_button3.Location = new System.Drawing.Point(721, 10);
+            this.if_button3.Name = "if_button3";
+            this.if_button3.Size = new System.Drawing.Size(82, 88);
+            this.if_button3.TabIndex = 91;
+            this.if_button3.Text = "if_button3";
+            this.if_button3.UseVisualStyleBackColor = true;
+            this.if_button3.Click += new System.EventHandler(this.if_button3_Click);
+            // 
+            // if_button2
+            // 
+            this.if_button2.Location = new System.Drawing.Point(629, 10);
+            this.if_button2.Name = "if_button2";
+            this.if_button2.Size = new System.Drawing.Size(82, 88);
+            this.if_button2.TabIndex = 90;
+            this.if_button2.Text = "if_button2";
+            this.if_button2.UseVisualStyleBackColor = true;
+            this.if_button2.Click += new System.EventHandler(this.if_button2_Click);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(509, 413);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(500, 140);
+            this.tabControl1.TabIndex = 102;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.Ivory;
+            this.tabPage1.Controls.Add(this.mosimocmb1);
+            this.tabPage1.Controls.Add(this.mosimo16);
+            this.tabPage1.Controls.Add(this.mosimo13);
+            this.tabPage1.Controls.Add(this.mosimo12);
+            this.tabPage1.Controls.Add(this.mosimo14);
+            this.tabPage1.Controls.Add(this.mosimo15);
+            this.tabPage1.Controls.Add(this.mosimo11);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(492, 114);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "もしもボックス１";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.Ivory;
+            this.tabPage2.Controls.Add(this.mosimocmb2);
+            this.tabPage2.Controls.Add(this.mosimo26);
+            this.tabPage2.Controls.Add(this.mosimo21);
+            this.tabPage2.Controls.Add(this.mosimo23);
+            this.tabPage2.Controls.Add(this.mosimo25);
+            this.tabPage2.Controls.Add(this.mosimo22);
+            this.tabPage2.Controls.Add(this.mosimo24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tabPage2.Size = new System.Drawing.Size(492, 114);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "２";
+            // 
+            // mosimocmb2
+            // 
+            this.mosimocmb2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mosimocmb2.FormattingEnabled = true;
+            this.mosimocmb2.Location = new System.Drawing.Point(6, 6);
+            this.mosimocmb2.Name = "mosimocmb2";
+            this.mosimocmb2.Size = new System.Drawing.Size(183, 20);
+            this.mosimocmb2.TabIndex = 109;
+            // 
+            // mosimo26
+            // 
+            this.mosimo26.Location = new System.Drawing.Point(403, 29);
+            this.mosimo26.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo26.Name = "mosimo26";
+            this.mosimo26.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo26.Size = new System.Drawing.Size(75, 80);
+            this.mosimo26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo26.TabIndex = 108;
+            this.mosimo26.TabStop = false;
+            // 
+            // mosimo21
+            // 
+            this.mosimo21.Location = new System.Drawing.Point(6, 29);
+            this.mosimo21.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo21.Name = "mosimo21";
+            this.mosimo21.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo21.Size = new System.Drawing.Size(75, 80);
+            this.mosimo21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo21.TabIndex = 103;
+            this.mosimo21.TabStop = false;
+            // 
+            // mosimo23
+            // 
+            this.mosimo23.Location = new System.Drawing.Point(164, 29);
+            this.mosimo23.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo23.Name = "mosimo23";
+            this.mosimo23.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo23.Size = new System.Drawing.Size(75, 80);
+            this.mosimo23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo23.TabIndex = 105;
+            this.mosimo23.TabStop = false;
+            // 
+            // mosimo25
+            // 
+            this.mosimo25.Location = new System.Drawing.Point(324, 29);
+            this.mosimo25.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo25.Name = "mosimo25";
+            this.mosimo25.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo25.Size = new System.Drawing.Size(75, 80);
+            this.mosimo25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo25.TabIndex = 107;
+            this.mosimo25.TabStop = false;
+            // 
+            // mosimo22
+            // 
+            this.mosimo22.Location = new System.Drawing.Point(85, 29);
+            this.mosimo22.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo22.Name = "mosimo22";
+            this.mosimo22.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo22.Size = new System.Drawing.Size(75, 80);
+            this.mosimo22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo22.TabIndex = 104;
+            this.mosimo22.TabStop = false;
+            // 
+            // mosimo24
+            // 
+            this.mosimo24.Location = new System.Drawing.Point(244, 29);
+            this.mosimo24.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo24.Name = "mosimo24";
+            this.mosimo24.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo24.Size = new System.Drawing.Size(75, 80);
+            this.mosimo24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo24.TabIndex = 106;
+            this.mosimo24.TabStop = false;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.Ivory;
+            this.tabPage3.Controls.Add(this.mosimocmb3);
+            this.tabPage3.Controls.Add(this.mosimo36);
+            this.tabPage3.Controls.Add(this.mosimo31);
+            this.tabPage3.Controls.Add(this.mosimo33);
+            this.tabPage3.Controls.Add(this.mosimo35);
+            this.tabPage3.Controls.Add(this.mosimo32);
+            this.tabPage3.Controls.Add(this.mosimo34);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tabPage3.Size = new System.Drawing.Size(492, 114);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "３";
+            // 
+            // mosimocmb3
+            // 
+            this.mosimocmb3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mosimocmb3.FormattingEnabled = true;
+            this.mosimocmb3.Location = new System.Drawing.Point(6, 6);
+            this.mosimocmb3.Name = "mosimocmb3";
+            this.mosimocmb3.Size = new System.Drawing.Size(183, 20);
+            this.mosimocmb3.TabIndex = 109;
+            // 
+            // mosimo36
+            // 
+            this.mosimo36.Location = new System.Drawing.Point(403, 29);
+            this.mosimo36.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo36.Name = "mosimo36";
+            this.mosimo36.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo36.Size = new System.Drawing.Size(75, 80);
+            this.mosimo36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo36.TabIndex = 108;
+            this.mosimo36.TabStop = false;
+            // 
+            // mosimo31
+            // 
+            this.mosimo31.Location = new System.Drawing.Point(6, 29);
+            this.mosimo31.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo31.Name = "mosimo31";
+            this.mosimo31.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo31.Size = new System.Drawing.Size(75, 80);
+            this.mosimo31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo31.TabIndex = 103;
+            this.mosimo31.TabStop = false;
+            // 
+            // mosimo33
+            // 
+            this.mosimo33.Location = new System.Drawing.Point(164, 29);
+            this.mosimo33.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo33.Name = "mosimo33";
+            this.mosimo33.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo33.Size = new System.Drawing.Size(75, 80);
+            this.mosimo33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo33.TabIndex = 105;
+            this.mosimo33.TabStop = false;
+            // 
+            // mosimo35
+            // 
+            this.mosimo35.Location = new System.Drawing.Point(324, 29);
+            this.mosimo35.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo35.Name = "mosimo35";
+            this.mosimo35.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo35.Size = new System.Drawing.Size(75, 80);
+            this.mosimo35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo35.TabIndex = 107;
+            this.mosimo35.TabStop = false;
+            // 
+            // mosimo32
+            // 
+            this.mosimo32.Location = new System.Drawing.Point(85, 29);
+            this.mosimo32.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo32.Name = "mosimo32";
+            this.mosimo32.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo32.Size = new System.Drawing.Size(75, 80);
+            this.mosimo32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo32.TabIndex = 104;
+            this.mosimo32.TabStop = false;
+            // 
+            // mosimo34
+            // 
+            this.mosimo34.Location = new System.Drawing.Point(244, 29);
+            this.mosimo34.Margin = new System.Windows.Forms.Padding(0);
+            this.mosimo34.Name = "mosimo34";
+            this.mosimo34.Padding = new System.Windows.Forms.Padding(3);
+            this.mosimo34.Size = new System.Drawing.Size(75, 80);
+            this.mosimo34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mosimo34.TabIndex = 106;
+            this.mosimo34.TabStop = false;
             // 
             // Form1
             // 
@@ -893,7 +1145,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(1188, 670);
+            this.ClientSize = new System.Drawing.Size(1343, 670);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.undo_button);
             this.Controls.Add(this.orderreset_button);
             this.Controls.Add(this.groupBox_order);
@@ -909,7 +1162,6 @@
             this.Controls.Add(this.pictureBox26);
             this.Controls.Add(this.power_pictureBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.if_Box);
             this.Controls.Add(this.two_Box);
             this.Controls.Add(this.one_Box);
             this.Controls.Add(this.main_Box);
@@ -952,19 +1204,34 @@
             ((System.ComponentModel.ISupportInitialize)(this.two3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.two2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.two1)).EndInit();
-            this.if_Box.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mosimo3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo13)).EndInit();
             this.groupBox_music.ResumeLayout(false);
             this.groupBox_music.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.power_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             this.groupBox_order.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo23)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo22)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo24)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo36)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo31)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo33)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo35)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo32)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mosimo34)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1015,15 +1282,14 @@
         private System.Windows.Forms.PictureBox two3;
         private System.Windows.Forms.PictureBox two2;
         private System.Windows.Forms.PictureBox two1;
-        private System.Windows.Forms.GroupBox if_Box;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.PictureBox mosimo6;
-        private System.Windows.Forms.PictureBox mosimo2;
-        private System.Windows.Forms.PictureBox mosimo5;
-        private System.Windows.Forms.PictureBox mosimo1;
-        private System.Windows.Forms.PictureBox mosimo4;
-        private System.Windows.Forms.PictureBox mosimo3;
-        private System.Windows.Forms.Button if_button;
+        private System.Windows.Forms.ComboBox mosimocmb1;
+        private System.Windows.Forms.PictureBox mosimo16;
+        private System.Windows.Forms.PictureBox mosimo12;
+        private System.Windows.Forms.PictureBox mosimo15;
+        private System.Windows.Forms.PictureBox mosimo11;
+        private System.Windows.Forms.PictureBox mosimo14;
+        private System.Windows.Forms.PictureBox mosimo13;
+        private System.Windows.Forms.Button if_button1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.GroupBox groupBox_music;
@@ -1038,6 +1304,26 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox_order;
         private System.Windows.Forms.Button button_orderone;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.ComboBox mosimocmb2;
+        private System.Windows.Forms.PictureBox mosimo26;
+        private System.Windows.Forms.PictureBox mosimo21;
+        private System.Windows.Forms.PictureBox mosimo23;
+        private System.Windows.Forms.PictureBox mosimo25;
+        private System.Windows.Forms.PictureBox mosimo22;
+        private System.Windows.Forms.PictureBox mosimo24;
+        private System.Windows.Forms.ComboBox mosimocmb3;
+        private System.Windows.Forms.PictureBox mosimo36;
+        private System.Windows.Forms.PictureBox mosimo31;
+        private System.Windows.Forms.PictureBox mosimo33;
+        private System.Windows.Forms.PictureBox mosimo35;
+        private System.Windows.Forms.PictureBox mosimo32;
+        private System.Windows.Forms.PictureBox mosimo34;
+        private System.Windows.Forms.Button if_button3;
+        private System.Windows.Forms.Button if_button2;
     }
 }
 
