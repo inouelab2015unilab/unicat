@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.edit_button = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.make_button = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox_back = new System.Windows.Forms.PictureBox();
             this.pictureBox_road = new System.Windows.Forms.PictureBox();
@@ -41,6 +42,8 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.delete_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_back)).BeginInit();
@@ -54,45 +57,55 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(230, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(376, 401);
+            this.pictureBox1.Size = new System.Drawing.Size(400, 400);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             // 
-            // button1
+            // edit_button
             // 
-            this.button1.Location = new System.Drawing.Point(6, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 25);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "ステージ作成開始";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.edit_button.Location = new System.Drawing.Point(133, 344);
+            this.edit_button.Name = "edit_button";
+            this.edit_button.Size = new System.Drawing.Size(82, 25);
+            this.edit_button.TabIndex = 1;
+            this.edit_button.Text = "編集";
+            this.edit_button.UseVisualStyleBackColor = true;
+            this.edit_button.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 18);
+            this.comboBox1.Location = new System.Drawing.Point(6, 12);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(132, 20);
+            this.comboBox1.Size = new System.Drawing.Size(89, 20);
             this.comboBox1.TabIndex = 2;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(418, 4);
+            this.groupBox1.Controls.Add(this.make_button);
+            this.groupBox1.Location = new System.Drawing.Point(21, 336);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(144, 83);
+            this.groupBox1.Size = new System.Drawing.Size(106, 70);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
+            // make_button
+            // 
+            this.make_button.Location = new System.Drawing.Point(6, 38);
+            this.make_button.Name = "make_button";
+            this.make_button.Size = new System.Drawing.Size(89, 25);
+            this.make_button.TabIndex = 16;
+            this.make_button.Text = "新規作成";
+            this.make_button.UseVisualStyleBackColor = true;
+            this.make_button.Click += new System.EventHandler(this.make_button_Click);
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(424, 383);
+            this.button2.Location = new System.Drawing.Point(642, 383);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(132, 29);
             this.button2.TabIndex = 4;
@@ -102,7 +115,7 @@
             // 
             // pictureBox_back
             // 
-            this.pictureBox_back.Location = new System.Drawing.Point(424, 182);
+            this.pictureBox_back.Location = new System.Drawing.Point(642, 182);
             this.pictureBox_back.Name = "pictureBox_back";
             this.pictureBox_back.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_back.TabIndex = 5;
@@ -111,7 +124,7 @@
             // 
             // pictureBox_road
             // 
-            this.pictureBox_road.Location = new System.Drawing.Point(496, 182);
+            this.pictureBox_road.Location = new System.Drawing.Point(714, 182);
             this.pictureBox_road.Name = "pictureBox_road";
             this.pictureBox_road.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_road.TabIndex = 6;
@@ -120,7 +133,7 @@
             // 
             // pictureBox_cat
             // 
-            this.pictureBox_cat.Location = new System.Drawing.Point(424, 249);
+            this.pictureBox_cat.Location = new System.Drawing.Point(642, 249);
             this.pictureBox_cat.Name = "pictureBox_cat";
             this.pictureBox_cat.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_cat.TabIndex = 7;
@@ -129,7 +142,7 @@
             // 
             // pictureBox_fish1
             // 
-            this.pictureBox_fish1.Location = new System.Drawing.Point(496, 249);
+            this.pictureBox_fish1.Location = new System.Drawing.Point(714, 249);
             this.pictureBox_fish1.Name = "pictureBox_fish1";
             this.pictureBox_fish1.Size = new System.Drawing.Size(60, 60);
             this.pictureBox_fish1.TabIndex = 8;
@@ -148,7 +161,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.selected_pictureBox);
-            this.groupBox2.Location = new System.Drawing.Point(448, 90);
+            this.groupBox2.Location = new System.Drawing.Point(666, 90);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(78, 86);
             this.groupBox2.TabIndex = 12;
@@ -157,8 +170,8 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(424, 360);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Location = new System.Drawing.Point(642, 360);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 19);
             this.textBox1.TabIndex = 13;
@@ -166,19 +179,43 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(422, 346);
+            this.label1.Location = new System.Drawing.Point(640, 346);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 12);
             this.label1.TabIndex = 14;
             this.label1.Text = "ステージ名";
             // 
+            // listBox1
+            // 
+            this.listBox1.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(21, 12);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(194, 324);
+            this.listBox1.TabIndex = 15;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // delete_button
+            // 
+            this.delete_button.Location = new System.Drawing.Point(133, 373);
+            this.delete_button.Name = "delete_button";
+            this.delete_button.Size = new System.Drawing.Size(82, 25);
+            this.delete_button.TabIndex = 17;
+            this.delete_button.Text = "削除";
+            this.delete_button.UseVisualStyleBackColor = true;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(574, 421);
+            this.ClientSize = new System.Drawing.Size(792, 421);
+            this.Controls.Add(this.delete_button);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.edit_button);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox2);
@@ -189,10 +226,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_back)).EndInit();
@@ -209,7 +247,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button edit_button;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
@@ -221,5 +259,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button make_button;
+        private System.Windows.Forms.Button delete_button;
     }
 }

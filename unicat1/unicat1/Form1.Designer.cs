@@ -113,6 +113,9 @@
             this.mosimo35 = new System.Windows.Forms.PictureBox();
             this.mosimo32 = new System.Windows.Forms.PictureBox();
             this.mosimo34 = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radio_off = new System.Windows.Forms.RadioButton();
+            this.radio_on = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).BeginInit();
@@ -168,6 +171,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mosimo35)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mosimo32)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mosimo34)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -536,7 +540,7 @@
             this.makeStage_button.Name = "makeStage_button";
             this.makeStage_button.Size = new System.Drawing.Size(168, 33);
             this.makeStage_button.TabIndex = 84;
-            this.makeStage_button.Text = "ステージ作成";
+            this.makeStage_button.Text = "ステージ編集";
             this.makeStage_button.UseVisualStyleBackColor = true;
             this.makeStage_button.Click += new System.EventHandler(this.makeStage_button_Click);
             // 
@@ -1139,6 +1143,44 @@
             this.mosimo34.TabIndex = 106;
             this.mosimo34.TabStop = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radio_off);
+            this.groupBox1.Controls.Add(this.radio_on);
+            this.groupBox1.Location = new System.Drawing.Point(1019, 198);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(167, 42);
+            this.groupBox1.TabIndex = 93;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "オリジナルステージ";
+            // 
+            // radio_off
+            // 
+            this.radio_off.AutoSize = true;
+            this.radio_off.Location = new System.Drawing.Point(79, 16);
+            this.radio_off.Margin = new System.Windows.Forms.Padding(2);
+            this.radio_off.Name = "radio_off";
+            this.radio_off.Size = new System.Drawing.Size(37, 16);
+            this.radio_off.TabIndex = 91;
+            this.radio_off.TabStop = true;
+            this.radio_off.Text = "off";
+            this.radio_off.UseVisualStyleBackColor = true;
+            // 
+            // radio_on
+            // 
+            this.radio_on.AutoSize = true;
+            this.radio_on.Location = new System.Drawing.Point(4, 15);
+            this.radio_on.Margin = new System.Windows.Forms.Padding(2);
+            this.radio_on.Name = "radio_on";
+            this.radio_on.Size = new System.Drawing.Size(35, 16);
+            this.radio_on.TabIndex = 90;
+            this.radio_on.TabStop = true;
+            this.radio_on.Text = "on";
+            this.radio_on.UseVisualStyleBackColor = true;
+            this.radio_on.CheckedChanged += new System.EventHandler(this.radio_on_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1146,6 +1188,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(1343, 670);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.undo_button);
             this.Controls.Add(this.orderreset_button);
@@ -1232,6 +1275,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.mosimo35)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mosimo32)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mosimo34)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1324,6 +1369,9 @@
         private System.Windows.Forms.PictureBox mosimo34;
         private System.Windows.Forms.Button if_button3;
         private System.Windows.Forms.Button if_button2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radio_off;
+        private System.Windows.Forms.RadioButton radio_on;
     }
 }
 

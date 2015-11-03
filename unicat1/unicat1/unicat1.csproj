@@ -102,7 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="素材\1.png" />
-    <Content Include="素材\if.png" />
+    <Content Include="素材\if1.png" />
     <Content Include="素材\2.png" />
     <Content Include="素材\back.png" />
     <Content Include="素材\BGM.wav" />
@@ -117,6 +117,8 @@
     <Content Include="素材\fish.png" />
     <Content Include="素材\fish2.png" />
     <Content Include="素材\fish3.png" />
+    <Content Include="素材\if2.png" />
+    <Content Include="素材\if3.png" />
     <Content Include="素材\left.png" />
     <Content Include="素材\right.png" />
     <Content Include="素材\road.png" />

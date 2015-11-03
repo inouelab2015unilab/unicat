@@ -37,7 +37,9 @@ namespace unicat1
         Image commandpanel2 = Image.FromFile(@"素材/commandpanel2.png");
         Image loop1 = Image.FromFile(@"素材/1.png");
         Image loop2 = Image.FromFile(@"素材/2.png");
-        Image pic_if = Image.FromFile(@"素材/if.png");
+        Image pic_if1 = Image.FromFile(@"素材/if1.png");
+        Image pic_if2 = Image.FromFile(@"素材/if2.png");
+        Image pic_if3 = Image.FromFile(@"素材/if3.png");
         Image cat;
 
         int[,] nowboard;    //現在選択されている盤面のデータ
@@ -83,7 +85,8 @@ namespace unicat1
         SoundPlayer Hoge = new SoundPlayer(@"素材/BGM.wav");
 
         //盤面情報をCSVファイルから読み込み
-        string[] files = System.IO.Directory.GetFiles("boardmatrix/", "*.csv");
+        string[] files1 = System.IO.Directory.GetFiles("boardmatrix/", "*.csv");
+        string[] files2 = System.IO.Directory.GetFiles("boardmatrix2/", "*.csv");
 
         public Form1()
         {
@@ -107,6 +110,7 @@ namespace unicat1
             SelectedBoxChanged();
 
             radioButton2.Checked = true;
+            radio_off.Checked = true;
             //音楽流す
             if (radioButton1.Checked == true)
             {
@@ -120,9 +124,9 @@ namespace unicat1
             RandomMT rand = new RandomMT();
 
             //コンボボックスにステージ名を自動で追加
-            for (int i = 0; i < files.Length; i++)
+            for (int i = 0; i < files1.Length; i++)
             {
-                var stagename = Path.GetFileName(files[i]);
+                var stagename = Path.GetFileName(files1[i]);
                 stagename = stagename.Replace(".csv", "");
                 comboBox1.Items.Add(stagename);
 
@@ -154,7 +158,9 @@ namespace unicat1
             catchfish_button.BackgroundImage = Image.FromFile(@"素材/catch.png");
             one_button.BackgroundImage = Image.FromFile(@"素材/1.png");
             two_button.BackgroundImage = Image.FromFile(@"素材/2.png");
-            if_button1.BackgroundImage = Image.FromFile(@"素材/if.png");
+            if_button1.BackgroundImage = Image.FromFile(@"素材/if1.png");
+            if_button2.BackgroundImage = Image.FromFile(@"素材/if2.png");
+            if_button3.BackgroundImage = Image.FromFile(@"素材/if3.png");
 
             gobutton.Paint += new PaintEventHandler(button_Paint);
             turnleft_button.Paint += new PaintEventHandler(button_Paint);
@@ -163,6 +169,8 @@ namespace unicat1
             one_button.Paint += new PaintEventHandler(button_Paint);
             two_button.Paint += new PaintEventHandler(button_Paint);
             if_button1.Paint += new PaintEventHandler(button_Paint);
+            if_button2.Paint += new PaintEventHandler(button_Paint);
+            if_button3.Paint += new PaintEventHandler(button_Paint);
 
             //描画先とするImageオブジェクトを作成する
             Bitmap canvas = new Bitmap(pictureBox1.Width, pictureBox1.Height);
@@ -180,7 +188,7 @@ namespace unicat1
 
 
             //盤面情報をCSVファイルから読み込み、boardlistに格納(要素は二次元配列)
-            foreach (var n in files)
+            foreach (var n in files1)
             {
                 using (StreamReader sr = new StreamReader(n, Encoding.GetEncoding(932)))
                 {
@@ -386,16 +394,16 @@ namespace unicat1
         }
         private void if_button_Click(object sender, EventArgs e)
         {
-            orderclick(6, pic_if);
+            orderclick(6, pic_if1);
         }
         private void if_button2_Click(object sender, EventArgs e)
         {
-            orderclick(7, pic_if);
+            orderclick(7, pic_if2);
 
         }
         private void if_button3_Click(object sender, EventArgs e)
         {
-            orderclick(8, pic_if);
+            orderclick(8, pic_if3);
 
         }
         private void mosimoaction(int cmbnum, List<int> mlist)
@@ -477,11 +485,11 @@ namespace unicat1
 
         private void listcheck(List<int> list, int index)
         {
-            if (checkfood() != 0&&0<power)
+            if (checkfood() != 0 && 0 < power)
             {
                 usePower(list, index);//体力消費
                 powerPaint();//体力描画
-                orderFlash(list,index);//使用中の命令を赤くする
+                orderFlash(list, index);//使用中の命令を赤くする
                 if (list[index] == 0)
                 {
                     catmove(catdirection);
@@ -525,7 +533,7 @@ namespace unicat1
                 }
                 else if (list[index] == 6)
                 {
-                    mosimoaction(mosimocmb1.SelectedIndex,mosimolist1);                  
+                    mosimoaction(mosimocmb1.SelectedIndex, mosimolist1);
                 }
                 else if (list[index] == 7)
                 {
@@ -535,7 +543,7 @@ namespace unicat1
                 {
                     mosimoaction(mosimocmb3.SelectedIndex, mosimolist3);
                 }
-                
+
                 foodlabel.Text = checkfood().ToString();
                 foodlabel.Refresh();
                 orderFlashBack(list, index);
@@ -581,11 +589,11 @@ namespace unicat1
 
         private void movebutton_Click_1(object sender, EventArgs e)
         {
-            
+
             //movelistに格納された番号にしたがって命令を実行
             for (int i = orderone_count; i < movelist.Count; i++)
             {
-                listcheck(movelist, i);                
+                listcheck(movelist, i);
             }
 
             int foodcount = checkfood();
@@ -757,26 +765,26 @@ namespace unicat1
             for (int i = 0; i <= 360; i = i + 20)
             {
                 double d = (i + 45) / (180 / Math.PI);//傾けたい角度
-                float a = (float)Math.Sqrt(Math.Pow(pictureBox1.Width / (2*xmax), 2) + Math.Pow(pictureBox1.Height / (2*ymax), 2));//傾けたい角度
+                float a = (float)Math.Sqrt(Math.Pow(pictureBox1.Width / (2 * xmax), 2) + Math.Pow(pictureBox1.Height / (2 * ymax), 2));//傾けたい角度
                 //新しい座標位置を計算する
                 float x = catposx * pictureBox1.Width / xmax + (pictureBox1.Width / (2 * xmax));   //中心のｘ座標
                 float y = catposy * pictureBox1.Height / ymax + (pictureBox1.Height / (2 * ymax)); //中心のｙ座標
                 float r = (float)Math.Sqrt(Math.Pow(pictureBox1.Width / xmax, 2) + Math.Pow(pictureBox1.Height / ymax, 2)); //中心のｙ座標
                 float xx = x - (pictureBox1.Width / xmax) * (float)Math.Cos(d) / 2;
                 float yy = y - (pictureBox1.Height / ymax) * (float)Math.Sin(d) / 2;
-                float x1 = xx + a * (float)Math.Cos(i / (180 / Math.PI)) ;
-                float y1 = yy + a * (float)Math.Sin(i / (180 / Math.PI)) ;
-                float x2 = xx - a * (float)Math.Sin(i / (180 / Math.PI)) ;
-                float y2 = yy + a * (float)Math.Cos(i / (180 / Math.PI)) ;
+                float x1 = xx + a * (float)Math.Cos(i / (180 / Math.PI));
+                float y1 = yy + a * (float)Math.Sin(i / (180 / Math.PI));
+                float x2 = xx - a * (float)Math.Sin(i / (180 / Math.PI));
+                float y2 = yy + a * (float)Math.Cos(i / (180 / Math.PI));
                 //PointF配列を作成
                 PointF[] destinationPoints = { new PointF(xx, yy), new PointF(x1, y1), new PointF(x2, y2) };
                 //画像を表示
-                g.DrawImage(road, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);                
+                g.DrawImage(road, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
                 g.DrawImage(cat, destinationPoints);
                 pictureBox1.Refresh();
                 Thread.Sleep(10);
             }
-            g.DrawImage(cat, catposx * pictureBox1.Width / xmax , catposy * pictureBox1.Height / ymax , pictureBox1.Width / xmax, pictureBox1.Height / ymax);
+            g.DrawImage(cat, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
             pictureBox1.Refresh();
             Thread.Sleep(10);
 
@@ -909,7 +917,7 @@ namespace unicat1
                 {
                     mosimolist2.RemoveAt(mosimolist2.Count - 1);
                 }
-            } 
+            }
             if (selectBox == 5)
             {
                 if (mosimopiccount3 < 0) mosimopiccount3 = 0;
@@ -998,7 +1006,7 @@ namespace unicat1
             }
             if (list == onelist)
             {
-                onepicarray[index].BackColor =one_Box.BackColor;
+                onepicarray[index].BackColor = one_Box.BackColor;
                 onepicarray[index].Refresh();
             }
             if (list == twolist)
@@ -1025,9 +1033,9 @@ namespace unicat1
 
         private void powerPaint()//体力の描画
         {
-            int x=power_pictureBox.Width/20;
-            int y=power_pictureBox.Height;
-            int s=power/5;
+            int x = power_pictureBox.Width / 20;
+            int y = power_pictureBox.Height;
+            int s = power / 5;
             Brush br = Brushes.LightGreen; ;
             if (s <= 5) br = Brushes.Red;
             else if (5 < s && s <= 10) br = Brushes.Yellow;
@@ -1036,19 +1044,19 @@ namespace unicat1
             g2.FillRectangle(Brushes.Black, 0, 0, power_pictureBox.Width, power_pictureBox.Height);
             for (int i = 0; i < s; i++)
             {
-                g2.FillRectangle(br, i * x, 0, x-2, y-2);
+                g2.FillRectangle(br, i * x, 0, x - 2, y - 2);
             }
             power_pictureBox.Refresh();
         }
 
-        private void usePower(List<int> list,int index)//体力の消費
+        private void usePower(List<int> list, int index)//体力の消費
         {
-                if (list == movelist) power -= 10;
-                else if (list == onelist) power -= 5;
-                else if (list == twolist) power -= 5;
-                else if (list == mosimolist1) power -= 5;
-                else if (list == mosimolist2) power -= 5;
-                else if (list == mosimolist3) power -= 5;
+            if (list == movelist) power -= 10;
+            else if (list == onelist) power -= 5;
+            else if (list == twolist) power -= 5;
+            else if (list == mosimolist1) power -= 5;
+            else if (list == mosimolist2) power -= 5;
+            else if (list == mosimolist3) power -= 5;
 
         }
 
@@ -1146,7 +1154,130 @@ namespace unicat1
         {
             selectBox = tabControl1.SelectedIndex + 3;
             SelectedBoxChanged();
-        }     
-    
+        }
+
+        private void radio_on_CheckedChanged(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            boardlist.Clear();
+            if (radio_on.Checked == true)
+            {
+                //コンボボックスにステージ名を自動で追加
+                for (int i = 0; i < files1.Length; i++)
+                {
+                    var stagename = Path.GetFileName(files1[i]);
+                    stagename = stagename.Replace(".csv", "");
+                    comboBox1.Items.Add(stagename);
+
+                }
+                //盤面情報をCSVファイルから読み込み、boardlistに格納(要素は二次元配列)
+                foreach (var n1 in files1)
+                {
+                    using (StreamReader sr = new StreamReader(n1, Encoding.GetEncoding(932)))
+                    {
+                        List<string> templist = new List<string>();
+
+                        while (!sr.EndOfStream)
+                        {
+                            string s = sr.ReadLine();
+                            templist.Add(s);
+                        }
+                        xmax = templist.Count;
+                        string[] a = templist[0].Split(',');
+                        ymax = a.Length;
+                        int[,] temp = new int[xmax, ymax];
+
+                        for (int y = 0; y < ymax; y++)
+                        {
+                            string[] arraytemp = templist[y].Split(',');
+                            for (int x = 0; x < xmax; x++)
+                            {
+                                temp[x, y] = int.Parse(arraytemp[x]);
+                            }
+                        }
+                        boardlist.Add(temp);
+                    }
+                }
+                //コンボボックスにステージ名を自動で追加
+                for (int i = 0; i < files2.Length; i++)
+                {
+                    var stagename = Path.GetFileName(files2[i]);
+                    stagename = stagename.Replace(".csv", "");
+                    comboBox1.Items.Add(stagename);
+
+                }
+                //盤面情報をCSVファイルから読み込み、boardlistに格納(要素は二次元配列)
+                foreach (var n2 in files2)
+                {
+                    using (StreamReader sr = new StreamReader(n2, Encoding.GetEncoding(932)))
+                    {
+                        List<string> templist = new List<string>();
+
+                        while (!sr.EndOfStream)
+                        {
+                            string s = sr.ReadLine();
+                            templist.Add(s);
+                        }
+                        xmax = templist.Count;
+                        string[] a = templist[0].Split(',');
+                        ymax = a.Length;
+                        int[,] temp = new int[xmax, ymax];
+
+                        for (int y = 0; y < ymax; y++)
+                        {
+                            string[] arraytemp = templist[y].Split(',');
+                            for (int x = 0; x < xmax; x++)
+                            {
+                                temp[x, y] = int.Parse(arraytemp[x]);
+                            }
+                        }
+                        boardlist.Add(temp);
+                    }
+                }
+                comboBox1.SelectedIndex = 0;
+            }
+            else
+            {
+
+                //コンボボックスにステージ名を自動で追加
+                for (int i = 0; i < files1.Length; i++)
+                {
+                    var stagename = Path.GetFileName(files1[i]);
+                    stagename = stagename.Replace(".csv", "");
+                    comboBox1.Items.Add(stagename);
+
+                }
+                //盤面情報をCSVファイルから読み込み、boardlistに格納(要素は二次元配列)
+                foreach (var n1 in files1)
+                {
+                    using (StreamReader sr = new StreamReader(n1, Encoding.GetEncoding(932)))
+                    {
+                        List<string> templist = new List<string>();
+
+                        while (!sr.EndOfStream)
+                        {
+                            string s = sr.ReadLine();
+                            templist.Add(s);
+                        }
+                        xmax = templist.Count;
+                        string[] a = templist[0].Split(',');
+                        ymax = a.Length;
+                        int[,] temp = new int[xmax, ymax];
+
+                        for (int y = 0; y < ymax; y++)
+                        {
+                            string[] arraytemp = templist[y].Split(',');
+                            for (int x = 0; x < xmax; x++)
+                            {
+                                temp[x, y] = int.Parse(arraytemp[x]);
+                            }
+                        }
+                        boardlist.Add(temp);
+                    }
+                }
+                comboBox1.SelectedIndex = 0;
+            }
+
+        }
     }
 }
