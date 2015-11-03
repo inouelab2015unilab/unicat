@@ -83,12 +83,8 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox_music = new System.Windows.Forms.GroupBox();
-            this.radioButton_main = new System.Windows.Forms.RadioButton();
-            this.radioButton_1 = new System.Windows.Forms.RadioButton();
-            this.radioButton_2 = new System.Windows.Forms.RadioButton();
-            this.radioButton_mosimo = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button_orderone = new System.Windows.Forms.Button();
             this.power_pictureBox = new System.Windows.Forms.PictureBox();
             this.pictureBox26 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -98,7 +94,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox_order = new System.Windows.Forms.GroupBox();
-            this.button_orderone = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).BeginInit();
@@ -135,7 +130,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mosimo4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mosimo3)).BeginInit();
             this.groupBox_music.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.power_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
@@ -777,73 +771,6 @@
             this.groupBox_music.TabStop = false;
             this.groupBox_music.Text = "音楽";
             // 
-            // radioButton_main
-            // 
-            this.radioButton_main.AutoSize = true;
-            this.radioButton_main.Location = new System.Drawing.Point(21, 22);
-            this.radioButton_main.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton_main.Name = "radioButton_main";
-            this.radioButton_main.Size = new System.Drawing.Size(83, 16);
-            this.radioButton_main.TabIndex = 93;
-            this.radioButton_main.TabStop = true;
-            this.radioButton_main.Text = "メインボックス";
-            this.radioButton_main.UseVisualStyleBackColor = true;
-            this.radioButton_main.CheckedChanged += new System.EventHandler(this.radioButton_main_CheckedChanged);
-            // 
-            // radioButton_1
-            // 
-            this.radioButton_1.AutoSize = true;
-            this.radioButton_1.Location = new System.Drawing.Point(21, 41);
-            this.radioButton_1.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton_1.Name = "radioButton_1";
-            this.radioButton_1.Size = new System.Drawing.Size(65, 16);
-            this.radioButton_1.TabIndex = 94;
-            this.radioButton_1.TabStop = true;
-            this.radioButton_1.Text = "１ボックス";
-            this.radioButton_1.UseVisualStyleBackColor = true;
-            this.radioButton_1.CheckedChanged += new System.EventHandler(this.radioButton_1_CheckedChanged);
-            // 
-            // radioButton_2
-            // 
-            this.radioButton_2.AutoSize = true;
-            this.radioButton_2.Location = new System.Drawing.Point(21, 61);
-            this.radioButton_2.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton_2.Name = "radioButton_2";
-            this.radioButton_2.Size = new System.Drawing.Size(65, 16);
-            this.radioButton_2.TabIndex = 95;
-            this.radioButton_2.TabStop = true;
-            this.radioButton_2.Text = "２ボックス";
-            this.radioButton_2.UseVisualStyleBackColor = true;
-            this.radioButton_2.CheckedChanged += new System.EventHandler(this.radioButton_2_CheckedChanged);
-            // 
-            // radioButton_mosimo
-            // 
-            this.radioButton_mosimo.AutoSize = true;
-            this.radioButton_mosimo.Location = new System.Drawing.Point(21, 81);
-            this.radioButton_mosimo.Margin = new System.Windows.Forms.Padding(2);
-            this.radioButton_mosimo.Name = "radioButton_mosimo";
-            this.radioButton_mosimo.Size = new System.Drawing.Size(84, 16);
-            this.radioButton_mosimo.TabIndex = 96;
-            this.radioButton_mosimo.TabStop = true;
-            this.radioButton_mosimo.Text = "もしもボックス";
-            this.radioButton_mosimo.UseVisualStyleBackColor = true;
-            this.radioButton_mosimo.CheckedChanged += new System.EventHandler(this.radioButton_mosimo_CheckedChanged);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.radioButton_mosimo);
-            this.groupBox2.Controls.Add(this.radioButton_2);
-            this.groupBox2.Controls.Add(this.radioButton_1);
-            this.groupBox2.Controls.Add(this.radioButton_main);
-            this.groupBox2.Location = new System.Drawing.Point(398, 560);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(110, 100);
-            this.groupBox2.TabIndex = 97;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "選択中";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button_orderone);
@@ -855,6 +782,18 @@
             this.groupBox3.Size = new System.Drawing.Size(138, 301);
             this.groupBox3.TabIndex = 98;
             this.groupBox3.TabStop = false;
+            // 
+            // button_orderone
+            // 
+            this.button_orderone.BackColor = System.Drawing.Color.White;
+            this.button_orderone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button_orderone.Location = new System.Drawing.Point(14, 175);
+            this.button_orderone.Name = "button_orderone";
+            this.button_orderone.Size = new System.Drawing.Size(112, 48);
+            this.button_orderone.TabIndex = 102;
+            this.button_orderone.Text = "命令一つ実行";
+            this.button_orderone.UseVisualStyleBackColor = false;
+            this.button_orderone.Click += new System.EventHandler(this.button_orderone_Click);
             // 
             // power_pictureBox
             // 
@@ -948,18 +887,6 @@
             this.groupBox_order.TabIndex = 101;
             this.groupBox_order.TabStop = false;
             // 
-            // button_orderone
-            // 
-            this.button_orderone.BackColor = System.Drawing.Color.White;
-            this.button_orderone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button_orderone.Location = new System.Drawing.Point(14, 175);
-            this.button_orderone.Name = "button_orderone";
-            this.button_orderone.Size = new System.Drawing.Size(112, 48);
-            this.button_orderone.TabIndex = 102;
-            this.button_orderone.Text = "命令一つ実行";
-            this.button_orderone.UseVisualStyleBackColor = false;
-            this.button_orderone.Click += new System.EventHandler(this.button_orderone_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -977,7 +904,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.foodlabel);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox_music);
             this.Controls.Add(this.pictureBox26);
@@ -1035,8 +961,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mosimo3)).EndInit();
             this.groupBox_music.ResumeLayout(false);
             this.groupBox_music.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.power_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
@@ -1103,11 +1027,6 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.GroupBox groupBox_music;
-        private System.Windows.Forms.RadioButton radioButton_main;
-        private System.Windows.Forms.RadioButton radioButton_1;
-        private System.Windows.Forms.RadioButton radioButton_2;
-        private System.Windows.Forms.RadioButton radioButton_mosimo;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.PictureBox power_pictureBox;
         private System.Windows.Forms.PictureBox pictureBox26;

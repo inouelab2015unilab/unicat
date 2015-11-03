@@ -81,8 +81,19 @@ namespace unicat1
         public Form1()
         {
             InitializeComponent();
+            //ピクチャーボックス配列に各ピクチャーボックスを格納
+            mainpicarray = new PictureBox[] { main1, main2, main3, main4, main5, main6, main7, main8, main9, main10, main11, main12 };
+            onepicarray = new PictureBox[] { one1, one2, one3, one4, one5, one6 };
+            twopicarray = new PictureBox[] { two1, two2, two3, two4, two5, two6 };
+            mosimopicarray = new PictureBox[] { mosimo1, mosimo2, mosimo3, mosimo4, mosimo5, mosimo6 };
+
+            foreach (var i in mainpicarray) i.Click += new EventHandler(main_Click);
+            foreach (var i in onepicarray) i.Click += new EventHandler(one_Click);
+            foreach (var i in twopicarray) i.Click += new EventHandler(two_Click);
+            foreach (var i in mosimopicarray) i.Click += new EventHandler(mosimo_Click);
+            SelectedBoxChanged();
+
             radioButton2.Checked = true;
-            radioButton_main.Checked = true;
             //音楽流す
             if (radioButton1.Checked == true)
             {
@@ -108,11 +119,6 @@ namespace unicat1
             comboBox3.Items.Add("もしも、左に壁がなかったら");
             comboBox3.Items.Add("もしも、右に壁がなかったら");
 
-            //ピクチャーボックス配列に各ピクチャーボックスを格納
-            mainpicarray = new PictureBox[] { main1, main2, main3, main4, main5, main6, main7, main8, main9, main10, main11, main12 };
-            onepicarray = new PictureBox[] { one1, one2, one3, one4, one5, one6 };
-            twopicarray = new PictureBox[] { two1, two2, two3, two4, two5, two6 };
-            mosimopicarray = new PictureBox[] { mosimo1, mosimo2, mosimo3, mosimo4, mosimo5, mosimo6 };
 
             //命令パネルの背景を設置
             foreach (var n in mainpicarray) n.Image = commandpanel;
@@ -798,42 +804,6 @@ namespace unicat1
             else Hoge.Stop();
         }
 
-        private void radioButton_main_CheckedChanged(object sender, EventArgs e)
-        {
-            SelectedBoxChanged();
-            if (radioButton_1.Checked == true) selectBox = 1;
-            if (radioButton_2.Checked == true) selectBox = 2;
-            if (radioButton_mosimo.Checked == true) selectBox = 3;
-        }
-
-        private void radioButton_1_CheckedChanged(object sender, EventArgs e)
-        {
-            SelectedBoxChanged();
-            if (radioButton_main.Checked == true) selectBox = 0;
-            if (radioButton_1.Checked == true) selectBox = 1;
-            if (radioButton_2.Checked == true) selectBox = 2;
-            if (radioButton_mosimo.Checked == true) selectBox = 3;
-
-        }
-
-        private void radioButton_2_CheckedChanged(object sender, EventArgs e)
-        {
-            SelectedBoxChanged();
-            if (radioButton_main.Checked == true) selectBox = 0;
-            if (radioButton_1.Checked == true) selectBox = 1;
-            if (radioButton_2.Checked == true) selectBox = 2;
-            if (radioButton_mosimo.Checked == true) selectBox = 3;
-
-        }
-
-        private void radioButton_mosimo_CheckedChanged(object sender, EventArgs e)
-        {
-            SelectedBoxChanged();
-            if (radioButton_main.Checked == true) selectBox = 0;
-            if (radioButton_1.Checked == true) selectBox = 1;
-            if (radioButton_2.Checked == true) selectBox = 2;
-            if (radioButton_mosimo.Checked == true) selectBox = 3;
-        }
 
         private void orderFlash(List<int> list, int index)//実行している命令の縁を赤くする
         {
@@ -959,6 +929,33 @@ namespace unicat1
                 scorereset();
 
             }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            orderclick(0, command1);
+
+        }
+
+        private void main_Click(object sender, EventArgs e)
+        {
+            selectBox = 0;
+            SelectedBoxChanged();
+        }
+        private void one_Click(object sender, EventArgs e)
+        {
+            selectBox = 1;
+            SelectedBoxChanged();
+        }
+        private void two_Click(object sender, EventArgs e)
+        {
+            selectBox = 2;
+            SelectedBoxChanged();
+        }
+        private void mosimo_Click(object sender, EventArgs e)
+        {
+            selectBox = 3;
+            SelectedBoxChanged();
         }
     
     }
