@@ -1235,6 +1235,8 @@ namespace unicat1
                     }
                 }
                 comboBox1.SelectedIndex = 0;
+                makeboard(boardlist[comboBox1.SelectedIndex]);
+
             }
             else
             {
@@ -1276,6 +1278,8 @@ namespace unicat1
                     }
                 }
                 comboBox1.SelectedIndex = 0;
+                makeboard(boardlist[comboBox1.SelectedIndex]);
+
             }
 
         }
