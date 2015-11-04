@@ -116,6 +116,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radio_off = new System.Windows.Forms.RadioButton();
             this.radio_on = new System.Windows.Forms.RadioButton();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).BeginInit();
@@ -1181,6 +1182,15 @@
             this.radio_on.UseVisualStyleBackColor = true;
             this.radio_on.CheckedChanged += new System.EventHandler(this.radio_on_CheckedChanged);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(1228, 401);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 12);
+            this.label9.TabIndex = 103;
+            this.label9.Text = "label9";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1188,6 +1198,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Ivory;
             this.ClientSize = new System.Drawing.Size(1343, 670);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.undo_button);
@@ -1372,6 +1383,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radio_off;
         private System.Windows.Forms.RadioButton radio_on;
+        private System.Windows.Forms.Label label9;
     }
 }
 
