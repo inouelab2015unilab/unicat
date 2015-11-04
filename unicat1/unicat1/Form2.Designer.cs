@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.edit_button = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.make_button = new System.Windows.Forms.Button();
@@ -63,16 +62,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
-            // 
-            // edit_button
-            // 
-            this.edit_button.Location = new System.Drawing.Point(133, 344);
-            this.edit_button.Name = "edit_button";
-            this.edit_button.Size = new System.Drawing.Size(82, 25);
-            this.edit_button.TabIndex = 1;
-            this.edit_button.Text = "編集";
-            this.edit_button.UseVisualStyleBackColor = true;
-            this.edit_button.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 
@@ -215,7 +204,6 @@
             this.ClientSize = new System.Drawing.Size(792, 421);
             this.Controls.Add(this.delete_button);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.edit_button);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox2);
@@ -247,7 +235,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button edit_button;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;

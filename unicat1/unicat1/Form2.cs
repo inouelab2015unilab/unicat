@@ -65,45 +65,6 @@ namespace unicat1
             comboBox1.SelectedIndex = 0;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            g.FillRectangle(Brushes.White, 0, 0, pictureBox1.Width, pictureBox1.Height);
-            nowfile = listBox1.Items[listBox1.SelectedIndex].ToString();
-            string filepath = "boardmatrix2/" + nowfile + ".csv";
-            using (StreamReader sr = new StreamReader(filepath, Encoding.GetEncoding(932)))
-            {
-                List<string> templist = new List<string>();
-                while (!sr.EndOfStream)
-                {
-                    string s = sr.ReadLine();
-                    templist.Add(s);
-                }
-                boardsize = templist.Count;
-                for (int y = 0; y < boardsize; y++)
-                {
-                    string[] arraytemp = templist[y].Split(',');
-                    for (int x = 0; x < boardsize; x++)
-                    {
-                        stage[x, y] = int.Parse(arraytemp[x]);
-                    }
-                }
-            }
-            cellsize = pictureBox1.Width / boardsize;
-            cellnumber = 2;
-            stage = new int[boardsize, boardsize];
-            for (int i = 0; i < boardsize; i++)
-            {
-                for (int j = 0; j < boardsize; j++)
-                {
-                    g.DrawImage(back, i * cellsize, j * cellsize, cellsize, cellsize);
-                    stage[i, j] = cellnumber;
-                }
-            }
-            pictureBox1.Refresh();
-            selected_pictureBox.Image = back;
-            pictureBox_back.Refresh();
-        }
-
         private void pictureBox_back_Click(object sender, EventArgs e)
         {
             cellnumber = 2;
@@ -201,7 +162,6 @@ namespace unicat1
                     try
                     {
                         nowfile = listBox1.Items[listBox1.SelectedIndex].ToString();
-
                         File.Move("boardmatrix2/" + nowfile + ".csv", "boardmatrix2/" + textBox1.Text + ".csv");
                         // 出力用のファイルを開く
                         string filepas = "boardmatrix2/" + textBox1.Text + ".csv";
