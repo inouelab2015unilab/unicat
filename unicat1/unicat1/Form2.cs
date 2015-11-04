@@ -200,6 +200,8 @@ namespace unicat1
                 {
                     try
                     {
+                        nowfile = listBox1.Items[listBox1.SelectedIndex].ToString();
+
                         File.Move("boardmatrix2/" + nowfile + ".csv", "boardmatrix2/" + textBox1.Text + ".csv");
                         // 出力用のファイルを開く
                         string filepas = "boardmatrix2/" + textBox1.Text + ".csv";
@@ -226,7 +228,6 @@ namespace unicat1
                         listBox1.Items.Add(temp);
                     }
 
-                    //Application.Restart();
                 }
                 else
                 {
