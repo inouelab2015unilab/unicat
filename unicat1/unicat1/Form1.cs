@@ -72,6 +72,9 @@ namespace unicat1
         List<int> mosimolist1 = new List<int>();    //２ボックスの命令リスト
         List<int> mosimolist2 = new List<int>();
         List<int> mosimolist3 = new List<int>();
+        List<Runking> scorelist = new List<Runking>(); //ランキングのリスト
+        int nowstage = 0;
+        int stagenum = 0;
         int Score = 0;
 
         public List<int[,]> boardlist = new List<int[,]>();
@@ -87,6 +90,22 @@ namespace unicat1
         //盤面情報をCSVファイルから読み込み
         string[] files1 = System.IO.Directory.GetFiles("boardmatrix/", "*.csv");
         string[] files2 = System.IO.Directory.GetFiles("boardmatrix2/", "*.csv");
+
+
+        public class Runking
+        {
+            public string Stage;
+            public double First;
+            public double Second;
+            public double Third;
+            public Runking(string s, double x, double y, double z)
+            {
+                Stage = s;
+                First = x;
+                Second = y;
+                Third = z;
+            }
+        }
 
         public Form1()
         {
@@ -107,7 +126,9 @@ namespace unicat1
             foreach (var i in mosimopicarray2) i.Click += new EventHandler(mosimo2_Click);
             foreach (var i in mosimopicarray3) i.Click += new EventHandler(mosimo3_Click);
 
+
             SelectedBoxChanged();
+            RankRead();
 
             radioButton2.Checked = true;
             radio_off.Checked = true;
@@ -589,12 +610,15 @@ namespace unicat1
 
         private void movebutton_Click_1(object sender, EventArgs e)
         {
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
 
             //movelistに格納された番号にしたがって命令を実行
             for (int i = orderone_count; i < movelist.Count; i++)
             {
                 listcheck(movelist, i);
             }
+            sw.Stop();
 
             int foodcount = checkfood();
             foodlabel.Text = checkfood().ToString();
@@ -616,13 +640,23 @@ namespace unicat1
             }
             else if (foodcount == 0) //全部食べられていたらクリア
             {
+                //if (movelist.Count <= double.Parse(label11.Text))
+                //{
+                //    Form3 form3 = new Form3();
+                //    form3.Show();
+                //}
+                RankUpdate(comboBox1.Text, movelist.Count);
                 DialogResult result = MessageBox.Show("次に進みますか？", "ステージクリア！", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                
+
+
                 try
                 {
                     if (result == DialogResult.Yes)
                     {
                         makeboard(boardlist[comboBox1.SelectedIndex + 1]);
                         comboBox1.SelectedIndex++;
+                        RankDisp();
                     }
                 }
                 catch
@@ -1060,6 +1094,85 @@ namespace unicat1
 
         }
 
+        private void RankRead() //ランキング読み込み表示
+        {    
+            StreamReader sr = new StreamReader("runking.csv", Encoding.GetEncoding("Shift_JIS")); //ランキング読み込み
+            string Line = "";
+            while (Line != null)
+            {
+                Line = sr.ReadLine();
+                if (Line == null) break;
+                string[] t = Line.Split(',');
+                scorelist.Add(new Runking(t[0], double.Parse(t[1]), double.Parse(t[2]), double.Parse(t[3])));
+                stagenum++;
+            }
+            sr.Close();
+            //int now = 0;
+            for (int i = 0; i < stagenum; i++)
+            {
+                if (scorelist[i].Stage == comboBox1.Text) //現ステージはリストの何番目か
+                {
+                    nowstage = i;
+                    break;
+                }
+            }
+            label9.Text = scorelist[nowstage].First.ToString();
+            label10.Text = scorelist[nowstage].Second.ToString();
+            label11.Text = scorelist[nowstage].Third.ToString();
+        }
+
+        private void RankDisp() //ランキング読み込み表示
+        {
+            for (int i = 0; i < stagenum; i++)
+            {
+                if (scorelist[i].Stage == comboBox1.Text) //現ステージはリストの何番目か
+                {
+                    nowstage = i;
+                    break;
+                }
+            }
+            label9.Text = scorelist[nowstage].First.ToString();
+            label10.Text = scorelist[nowstage].Second.ToString();
+            label11.Text = scorelist[nowstage].Third.ToString();
+        }
+
+        private void RankUpdate(string stagename,double myscore)
+        {
+         
+            if (double.Parse(label9.Text) >= myscore)
+            {
+                label11.Text = label10.Text; //3に2を格下げ
+                scorelist[nowstage].Third = double.Parse(label10.Text);
+                label10.Text = label9.Text; //2に1を格下げ
+                scorelist[nowstage].Second = double.Parse(label9.Text);
+                label9.Text = myscore.ToString(); //1に自分スコアを入れる
+                scorelist[nowstage].First = myscore;
+            }
+            else if (double.Parse(label10.Text) >= myscore)
+            {
+                label11.Text = label10.Text; //3に2を格下げ
+                scorelist[nowstage].Third = double.Parse(label10.Text);
+                label10.Text = myscore.ToString();
+                scorelist[nowstage].Second = myscore;
+            }
+            else if (double.Parse(label11.Text) >= myscore)
+            {
+                label11.Text = myscore.ToString(); //3に自分スコアを入れる
+                scorelist[nowstage].Second = myscore;
+            }
+            //csvに書き出し
+            System.IO.StreamWriter sw = new System.IO.StreamWriter("runking.csv", false, System.Text.Encoding.GetEncoding("shift_jis"));
+            for (int i = 0; i < stagenum; i++)
+            {
+                sw.Write(scorelist[i].Stage + ",");
+                sw.Write(scorelist[i].First.ToString() + ",");
+                sw.Write(scorelist[i].Second.ToString() + ",");
+                sw.Write(scorelist[i].Third.ToString());
+                sw.WriteLine();
+            }
+            sw.Close();
+        }
+
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
             makeboard(boardlist[comboBox1.SelectedIndex]);
@@ -1069,8 +1182,9 @@ namespace unicat1
             fish3count = 0;
             catdirection = 0;
             //harapekocount.Text = harapekoscore.Text = 0.ToString();
-
+            RankDisp();
         }
+
 
         private void button_orderone_Click(object sender, EventArgs e)
         {
@@ -1281,6 +1395,26 @@ namespace unicat1
                 makeboard(boardlist[comboBox1.SelectedIndex]);
 
             }
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
 
         }
     }
