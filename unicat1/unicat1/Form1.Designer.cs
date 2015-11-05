@@ -116,15 +116,17 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radio_off = new System.Windows.Forms.RadioButton();
             this.radio_on = new System.Windows.Forms.RadioButton();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.firstscore = new System.Windows.Forms.Label();
+            this.secondscore = new System.Windows.Forms.Label();
+            this.thirdscore = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.firstname = new System.Windows.Forms.Label();
+            this.secondname = new System.Windows.Forms.Label();
+            this.thirdname = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.myscore = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.main1)).BeginInit();
@@ -427,7 +429,7 @@
             // 
             this.button9.BackColor = System.Drawing.Color.White;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.button9.Location = new System.Drawing.Point(1045, 366);
+            this.button9.Location = new System.Drawing.Point(1038, 368);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(112, 48);
@@ -440,7 +442,7 @@
             // 
             this.orderreset_button.BackColor = System.Drawing.Color.White;
             this.orderreset_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.orderreset_button.Location = new System.Drawing.Point(1043, 310);
+            this.orderreset_button.Location = new System.Drawing.Point(1036, 312);
             this.orderreset_button.Name = "orderreset_button";
             this.orderreset_button.Size = new System.Drawing.Size(112, 48);
             this.orderreset_button.TabIndex = 76;
@@ -452,7 +454,7 @@
             // 
             this.undo_button.BackColor = System.Drawing.Color.White;
             this.undo_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.undo_button.Location = new System.Drawing.Point(1042, 256);
+            this.undo_button.Location = new System.Drawing.Point(1035, 258);
             this.undo_button.Name = "undo_button";
             this.undo_button.Size = new System.Drawing.Size(112, 48);
             this.undo_button.TabIndex = 82;
@@ -804,7 +806,7 @@
             // 
             this.groupBox3.Controls.Add(this.button_orderone);
             this.groupBox3.Controls.Add(this.movebutton);
-            this.groupBox3.Location = new System.Drawing.Point(1031, 244);
+            this.groupBox3.Location = new System.Drawing.Point(1024, 246);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
@@ -1176,6 +1178,7 @@
             this.radio_off.TabStop = true;
             this.radio_off.Text = "off";
             this.radio_off.UseVisualStyleBackColor = true;
+            this.radio_off.CheckedChanged += new System.EventHandler(this.radio_off_CheckedChanged);
             // 
             // radio_on
             // 
@@ -1190,96 +1193,115 @@
             this.radio_on.UseVisualStyleBackColor = true;
             this.radio_on.CheckedChanged += new System.EventHandler(this.radio_on_CheckedChanged);
             // 
-            // label9
+            // firstscore
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("メイリオ", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label9.Location = new System.Drawing.Point(1242, 274);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 31);
-            this.label9.TabIndex = 103;
-            this.label9.Text = "label9";
+            this.firstscore.AutoSize = true;
+            this.firstscore.Font = new System.Drawing.Font("メイリオ", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.firstscore.Location = new System.Drawing.Point(1249, 391);
+            this.firstscore.Name = "firstscore";
+            this.firstscore.Size = new System.Drawing.Size(74, 31);
+            this.firstscore.TabIndex = 103;
+            this.firstscore.Text = "label9";
             // 
-            // label10
+            // secondscore
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("メイリオ", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label10.Location = new System.Drawing.Point(1242, 335);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(87, 31);
-            this.label10.TabIndex = 104;
-            this.label10.Text = "label10";
-         //   this.label10.Click += new System.EventHandler(this.label10_Click);
+            this.secondscore.AutoSize = true;
+            this.secondscore.Font = new System.Drawing.Font("メイリオ", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.secondscore.Location = new System.Drawing.Point(1250, 449);
+            this.secondscore.Name = "secondscore";
+            this.secondscore.Size = new System.Drawing.Size(87, 31);
+            this.secondscore.TabIndex = 104;
+            this.secondscore.Text = "label10";
             // 
-            // label11
+            // thirdscore
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("メイリオ", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label11.Location = new System.Drawing.Point(1244, 396);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(87, 31);
-            this.label11.TabIndex = 105;
-            this.label11.Text = "label11";
-          //  this.label11.Click += new System.EventHandler(this.label11_Click);
+            this.thirdscore.AutoSize = true;
+            this.thirdscore.Font = new System.Drawing.Font("メイリオ", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.thirdscore.Location = new System.Drawing.Point(1250, 510);
+            this.thirdscore.Name = "thirdscore";
+            this.thirdscore.Size = new System.Drawing.Size(87, 31);
+            this.thirdscore.TabIndex = 105;
+            this.thirdscore.Text = "label11";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("メイリオ", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label12.Location = new System.Drawing.Point(1180, 274);
+            this.label12.Location = new System.Drawing.Point(1170, 365);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(64, 31);
+            this.label12.Size = new System.Drawing.Size(48, 31);
             this.label12.TabIndex = 106;
-            this.label12.Text = "1位!!";
+            this.label12.Text = "1位";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("メイリオ", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label13.Location = new System.Drawing.Point(1180, 335);
+            this.label13.Location = new System.Drawing.Point(1170, 424);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 31);
+            this.label13.Size = new System.Drawing.Size(48, 31);
             this.label13.TabIndex = 107;
-            this.label13.Text = "2位!!";
-         //   this.label13.Click += new System.EventHandler(this.label13_Click);
+            this.label13.Text = "2位";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("メイリオ", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label14.Location = new System.Drawing.Point(1180, 396);
+            this.label14.Location = new System.Drawing.Point(1170, 482);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(64, 31);
+            this.label14.Size = new System.Drawing.Size(48, 31);
             this.label14.TabIndex = 108;
-            this.label14.Text = "3位!!";
-         //   this.label14.Click += new System.EventHandler(this.label14_Click);
+            this.label14.Text = "3位";
             // 
-            // label15
+            // firstname
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(1250, 306);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 12);
-            this.label15.TabIndex = 109;
-            this.label15.Text = "label15";
+            this.firstname.AutoSize = true;
+            this.firstname.Font = new System.Drawing.Font("メイリオ", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.firstname.Location = new System.Drawing.Point(1224, 366);
+            this.firstname.Name = "firstname";
+            this.firstname.Size = new System.Drawing.Size(99, 28);
+            this.firstname.TabIndex = 109;
+            this.firstname.Text = "firstname";
             // 
-            // label16
+            // secondname
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(1252, 370);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(41, 12);
-            this.label16.TabIndex = 110;
-            this.label16.Text = "label16";
+            this.secondname.AutoSize = true;
+            this.secondname.Font = new System.Drawing.Font("メイリオ", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.secondname.Location = new System.Drawing.Point(1224, 424);
+            this.secondname.Name = "secondname";
+            this.secondname.Size = new System.Drawing.Size(129, 28);
+            this.secondname.TabIndex = 110;
+            this.secondname.Text = "secondname";
             // 
-            // label17
+            // thirdname
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1248, 431);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(41, 12);
-            this.label17.TabIndex = 111;
-            this.label17.Text = "label17";
+            this.thirdname.AutoSize = true;
+            this.thirdname.Font = new System.Drawing.Font("メイリオ", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.thirdname.Location = new System.Drawing.Point(1224, 485);
+            this.thirdname.Name = "thirdname";
+            this.thirdname.Size = new System.Drawing.Size(108, 28);
+            this.thirdname.TabIndex = 111;
+            this.thirdname.Text = "thirdname";
+            this.thirdname.Click += new System.EventHandler(this.thirdname_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label9.Location = new System.Drawing.Point(1173, 286);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 48);
+            this.label9.TabIndex = 113;
+            this.label9.Text = "YOUR\r\nSCORE";
+            // 
+            // myscore
+            // 
+            this.myscore.AutoSize = true;
+            this.myscore.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.myscore.Location = new System.Drawing.Point(1266, 297);
+            this.myscore.Name = "myscore";
+            this.myscore.Size = new System.Drawing.Size(0, 24);
+            this.myscore.TabIndex = 114;
             // 
             // Form1
             // 
@@ -1287,20 +1309,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Ivory;
-            this.ClientSize = new System.Drawing.Size(1343, 670);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.ClientSize = new System.Drawing.Size(1360, 670);
+            this.Controls.Add(this.firstname);
+            this.Controls.Add(this.myscore);
+            this.Controls.Add(this.thirdname);
             this.Controls.Add(this.label9);
+            this.Controls.Add(this.firstscore);
+            this.Controls.Add(this.secondname);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.secondscore);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.thirdscore);
             this.Controls.Add(this.undo_button);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.orderreset_button);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.groupBox_order);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.label8);
@@ -1481,15 +1505,17 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radio_off;
         private System.Windows.Forms.RadioButton radio_on;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label firstscore;
+        private System.Windows.Forms.Label secondscore;
+        private System.Windows.Forms.Label thirdscore;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label firstname;
+        private System.Windows.Forms.Label secondname;
+        private System.Windows.Forms.Label thirdname;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label myscore;
     }
 }
 

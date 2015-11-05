@@ -16,6 +16,9 @@ namespace unicat1
 {
     public partial class Form1 : Form
     {
+        string myname = "rinapon";
+
+
         Graphics g;
         Graphics g2;
 
@@ -95,14 +98,20 @@ namespace unicat1
         public class Runking
         {
             public string Stage;
+            public string FirstPerson;
             public double First;
+            public string SecondPerson;
             public double Second;
+            public string ThirdPerson;
             public double Third;
-            public Runking(string s, double x, double y, double z)
+            public Runking(string s, string t,double x,string u, double y,string v, double z)
             {
                 Stage = s;
+                FirstPerson = t;
                 First = x;
+                SecondPerson = u;
                 Second = y;
+                ThirdPerson = v;
                 Third = z;
             }
         }
@@ -729,7 +738,8 @@ namespace unicat1
                 //    Form3 form3 = new Form3();
                 //    form3.Show();
                 //}
-                RankUpdate(comboBox1.Text, movelist.Count);
+                myscore.Text = (6 * movelist.Count + onelist.Count + twolist.Count + mosimolist1.Count + mosimolist2.Count + mosimolist3.Count).ToString();
+                if (radio_off.Checked == true) RankUpdate(comboBox1.Text, 6 * movelist.Count + onelist.Count + twolist.Count + mosimolist1.Count + mosimolist2.Count + mosimolist3.Count);
                 DialogResult result = MessageBox.Show("次に進みますか？", "ステージクリア！", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 
 
@@ -740,7 +750,11 @@ namespace unicat1
                     {
                         makeboard(boardlist[comboBox1.SelectedIndex + 1]);
                         comboBox1.SelectedIndex++;
-                        RankDisp();
+                        if (radio_off.Checked == true)
+                        {
+                            RankDisp();
+                            myscore.Text = "";
+                        }
                     }
                 }
                 catch
@@ -927,6 +941,7 @@ namespace unicat1
             makeboard(boardlist[comboBox1.SelectedIndex]);
             catdirection = 0;
             catd_change();
+            myscore.Text = "";
         }
 
         private void orderreset_button_Click(object sender, EventArgs e)
@@ -1187,7 +1202,7 @@ namespace unicat1
                 Line = sr.ReadLine();
                 if (Line == null) break;
                 string[] t = Line.Split(',');
-                scorelist.Add(new Runking(t[0], double.Parse(t[1]), double.Parse(t[2]), double.Parse(t[3])));
+                scorelist.Add(new Runking(t[0], t[1], double.Parse(t[2]), t[3], double.Parse(t[4]), t[5], double.Parse(t[6])));
                 stagenum++;
             }
             sr.Close();
@@ -1200,9 +1215,12 @@ namespace unicat1
                     break;
                 }
             }
-            label9.Text = scorelist[nowstage].First.ToString();
-            label10.Text = scorelist[nowstage].Second.ToString();
-            label11.Text = scorelist[nowstage].Third.ToString();
+            firstscore.Text = scorelist[nowstage].First.ToString();
+            firstname.Text = scorelist[nowstage].FirstPerson;
+            secondscore.Text = scorelist[nowstage].Second.ToString();
+            secondname.Text = scorelist[nowstage].SecondPerson;
+            thirdscore.Text = scorelist[nowstage].Third.ToString();
+            thirdname.Text = scorelist[nowstage].ThirdPerson;
         }
 
         private void RankDisp() //ランキング読み込み表示
@@ -1215,42 +1233,71 @@ namespace unicat1
                     break;
                 }
             }
-            label9.Text = scorelist[nowstage].First.ToString();
-            label10.Text = scorelist[nowstage].Second.ToString();
-            label11.Text = scorelist[nowstage].Third.ToString();
+            firstscore.Text = scorelist[nowstage].First.ToString();
+            firstname.Text = scorelist[nowstage].FirstPerson;
+            secondscore.Text = scorelist[nowstage].Second.ToString();
+            secondname.Text = scorelist[nowstage].SecondPerson;
+            thirdscore.Text = scorelist[nowstage].Third.ToString();
+            thirdname.Text = scorelist[nowstage].ThirdPerson;
         }
 
         private void RankUpdate(string stagename,double myscore)
         {
-         
-            if (double.Parse(label9.Text) >= myscore)
+            if (double.Parse(firstscore.Text) >= myscore) //今回1位!!
             {
-                label11.Text = label10.Text; //3に2を格下げ
-                scorelist[nowstage].Third = double.Parse(label10.Text);
-                label10.Text = label9.Text; //2に1を格下げ
-                scorelist[nowstage].Second = double.Parse(label9.Text);
-                label9.Text = myscore.ToString(); //1に自分スコアを入れる
-                scorelist[nowstage].First = myscore;
+                if(myname != firstname.Text)
+                {
+                    thirdscore.Text = secondscore.Text; //3に2を格下げ
+                    thirdname.Text = secondname.Text;
+                    scorelist[nowstage].Third = double.Parse(secondscore.Text);
+                    scorelist[nowstage].ThirdPerson = secondname.Text;
+
+                    secondscore.Text = firstscore.Text; //2に1を格下げ
+                    secondname.Text = firstname.Text;
+                    scorelist[nowstage].Second = double.Parse(firstscore.Text);
+                    scorelist[nowstage].SecondPerson = firstname.Text;
+
+                    firstscore.Text = myscore.ToString(); //1に自分スコアを入れる
+                    firstname.Text = myname;
+                    scorelist[nowstage].First = myscore;
+                    scorelist[nowstage].FirstPerson = myname;
+                }
             }
-            else if (double.Parse(label10.Text) >= myscore)
+            else if (double.Parse(secondscore.Text) >= myscore) //今回2位!!
             {
-                label11.Text = label10.Text; //3に2を格下げ
-                scorelist[nowstage].Third = double.Parse(label10.Text);
-                label10.Text = myscore.ToString();
-                scorelist[nowstage].Second = myscore;
+                if (myname != secondname.Text)
+                {
+                    thirdscore.Text = secondscore.Text; //3に2を格下げ
+                    thirdname.Text = secondname.Text;
+                    scorelist[nowstage].Third = double.Parse(secondscore.Text);
+                    scorelist[nowstage].ThirdPerson = secondname.Text;
+
+                    secondscore.Text = myscore.ToString(); //2に自分のスコアを入れる
+                    secondname.Text = myname;
+                    scorelist[nowstage].Second = myscore;
+                    scorelist[nowstage].SecondPerson = myname;
+                }
             }
-            else if (double.Parse(label11.Text) >= myscore)
+            else if (double.Parse(thirdscore.Text) >= myscore) //今回3位!!
             {
-                label11.Text = myscore.ToString(); //3に自分スコアを入れる
-                scorelist[nowstage].Second = myscore;
+                if (myname != thirdname.Text)
+                {
+                    thirdscore.Text = myscore.ToString(); //3に自分スコアを入れる
+                    thirdname.Text = myname;
+                    scorelist[nowstage].Third = myscore;
+                    scorelist[nowstage].ThirdPerson = myname;
+                }
             }
             //csvに書き出し
             System.IO.StreamWriter sw = new System.IO.StreamWriter("runking.csv", false, System.Text.Encoding.GetEncoding("shift_jis"));
             for (int i = 0; i < stagenum; i++)
             {
                 sw.Write(scorelist[i].Stage + ",");
+                sw.Write(scorelist[i].FirstPerson + ",");
                 sw.Write(scorelist[i].First.ToString() + ",");
+                sw.Write(scorelist[i].SecondPerson + ",");
                 sw.Write(scorelist[i].Second.ToString() + ",");
+                sw.Write(scorelist[i].ThirdPerson + ",");
                 sw.Write(scorelist[i].Third.ToString());
                 sw.WriteLine();
             }
@@ -1266,7 +1313,7 @@ namespace unicat1
             fish3count = 0;
             catdirection = 0;
             //harapekocount.Text = harapekoscore.Text = 0.ToString();
-            RankDisp();
+            if (radio_off.Checked == true) RankDisp();
         }
 
 
@@ -1360,6 +1407,17 @@ namespace unicat1
             boardlist.Clear();
             if (radio_on.Checked == true)
             {
+                firstscore.Text = "";
+                secondscore.Text = "";
+                thirdscore.Text = "";
+                label12.Text = "";
+                label13.Text = "";
+                label14.Text = "";
+                firstname.Text = "";
+                secondname.Text = "";
+                thirdname.Text = "";
+                myscore.Text = "";
+
                 ////コンボボックスにステージ名を自動で追加
                 //for (int i = 0; i < files1.Length; i++)
                 //{
@@ -1434,7 +1492,6 @@ namespace unicat1
                 }
                 comboBox1.SelectedIndex = 0;
                 makeboard(boardlist[comboBox1.SelectedIndex]);
-
             }
             else
             {
@@ -1477,8 +1534,24 @@ namespace unicat1
                 }
                 comboBox1.SelectedIndex = 0;
                 makeboard(boardlist[comboBox1.SelectedIndex]);
-
             }
+        }
+
+        private void radio_off_CheckedChanged(object sender, EventArgs e)
+        {
+            RankDisp();
+            label12.Text = "1位";
+            label13.Text = "2位";
+            label14.Text = "3位";
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void thirdname_Click(object sender, EventArgs e)
+        {
 
         }
 
