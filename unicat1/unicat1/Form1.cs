@@ -165,12 +165,23 @@ namespace unicat1
             mosimocmb1.Items.Add("もしも、前に壁がなかったら");
             mosimocmb1.Items.Add("もしも、左に壁がなかったら");
             mosimocmb1.Items.Add("もしも、右に壁がなかったら");
+            mosimocmb1.Items.Add("もしも、前に壁があったら");
+            mosimocmb1.Items.Add("もしも、左に壁があったら");
+            mosimocmb1.Items.Add("もしも、右に壁がなかったら");
             mosimocmb2.Items.Add("もしも、前に壁がなかったら");
             mosimocmb2.Items.Add("もしも、左に壁がなかったら");
             mosimocmb2.Items.Add("もしも、右に壁がなかったら");
+            mosimocmb2.Items.Add("もしも、前に壁があったら");
+            mosimocmb2.Items.Add("もしも、左に壁があったら");
+            mosimocmb2.Items.Add("もしも、右に壁があったら");
             mosimocmb3.Items.Add("もしも、前に壁がなかったら");
             mosimocmb3.Items.Add("もしも、左に壁がなかったら");
             mosimocmb3.Items.Add("もしも、右に壁がなかったら");
+            mosimocmb3.Items.Add("もしも、前に壁があったら");
+            mosimocmb3.Items.Add("もしも、左に壁があったら");
+            mosimocmb3.Items.Add("もしも、右に壁があったら");
+
+
 
             //命令パネルの背景を設置
             foreach (var n in mainpicarray) n.Image = commandpanel;
@@ -497,6 +508,79 @@ namespace unicat1
                 try
                 {
                     if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先が壁じゃない
+                    {
+                        for (int j = 0; j < mlist.Count; j++)
+                        {
+                            listcheck(mlist, j);
+                            //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                            //if (totalscore <= -100) break;
+                        }
+
+                    }
+                    else { Thread.Sleep(200); }
+
+                }
+                catch { }
+            }
+            else if (cmbnum == 3)
+            {
+                //方向と端にいるかどうかで移動の変化量を決める
+                if (catdirection == 0) ymove = -1;
+                if (catdirection == 2) ymove = 1;
+                if (catdirection == 1) xmove = 1;
+                if (catdirection == 3) xmove = -1;
+                try
+                {
+                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先が壁
+                    {
+                        for (int j = 0; j < mlist.Count; j++)
+                        {
+                            listcheck(mlist, j);
+                            //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                            //if (totalscore <= -100) break;
+                        }
+
+                    }
+                    else { Thread.Sleep(200); }
+
+                }
+                catch { }
+            }
+            else if (cmbnum == 4)
+            {
+                //方向と端にいるかどうかで移動の変化量を決める
+                if (catdirection == 0) xmove = -1;
+                if (catdirection == 2) xmove = 1;
+                if (catdirection == 1) ymove = -1;
+                if (catdirection == 3) ymove = 1;
+
+                try
+                {
+                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先が壁
+                    {
+                        for (int j = 0; j < mlist.Count; j++)
+                        {
+                            listcheck(mlist, j);
+                            //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                            //if (totalscore <= -100) break;
+                        }
+
+                    }
+                    else { Thread.Sleep(200); }
+
+                }
+                catch { }
+            }
+            else if (cmbnum == 5)
+            {
+                //方向と端にいるかどうかで移動の変化量を決める
+                if (catdirection == 0) xmove = 1;
+                if (catdirection == 2) xmove = -1;
+                if (catdirection == 1) ymove = 1;
+                if (catdirection == 3) ymove = -1;
+                try
+                {
+                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先が壁
                     {
                         for (int j = 0; j < mlist.Count; j++)
                         {
