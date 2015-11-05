@@ -449,6 +449,8 @@ namespace unicat1
         }
         private void mosimoaction(int cmbnum, List<int> mlist)
         {
+            //List<int[,]> temp_boardlist = new List<int[,]>();
+            
             int xmove = 0, ymove = 0;
             if (cmbnum == 0)
             {        //catdirection 0=上、1=右、2=下、3=左
@@ -459,7 +461,7 @@ namespace unicat1
                 if (catdirection == 3) xmove = -1;
                 try
                 {
-                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先が壁じゃない
+                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove]!=2)//移動した先が壁じゃない
                     {
                         for (int j = 0; j < mlist.Count; j++)
                         {
@@ -471,7 +473,10 @@ namespace unicat1
                     else { Thread.Sleep(200); }
 
                 }
-                catch { }
+                catch
+                {
+                   
+                }
             }
             else if (cmbnum == 1)
             {
@@ -483,7 +488,7 @@ namespace unicat1
 
                 try
                 {
-                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先が壁じゃない
+                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] !=2)//移動した先が壁じゃない
                     {
                         for (int j = 0; j < mlist.Count; j++)
                         {
@@ -496,7 +501,10 @@ namespace unicat1
                     else { Thread.Sleep(200); }
 
                 }
-                catch { }
+                catch
+                {
+                  
+                }
             }
             else if (cmbnum == 2)
             {
@@ -507,7 +515,7 @@ namespace unicat1
                 if (catdirection == 3) ymove = -1;
                 try
                 {
-                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先が壁じゃない
+                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] !=2)//移動した先が壁じゃない
                     {
                         for (int j = 0; j < mlist.Count; j++)
                         {
@@ -520,7 +528,10 @@ namespace unicat1
                     else { Thread.Sleep(200); }
 
                 }
-                catch { }
+                catch
+                {
+                  
+                }
             }
             else if (cmbnum == 3)
             {
@@ -544,7 +555,15 @@ namespace unicat1
                     else { Thread.Sleep(200); }
 
                 }
-                catch { }
+                catch
+                {
+                    for (int j = 0; j < mlist.Count; j++)
+                    {
+                        listcheck(mlist, j);
+                        //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                        //if (totalscore <= -100) break;
+                    }
+                }
             }
             else if (cmbnum == 4)
             {
@@ -569,7 +588,15 @@ namespace unicat1
                     else { Thread.Sleep(200); }
 
                 }
-                catch { }
+                catch
+                {
+                    for (int j = 0; j < mlist.Count; j++)
+                    {
+                        listcheck(mlist, j);
+                        //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                        //if (totalscore <= -100) break;
+                    }
+                }
             }
             else if (cmbnum == 5)
             {
@@ -593,7 +620,15 @@ namespace unicat1
                     else { Thread.Sleep(200); }
 
                 }
-                catch { }
+                catch
+                {
+                    for (int j = 0; j < mlist.Count; j++)
+                    {
+                        listcheck(mlist, j);
+                        //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                        //if (totalscore <= -100) break;
+                    }
+                }
             }
         }
 
