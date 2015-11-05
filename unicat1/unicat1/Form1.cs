@@ -1276,42 +1276,42 @@ namespace unicat1
             boardlist.Clear();
             if (radio_on.Checked == true)
             {
-                //コンボボックスにステージ名を自動で追加
-                for (int i = 0; i < files1.Length; i++)
-                {
-                    var stagename = Path.GetFileName(files1[i]);
-                    stagename = stagename.Replace(".csv", "");
-                    comboBox1.Items.Add(stagename);
+                ////コンボボックスにステージ名を自動で追加
+                //for (int i = 0; i < files1.Length; i++)
+                //{
+                //    var stagename = Path.GetFileName(files1[i]);
+                //    stagename = stagename.Replace(".csv", "");
+                //    comboBox1.Items.Add(stagename);
 
-                }
-                //盤面情報をCSVファイルから読み込み、boardlistに格納(要素は二次元配列)
-                foreach (var n1 in files1)
-                {
-                    using (StreamReader sr = new StreamReader(n1, Encoding.GetEncoding(932)))
-                    {
-                        List<string> templist = new List<string>();
+                //}
+                ////盤面情報をCSVファイルから読み込み、boardlistに格納(要素は二次元配列)
+                //foreach (var n1 in files1)
+                //{
+                //    using (StreamReader sr = new StreamReader(n1, Encoding.GetEncoding(932)))
+                //    {
+                //        List<string> templist = new List<string>();
 
-                        while (!sr.EndOfStream)
-                        {
-                            string s = sr.ReadLine();
-                            templist.Add(s);
-                        }
-                        xmax = templist.Count;
-                        string[] a = templist[0].Split(',');
-                        ymax = a.Length;
-                        int[,] temp = new int[xmax, ymax];
+                //        while (!sr.EndOfStream)
+                //        {
+                //            string s = sr.ReadLine();
+                //            templist.Add(s);
+                //        }
+                //        xmax = templist.Count;
+                //        string[] a = templist[0].Split(',');
+                //        ymax = a.Length;
+                //        int[,] temp = new int[xmax, ymax];
 
-                        for (int y = 0; y < ymax; y++)
-                        {
-                            string[] arraytemp = templist[y].Split(',');
-                            for (int x = 0; x < xmax; x++)
-                            {
-                                temp[x, y] = int.Parse(arraytemp[x]);
-                            }
-                        }
-                        boardlist.Add(temp);
-                    }
-                }
+                //        for (int y = 0; y < ymax; y++)
+                //        {
+                //            string[] arraytemp = templist[y].Split(',');
+                //            for (int x = 0; x < xmax; x++)
+                //            {
+                //                temp[x, y] = int.Parse(arraytemp[x]);
+                //            }
+                //        }
+                //        boardlist.Add(temp);
+                //    }
+                //}
                 //コンボボックスにステージ名を自動で追加
                 for (int i = 0; i < files2.Length; i++)
                 {
@@ -1398,24 +1398,5 @@ namespace unicat1
 
         }
 
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
