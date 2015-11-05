@@ -1206,7 +1206,7 @@
             this.label10.Size = new System.Drawing.Size(87, 31);
             this.label10.TabIndex = 104;
             this.label10.Text = "label10";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+         //   this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -1217,7 +1217,7 @@
             this.label11.Size = new System.Drawing.Size(87, 31);
             this.label11.TabIndex = 105;
             this.label11.Text = "label11";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+          //  this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -1238,7 +1238,7 @@
             this.label13.Size = new System.Drawing.Size(64, 31);
             this.label13.TabIndex = 107;
             this.label13.Text = "2位!!";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+         //   this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label14
             // 
@@ -1249,7 +1249,7 @@
             this.label14.Size = new System.Drawing.Size(64, 31);
             this.label14.TabIndex = 108;
             this.label14.Text = "3位!!";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
+         //   this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // Form1
             // 
