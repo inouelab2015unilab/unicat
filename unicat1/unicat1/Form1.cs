@@ -153,24 +153,24 @@ namespace unicat1
 
             }
 
-            mosimocmb1.Items.Add("もしも、前に壁がなかったら");
-            mosimocmb1.Items.Add("もしも、左に壁がなかったら");
-            mosimocmb1.Items.Add("もしも、右に壁がなかったら");
-            mosimocmb1.Items.Add("もしも、前に壁があったら");
-            mosimocmb1.Items.Add("もしも、左に壁があったら");
-            mosimocmb1.Items.Add("もしも、右に壁がなかったら");
-            mosimocmb2.Items.Add("もしも、前に壁がなかったら");
-            mosimocmb2.Items.Add("もしも、左に壁がなかったら");
-            mosimocmb2.Items.Add("もしも、右に壁がなかったら");
-            mosimocmb2.Items.Add("もしも、前に壁があったら");
-            mosimocmb2.Items.Add("もしも、左に壁があったら");
-            mosimocmb2.Items.Add("もしも、右に壁があったら");
-            mosimocmb3.Items.Add("もしも、前に壁がなかったら");
-            mosimocmb3.Items.Add("もしも、左に壁がなかったら");
-            mosimocmb3.Items.Add("もしも、右に壁がなかったら");
-            mosimocmb3.Items.Add("もしも、前に壁があったら");
-            mosimocmb3.Items.Add("もしも、左に壁があったら");
-            mosimocmb3.Items.Add("もしも、右に壁があったら");
+            mosimocmb1.Items.Add("もしも、 前 に壁が なかったら");
+            mosimocmb1.Items.Add("もしも、 左 に壁が なかったら");
+            mosimocmb1.Items.Add("もしも、 右 に壁が なかったら");
+            mosimocmb1.Items.Add("もしも、 前 に壁が あったら");
+            mosimocmb1.Items.Add("もしも、 左 に壁が あったら");
+            mosimocmb1.Items.Add("もしも、 右 に壁が あったら");
+            mosimocmb2.Items.Add("もしも、 前 に壁が なかったら");
+            mosimocmb2.Items.Add("もしも、 左 に壁が なかったら");
+            mosimocmb2.Items.Add("もしも、 右 に壁が なかったら");
+            mosimocmb2.Items.Add("もしも、 前 に壁が あったら");
+            mosimocmb2.Items.Add("もしも、 左 に壁が あったら");
+            mosimocmb2.Items.Add("もしも、 右 に壁が あったら");
+            mosimocmb3.Items.Add("もしも、 前 に壁が なかったら");
+            mosimocmb3.Items.Add("もしも、 左 に壁が なかったら");
+            mosimocmb3.Items.Add("もしも、 右 に壁が なかったら");
+            mosimocmb3.Items.Add("もしも、 前 に壁が あったら");
+            mosimocmb3.Items.Add("もしも、 左 に壁が あったら");
+            mosimocmb3.Items.Add("もしも、 右 に壁が あったら");
 
 
 
