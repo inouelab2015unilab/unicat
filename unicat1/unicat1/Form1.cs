@@ -1255,12 +1255,21 @@ namespace unicat1
                     break;
                 }
             }
-            firstscore.Text = scorelist[nowstage].First.ToString();
             firstname.Text = scorelist[nowstage].FirstPerson;
-            secondscore.Text = scorelist[nowstage].Second.ToString();
             secondname.Text = scorelist[nowstage].SecondPerson;
-            thirdscore.Text = scorelist[nowstage].Third.ToString();
             thirdname.Text = scorelist[nowstage].ThirdPerson;
+            if (scorelist[nowstage].First != 50)
+            {
+                firstscore.Text = scorelist[nowstage].First.ToString();
+            }
+            if (scorelist[nowstage].Second != 50)
+            {
+                secondscore.Text = scorelist[nowstage].Second.ToString();
+            }
+            if (scorelist[nowstage].Third != 50)
+            {
+                thirdscore.Text = scorelist[nowstage].Third.ToString();
+            }
         }
 
         private void RankDisp() //ランキング読み込み表示
@@ -1273,60 +1282,87 @@ namespace unicat1
                     break;
                 }
             }
-            firstscore.Text = scorelist[nowstage].First.ToString();
             firstname.Text = scorelist[nowstage].FirstPerson;
-            secondscore.Text = scorelist[nowstage].Second.ToString();
             secondname.Text = scorelist[nowstage].SecondPerson;
-            thirdscore.Text = scorelist[nowstage].Third.ToString();
             thirdname.Text = scorelist[nowstage].ThirdPerson;
+            if (scorelist[nowstage].First == 50)
+            {
+                firstscore.Text = "";
+            }
+            else
+            {
+                firstscore.Text = scorelist[nowstage].First.ToString();
+            }
+
+            if (scorelist[nowstage].Second == 50)
+            {
+                secondscore.Text = "";
+            }
+            else
+            {
+                secondscore.Text = scorelist[nowstage].Second.ToString();
+            }
+            if (scorelist[nowstage].Third == 50)
+            {
+                thirdscore.Text = "";
+            }
+            else
+            {
+                thirdscore.Text = scorelist[nowstage].Third.ToString();
+            }
         }
 
         private void RankUpdate(string stagename, double myscore)
         {
-            if (double.Parse(firstscore.Text) >= myscore) //今回1位!!
+            if (scorelist[nowstage].First >= myscore) //今回1位!!
             {
-                if ((myname != firstname.Text) || (myscore < double.Parse(firstscore.Text)))
+                if ((myname != scorelist[nowstage].FirstPerson) || (myscore < scorelist[nowstage].First))
                 {
-                    thirdscore.Text = secondscore.Text; //3に2を格下げ
-                    thirdname.Text = secondname.Text;
-                    scorelist[nowstage].Third = double.Parse(secondscore.Text);
-                    scorelist[nowstage].ThirdPerson = secondname.Text;
 
-                    secondscore.Text = firstscore.Text; //2に1を格下げ
-                    secondname.Text = firstname.Text;
-                    scorelist[nowstage].Second = double.Parse(firstscore.Text);
-                    scorelist[nowstage].SecondPerson = firstname.Text;
+                    scorelist[nowstage].Third = scorelist[nowstage].Second; //3に2を格下げ
+                    scorelist[nowstage].ThirdPerson = scorelist[nowstage].SecondPerson;
+                    if (scorelist[nowstage].Third == 50) thirdscore.Text = "";
+                    else thirdscore.Text = scorelist[nowstage].Third.ToString();
+                    thirdname.Text = scorelist[nowstage].ThirdPerson;
 
-                    firstscore.Text = myscore.ToString(); //1に自分スコアを入れる
-                    firstname.Text = myname;
+                    scorelist[nowstage].Second = scorelist[nowstage].First; //2に1を格下げ
+                    scorelist[nowstage].SecondPerson = scorelist[nowstage].FirstPerson;
+                    if (scorelist[nowstage].Second == 50) secondscore.Text = "";
+                    else secondscore.Text = scorelist[nowstage].Second.ToString();
+                    secondname.Text = scorelist[nowstage].SecondPerson;
+
                     scorelist[nowstage].First = myscore;
                     scorelist[nowstage].FirstPerson = myname;
+                    firstscore.Text = myscore.ToString(); //1に自分スコアを入れる
+                    firstname.Text = myname;
                 }
             }
 
-            else if (double.Parse(secondscore.Text) >= myscore) //今回2位!!
+            else if (scorelist[nowstage].Second >= myscore) //今回2位!!
             {
-                if ((myname != secondname.Text) || (myscore < double.Parse(secondscore.Text)))
+                if ((myname != scorelist[nowstage].SecondPerson) || (myscore < scorelist[nowstage].Second))
                 {
-                    thirdscore.Text = secondscore.Text; //3に2を格下げ
-                    thirdname.Text = secondname.Text;
-                    scorelist[nowstage].Third = double.Parse(secondscore.Text);
-                    scorelist[nowstage].ThirdPerson = secondname.Text;
 
-                    secondscore.Text = myscore.ToString(); //2に自分のスコアを入れる
-                    secondname.Text = myname;
+                    scorelist[nowstage].Third = scorelist[nowstage].Second; //3に2を格下げ
+                    scorelist[nowstage].ThirdPerson = scorelist[nowstage].SecondPerson;
+                    if (scorelist[nowstage].Third == 50) thirdscore.Text = "";
+                    else thirdscore.Text = scorelist[nowstage].Third.ToString();
+                    thirdname.Text = scorelist[nowstage].ThirdPerson;
+
                     scorelist[nowstage].Second = myscore;
                     scorelist[nowstage].SecondPerson = myname;
+                    secondscore.Text = myscore.ToString(); //2に自分スコアを入れる
+                    secondname.Text = myname;
                 }
             }
-            else if (double.Parse(thirdscore.Text) >= myscore) //今回3位!!
+            else if (scorelist[nowstage].Third >= myscore) //今回3位!!
             {
-                if ((myname != thirdname.Text) || (myscore < double.Parse(thirdscore.Text)))
+                if ((myname != scorelist[nowstage].ThirdPerson) || (myscore < scorelist[nowstage].Third))
                 {
-                    thirdscore.Text = myscore.ToString(); //3に自分スコアを入れる
-                    thirdname.Text = myname;
                     scorelist[nowstage].Third = myscore;
                     scorelist[nowstage].ThirdPerson = myname;
+                    thirdscore.Text = myscore.ToString(); //3に自分スコアを入れる
+                    thirdname.Text = myname;
                 }
             }
             //csvに書き出し
@@ -1353,6 +1389,7 @@ namespace unicat1
             fish2count = 0;
             fish3count = 0;
             catdirection = 0;
+            myscore.Text = "";
             //harapekocount.Text = harapekoscore.Text = 0.ToString();
             if (radio_off.Checked == true) RankDisp();
         }
