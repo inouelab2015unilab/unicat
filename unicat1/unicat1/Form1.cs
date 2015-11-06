@@ -16,6 +16,9 @@ namespace unicat1
 {
     public partial class Form1 : Form
     {
+        //string myname = "rinapon";
+        string myname = Form3.username;
+
         Graphics g;
         Graphics g2;
 
@@ -72,6 +75,10 @@ namespace unicat1
         List<int> mosimolist1 = new List<int>();    //２ボックスの命令リスト
         List<int> mosimolist2 = new List<int>();
         List<int> mosimolist3 = new List<int>();
+        List<Runking> scorelist = new List<Runking>(); //ランキングのリスト
+        int nowstage = 0;
+        int stagenum = 0;
+        int Score = 0;
 
         public List<int[,]> boardlist = new List<int[,]>();
         PictureBox[] mainpicarray = new PictureBox[12];
@@ -86,6 +93,28 @@ namespace unicat1
         //盤面情報をCSVファイルから読み込み
         string[] files1 = System.IO.Directory.GetFiles("boardmatrix/", "*.csv");
         string[] files2 = System.IO.Directory.GetFiles("boardmatrix2/", "*.csv");
+
+
+        public class Runking
+        {
+            public string Stage;
+            public string FirstPerson;
+            public double First;
+            public string SecondPerson;
+            public double Second;
+            public string ThirdPerson;
+            public double Third;
+            public Runking(string s, string t, double x, string u, double y, string v, double z)
+            {
+                Stage = s;
+                FirstPerson = t;
+                First = x;
+                SecondPerson = u;
+                Second = y;
+                ThirdPerson = v;
+                Third = z;
+            }
+        }
 
         public Form1()
         {
@@ -106,7 +135,9 @@ namespace unicat1
             foreach (var i in mosimopicarray2) i.Click += new EventHandler(mosimo2_Click);
             foreach (var i in mosimopicarray3) i.Click += new EventHandler(mosimo3_Click);
 
+
             SelectedBoxChanged();
+            RankRead();
 
             radioButton2.Checked = true;
             radio_off.Checked = true;
@@ -131,15 +162,26 @@ namespace unicat1
 
             }
 
-            mosimocmb1.Items.Add("もしも、前に壁がなかったら");
-            mosimocmb1.Items.Add("もしも、左に壁がなかったら");
-            mosimocmb1.Items.Add("もしも、右に壁がなかったら");
-            mosimocmb2.Items.Add("もしも、前に壁がなかったら");
-            mosimocmb2.Items.Add("もしも、左に壁がなかったら");
-            mosimocmb2.Items.Add("もしも、右に壁がなかったら");
-            mosimocmb3.Items.Add("もしも、前に壁がなかったら");
-            mosimocmb3.Items.Add("もしも、左に壁がなかったら");
-            mosimocmb3.Items.Add("もしも、右に壁がなかったら");
+            mosimocmb1.Items.Add("もしも、 前 に壁が なかったら");
+            mosimocmb1.Items.Add("もしも、 左 に壁が なかったら");
+            mosimocmb1.Items.Add("もしも、 右 に壁が なかったら");
+            mosimocmb1.Items.Add("もしも、 前 に壁が あったら");
+            mosimocmb1.Items.Add("もしも、 左 に壁が あったら");
+            mosimocmb1.Items.Add("もしも、 右 に壁が あったら");
+            mosimocmb2.Items.Add("もしも、 前 に壁が なかったら");
+            mosimocmb2.Items.Add("もしも、 左 に壁が なかったら");
+            mosimocmb2.Items.Add("もしも、 右 に壁が なかったら");
+            mosimocmb2.Items.Add("もしも、 前 に壁が あったら");
+            mosimocmb2.Items.Add("もしも、 左 に壁が あったら");
+            mosimocmb2.Items.Add("もしも、 右 に壁が あったら");
+            mosimocmb3.Items.Add("もしも、 前 に壁が なかったら");
+            mosimocmb3.Items.Add("もしも、 左 に壁が なかったら");
+            mosimocmb3.Items.Add("もしも、 右 に壁が なかったら");
+            mosimocmb3.Items.Add("もしも、 前 に壁が あったら");
+            mosimocmb3.Items.Add("もしも、 左 に壁が あったら");
+            mosimocmb3.Items.Add("もしも、 右 に壁が あったら");
+
+
 
             //命令パネルの背景を設置
             foreach (var n in mainpicarray) n.Image = commandpanel;
@@ -407,6 +449,8 @@ namespace unicat1
         }
         private void mosimoaction(int cmbnum, List<int> mlist)
         {
+            //List<int[,]> temp_boardlist = new List<int[,]>();
+
             int xmove = 0, ymove = 0;
             if (cmbnum == 0)
             {        //catdirection 0=上、1=右、2=下、3=左
@@ -429,7 +473,10 @@ namespace unicat1
                     else { Thread.Sleep(200); }
 
                 }
-                catch { }
+                catch
+                {
+
+                }
             }
             else if (cmbnum == 1)
             {
@@ -454,7 +501,10 @@ namespace unicat1
                     else { Thread.Sleep(200); }
 
                 }
-                catch { }
+                catch
+                {
+
+                }
             }
             else if (cmbnum == 2)
             {
@@ -478,7 +528,107 @@ namespace unicat1
                     else { Thread.Sleep(200); }
 
                 }
-                catch { }
+                catch
+                {
+
+                }
+            }
+            else if (cmbnum == 3)
+            {
+                //方向と端にいるかどうかで移動の変化量を決める
+                if (catdirection == 0) ymove = -1;
+                if (catdirection == 2) ymove = 1;
+                if (catdirection == 1) xmove = 1;
+                if (catdirection == 3) xmove = -1;
+                try
+                {
+                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先が壁
+                    {
+                        for (int j = 0; j < mlist.Count; j++)
+                        {
+                            listcheck(mlist, j);
+                            //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                            //if (totalscore <= -100) break;
+                        }
+
+                    }
+                    else { Thread.Sleep(200); }
+
+                }
+                catch
+                {
+                    for (int j = 0; j < mlist.Count; j++)
+                    {
+                        listcheck(mlist, j);
+                        //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                        //if (totalscore <= -100) break;
+                    }
+                }
+            }
+            else if (cmbnum == 4)
+            {
+                //方向と端にいるかどうかで移動の変化量を決める
+                if (catdirection == 0) xmove = -1;
+                if (catdirection == 2) xmove = 1;
+                if (catdirection == 1) ymove = -1;
+                if (catdirection == 3) ymove = 1;
+
+                try
+                {
+                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先が壁
+                    {
+                        for (int j = 0; j < mlist.Count; j++)
+                        {
+                            listcheck(mlist, j);
+                            //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                            //if (totalscore <= -100) break;
+                        }
+
+                    }
+                    else { Thread.Sleep(200); }
+
+                }
+                catch
+                {
+                    for (int j = 0; j < mlist.Count; j++)
+                    {
+                        listcheck(mlist, j);
+                        //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                        //if (totalscore <= -100) break;
+                    }
+                }
+            }
+            else if (cmbnum == 5)
+            {
+                //方向と端にいるかどうかで移動の変化量を決める
+                if (catdirection == 0) xmove = 1;
+                if (catdirection == 2) xmove = -1;
+                if (catdirection == 1) ymove = 1;
+                if (catdirection == 3) ymove = -1;
+                try
+                {
+                    if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] == 2)//移動した先が壁
+                    {
+                        for (int j = 0; j < mlist.Count; j++)
+                        {
+                            listcheck(mlist, j);
+                            //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                            //if (totalscore <= -100) break;
+                        }
+
+                    }
+                    else { Thread.Sleep(200); }
+
+                }
+                catch
+                {
+                    for (int j = 0; j < mlist.Count; j++)
+                    {
+                        listcheck(mlist, j);
+                        //totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
+                        //if (totalscore <= -100) break;
+                    }
+                }
             }
         }
 
@@ -588,12 +738,15 @@ namespace unicat1
 
         private void movebutton_Click_1(object sender, EventArgs e)
         {
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
 
             //movelistに格納された番号にしたがって命令を実行
             for (int i = orderone_count; i < movelist.Count; i++)
             {
                 listcheck(movelist, i);
             }
+            sw.Stop();
 
             int foodcount = checkfood();
             foodlabel.Text = checkfood().ToString();
@@ -615,13 +768,28 @@ namespace unicat1
             }
             else if (foodcount == 0) //全部食べられていたらクリア
             {
+                //if (movelist.Count <= double.Parse(label11.Text))
+                //{
+                //    Form3 form3 = new Form3();
+                //    form3.Show();
+                //}
+                myscore.Text = (6 * movelist.Count + onelist.Count + twolist.Count + mosimolist1.Count + mosimolist2.Count + mosimolist3.Count).ToString();
+                if (radio_off.Checked == true) RankUpdate(comboBox1.Text, 6 * movelist.Count + onelist.Count + twolist.Count + mosimolist1.Count + mosimolist2.Count + mosimolist3.Count);
                 DialogResult result = MessageBox.Show("次に進みますか？", "ステージクリア！", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+
+
                 try
                 {
                     if (result == DialogResult.Yes)
                     {
                         makeboard(boardlist[comboBox1.SelectedIndex + 1]);
                         comboBox1.SelectedIndex++;
+                        if (radio_off.Checked == true)
+                        {
+                            RankDisp();
+                            myscore.Text = "";
+                        }
                     }
                 }
                 catch
@@ -733,6 +901,7 @@ namespace unicat1
             if (nowboard[catposx, catposy] == 4)
             {
                 nowboard[catposx, catposy] = 1;
+                Score = 100;
                 fishcount += 1;
                 foodlabel.Text = fishcount.ToString();
                 power = 100;
@@ -742,6 +911,7 @@ namespace unicat1
             if (nowboard[catposx, catposy] == 5)
             {
                 nowboard[catposx, catposy] = 1;
+                Score = 300;
                 fish2count += 1;
                 //fish300count.Text = fish2count.ToString();
                 //fish300score.Text = (fish2count * Score).ToString();
@@ -749,6 +919,7 @@ namespace unicat1
             if (nowboard[catposx, catposy] == 6)
             {
                 nowboard[catposx, catposy] = 1;
+                Score = 500;
                 fish3count += 1;
                 //fish500count.Text = fish3count.ToString();
                 //fish500score.Text = (fish3count * Score).ToString();
@@ -805,6 +976,7 @@ namespace unicat1
             makeboard(boardlist[comboBox1.SelectedIndex]);
             catdirection = 0;
             catd_change();
+            myscore.Text = "";
         }
 
         private void orderreset_button_Click(object sender, EventArgs e)
@@ -944,10 +1116,10 @@ namespace unicat1
             selectBox = 2;
         }
 
-        bool loadflag;
+        bool flag;
         private void makeStage_button_Click(object sender, EventArgs e)
         {
-            loadflag = true;
+            flag = true;
             Form2 form2 = new Form2();
             form2.Show();
         }
@@ -1058,6 +1230,117 @@ namespace unicat1
 
         }
 
+        private void RankRead() //ランキング読み込み表示
+        {
+            StreamReader sr = new StreamReader("runking.csv", Encoding.GetEncoding("Shift_JIS")); //ランキング読み込み
+            string Line = "";
+            while (Line != null)
+            {
+                Line = sr.ReadLine();
+                if (Line == null) break;
+                string[] t = Line.Split(',');
+                scorelist.Add(new Runking(t[0], t[1], double.Parse(t[2]), t[3], double.Parse(t[4]), t[5], double.Parse(t[6])));
+                stagenum++;
+            }
+            sr.Close();
+            //int now = 0;
+            for (int i = 0; i < stagenum; i++)
+            {
+                if (scorelist[i].Stage == comboBox1.Text) //現ステージはリストの何番目か
+                {
+                    nowstage = i;
+                    break;
+                }
+            }
+            firstscore.Text = scorelist[nowstage].First.ToString();
+            firstname.Text = scorelist[nowstage].FirstPerson;
+            secondscore.Text = scorelist[nowstage].Second.ToString();
+            secondname.Text = scorelist[nowstage].SecondPerson;
+            thirdscore.Text = scorelist[nowstage].Third.ToString();
+            thirdname.Text = scorelist[nowstage].ThirdPerson;
+        }
+
+        private void RankDisp() //ランキング読み込み表示
+        {
+            for (int i = 0; i < stagenum; i++)
+            {
+                if (scorelist[i].Stage == comboBox1.Text) //現ステージはリストの何番目か
+                {
+                    nowstage = i;
+                    break;
+                }
+            }
+            firstscore.Text = scorelist[nowstage].First.ToString();
+            firstname.Text = scorelist[nowstage].FirstPerson;
+            secondscore.Text = scorelist[nowstage].Second.ToString();
+            secondname.Text = scorelist[nowstage].SecondPerson;
+            thirdscore.Text = scorelist[nowstage].Third.ToString();
+            thirdname.Text = scorelist[nowstage].ThirdPerson;
+        }
+
+        private void RankUpdate(string stagename, double myscore)
+        {
+            if (double.Parse(firstscore.Text) >= myscore) //今回1位!!
+            {
+                if (myname != firstname.Text)
+                {
+                    thirdscore.Text = secondscore.Text; //3に2を格下げ
+                    thirdname.Text = secondname.Text;
+                    scorelist[nowstage].Third = double.Parse(secondscore.Text);
+                    scorelist[nowstage].ThirdPerson = secondname.Text;
+
+                    secondscore.Text = firstscore.Text; //2に1を格下げ
+                    secondname.Text = firstname.Text;
+                    scorelist[nowstage].Second = double.Parse(firstscore.Text);
+                    scorelist[nowstage].SecondPerson = firstname.Text;
+
+                    firstscore.Text = myscore.ToString(); //1に自分スコアを入れる
+                    firstname.Text = myname;
+                    scorelist[nowstage].First = myscore;
+                    scorelist[nowstage].FirstPerson = myname;
+                }
+            }
+            else if (double.Parse(secondscore.Text) >= myscore) //今回2位!!
+            {
+                if (myname != secondname.Text)
+                {
+                    thirdscore.Text = secondscore.Text; //3に2を格下げ
+                    thirdname.Text = secondname.Text;
+                    scorelist[nowstage].Third = double.Parse(secondscore.Text);
+                    scorelist[nowstage].ThirdPerson = secondname.Text;
+
+                    secondscore.Text = myscore.ToString(); //2に自分のスコアを入れる
+                    secondname.Text = myname;
+                    scorelist[nowstage].Second = myscore;
+                    scorelist[nowstage].SecondPerson = myname;
+                }
+            }
+            else if (double.Parse(thirdscore.Text) >= myscore) //今回3位!!
+            {
+                if (myname != thirdname.Text)
+                {
+                    thirdscore.Text = myscore.ToString(); //3に自分スコアを入れる
+                    thirdname.Text = myname;
+                    scorelist[nowstage].Third = myscore;
+                    scorelist[nowstage].ThirdPerson = myname;
+                }
+            }
+            //csvに書き出し
+            System.IO.StreamWriter sw = new System.IO.StreamWriter("runking.csv", false, System.Text.Encoding.GetEncoding("shift_jis"));
+            for (int i = 0; i < stagenum; i++)
+            {
+                sw.Write(scorelist[i].Stage + ",");
+                sw.Write(scorelist[i].FirstPerson + ",");
+                sw.Write(scorelist[i].First.ToString() + ",");
+                sw.Write(scorelist[i].SecondPerson + ",");
+                sw.Write(scorelist[i].Second.ToString() + ",");
+                sw.Write(scorelist[i].ThirdPerson + ",");
+                sw.Write(scorelist[i].Third.ToString());
+                sw.WriteLine();
+            }
+            sw.Close();
+        }
+
         private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
             makeboard(boardlist[comboBox1.SelectedIndex]);
@@ -1067,8 +1350,9 @@ namespace unicat1
             fish3count = 0;
             catdirection = 0;
             //harapekocount.Text = harapekoscore.Text = 0.ToString();
-
+            if (radio_off.Checked == true) RankDisp();
         }
+
 
         private void button_orderone_Click(object sender, EventArgs e)
         {
@@ -1158,8 +1442,19 @@ namespace unicat1
         {
             comboBox1.Items.Clear();
             boardlist.Clear();
+            files2 = System.IO.Directory.GetFiles("boardmatrix2/", "*.csv");
             if (radio_on.Checked == true)
             {
+                firstscore.Text = "";
+                secondscore.Text = "";
+                thirdscore.Text = "";
+                label12.Text = "";
+                label13.Text = "";
+                label14.Text = "";
+                firstname.Text = "";
+                secondname.Text = "";
+                thirdname.Text = "";
+                myscore.Text = "";
                 //コンボボックスにステージ名を自動で追加
                 for (int i = 0; i < files2.Length; i++)
                 {
@@ -1198,7 +1493,6 @@ namespace unicat1
                 }
                 comboBox1.SelectedIndex = 0;
                 makeboard(boardlist[comboBox1.SelectedIndex]);
-
             }
             else
             {
@@ -1241,23 +1535,41 @@ namespace unicat1
                 }
                 comboBox1.SelectedIndex = 0;
                 makeboard(boardlist[comboBox1.SelectedIndex]);
-
             }
 
         }
-
         private void radio_on_CheckedChanged(object sender, EventArgs e)
         {
             load();
         }
 
+        private void radio_off_CheckedChanged(object sender, EventArgs e)
+        {
+            RankDisp();
+            label12.Text = "1位";
+            label13.Text = "2位";
+            label14.Text = "3位";
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void thirdname_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Form1_Activated(object sender, EventArgs e)
         {
-            if (loadflag ==true)
+            if (flag == true)
             {
                 load();
-                loadflag = false;
+                flag = false;
             }
+
         }
+
     }
 }
