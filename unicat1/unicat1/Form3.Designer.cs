@@ -35,28 +35,26 @@
             // 
             // textBox_name
             // 
-            this.textBox_name.Location = new System.Drawing.Point(128, 132);
-            this.textBox_name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_name.Location = new System.Drawing.Point(96, 106);
             this.textBox_name.Name = "textBox_name";
-            this.textBox_name.Size = new System.Drawing.Size(132, 22);
+            this.textBox_name.Size = new System.Drawing.Size(100, 19);
             this.textBox_name.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(125, 97);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(78, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 15);
+            this.label1.Size = new System.Drawing.Size(136, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "名前を登録してね";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(128, 172);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(106, 131);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 29);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 2;
             this.button1.Text = "はじめる";
             this.button1.UseVisualStyleBackColor = true;
@@ -64,13 +62,13 @@
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 326);
+            this.BackColor = System.Drawing.Color.Ivory;
+            this.ClientSize = new System.Drawing.Size(294, 261);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_name);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "はじめてのプログラミング教室";

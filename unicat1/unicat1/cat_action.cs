@@ -30,7 +30,11 @@ namespace unicat1
 
             if (boardlist[comboBox1.SelectedIndex][catposx + xmove, catposy + ymove] != 2)//移動した先に壁がなければ
             {
-                for (int i = 0; i <= pictureBox1.Width / xmax; i = i + 1)
+                int l = pictureBox1.Width/xmax;
+                if (direction == 1 || direction == 3) l = pictureBox1.Width / xmax;
+                if (direction == 0 || direction == 2) l = pictureBox1.Height / ymax;
+
+                for (int i = 0; i <= l; i = i + 1)
                 {
                     if (i < pictureBox1.Width / xmax - 5) i = i + 4;
 

@@ -669,8 +669,7 @@ namespace unicat1
                         totalscore = fishcount * 100 + fish2count * 300 + fish3count * 500 - footcount * 5;
                         if (totalscore <= -100) break;
                     }
-                }
-
+                }                    
                 else if (list[index] == 5)
                 {
                     for (int j = 0; j < twolist.Count; j++)
