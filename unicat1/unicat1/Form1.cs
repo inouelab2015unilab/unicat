@@ -774,7 +774,10 @@ namespace unicat1
                 //    form3.Show();
                 //}
                 myscore.Text = (6 * movelist.Count + onelist.Count + twolist.Count + mosimolist1.Count + mosimolist2.Count + mosimolist3.Count).ToString();
-                if (radio_off.Checked == true) RankUpdate(comboBox1.Text, 6 * movelist.Count + onelist.Count + twolist.Count + mosimolist1.Count + mosimolist2.Count + mosimolist3.Count);
+                if (radio_off.Checked == true)
+                {
+                    RankUpdate(comboBox1.Text, 6 * movelist.Count + onelist.Count + twolist.Count + mosimolist1.Count + mosimolist2.Count + mosimolist3.Count);
+                }
                 DialogResult result = MessageBox.Show("次に進みますか？", "ステージクリア！", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
 
@@ -1282,7 +1285,7 @@ namespace unicat1
         {
             if (double.Parse(firstscore.Text) >= myscore) //今回1位!!
             {
-                if (myname != firstname.Text)
+                if ((myname != firstname.Text) || (myscore < double.Parse(firstscore.Text)))
                 {
                     thirdscore.Text = secondscore.Text; //3に2を格下げ
                     thirdname.Text = secondname.Text;
@@ -1300,9 +1303,10 @@ namespace unicat1
                     scorelist[nowstage].FirstPerson = myname;
                 }
             }
+
             else if (double.Parse(secondscore.Text) >= myscore) //今回2位!!
             {
-                if (myname != secondname.Text)
+                if ((myname != secondname.Text) || (myscore < double.Parse(secondscore.Text)))
                 {
                     thirdscore.Text = secondscore.Text; //3に2を格下げ
                     thirdname.Text = secondname.Text;
@@ -1317,7 +1321,7 @@ namespace unicat1
             }
             else if (double.Parse(thirdscore.Text) >= myscore) //今回3位!!
             {
-                if (myname != thirdname.Text)
+                if ((myname != thirdname.Text) || (myscore < double.Parse(thirdscore.Text)))
                 {
                     thirdscore.Text = myscore.ToString(); //3に自分スコアを入れる
                     thirdname.Text = myname;
@@ -1496,6 +1500,10 @@ namespace unicat1
             }
             else
             {
+                label12.Text = "1位";
+                label13.Text = "2位";
+                label14.Text = "3位";
+                RankDisp();
 
                 //コンボボックスにステージ名を自動で追加
                 for (int i = 0; i < files1.Length; i++)
@@ -1545,10 +1553,7 @@ namespace unicat1
 
         private void radio_off_CheckedChanged(object sender, EventArgs e)
         {
-            RankDisp();
-            label12.Text = "1位";
-            label13.Text = "2位";
-            label14.Text = "3位";
+
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
