@@ -115,14 +115,15 @@ namespace unicat1
                 boardsize = stage.GetLength(0);
                 cellsize = pictureBox1.Width / boardsize;
                 Point p = this.pictureBox1.PointToScreen(new Point(0, 0));
-                int x = e.X / cellsize;
-                int y = e.Y / cellsize;
-                if (cellnumber != 3)
+                //int x = e.X / cellsize;
+                //int y = e.Y / cellsize;
+                int x = e.X / (pictureBox1.Width / boardsize);
+                int y = e.Y / (pictureBox1.Height / boardsize);
+                if (cellnumber != 3)//ネコ以外は一つ変える
                 {
-                    g.DrawImage(imageset[cellnumber], x * cellsize, y * cellsize, cellsize, cellsize);
                     stage[x, y] = cellnumber;
                 }
-                else
+                else//ネコのときはネコの位置を変える
                 {
                     for (int i = 0; i < stage.GetLength(0); i++)
                     {
@@ -130,15 +131,15 @@ namespace unicat1
                         {
                             if (stage[i, j] == 3)
                             {
-                                g.DrawImage(road, i * cellsize, j * cellsize, cellsize, cellsize);
                                 stage[i, j] = 1;
                                 break;
                             }
                         }
                     }
-                    g.DrawImage(imageset[cellnumber], x * cellsize, y * cellsize, cellsize, cellsize);
+                    //g.DrawImage(imageset[cellnumber], x * cellsize, y * cellsize, cellsize, cellsize);
                     stage[x, y] = cellnumber;
                 }
+                makeboard(stage);
                 pictureBox1.Refresh();
             }
             catch { }
@@ -178,16 +179,7 @@ namespace unicat1
                         }
                     }
                     catch { }
-
-                    string[] files = System.IO.Directory.GetFiles("boardmatrix2/", "*.csv");
-                    listBox1.Items.Clear();
-                    foreach (var i in files)
-                    {
-                        string temp = i.Replace(".csv", "");
-                        temp = temp.Replace("boardmatrix2/", "");
-                        listBox1.Items.Add(temp);
-                    }
-
+                    loadData();
                 }
                 else
                 {
@@ -224,7 +216,8 @@ namespace unicat1
 
         private void loadData()
         {
-            string[] files = System.IO.Directory.GetFiles("boardmatrix2/", "*.csv");
+            //string[] files = System.IO.Directory.GetFiles("boardmatrix2/", "*.csv");
+            var files = System.IO.Directory.GetFiles("boardmatrix2/", "*.csv").OrderBy(f => File.GetLastWriteTime(f));
             listBox1.Items.Clear();
             boardlist.Clear();
 
@@ -254,7 +247,7 @@ namespace unicat1
                     boardlist.Add(temp);
                 }
             }
-            listBox1.SelectedIndex = 0;
+            listBox1.SelectedIndex = listBox1.Items.Count-1;
 
 
         }
@@ -352,8 +345,9 @@ namespace unicat1
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Restart();
+        {            
+            
+            //Application.Restart();
         }
     }
 }
