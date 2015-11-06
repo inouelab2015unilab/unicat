@@ -15,9 +15,9 @@ using System.Media;
 namespace unicat1
 {
     public partial class Form1 : Form
-    {
-        string myname = "rinapon";
-
+    {        
+        //string myname = "rinapon";
+        string myname = Form3.username;
 
         Graphics g;
         Graphics g2;
@@ -1436,10 +1436,11 @@ namespace unicat1
             SelectedBoxChanged();
         }
 
-        private void radio_on_CheckedChanged(object sender, EventArgs e)
+        private void load()
         {
             comboBox1.Items.Clear();
             boardlist.Clear();
+            files2 = System.IO.Directory.GetFiles("boardmatrix2/", "*.csv");
             if (radio_on.Checked == true)
             {
                 firstscore.Text = "";
@@ -1452,43 +1453,6 @@ namespace unicat1
                 secondname.Text = "";
                 thirdname.Text = "";
                 myscore.Text = "";
-
-                ////コンボボックスにステージ名を自動で追加
-                //for (int i = 0; i < files1.Length; i++)
-                //{
-                //    var stagename = Path.GetFileName(files1[i]);
-                //    stagename = stagename.Replace(".csv", "");
-                //    comboBox1.Items.Add(stagename);
-
-                //}
-                ////盤面情報をCSVファイルから読み込み、boardlistに格納(要素は二次元配列)
-                //foreach (var n1 in files1)
-                //{
-                //    using (StreamReader sr = new StreamReader(n1, Encoding.GetEncoding(932)))
-                //    {
-                //        List<string> templist = new List<string>();
-
-                //        while (!sr.EndOfStream)
-                //        {
-                //            string s = sr.ReadLine();
-                //            templist.Add(s);
-                //        }
-                //        xmax = templist.Count;
-                //        string[] a = templist[0].Split(',');
-                //        ymax = a.Length;
-                //        int[,] temp = new int[xmax, ymax];
-
-                //        for (int y = 0; y < ymax; y++)
-                //        {
-                //            string[] arraytemp = templist[y].Split(',');
-                //            for (int x = 0; x < xmax; x++)
-                //            {
-                //                temp[x, y] = int.Parse(arraytemp[x]);
-                //            }
-                //        }
-                //        boardlist.Add(temp);
-                //    }
-                //}
                 //コンボボックスにステージ名を自動で追加
                 for (int i = 0; i < files2.Length; i++)
                 {
@@ -1570,6 +1534,11 @@ namespace unicat1
                 comboBox1.SelectedIndex = 0;
                 makeboard(boardlist[comboBox1.SelectedIndex]);
             }
+
+        }
+        private void radio_on_CheckedChanged(object sender, EventArgs e)
+        {
+            load();
         }
 
         private void radio_off_CheckedChanged(object sender, EventArgs e)
@@ -1588,6 +1557,11 @@ namespace unicat1
         private void thirdname_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            load();
         }
 
     }
