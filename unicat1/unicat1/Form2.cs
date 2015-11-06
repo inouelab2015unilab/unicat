@@ -346,6 +346,7 @@ namespace unicat1
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {            
+            
             //Application.Restart();
         }
     }

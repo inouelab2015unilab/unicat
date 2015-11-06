@@ -1116,8 +1116,10 @@ namespace unicat1
             selectBox = 2;
         }
 
+        bool loadflag;
         private void makeStage_button_Click(object sender, EventArgs e)
         {
+            loadflag = true;
             Form2 form2 = new Form2();
             form2.Show();
         }
@@ -1436,7 +1438,7 @@ namespace unicat1
             SelectedBoxChanged();
         }
 
-        private void load()
+        public void load()
         {
             comboBox1.Items.Clear();
             boardlist.Clear();
@@ -1561,7 +1563,11 @@ namespace unicat1
 
         private void Form1_Activated(object sender, EventArgs e)
         {
-            load();
+            if (loadflag == true)
+            {
+                load();
+                loadflag = false;
+            }
         }
 
     }
