@@ -72,7 +72,6 @@ namespace unicat1
         List<int> mosimolist1 = new List<int>();    //２ボックスの命令リスト
         List<int> mosimolist2 = new List<int>();
         List<int> mosimolist3 = new List<int>();
-        int Score = 0;
 
         public List<int[,]> boardlist = new List<int[,]>();
         PictureBox[] mainpicarray = new PictureBox[12];
@@ -734,7 +733,6 @@ namespace unicat1
             if (nowboard[catposx, catposy] == 4)
             {
                 nowboard[catposx, catposy] = 1;
-                Score = 100;
                 fishcount += 1;
                 foodlabel.Text = fishcount.ToString();
                 power = 100;
@@ -744,7 +742,6 @@ namespace unicat1
             if (nowboard[catposx, catposy] == 5)
             {
                 nowboard[catposx, catposy] = 1;
-                Score = 300;
                 fish2count += 1;
                 //fish300count.Text = fish2count.ToString();
                 //fish300score.Text = (fish2count * Score).ToString();
@@ -752,7 +749,6 @@ namespace unicat1
             if (nowboard[catposx, catposy] == 6)
             {
                 nowboard[catposx, catposy] = 1;
-                Score = 500;
                 fish3count += 1;
                 //fish500count.Text = fish3count.ToString();
                 //fish500score.Text = (fish3count * Score).ToString();
@@ -948,8 +944,10 @@ namespace unicat1
             selectBox = 2;
         }
 
+        bool loadflag;
         private void makeStage_button_Click(object sender, EventArgs e)
         {
+            loadflag = true;
             Form2 form2 = new Form2();
             form2.Show();
         }
@@ -1156,48 +1154,12 @@ namespace unicat1
             SelectedBoxChanged();
         }
 
-        private void radio_on_CheckedChanged(object sender, EventArgs e)
+        private void load()
         {
             comboBox1.Items.Clear();
             boardlist.Clear();
             if (radio_on.Checked == true)
             {
-                //コンボボックスにステージ名を自動で追加
-                for (int i = 0; i < files1.Length; i++)
-                {
-                    var stagename = Path.GetFileName(files1[i]);
-                    stagename = stagename.Replace(".csv", "");
-                    comboBox1.Items.Add(stagename);
-
-                }
-                //盤面情報をCSVファイルから読み込み、boardlistに格納(要素は二次元配列)
-                foreach (var n1 in files1)
-                {
-                    using (StreamReader sr = new StreamReader(n1, Encoding.GetEncoding(932)))
-                    {
-                        List<string> templist = new List<string>();
-
-                        while (!sr.EndOfStream)
-                        {
-                            string s = sr.ReadLine();
-                            templist.Add(s);
-                        }
-                        xmax = templist.Count;
-                        string[] a = templist[0].Split(',');
-                        ymax = a.Length;
-                        int[,] temp = new int[xmax, ymax];
-
-                        for (int y = 0; y < ymax; y++)
-                        {
-                            string[] arraytemp = templist[y].Split(',');
-                            for (int x = 0; x < xmax; x++)
-                            {
-                                temp[x, y] = int.Parse(arraytemp[x]);
-                            }
-                        }
-                        boardlist.Add(temp);
-                    }
-                }
                 //コンボボックスにステージ名を自動で追加
                 for (int i = 0; i < files2.Length; i++)
                 {
@@ -1282,6 +1244,20 @@ namespace unicat1
 
             }
 
+        }
+
+        private void radio_on_CheckedChanged(object sender, EventArgs e)
+        {
+            load();
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            if (loadflag ==true)
+            {
+                load();
+                loadflag = false;
+            }
         }
     }
 }

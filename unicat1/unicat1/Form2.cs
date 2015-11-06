@@ -26,7 +26,7 @@ namespace unicat1
         Image catl = Image.FromFile(@"素材/catl.png");
         static Image catd = Image.FromFile(@"素材/catd.png");
         public List<int[,]> boardlist = new List<int[,]>();
-        Image cat;
+        //Image cat;
         Image[] imageset = { back, road, back, catd, fish, fish2, fish3 };
         static int boardsize = 5;
         int cellsize;
