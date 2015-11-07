@@ -28,16 +28,9 @@ namespace unicat1
             else
             {
                 username = textBox_name.Text;
-                DialogResult result = MessageBox.Show(username + "さんでよろしいですか？", "質問", MessageBoxButtons.OKCancel, MessageBoxIcon.None, MessageBoxDefaultButton.Button2);
-
-                //何が選択されたか調べる
-                if (result == DialogResult.OK)
-                {
-                    Form1 f = new Form1();
-                    //フォームを表示する
-                    f.Show();
-                }
-
+                Form1 f = new Form1();
+                //フォームを表示する
+                f.Show();
             }
 
         }

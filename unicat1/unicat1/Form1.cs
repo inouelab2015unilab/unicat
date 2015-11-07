@@ -634,32 +634,42 @@ namespace unicat1
 
         private void listcheck(List<int> list, int index)
         {
-            if (checkfood() != 0 && 0 < power)
+            if (checkfood() != 0 && 0 < power)//食べ物があって体力もあるとき
             {
-                usePower(list, index);//体力消費
-                powerPaint();//体力描画
+                //usePower(list, index);//体力消費
+                //powerPaint();//体力描画
                 orderFlash(list, index);//使用中の命令を赤くする
                 if (list[index] == 0)
                 {
                     catmove(catdirection);
+                    power -= 5;
+                    powerPaint();
+                    
                 }
                 else if (list[index] == 1)
                 {
                     if (catdirection == 0) catdirection = 3;
                     else catdirection -= 1;
-
                     catd_change();
+                    power -= 5;
+                    powerPaint();
+
                 }
                 else if (list[index] == 2)
                 {
                     if (catdirection == 3) catdirection = 0;
                     else catdirection += 1;
-
                     catd_change();
+                    power -= 5;
+                    powerPaint();
+
                 }
                 else if (list[index] == 3)
                 {
                     catchfish(catposx, catposy);
+                    power -= 5;
+                    powerPaint();
+
                 }
                 else if (list[index] == 4)
                 {
@@ -891,6 +901,25 @@ namespace unicat1
                 mosimocmb2.Enabled = false;
                 mosimocmb3.Enabled = true;
 
+            }
+            for (int index = 0; index < mainpicarray.Length; index++)
+            {
+                mainpicarray[index].BackColor = main_Box.BackColor;
+                mainpicarray[index].Refresh();
+                if (index < onepicarray.Length)
+                {
+                    onepicarray[index].BackColor = one_Box.BackColor;
+                    onepicarray[index].Refresh();
+                    twopicarray[index].BackColor = two_Box.BackColor;
+                    twopicarray[index].Refresh();
+                    mosimopicarray1[index].BackColor = tabPage1.BackColor;
+                    mosimopicarray1[index].Refresh();
+                    mosimopicarray2[index].BackColor = tabPage1.BackColor;
+                    mosimopicarray2[index].Refresh();
+                    mosimopicarray3[index].BackColor = tabPage1.BackColor;
+                    mosimopicarray3[index].Refresh();
+
+                }
             }
         }
 

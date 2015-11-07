@@ -37,7 +37,6 @@ namespace unicat1
                 for (int i = 0; i <= l; i = i + 1)
                 {
                     if (i < pictureBox1.Width / xmax - 5) i = i + 4;
-
                     if (nowboard[catposx, catposy] == 4)
                     {
                         g.DrawImage(fish, catposx * pictureBox1.Width / xmax, catposy * pictureBox1.Height / ymax, pictureBox1.Width / xmax, pictureBox1.Height / ymax);
