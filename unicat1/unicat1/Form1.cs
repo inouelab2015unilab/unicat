@@ -1234,7 +1234,7 @@ namespace unicat1
 
         private void RankRead() //ランキング読み込み表示
         {
-            StreamReader sr = new StreamReader("runking.csv", Encoding.GetEncoding("Shift_JIS")); //ランキング読み込み
+            StreamReader sr = new StreamReader("ranking.csv", Encoding.GetEncoding("Shift_JIS")); //ランキング読み込み
             string Line = "";
             while (Line != null)
             {
@@ -1257,15 +1257,15 @@ namespace unicat1
             firstname.Text = scorelist[nowstage].FirstPerson;
             secondname.Text = scorelist[nowstage].SecondPerson;
             thirdname.Text = scorelist[nowstage].ThirdPerson;
-            if (scorelist[nowstage].First != 50)
+            if (scorelist[nowstage].First != 105)
             {
                 firstscore.Text = scorelist[nowstage].First.ToString();
         }
-            if (scorelist[nowstage].Second != 50)
+            if (scorelist[nowstage].Second != 105)
             {
                 secondscore.Text = scorelist[nowstage].Second.ToString();
             }
-            if (scorelist[nowstage].Third != 50)
+            if (scorelist[nowstage].Third != 105)
             {
                 thirdscore.Text = scorelist[nowstage].Third.ToString();
             }
@@ -1284,7 +1284,7 @@ namespace unicat1
             firstname.Text = scorelist[nowstage].FirstPerson;
             secondname.Text = scorelist[nowstage].SecondPerson;
             thirdname.Text = scorelist[nowstage].ThirdPerson;
-            if (scorelist[nowstage].First == 50)
+            if (scorelist[nowstage].First == 105)
             {
                 firstscore.Text = "";
         }
@@ -1293,7 +1293,7 @@ namespace unicat1
                 firstscore.Text = scorelist[nowstage].First.ToString();
             }
 
-            if (scorelist[nowstage].Second == 50)
+            if (scorelist[nowstage].Second == 105)
             {
                 secondscore.Text = "";
             }
@@ -1301,7 +1301,7 @@ namespace unicat1
             {
                 secondscore.Text = scorelist[nowstage].Second.ToString();
             }
-            if (scorelist[nowstage].Third == 50)
+            if (scorelist[nowstage].Third == 105)
             {
                 thirdscore.Text = "";
             }
@@ -1320,13 +1320,13 @@ namespace unicat1
 
                     scorelist[nowstage].Third = scorelist[nowstage].Second; //3に2を格下げ
                     scorelist[nowstage].ThirdPerson = scorelist[nowstage].SecondPerson;
-                    if (scorelist[nowstage].Third == 50) thirdscore.Text = "";
+                    if (scorelist[nowstage].Third == 105) thirdscore.Text = "";
                     else thirdscore.Text = scorelist[nowstage].Third.ToString();
                     thirdname.Text = scorelist[nowstage].ThirdPerson;
 
                     scorelist[nowstage].Second = scorelist[nowstage].First; //2に1を格下げ
                     scorelist[nowstage].SecondPerson = scorelist[nowstage].FirstPerson;
-                    if (scorelist[nowstage].Second == 50) secondscore.Text = "";
+                    if (scorelist[nowstage].Second == 105) secondscore.Text = "";
                     else secondscore.Text = scorelist[nowstage].Second.ToString();
                     secondname.Text = scorelist[nowstage].SecondPerson;
 
@@ -1344,7 +1344,7 @@ namespace unicat1
 
                     scorelist[nowstage].Third = scorelist[nowstage].Second; //3に2を格下げ
                     scorelist[nowstage].ThirdPerson = scorelist[nowstage].SecondPerson;
-                    if (scorelist[nowstage].Third == 50) thirdscore.Text = "";
+                    if (scorelist[nowstage].Third == 105) thirdscore.Text = "";
                     else thirdscore.Text = scorelist[nowstage].Third.ToString();
                     thirdname.Text = scorelist[nowstage].ThirdPerson;
 
@@ -1365,7 +1365,7 @@ namespace unicat1
                 }
             }
             //csvに書き出し
-            System.IO.StreamWriter sw = new System.IO.StreamWriter("runking.csv", false, System.Text.Encoding.GetEncoding("shift_jis"));
+            System.IO.StreamWriter sw = new System.IO.StreamWriter("ranking.csv", false, System.Text.Encoding.GetEncoding("shift_jis"));
             for (int i = 0; i < stagenum; i++)
             {
                 sw.Write(scorelist[i].Stage + ",");
